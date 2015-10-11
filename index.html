@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png">
+  <title>Metro 2033 Companion Map</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png" alt="Brand" class="navbar-brand" />
+        <a href="#" class="navbar-brand">METRO 2033 COMPANION MAP</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input id="location" type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="map">
+    <canvas id="map">
+      <img id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif" alt="Metro 2033 Map" class="map">
+    </canvas>
+    <div class="popover fade right in">
+      <div class="arrow"></div>
+      <h3 class="popover-title"></h3>
+      <div class="popover-content">
+        Here you can see some very useful information about the station!
+      </div>
+    </div>
+  </div>
+  <footer>
+    Tool
+    <a href="https://github.com/arguser/metro2033-companion-map">
+      <span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-right"></span></a> with
+    <span class="glyphicon glyphicon-heart"></span> by <a href="https://twitter.com/arguser">arguser</a>
+  </footer>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="js/locations.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+body {
+  padding-top: 70px;
+}
+div.map {
+  text-align: center;
+  overflow: hidden;
+}
+.ui-autocomplete {
+  z-index: 2000;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+}
+
+div.form-group .ui-autocomplete-input {
+  width: 287px;
+}
+
+ul.ui-menu {
+  z-index: 2000;
+}
+
+.popover {
+  z-index: 1000;
+}
