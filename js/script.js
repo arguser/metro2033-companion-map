@@ -66,8 +66,10 @@ function showPopover(location) {
   $('.popover').css('top', (yPos - (theHeight / 2)) + 'px');
 }
 
-function circleStation(x, y) {
+function circleStation(location) {
   context.beginPath();
+  var x = location.x;
+  var y = location.y;
   var w = 100;
   var h = 20;
   var rx = x - w / 2;
