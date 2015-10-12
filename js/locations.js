@@ -150,7 +150,7 @@ var locations = [
     x: 705,
     y: 217
   }, {
-    label: "VDNH",
+    label: "VDNKH (EXHIBITION)",
     x: 704.5,
     y: 255.5
   }, {
