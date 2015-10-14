@@ -10,7 +10,6 @@ div.map {
   max-height: 500px;
   overflow-y: auto;
   overflow-x: hidden;
-  position: absolute;
 }
 
 div.form-group .ui-autocomplete-input {
@@ -19,6 +18,7 @@ div.form-group .ui-autocomplete-input {
 
 ul.ui-menu {
   z-index: 2000;
+  position: fixed;
 }
 
 .popover {
