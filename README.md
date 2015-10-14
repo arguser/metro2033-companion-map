@@ -8,7 +8,7 @@ TODO
 
 -	Adjust station coordinates
 -	Adjust Popover location according to station
--	Make autocomplete dropdown to move with the navbar
+-	~~Make autocomplete dropdown to move with the navbar~~
 -	Improve location filter
 -	Highlight multiple locations
 -	Add more information to stations
