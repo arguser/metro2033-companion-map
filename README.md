@@ -7,8 +7,36 @@ TODO
 ----
 
 -	Adjust station coordinates
--	Adjust Popover location according to station
--	~~Make autocomplete dropdown to move with the navbar~~
--	Improve location filter
+-	New UI
+  -	Add floating search box
+  -	Add information drawer
+    -	Station
+    -	Line
+    -	Faction
+      -	Faction Description
+    -	Station Description
+  -	Add options menu
+    - Metro Version
+    - Language
+    - Help
+-	Draw map with HTML5 Canvas
+-	Switch to AngularSJ
 -	Highlight multiple locations
--	Add more information to stations
+-	Navigate Lines/Stations with Keyboard
+-	Add more information
+  - Lines
+  - Stations
+  - Factions
+
+
+Feedback
+--------
+[Reddit](https://www.reddit.com/r/metro2033/comments/3ocep3/metro_2033_companion_map_early_functional_version/)
+
+
+Contributors
+------------
+
+- [cristiands7](https://github.com/cristiands7)
+- [MightyGoatMan](https://github.com/MightyGoatMan)
+- [arguser](https://github.com/arguser)
