@@ -1,62 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mapApp">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+  <!--Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+
+  <!-- Data -->
+  <script src="js/locations.js"></script>
+
+  <!-- Map behavior -->
+  <script src="js/map.js"></script>
+
+  <!-- Map styles -->
+  <link href="css/app.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+
   <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png">
   <title>Metro 2033 Companion Map</title>
 </head>
 
-<body onload="initialize()">
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png" alt="Brand" class="navbar-brand" />
-        <a href="#" class="navbar-brand">METRO 2033 COMPANION MAP</a>
+<body>
+  <div id="toolbar" ng-controller="StationListController as stationList">
+    <md-content class="md-padding">
+    <form ng-submit="$event.preventDefault()">
+      <md-autocomplete
+        class="form-search"
+        ng-disabled="stationList.isDisabled"
+        md-no-cache="stationList.noCache"
+        md-selected-item="stationList.selectedItem"
+        md-search-text-change="stationList.searchTextChange(stationList.searchText)"
+        md-search-text="stationList.searchText"
+        md-selected-item-change="stationList.selectedItemChange(item)"
+        md-items="item in stationList.querySearch(stationList.searchText)"
+        md-item-text="item.display.label"
+        md-min-length="0"
+        md-floating-label="Station">
+      <md-item-template>
+        <span md-highlight-text="stationList.searchText" md-highlight-flags="^i">{{item.display.label}}</span>
+      </md-item-template>
+      <md-not-found>
+        No station matching "{{stationList.searchText}}" were found.
+      </md-not-found>
+    </md-autocomplete>
+    </form>
+    </md-content>
+    <div class="panel">
+      <div class="panel-toggle-button"></div>
+      <div class="panel-header-image">
+        <img src="assets/img/card.jpg" alt="">
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar">
-        <form class="navbar-form navbar-right" role="search">
-          <div class="form-group">
-            <input id="location" type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
+      <div class="panel-header-description">
+        <div class="panel-header-title">{{stationList.selectedStation.display.label}}</div>
+        <div class="panel-header-subtitle">{{station.line_name}}</div>
+        <div class="panel-header-number">{{station.line_number}}</div>
       </div>
-      <!-- /.navbar-collapse -->
+      <div class="panel-content">
+        <div class="panel-content-title">Description</div>
+        <div class="panel-content-text">{{station.station_description}}</div>
+      </div>
     </div>
-    <!-- /.container-fluid -->
-  </nav>
+  </div>
   <div class="map">
     <canvas id="map">
       <img id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif" alt="Metro 2033 Map" class="map">
     </canvas>
-    <div class="popover fade right in">
-      <div class="arrow"></div>
-      <h3 class="popover-title"></h3>
-      <div class="popover-content">
-        Here you can see some very useful information about the station!
-        <br><br>
-        If not, then you could help! <a href="https://github.com/arguser/metro2033-companion-map/blob/master/js/locations.js#L14"><span class="glyphicon glyphicon-pencil"></span></a>
-      </div>
-    </div>
   </div>
   <footer>
-    Tool
-    <a href="https://github.com/arguser/metro2033-companion-map">
-      <span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-right"></span></a> with
-    <span class="glyphicon glyphicon-heart"></span> by <a href="https://twitter.com/arguser">arguser</a>
+    Tool <a href="https://github.com/arguser/metro2033-companion-map">coded</a> with love by <a href="https://twitter.com/arguser">arguser</a>, <a href="https://github.com/MightyGoatMan">MightyGoatMan</a> and <a href="https://github.com/cristiands7">cristiands7</a>
   </footer>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="js/locations.js"></script>
 
 </body>
 
