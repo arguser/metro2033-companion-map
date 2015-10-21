@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Metro</title>
+		<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>	
+
+	<style type="text/css">
+		html {
+			margin:0;
+			padding:0;
+			font-family:arial,helvetica,sans-serif;
+			color:#FFF;
+			background-color:#001;
+		}
+		#metromap {
+			margin:50px;
+			padding:0px;
+			width:1800px;
+			height:2000px;
+			background-color:#FFF;
+		}
+
+	</style>
+
+
+	<script type="text/javascript" src="utilities.js"></script>
+	<script type="text/javascript" src="symbols.js"></script>
+	<script type="text/javascript" src="demo_locations.js"></script>
+
+
+
+	<script type="text/javascript">
+		var ctx;
+
+		function drawMap() {
+			var canvas = document.getElementById('metromap');
+			ctx = canvas.getContext('2d');
+
+			ctx.scale(1,1);
+			ctx.lineCap = 'round';
+
+			// draw lines
+			for (i=0;i<lines.length;i++) {
+				thisLine = lines[i];
+				drawLine(thisLine);
+			}
+
+			// draw stations
+			for (i=0;i<stations.length;i++) {
+				thisStation = stations[i];
+				station(thisStation['x_position'],thisStation['y_position'],thisStation['faction_id']);
+			}
+
+		}
+
+
+		
+	</script>
+
+	</head>
+	<body onload="drawMap();">
+
+		<canvas id="metromap" width="1800" height="2000"></canvas>
+	
+	</body>
+</html>
