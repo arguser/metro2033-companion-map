@@ -41,11 +41,11 @@
         md-search-text="stationList.searchText"
         md-selected-item-change="stationList.selectedItemChange(item)"
         md-items="item in stationList.querySearch(stationList.searchText)"
-        md-item-text="item.display.label"
+        md-item-text="item.display.station_name"
         md-min-length="0"
         md-floating-label="Station">
       <md-item-template>
-        <span md-highlight-text="stationList.searchText" md-highlight-flags="^i">{{item.display.label}}</span>
+        <span md-highlight-text="stationList.searchText" md-highlight-flags="^i">{{item.display.station_name}}</span>
       </md-item-template>
       <md-not-found>
         No station matching "{{stationList.searchText}}" were found.
@@ -59,13 +59,13 @@
         <img src="assets/img/card.jpg" alt="">
       </div>
       <div class="panel-header-description">
-        <div class="panel-header-title">{{stationList.selectedStation.display.label}}</div>
-        <div class="panel-header-subtitle">{{station.line_name}}</div>
-        <div class="panel-header-number">{{station.line_number}}</div>
+        <div class="panel-header-title">{{stationList.station.station_name}}</div>
+        <div class="panel-header-subtitle">{{stationList.line.line_name}}</div>
+        <div class="panel-header-number">{{stationList.line.line_id}}</div>
       </div>
       <div class="panel-content">
         <div class="panel-content-title">Description</div>
-        <div class="panel-content-text">{{station.station_description}}</div>
+        <div class="panel-content-text">{{stationList.station.station_description}}</div>
       </div>
     </div>
   </div>

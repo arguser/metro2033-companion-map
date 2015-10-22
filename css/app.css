@@ -57,6 +57,13 @@ body {
     margin-top: 4px;
 }
 
+.panel-header-number {
+  position: relative;
+  font-size: 36pt;
+  float: right;
+  bottom: 50px;
+}
+
 .panel-content {
     padding: 20px 25px;
 }

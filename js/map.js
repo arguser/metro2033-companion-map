@@ -1,16 +1,18 @@
 angular.module('mapApp', ['ngMaterial'])
   .controller('StationListController', StationListController);
 
-function StationListController($timeout, $q, $log) {
+function StationListController($timeout, $q, $log, $filter) {
   var self = this;
   self.simulateQuery = false;
-  self.isDisabled    = false;
+  self.isDisabled = false;
   // list of `stations` value/display objects
   self.stations = loadAll();
   self.querySearch = querySearch;
   self.selectedItemChange = selectedItemChange;
   self.searchTextChange = searchTextChange;
-  self.selectedStation = null;
+  self.station = null;
+  self.lines = lines;
+  self.line = null;
 
   // ******************************
   // Internal methods
@@ -37,7 +39,12 @@ function StationListController($timeout, $q, $log) {
     /**
      * Refresh data on Information Panel
      */
-    self.selectedStation = item;
+    if (item != null) {
+    self.station = item.display;
+    self.line =  $filter('filter')(lines, function (l) {return l.line_id === item.display.line_id;})[0];
+    if(self.line != null)
+      angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+      }
   }
 
   function searchTextChange(text) {
@@ -48,17 +55,23 @@ function StationListController($timeout, $q, $log) {
     /**
      * Refresh data on Information Panel
      */
-    self.selectedStation = item;
+
+    if (item != null) {
+    self.station = item.display;
+    self.line =  $filter('filter')(lines, function (l) {return l.line_id === item.display.line_id;})[0];
+    if(self.line != null)
+      angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+    }
     $log.info('Item changed to ' + JSON.stringify(item));
   }
   /**
    * Build `stations` list of key/value pairs
    */
   function loadAll() {
-    var allstations = locations;
+    var allstations = stations;
     return allstations.map(function(station) {
       return {
-        value: station.label.toLowerCase(),
+        value: station.station_name.toLowerCase(),
         display: station
       };
     });

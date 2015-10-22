@@ -83,8 +83,8 @@ var stations = [{
   "x_position": 480,
   "y_position": 110,
   "station_id": 0,
-  "station_description": "",
-  "line_id": 0,
+  "station_description": "Description Lorem Ipsum Blah Blah",
+  "line_id": 2,
   "faction_id": 0
 }, {
   "station_name": "BIBIREVO",
@@ -92,7 +92,7 @@ var stations = [{
   "y_position": 135.5,
   "station_id": 1,
   "station_description": "",
-  "line_id": 0,
+  "line_id": 1,
   "faction_id": 0
 }, {
   "station_name": "OTRADNOE",
@@ -100,7 +100,7 @@ var stations = [{
   "y_position": 168,
   "station_id": 2,
   "station_description": "",
-  "line_id": 0,
+  "line_id": 3,
   "faction_id": 0
 }, {
   "station_name": "VLADYKINO",
@@ -108,7 +108,7 @@ var stations = [{
   "y_position": 201,
   "station_id": 3,
   "station_description": "",
-  "line_id": 0,
+  "line_id": 4,
   "faction_id": 0
 }, {
   "station_name": "PETROVSKO-RAZUMOVSKAYA",
