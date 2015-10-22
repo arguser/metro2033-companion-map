@@ -14,7 +14,7 @@
 			background-color:#001;
 		}
 		#metromap {
-			margin:50px;
+			margin:10px;
 			padding:0px;
 			width:1800px;
 			height:2000px;
@@ -34,11 +34,15 @@
 		var ctx;
 
 		var data_version = 3; // what data sets to use
+		var name_set = 0; // what name set to use
 
 		function drawMap() {
+
+			document.getElementById('name_set_dd').selectedIndex=name_set;
+
 			var canvas = document.getElementById('metromap');
 			ctx = canvas.getContext('2d');
-
+			ctx.clearRect(0, 0, 1800, 2000);
 			ctx.scale(1,1);
 			ctx.lineCap = 'round';
 
@@ -52,24 +56,25 @@
 			for (i=0;i<stations.length;i++) {
 				thisStation = stations[i];
 				station(thisStation['x_position'],thisStation['y_position'],thisStation['faction_id']);
+				name_station(thisStation['station_id'],thisStation['label_point'],thisStation['x_position'],thisStation['y_position']);
 			}
 
-			// test of search function
-			var station_id 	= 31; // Botanical Gardens
-			var name_set	= 1; // Russian Cyrillic
-
-			testSearch = findRecord(station_name,"station_id",station_id);
-			testSearch = findRecord(testSearch,"name_set",name_set);
-			var stationName = testSearch[0]['station_name'];
-			// alert(stationName);
 		}
-
 
 		
 	</script>
 
 	</head>
 	<body onload="drawMap();">
+
+		<form>
+			<label for="name_set_dd">Labels</label>
+			<select name="name_set_dd" id="name_set_dd" onchange="changeNames()">
+				<option value="0">Russian (Latin)</option>
+				<option value="1">Russian (Cyrillic)</option>
+				<option value="2">English</option>
+			</select>
+		</form>
 
 		<canvas id="metromap" width="1800" height="2000"></canvas>
 	

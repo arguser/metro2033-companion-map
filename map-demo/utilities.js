@@ -41,6 +41,8 @@ function rad(deg) {
 			sX = scale*sX;
 			sY = scale*sY;
 
+			ctx.shadowBlur=0;
+			ctx.shadowColor="black";
 			ctx.strokeStyle = '#000000';
 			ctx.lineWidth = 2*scale;
 			circle(sX,sY,7*scale);
@@ -56,8 +58,44 @@ function rad(deg) {
 			ctx.textAlign = 'center';
 
       		eval("pattern_"+faction+"("+sX+","+sY+")");
-
 		}
+
+function changeNames() {
+	name_set=document.getElementById('name_set_dd').options[document.getElementById('name_set_dd').selectedIndex].value;
+	drawMap();
+}
+
+function name_station(stationID,position,sX,sY) {
+	var searchResult = findRecord(station_name,"station_id",stationID);
+	searchResult = findRecord(searchResult,"name_set",name_set);
+	if (searchResult.length>0) {
+		switch(position) {
+			case 1:           cX=10;  cY=0;   labelAlign="left";   break;
+			default: 
+			case 2: case 3:   cX=10;  cY=4;   labelAlign="left";   break;
+			case 4: case 5:   cX=10;  cY=6;   labelAlign="left";   break;
+			case 6:           cX=0;   cY=17;  labelAlign="center"; break;
+			case 7: case 8:   cX=-10; cY=6;   labelAlign="right";  break;
+			case 9:           cX=-10; cY=4;   labelAlign="right";  break;
+			case 10: case 11: cX=-10; cY=0;   labelAlign="right";  break;
+			case 12:          cX=0;   cY=-10; labelAlign="center"; break;
+		}
+
+		var stationName = searchResult[0]['station_name'];
+		if (stationName.length>0) {
+			ctx.lineCap = 'butt';
+			var fontSize = 10*scale;
+			ctx.font = 'bold '+fontSize+'px sans-serif';
+			ctx.textAlign = 'left';
+			ctx.fillStyle = '#000000';
+			ctx.shadowBlur=4;
+			ctx.shadowColor="#FFFFFF";
+			ctx.textAlign = labelAlign;
+			ctx.fillText(stationName,(sX+cX)*scale,(sY+cY)*scale);
+		}
+	}
+}
+
 
 		function interchange_2(fX,fY, sX,sY) {
 
@@ -179,6 +217,9 @@ function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY) {
 		}
 
 
+
+
+
 function drawLine(line) {
 
 	var offset = 10; // larger offset equals more extreme curves
@@ -253,6 +294,9 @@ function drawLine(line) {
 		}
 	}
 }
+
+
+
 
 // must be a better way to do this!
 function findRecord(source,property,value) {
