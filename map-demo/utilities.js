@@ -254,6 +254,17 @@ function drawLine(line) {
 	}
 }
 
+// must be a better way to do this!
+function findRecord(source,property,value) {
+	var newDataArray = [];
+	for (k=0;k<source.length;k++) {
+		item = source[k];
+		if (item[property] == value) {
+			newDataArray[newDataArray.length] = item;
+		}
+	}
+	return newDataArray;
+}
 
 
 var aFactions  = Array();

@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Metro</title>
-		<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>	
+		<meta charset="UTF-8">
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>	
 
 	<style type="text/css">
 		html {
@@ -32,6 +33,8 @@
 	<script type="text/javascript">
 		var ctx;
 
+		var data_version = 3; // what data sets to use
+
 		function drawMap() {
 			var canvas = document.getElementById('metromap');
 			ctx = canvas.getContext('2d');
@@ -51,6 +54,14 @@
 				station(thisStation['x_position'],thisStation['y_position'],thisStation['faction_id']);
 			}
 
+			// test of search function
+			var station_id 	= 31; // Botanical Gardens
+			var name_set	= 1; // Russian Cyrillic
+
+			testSearch = findRecord(station_name,"station_id",station_id);
+			testSearch = findRecord(testSearch,"name_set",name_set);
+			var stationName = testSearch[0]['station_name'];
+			// alert(stationName);
 		}
 
 

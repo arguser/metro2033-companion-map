@@ -423,7 +423,51 @@ var station_name = [{
   "station_id": 32,
   "station_name" : "VDNKh",
   "name_set": 2,
-}]
+},
+
+{
+  "station_id": 31,
+  "station_name" : "BOTANICHESKIY SAD",
+  "name_set": 0,
+}, {
+  "station_id": 31,
+  "station_name" : "Ботанический сад",
+  "name_set": 1,
+}, {
+  "station_id": 31,
+  "station_name" : "BOTANICAL GARDENS",
+  "name_set": 2,
+},
+
+{
+  "station_id": 35,
+  "station_name" : "PROSPEKT MIRA",
+  "name_set": 0,
+}, {
+  "station_id": 35,
+  "station_name" : "Проспект Мира",
+  "name_set": 1,
+}, {
+  "station_id": 35,
+  "station_name" : "PROSPECT MIR",
+  "name_set": 2,
+},
+
+{
+  "station_id": 36,
+  "station_name" : "PROSPEKT MIRA",
+  "name_set": 0,
+}, {
+  "station_id": 36,
+  "station_name" : "Проспект Мира",
+  "name_set": 1,
+}, {
+  "station_id": 36,
+  "station_name" : "PROSPECT MIR",
+  "name_set": 2,
+}
+
+]
 
 
 /********************/
