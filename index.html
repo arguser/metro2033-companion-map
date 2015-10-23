@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html ng-app="mapApp">
 
@@ -81,3 +82,75 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title & favicon -->
+    <title>Metro 2033 Companion Map</title>
+    <link href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png" rel="icon">
+
+    <!-- Angular Material -->
+    <link href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet">
+
+    <!-- App styles -->
+    <link href="assets/css/app.css" rel="stylesheet">
+  </head>
+  <body>
+    <div ng-controller="MapController">
+      <div id="toolbar">
+        <md-content class="md-padding">
+          <md-autocomplete md-selected-item="form.selectedStation" md-search-text="form.searchText" md-items="station in stations" md-item-text="station.stationName" md-min-length="2" placeholder="Write a station for find">
+            <md-item-template>
+              <span md-highlight-text="form.searchText" md-highlight-flags="^i">{{station.stationName}}</span>
+            </md-item-template>
+            <md-not-found>No states matching "{{form.searchText}}" were found.</md-not-found>
+          </md-autocomplete>
+          <div class="panel" ng-if="form.selectedStation != null">
+            <div class="panel-header-image">
+              <img src="assets/img/stations/altufyevo.jpg" alt="">
+            </div>
+            <div class="panel-header-description" ng-style="{'background-color': getLine(form.selectedStation.lineId).lineColour}">
+              <div class="panel-header-title">{{form.selectedStation.stationName}}</div>
+              <div class="panel-header-subtitle">{{getLine(form.selectedStation.lineId).lineName}}</div>
+              <div class="panel-header-number">{{getLine(form.selectedStation.lineId).lineId}}</div>
+            </div>
+            <div class="panel-content">
+              <div class="panel-content-title">Description</div>
+              <div class="panel-content-text">{{form.selectedStation.stationDescription}}</div>
+            </div>
+          </div>
+        </md-content>
+      </div>
+    </div>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+    <!-- Angular Material -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
+
+    <!-- Helpers -->
+    <script src="assets/js/array-helper.js"></script>
+
+    <!-- Module definition -->
+    <script src="app/app.module.js"></script>
+    <!-- Configurations -->
+    <script src="app/app.config.js"></script>
+    <!-- Controllers -->
+    <script src="app/controllers/MapController.js"></script>
+    <!-- Services -->
+    <script src="app/services/FactionService.js"></script>
+    <script src="app/services/LineService.js"></script>
+    <script src="app/services/StationService.js"></script>
+  </body>
+</html>
+>>>>>>> refs/remotes/origin/angular-structure
