@@ -1,23 +1,18 @@
-angular.module('mapApp', ['ngMaterial'])
-  .controller('StationListController', StationListController);
+app.controller('MapController', function($scope, FactionService, LineService, StationService) {
+  $scope.simulateQuery = false;
+  $scope.isDisabled = false;
 
-function StationListController($timeout, $q, $log, $filter, $scope) {
-  var self = this;
-  self.simulateQuery = false;
-  self.isDisabled = false;
   // list of `stations` value/display objects
-  self.stations = loadAll();
-  self.querySearch = querySearch;
-  self.selectedItemChange = selectedItemChange;
-  self.searchTextChange = searchTextChange;
-  self.station = null;
-  self.lines = lines;
-  self.line = null;
-
-  $scope.toggle = function () {
-    $scope.panel = !$scope.panel;
-  }
-
+  $scope.factions = FactionService.getList();
+  $scope.lines = LineService.getList();
+  $scope.stations = StationService.getList();
+  $scope.station = null;
+  $scope.line = null;
+  // $scope.stations = loadAll();
+  $scope.form = {};
+  $scope.querySearch = querySearch;
+  $scope.selectedItemChange = selectedItemChange;
+  $scope.searchTextChange = searchTextChange;
 
   // ******************************
   // Internal methods
@@ -45,11 +40,13 @@ function StationListController($timeout, $q, $log, $filter, $scope) {
      * Refresh data on Information Panel
      */
     if (item != null) {
-    self.station = item.display;
-    self.line =  $filter('filter')(lines, function (l) {return l.line_id === item.display.line_id;})[0];
-    if(self.line != null)
-      angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
-      }
+      self.station = item.display;
+      self.line = $filter('filter')(lines, function(l) {
+        return l.line_id === item.display.line_id;
+      })[0];
+      if (self.line != null)
+        angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+    }
   }
 
   function searchTextChange(text) {
@@ -62,10 +59,12 @@ function StationListController($timeout, $q, $log, $filter, $scope) {
      */
 
     if (item != null) {
-    self.station = item.display;
-    self.line =  $filter('filter')(lines, function (l) {return l.line_id === item.display.line_id;})[0];
-    if(self.line != null)
-      angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+      self.station = item.display;
+      self.line = $filter('filter')(lines, function(l) {
+        return l.line_id === item.display.line_id;
+      })[0];
+      if (self.line != null)
+        angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
     }
     $log.info('Item changed to ' + JSON.stringify(item));
   }
@@ -90,4 +89,4 @@ function StationListController($timeout, $q, $log, $filter, $scope) {
       return (station.value.indexOf(lowercaseQuery) === 0);
     };
   }
-}
+});
