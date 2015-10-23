@@ -1,7 +1,7 @@
 angular.module('mapApp', ['ngMaterial'])
   .controller('StationListController', StationListController);
 
-function StationListController($timeout, $q, $log, $filter) {
+function StationListController($timeout, $q, $log, $filter, $scope) {
   var self = this;
   self.simulateQuery = false;
   self.isDisabled = false;
@@ -13,6 +13,11 @@ function StationListController($timeout, $q, $log, $filter) {
   self.station = null;
   self.lines = lines;
   self.line = null;
+
+  $scope.toggle = function () {
+    $scope.panel = !$scope.panel;
+  }
+
 
   // ******************************
   // Internal methods
