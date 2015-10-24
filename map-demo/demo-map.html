@@ -13,51 +13,99 @@
 			color:#FFF;
 			background-color:#001;
 		}
-		#metromap {
+		#canvasHolder {
 			margin:10px;
 			padding:0px;
 			width:1800px;
 			height:2000px;
+			position:relative;
+		}
+		.metromap {
+			position:absolute;
+			margin:0px;
+			padding:0px;
+			width:1800px;
+			height:2000px;
+		}
+
+		#lineCanvas {
 			background-color:#FFF;
 		}
 
-	</style>
+		#bloop {
+			display:block;
+			width:20px;
+			height:20px;
+			background-color:red;
+			color:#FFF;
+			text-align:center;
+			position: absolute;
+			top:10px;
+			left:600px;
+		}
 
+
+	</style>
 
 	<script type="text/javascript" src="utilities.js"></script>
 	<script type="text/javascript" src="symbols.js"></script>
 	<script type="text/javascript" src="demo_locations.js"></script>
 
-
-
 	<script type="text/javascript">
-		var ctx;
 
+		var animHolder;
+		var animCurrentFrame; 
+		var animFrames;
+
+		var ctx = []; // holder for canvases
 		var data_version = 3; // what data sets to use
 		var name_set = 0; // what name set to use
 
 		function drawMap() {
 
+			// set label menu
 			document.getElementById('name_set_dd').selectedIndex=name_set;
 
-			var canvas = document.getElementById('metromap');
-			ctx = canvas.getContext('2d');
-			ctx.clearRect(0, 0, 1800, 2000);
-			ctx.scale(1,1);
-			ctx.lineCap = 'round';
+			// get canvas objects
+			var canvas1 = document.getElementById('lineCanvas');
+			ctx1 = canvas1.getContext('2d');
+			var canvas2 = document.getElementById('stationCanvas');
+			ctx2 = canvas2.getContext('2d');
+			var canvas3 = document.getElementById('labelCanvas');
+			ctx3 = canvas3.getContext('2d');
+			var canvas4 = document.getElementById('effectCanvas');
+			ctx4 = canvas4.getContext('2d');
 
-			// draw lines
+			// put them in array
+			ctx = [ctx1,ctx2,ctx3,ctx4];
+
+			// initialise canvases
+			for (i=0;i<ctx.length;i++) {
+				ctx[i].clearRect(0, 0, 1800, 2000);
+				ctx[i].scale(1,1);
+				ctx[i].lineCap = 'round';
+				ctx[i].textBaseline = 'middle'
+			}
+
+			// draw rail lines
 			for (i=0;i<lines.length;i++) {
 				thisLine = lines[i];
 				drawLine(thisLine);
 			}
 
+			// draw interchanges
+			interchange_2(705,368, 683,385); // Prospect Mir
+ 			interchange_2(521,823, 499,846); // October
+
 			// draw stations
 			for (i=0;i<stations.length;i++) {
+				ctx[2].clearRect(0, 0, 1800, 2000);
 				thisStation = stations[i];
 				station(thisStation['x_position'],thisStation['y_position'],thisStation['faction_id']);
-				name_station(thisStation['station_id'],thisStation['label_point'],thisStation['x_position'],thisStation['y_position']);
 			}
+
+			// label stations
+			print_station_labels();
 
 		}
 
@@ -74,9 +122,17 @@
 				<option value="1">Russian (Cyrillic)</option>
 				<option value="2">English</option>
 			</select>
+			&nbsp;&nbsp;&nbsp;<input type="button" value="Highlight VDNKh" onclick="highlight_station(32);"/>
+			&nbsp;&nbsp;&nbsp;<input type="button" value="Highlight Sukharev" onclick="highlight_station(37);"/>
+
 		</form>
 
-		<canvas id="metromap" width="1800" height="2000"></canvas>
-	
+		<div id="canvasHolder">
+			<canvas id="lineCanvas"    class="metromap" width="1800" height="2000"></canvas>
+			<canvas id="stationCanvas" class="metromap" width="1800" height="2000"></canvas>
+			<canvas id="labelCanvas"   class="metromap" width="1800" height="2000"></canvas>
+			<canvas id="effectCanvas"  class="metromap" width="1800" height="2000"></canvas>
+		</div>
+
 	</body>
 </html>

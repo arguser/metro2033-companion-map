@@ -1,233 +1,282 @@
-var scale=1.5;
+var baseScale = 1.5;  // scale factor for map. Should never be changed programatically
+var scale=baseScale;
 
+// converts degrees of a circle into insane radians units
 function rad(deg) {
 	deg = (Math.PI/180)*deg;
 	return deg;
 }
 
-		function line(sX,sY,eX,eY) {
-			ctx.beginPath();
-      		ctx.moveTo(sX,sY);
-      		ctx.lineTo(eX,eY);
-      		ctx.stroke();
-		}
-
-		function circle(cX,cY,Rad) {
-			ctx.beginPath();
-			ctx.arc(cX,cY,Rad,0,rad(360));
-		}
-
-		function arc(cX,cY,Rad,start,end) {
-			ctx.beginPath();
-			ctx.arc(cX,cY,Rad,rad(start),rad(end));
-			ctx.stroke();
-		}
-
-		function quad(sX,sY,cX,cY,eX,eY) {
-			ctx.beginPath();
-      		ctx.moveTo(sX,sY);     
-      		ctx.quadraticCurveTo(eX,eY, cX,cY);
-			ctx.stroke();			
-		}
-		function bezier(sX,sY,c1X,c1Y,c2X,c2Y,eX,eY) {
-			ctx.beginPath();
-      		ctx.moveTo(sX,sY);
-      		ctx.bezierCurveTo(c1X,c1Y, c2X,c2Y, eX,eY);
-			ctx.stroke();			
-		}
-
-		function station(sX,sY,faction) {
-
-			sX = scale*sX;
-			sY = scale*sY;
-
-			ctx.shadowBlur=0;
-			ctx.shadowColor="black";
-			ctx.strokeStyle = '#000000';
-			ctx.lineWidth = 2*scale;
-			circle(sX,sY,7*scale);
-			ctx.stroke();
-
-			var fillColour = aFactions[faction][0];
-			ctx.fillStyle = fillColour;
-      		ctx.fill();
-
-      		ctx.lineCap = 'butt';
-			ctx.lineWidth = 1;
-			ctx.font = 'normal 12px sans-serif';
-			ctx.textAlign = 'center';
-
-      		eval("pattern_"+faction+"("+sX+","+sY+")");
-		}
-
-function changeNames() {
-	name_set=document.getElementById('name_set_dd').options[document.getElementById('name_set_dd').selectedIndex].value;
-	drawMap();
+// draw a line between two points
+function line(sX,sY,eX,eY,canvas=1) {
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY);
+	ctx[canvas].lineTo(eX,eY);
+	ctx[canvas].stroke();
+}
+// draw a circle at a specific point
+function circle(cX,cY,Rad,canvas=1) {
+	ctx[canvas].beginPath();
+	ctx[canvas].arc(cX,cY,Rad,0,rad(360));
+}
+// draw a section of a circle at a specific point
+function arc(cX,cY,Rad,start,end,canvas=1) {
+	ctx[canvas].beginPath();
+	ctx[canvas].arc(cX,cY,Rad,rad(start),rad(end));
+	ctx[canvas].stroke();
+}
+// draw a quadratic curve between two points
+function quad(sX,sY,cX,cY,eX,eY,canvas=1) {
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY);     
+	ctx[canvas].quadraticCurveTo(eX,eY, cX,cY);
+	ctx[canvas].stroke();			
+}
+// draw a bezier curve between two points
+function bezier(sX,sY,c1X,c1Y,c2X,c2Y,eX,eY,canvas=1) {
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY);
+	ctx[canvas].bezierCurveTo(c1X,c1Y, c2X,c2Y, eX,eY);
+	ctx[canvas].stroke();			
 }
 
+// draw a station for a specific faction at a given point
+function station(sX,sY,faction,canvas=1,stationScale=1) {
+	sX = scale*sX;
+	sY = scale*sY;
+
+	// change size of station graphic (if necessary)
+	scale = scale*stationScale;
+
+	ctx[canvas].shadowBlur=0;
+	ctx[canvas].shadowColor="black";
+	ctx[canvas].strokeStyle = '#000000';
+	ctx[canvas].lineWidth = 2*scale;
+	circle(sX,sY,7*scale,canvas);
+	ctx[canvas].stroke();
+
+	var fillColour = aFactions[faction][0];
+	ctx[canvas].fillStyle = fillColour;
+	ctx[canvas].fill();
+
+    ctx[canvas].lineCap = 'butt';
+	ctx[canvas].lineWidth = 1;
+	ctx[canvas].font = 'normal 12px sans-serif';
+	ctx[canvas].textAlign = 'center';
+
+    eval("pattern_"+faction+"("+sX+","+sY+")");
+
+    // reset scale
+	scale = baseScale;
+}
+
+// get selected data set from label menu and rewrite station labels
+function changeNames() {
+	name_set=document.getElementById('name_set_dd').options[document.getElementById('name_set_dd').selectedIndex].value;
+	print_station_labels();
+}
+
+// print out station labels
+function print_station_labels() {
+	ctx[2].clearRect(0, 0, 1800, 2000);
+	for (i=0;i<stations.length;i++) {
+		thisStation = stations[i];
+		name_station(thisStation['station_id'],thisStation['label_point'],thisStation['x_position'],thisStation['y_position']);
+	}
+}
+
+// print out label for a specific station
 function name_station(stationID,position,sX,sY) {
 	var searchResult = findRecord(station_name,"station_id",stationID);
 	searchResult = findRecord(searchResult,"name_set",name_set);
 	if (searchResult.length>0) {
+
 		switch(position) {
-			case 1:           cX=10;  cY=0;   labelAlign="left";   break;
-			default: 
-			case 2: case 3:   cX=10;  cY=4;   labelAlign="left";   break;
-			case 4: case 5:   cX=10;  cY=6;   labelAlign="left";   break;
-			case 6:           cX=0;   cY=17;  labelAlign="center"; break;
-			case 7: case 8:   cX=-10; cY=6;   labelAlign="right";  break;
-			case 9:           cX=-10; cY=4;   labelAlign="right";  break;
-			case 10: case 11: cX=-10; cY=0;   labelAlign="right";  break;
-			case 12:          cX=0;   cY=-10; labelAlign="center"; break;
+			case 1:  cX=7;   cY=-10; labelAlign="left";   break;
+			case 2:  cX=10;  cY=-7;  labelAlign="left";   break;
+			case 3:  cX=11;  cY=0;   labelAlign="left";   break;
+			case 4:  cX=+10; cY=+7;  labelAlign="left";   break;
+			case 5:  cX=+7;  cY=+11; labelAlign="left";   break;
+			case 6:  cX=0;   cY=15;  labelAlign="center"; break;
+			case 7:  cX=-7;  cY=+11; labelAlign="right";  break;
+			case 8:  cX=-10; cY=+7;  labelAlign="right";  break;
+			case 9:  cX=-11; cY=0;   labelAlign="right";  break;
+			case 10: cX=-10; cY=-7;  labelAlign="right";  break;
+			case 11: cX=-7;  cY=-10; labelAlign="right";  break;
+			case 12: cX=0;   cY=-11; labelAlign="center"; break;
 		}
 
 		var stationName = searchResult[0]['station_name'];
 		if (stationName.length>0) {
-			ctx.lineCap = 'butt';
+			ctx[2].lineCap = 'butt';
 			var fontSize = 10*scale;
-			ctx.font = 'bold '+fontSize+'px sans-serif';
-			ctx.textAlign = 'left';
-			ctx.fillStyle = '#000000';
-			ctx.shadowBlur=4;
-			ctx.shadowColor="#FFFFFF";
-			ctx.textAlign = labelAlign;
-			ctx.fillText(stationName,(sX+cX)*scale,(sY+cY)*scale);
+			ctx[2].font = 'bold '+fontSize+'px sans-serif';
+			ctx[2].textAlign = 'left';
+			ctx[2].fillStyle = '#000000';
+			ctx[2].shadowBlur=4;
+			ctx[2].shadowColor="#FFFFFF";
+			ctx[2].textAlign = labelAlign;
+			ctx[2].fillText(stationName,(sX+cX)*scale,(sY+cY)*scale);
 		}
 	}
 }
 
+// removes a station from the map
+function clear_station(stationID,canvas=1) {
+	var searchResult = findRecord(stations,"station_id",stationID);
+	var thisStation = searchResult[0];
+	var x1 = (thisStation['x_position']-9)*scale;
+	var y1 = (thisStation['y_position']-9)*scale;
+    ctx[1].clearRect(x1,y1, 18*scale,18*scale);	
+}
 
-		function interchange_2(fX,fY, sX,sY) {
+function highlight_station(stationID) {
+	var searchResult = findRecord(stations,"station_id",stationID);
+	var thisStation = searchResult[0];
+	
+	ctx[3].clearRect(0,0, 1800,2000);
 
-			ctx.strokeStyle = '#000000';
-			ctx.fillStyle = '#FFFFFF';
-			ctx.lineWidth = 2;
+	ctx[3].lineWidth = 2*scale;
+	ctx[3].strokeStyle = '#FF0000';
 
-			ctx.beginPath();
-			circle(fX,fY,9); ctx.stroke();
-			ctx.closePath();
-			ctx.fill();
+	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,12*scale,3);
+	ctx[3].stroke();
 
-			ctx.beginPath();
-			circle(sX,sY,9); ctx.stroke();
-			ctx.closePath();
-			ctx.fill();
+	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,8*scale,3);
+	ctx[3].stroke();
+}
 
-			ctx.strokeStyle = '#000000';
-			ctx.lineWidth = 10;
-      		ctx.beginPath();
-      		ctx.moveTo(fX,fY);
-			ctx.lineTo(sX,sY);
-			ctx.closePath();
-			ctx.stroke();
+// interchange code - will need to be checked through and probably rewritten
+function interchange_2(fX,fY, sX,sY, canvas=1) {
 
-			ctx.strokeStyle = '#FFFFFF';
-			ctx.lineWidth = 8;
-      		ctx.beginPath();
-      		ctx.moveTo(fX,fY);
-			ctx.lineTo(sX,sY);
-			ctx.closePath();
-			ctx.stroke();
+			fX = fX*scale;	fY = fY*scale;
+			sX = sX*scale;	sY = sY*scale;
 
-			ctx.fillStyle = '#FFFFFF';
 
-			ctx.beginPath();
-			ctx.arc(fX,fY,9,0,rad(360));
-			ctx.closePath();
-			ctx.fill();
+			ctx[canvas].strokeStyle = '#000000';
+			ctx[canvas].fillStyle = '#FFFFFF';
+			ctx[canvas].lineWidth = 2*scale;
 
-			ctx.beginPath();
-			ctx.arc(sX,sY,9,0,rad(360));
-			ctx.closePath();
-			ctx.fill();
+			ctx[canvas].beginPath();
+			circle(fX,fY,9*scale); ctx[canvas].stroke();
+			ctx[canvas].closePath();
+			ctx[canvas].fill();
+
+			ctx[canvas].beginPath();
+			circle(sX,sY,9*scale); ctx[canvas].stroke();
+			ctx[canvas].closePath();
+			ctx[canvas].fill();
+
+			ctx[canvas].strokeStyle = '#000000';
+			ctx[canvas].lineWidth = 10*scale;
+      		ctx[canvas].beginPath();
+      		ctx[canvas].moveTo(fX,fY);
+			ctx[canvas].lineTo(sX,sY);
+			ctx[canvas].closePath();
+			ctx[canvas].stroke();
+
+			ctx[canvas].strokeStyle = '#FFFFFF';
+			ctx[canvas].lineWidth = 8*scale;
+      		ctx[canvas].beginPath();
+      		ctx[canvas].moveTo(fX,fY);
+			ctx[canvas].lineTo(sX,sY);
+			ctx[canvas].closePath();
+			ctx[canvas].stroke();
+
+			ctx[canvas].fillStyle = '#FFFFFF';
+
+			ctx[canvas].beginPath();
+			ctx[canvas].arc(fX,fY,9*scale,0,rad(360));
+			ctx[canvas].closePath();
+			ctx[canvas].fill();
+
+			ctx[canvas].beginPath();
+			ctx[canvas].arc(sX,sY,9*scale,0,rad(360));
+			ctx[canvas].closePath();
+			ctx[canvas].fill();
 		}
-
 function interchange_3(fX,fY, sX,sY, tX,tY, loop) {
 
 			// Base circles
-			ctx.strokeStyle = '#000000';
-			ctx.fillStyle = '#FFFFFF';
-			ctx.lineWidth = 2;
-			ctx.beginPath(); circle(fX,fY,9); ctx.closePath(); ctx.stroke(); ctx.fill();
-			ctx.beginPath(); circle(sX,sY,9); ctx.closePath(); ctx.stroke(); ctx.fill();
-			ctx.beginPath(); circle(tX,tY,9); ctx.closePath(); ctx.stroke(); ctx.fill();
+			ctx[0].strokeStyle = '#000000';
+			ctx[0].fillStyle = '#FFFFFF';
+			ctx[0].lineWidth = 2;
+			ctx[0].beginPath(); circle(fX,fY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
+			ctx[0].beginPath(); circle(sX,sY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
+			ctx[0].beginPath(); circle(tX,tY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
 			
 			// Black Connections
-			ctx.strokeStyle = '#000000';
-			ctx.lineWidth = 10;
-      		ctx.beginPath(); ctx.moveTo(fX,fY); ctx.lineTo(sX,sY); ctx.closePath(); ctx.stroke();
-      		ctx.beginPath(); ctx.moveTo(sX,sY); ctx.lineTo(tX,tY); ctx.closePath(); ctx.stroke();
+			ctx[0].strokeStyle = '#000000';
+			ctx[0].lineWidth = 10;
+      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
+      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
 
-      		if (loop) ctx.beginPath(); ctx.moveTo(tX,tY); ctx.lineTo(fX,fY); ctx.closePath(); ctx.stroke();
+      		if (loop) ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
 
 			// White Connections
-			ctx.strokeStyle = '#FFFFFF';
-			ctx.lineWidth = 8;
-      		ctx.beginPath(); ctx.moveTo(fX,fY); ctx.lineTo(sX,sY); ctx.closePath(); ctx.stroke();
-      		ctx.beginPath(); ctx.moveTo(sX,sY); ctx.lineTo(tX,tY); ctx.closePath(); ctx.stroke();
+			ctx[0].strokeStyle = '#FFFFFF';
+			ctx[0].lineWidth = 8;
+      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
+      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
 
-      		if (loop) ctx.beginPath(); ctx.moveTo(tX,tY); ctx.lineTo(fX,fY); ctx.closePath(); ctx.stroke();
+      		if (loop) ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
 
 
 			// Circle Overlays
-			ctx.fillStyle = '#FFFFFF';
-			ctx.beginPath(); ctx.arc(fX,fY,9,0,rad(360)); ctx.closePath(); ctx.fill();
-			ctx.beginPath(); ctx.arc(sX,sY,9,0,rad(360)); ctx.closePath(); ctx.fill();
-			ctx.beginPath(); ctx.arc(tX,tY,9,0,rad(360)); ctx.closePath(); ctx.fill();
+			ctx[0].fillStyle = '#FFFFFF';
+			ctx[0].beginPath(); ctx[0].arc(fX,fY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+			ctx[0].beginPath(); ctx[0].arc(sX,sY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+			ctx[0].beginPath(); ctx[0].arc(tX,tY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
 		}
-
-
 function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY) {
 
 			// Base circles
-			ctx.strokeStyle = '#000000';
-			ctx.fillStyle = '#FFFFFF';
-			ctx.lineWidth = 2;
-			ctx.beginPath(); circle(fX,fY,9); ctx.closePath(); ctx.stroke(); ctx.fill();
-			ctx.beginPath(); circle(sX,sY,9); ctx.closePath(); ctx.stroke(); ctx.fill();
-			ctx.beginPath(); circle(tX,tY,9); ctx.closePath(); ctx.stroke(); ctx.fill();
-			ctx.beginPath(); circle(rX,rY,9); ctx.closePath(); ctx.stroke(); ctx.fill();
+			ctx[0].strokeStyle = '#000000';
+			ctx[0].fillStyle = '#FFFFFF';
+			ctx[0].lineWidth = 2;
+			ctx[0].beginPath(); circle(fX,fY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
+			ctx[0].beginPath(); circle(sX,sY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
+			ctx[0].beginPath(); circle(tX,tY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
+			ctx[0].beginPath(); circle(rX,rY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
 
 			// Black Connections
-			ctx.strokeStyle = '#000000';
-			ctx.lineWidth = 8;
-      		ctx.beginPath(); ctx.moveTo(fX,fY); ctx.lineTo(sX,sY); ctx.closePath(); ctx.stroke();
-      		ctx.beginPath(); ctx.moveTo(sX,sY); ctx.lineTo(tX,tY); ctx.closePath(); ctx.stroke();
-      		ctx.beginPath(); ctx.moveTo(tX,tY); ctx.lineTo(rX,rY); ctx.closePath(); ctx.stroke();
-			ctx.beginPath(); ctx.moveTo(rX,rY); ctx.lineTo(fX,fY); ctx.closePath(); ctx.stroke();
+			ctx[0].strokeStyle = '#000000';
+			ctx[0].lineWidth = 8;
+      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
+      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
+      		ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(rX,rY); ctx[0].closePath(); ctx[0].stroke();
+			ctx[0].beginPath(); ctx[0].moveTo(rX,rY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
 
-			ctx.beginPath(); ctx.moveTo(fX,fY); ctx.lineTo(tX,tY); ctx.closePath(); ctx.stroke();
+			ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
 
 			// White Connections
-			ctx.strokeStyle = '#FFFFFF';
-			ctx.lineWidth = 6;
-      		ctx.beginPath(); ctx.moveTo(fX,fY); ctx.lineTo(sX,sY); ctx.closePath(); ctx.stroke();
-      		ctx.beginPath(); ctx.moveTo(sX,sY); ctx.lineTo(tX,tY); ctx.closePath(); ctx.stroke();
-      		ctx.beginPath(); ctx.moveTo(tX,tY); ctx.lineTo(rX,rY); ctx.closePath(); ctx.stroke();
-      		ctx.beginPath(); ctx.moveTo(rX,rY); ctx.lineTo(fX,fY); ctx.closePath(); ctx.stroke();
+			ctx[0].strokeStyle = '#FFFFFF';
+			ctx[0].lineWidth = 6;
+      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
+      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
+      		ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(rX,rY); ctx[0].closePath(); ctx[0].stroke();
+      		ctx[0].beginPath(); ctx[0].moveTo(rX,rY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
 
-			ctx.beginPath(); ctx.moveTo(fX,fY); ctx.lineTo(tX,tY); ctx.closePath(); ctx.stroke();
+			ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
 
 			// Circle Overlays
-			ctx.fillStyle = '#FFFFFF';
-			ctx.beginPath(); ctx.arc(fX,fY,9,0,rad(360)); ctx.closePath(); ctx.fill();
-			ctx.beginPath(); ctx.arc(sX,sY,9,0,rad(360)); ctx.closePath(); ctx.fill();
-			ctx.beginPath(); ctx.arc(tX,tY,9,0,rad(360)); ctx.closePath(); ctx.fill();
-			ctx.beginPath(); ctx.arc(rX,rY,9,0,rad(360)); ctx.closePath(); ctx.fill();
-		}
+			ctx[0].fillStyle = '#FFFFFF';
+			ctx[0].beginPath(); ctx[0].arc(fX,fY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+			ctx[0].beginPath(); ctx[0].arc(sX,sY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+			ctx[0].beginPath(); ctx[0].arc(tX,tY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+			ctx[0].beginPath(); ctx[0].arc(rX,rY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+}
 
-
-
-
-
+// draw a rail line from coordinates
 function drawLine(line) {
 
 	var offset = 10; // larger offset equals more extreme curves
 
-	ctx.lineCap = 'round';
-	ctx.strokeStyle = line['line_colour'];
+	ctx[0].lineCap = 'round';
+	ctx[0].strokeStyle = line['line_colour'];
 	nodes = line['line_nodes'];
-	ctx.lineWidth = 3*scale;
+	ctx[0].lineWidth = 3*scale;
+
 	var undef;
 	
 	for (j=0;j<nodes.length;j++) {
@@ -243,10 +292,10 @@ function drawLine(line) {
 		switch(startNode[0]) {
 
 			case 0: // straight section
-				ctx.beginPath();
-		    	ctx.moveTo(startNode[1]*scale,startNode[2]*scale);
-		    	ctx.lineTo(endNode[1]*scale,endNode[2]*scale);
-      			ctx.stroke();
+				ctx[0].beginPath();
+		    	ctx[0].moveTo(startNode[1]*scale,startNode[2]*scale);
+		    	ctx[0].lineTo(endNode[1]*scale,endNode[2]*scale);
+      			ctx[0].stroke();
 			break;
 
 			case 1: // curved section
@@ -278,26 +327,48 @@ function drawLine(line) {
 
 				controlNode2 = Array(ControlX,ControlY);
 
-				ctx.beginPath();
-		      	ctx.moveTo(startNode[1]*scale,startNode[2]*scale);
-		      	ctx.bezierCurveTo(controlNode1[0]*scale,controlNode1[1]*scale, controlNode2[0]*scale,controlNode2[1]*scale, endNode[1]*scale,endNode[2]*scale);
-      			ctx.stroke();
+				ctx[0].beginPath();
+		      	ctx[0].moveTo(startNode[1]*scale,startNode[2]*scale);
+		      	ctx[0].bezierCurveTo(controlNode1[0]*scale,controlNode1[1]*scale, controlNode2[0]*scale,controlNode2[1]*scale, endNode[1]*scale,endNode[2]*scale);
+      			ctx[0].stroke();
 
 			break;
 
 			case 2: // circle section
-				ctx.beginPath();
-				ctx.arc(startNode[1]*scale,startNode[2]*scale,startNode[3]*scale,0,rad(360));
-				ctx.stroke();
+				ctx[0].beginPath();
+				ctx[0].arc(startNode[1]*scale,startNode[2]*scale,startNode[3]*scale,0,rad(360));
+				ctx[0].stroke();
 			break;
 
 		}
 	}
 }
 
+function highlight_station(stationID) {
+	animHolder = stationID;
+	animCurrentFrame = 0;
+	animFrames = [16,15,14,13,12,11,10,9,9,9,9,16,15,14,13,12,11,10,9,9,9,9,16,15,14,13,12,11,10,9,9,9,9];
+	animate_station();
+}
+
+function animate_station() {
+	var searchResult = findRecord(stations,"station_id",animHolder);
+	var thisStation = searchResult[0];	
+	ctx[3].clearRect(0, 0, 1800, 2000);
+	ctx[3].lineWidth = 2*scale;
+	ctx[3].strokeStyle = '#FF0000';
+	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,animFrames[animCurrentFrame]*scale,3);
+	ctx[3].stroke();
+	animCurrentFrame++;
+	if (animCurrentFrame<animFrames.length) {
+		setTimeout(animate_station,20);
+	} else {
+		ctx[3].clearRect(0, 0, 1800, 2000);	
+	}
+}
 
 
-
+// search object array
 // must be a better way to do this!
 function findRecord(source,property,value) {
 	var newDataArray = [];
@@ -310,7 +381,8 @@ function findRecord(source,property,value) {
 	return newDataArray;
 }
 
-
+// array of factions - [station background color, faction name]
+// will be rewritten into the factions object at some point
 var aFactions  = Array();
 aFactions[0]   = Array("#FFFFFF","Unexplored or No Info");
 aFactions[1]   = Array("#8C9091","Community of the Ring Stations (Hansa)");
