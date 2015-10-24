@@ -1,0 +1,91 @@
+body {
+  background-color: peru;
+}
+
+.panel {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.panel-toggle-button {
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+  width: 22px;
+  height: 42px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.panel-header-image {
+  overflow: hidden;
+  height: 256px;
+}
+.panel-header-image img {
+  width: auto;
+  height: 100%;
+  transform: translateX(-25%);
+}
+
+.panel-header-description {
+  background-color: #4285F4;
+  color: #FFFFFF;
+  padding: 20px 25px;
+}
+
+.panel-header-title {
+  font-size: 18px;
+}
+
+.panel-header-subtitle {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.panel-header-number {
+  font-size: 42px;
+  position: relative;
+  bottom: 50px;
+  float: right;
+}
+
+.panel-content {
+  padding: 20px 25px;
+}
+
+.panel-content-title {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.54);
+  margin-bottom: 12px;
+}
+
+.panel-content-text {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 13px;
+  line-height: 19.5px;
+}
+
+md-content {
+  background-color: transparent;
+}
+
+md-autocomplete {
+  z-index: 1;
+}
+
+#toolbar {
+  width: 400px;
+}
+
+#toolbar .panel {
+  width: 400px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#toolbar .panel-toggle-button {
+  top: 10px;
+}
