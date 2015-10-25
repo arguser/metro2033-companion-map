@@ -1,18 +1,23 @@
 app.controller('MapController', function($scope, FactionService, LineService, StationService) {
-  $scope.simulateQuery = false;
-  $scope.isDisabled = false;
+  var self = this;
+  self.simulateQuery = false;
+  self.isDisabled = false;
 
   // list of `stations` value/display objects
-  $scope.factions = FactionService.getList();
-  $scope.lines = LineService.getList();
-  $scope.stations = StationService.getList();
-  $scope.station = null;
-  $scope.line = null;
-  // $scope.stations = loadAll();
-  $scope.form = {};
-  $scope.querySearch = querySearch;
-  $scope.selectedItemChange = selectedItemChange;
-  $scope.searchTextChange = searchTextChange;
+  self.factions = FactionService.getList();
+  self.lines = LineService.getList();
+  self.stations = loadAll();
+  self.station = null;
+  self.line = null;
+  // self.stations = loadAll();
+  self.form = {};
+  self.querySearch = querySearch;
+  self.selectedItemChange = selectedItemChange;
+  self.searchTextChange = searchTextChange;
+
+  function toggle() {
+    self.information = !self.information;
+  };
 
   // ******************************
   // Internal methods
@@ -41,16 +46,14 @@ app.controller('MapController', function($scope, FactionService, LineService, St
      */
     if (item != null) {
       self.station = item.display;
-      self.line = $filter('filter')(lines, function(l) {
-        return l.line_id === item.display.line_id;
-      })[0];
-      if (self.line != null)
+      self.line = LineService.getById(item.display.line_id);
+      if (self.line != false)
         angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
     }
   }
 
   function searchTextChange(text) {
-    $log.info('Text changed to ' + text);
+    // $log.info('Text changed to ' + text);
   }
 
   function selectedItemChange(item) {
@@ -60,19 +63,17 @@ app.controller('MapController', function($scope, FactionService, LineService, St
 
     if (item != null) {
       self.station = item.display;
-      self.line = $filter('filter')(lines, function(l) {
-        return l.line_id === item.display.line_id;
-      })[0];
-      if (self.line != null)
+      self.line = LineService.getById(item.display.line_id);
+      if (self.line != false)
         angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
     }
-    $log.info('Item changed to ' + JSON.stringify(item));
+    // $log.info('Item changed to ' + JSON.stringify(item));
   }
   /**
    * Build `stations` list of key/value pairs
    */
   function loadAll() {
-    var allstations = stations;
+    var allstations = StationService.getList();
     return allstations.map(function(station) {
       return {
         value: station.station_name.toLowerCase(),
