@@ -25,18 +25,8 @@
     <div id="toolbar" layout="column" flex="20">
       <md-content layout="row">
         <form ng-submit="$event.preventDefault()" class="form-search" flex>
-          <md-autocomplete id="omnibox"
-          md-floating-label="Station"
-          md-item-text="item.display.station_name"
-          md-items="item in map.querySearch(map.searchText)"
-          md-min-length="0"
-          md-no-cache="map.noCache"
-          md-search-text-change="map.searchTextChange(map.searchText)"
-          md-search-text="map.searchText"
-          md-selected-item-change="map.selectedItemChange(item)"
-          md-selected-item="map.selectedItem"
-          ng-disabled="map.isDisabled"
-          role="listbox">
+          <md-autocomplete id="omnibox" md-floating-label="Station" md-item-text="item.display.station_name" md-items="item in map.querySearch(map.searchText)" md-min-length="0" md-no-cache="map.noCache" md-search-text-change="map.searchTextChange(map.searchText)"
+          md-search-text="map.searchText" md-selected-item-change="map.selectedItemChange(item)" md-selected-item="map.selectedItem" ng-disabled="map.isDisabled" role="listbox">
             <md-item-template>
               <span md-highlight-flags="^i" md-highlight-text="map.searchText">{{item.display.station_name}}</span>
             </md-item-template>
@@ -48,57 +38,69 @@
       </md-content>
       <div class="panel" ng-show="map.station != null" layout="column">
         <div class="panel-toggle-button"></div>
-        <div class="panel-header-image" flex="40">
+        <div class="panel-header-image" flex="35">
           <img alt="" src="assets/img/card.jpg">
         </div>
         <div class="panel-header-description" layout="row">
           <div layout="column" flex="90">
-          <div class="panel-header-title" flex="50">{{map.station.station_name}}</div>
-          <div class="panel-header-subtitle" flex="50">{{map.line.line_name}}</div>
-        </div>
-        <div layout="column" flex="10">
-          <div class="panel-header-number">{{map.line.line_number}}</div>
-        </div>
+            <div class="panel-header-title" flex="50">{{map.station.station_name}}</div>
+            <div class="panel-header-subtitle" flex="50">{{map.line.line_name}}</div>
+          </div>
+          <div layout="column" flex="10">
+            <div class="panel-header-number">{{map.line.line_number}}</div>
+          </div>
         </div>
         <div class="panel-content" layout="column">
           <div class="panel-content-title" flex="50">Description</div>
           <div class="panel-content-text" flex="50">{{map.station.station_description}}</div>
         </div>
+        <div ng-show="map.faction != null">
+          <div class="panel-header-description" layout="row">
+            <div layout="column" flex="90">
+              <div class="panel-header-title" flex="50">{{map.faction.faction_name}}</div>
+            </div>
+            <div layout="column" flex="10">
+              <div class="panel-header-number">{{map.faction.icon}}</div>
+            </div>
+          </div>
+          <div class="panel-content" layout="column">
+            <div class="panel-content-text" flex="50">{{map.faction.faction_description}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="map" layout="row" flex="80">
+        <canvas id="map">
+          <img alt="Metro 2033 Map" class="map" id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif">
+        </canvas>
       </div>
     </div>
-    <div class="map" layout="row" flex="80">
-      <canvas id="map">
-        <img alt="Metro 2033 Map" class="map" id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif">
-      </canvas>
-    </div>
-  </div>
-  <footer>
-    Tool
-    <a href="https://github.com/arguser/metro2033-companion-map">coded</a> with love by
-    <a href="https://twitter.com/arguser">arguser</a>,
-    <a href="https://github.com/MightyGoatMan">MightyGoatMan</a> and
-    <a href="https://github.com/cristiands7">cristiands7</a>
-  </footer>
+    <footer>
+      Tool
+      <a href="https://github.com/arguser/metro2033-companion-map">coded</a> with love by
+      <a href="https://twitter.com/arguser">arguser</a>,
+      <a href="https://github.com/MightyGoatMan">MightyGoatMan</a> and
+      <a href="https://github.com/cristiands7">cristiands7</a>
+    </footer>
 
-  <!-- Angular -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
-  <!-- Angular Material -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+    <!-- Angular Material -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
 
-  <!-- Module definition -->
-  <script src="app/app.module.js"></script>
-  <!-- Configurations -->
-  <script src="app/app.config.js"></script>
-  <!-- Data -->
-  <script src="assets/data/locations.js"></script>
-  <!-- Controllers -->
-  <script src="app/controllers/MapController.js"></script>
-  <!-- Services -->
-  <script src="app/services/FactionService.js"></script>
-  <script src="app/services/LineService.js"></script>
-  <script src="app/services/StationService.js"></script>
+    <!-- Module definition -->
+    <script src="app/app.module.js"></script>
+    <!-- Configurations -->
+    <script src="app/app.config.js"></script>
+    <!-- Data -->
+    <script src="assets/data/locations.js"></script>
+    <!-- Controllers -->
+    <script src="app/controllers/MapController.js"></script>
+    <!-- Services -->
+    <script src="app/services/FactionService.js"></script>
+    <script src="app/services/LineService.js"></script>
+    <script src="app/services/StationService.js"></script>
 </body>
 
 </html>

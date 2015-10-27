@@ -64,8 +64,11 @@ app.controller('MapController', function($scope, FactionService, LineService, St
     if (item != null) {
       self.station = item.display;
       self.line = LineService.getById(item.display.line_id);
+      self.faction = FactionService.getById(item.display.faction_id);
       if (self.line != false)
         angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+      if (self.faction != false)
+        angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
     }
     // $log.info('Item changed to ' + JSON.stringify(item));
   }
