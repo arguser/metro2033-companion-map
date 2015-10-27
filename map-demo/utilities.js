@@ -1,5 +1,6 @@
 var baseScale = 1.5;  // scale factor for map. Should never be changed programatically
 var scale=baseScale;
+var station_radius=7; // radius os station circles
 
 // converts degrees of a circle into insane radians units
 function rad(deg) {
@@ -52,7 +53,7 @@ function station(sX,sY,faction,canvas=1,stationScale=1) {
 	ctx[canvas].shadowColor="black";
 	ctx[canvas].strokeStyle = '#000000';
 	ctx[canvas].lineWidth = 2*scale;
-	circle(sX,sY,7*scale,canvas);
+	circle(sX,sY,station_radius*scale,canvas);
 	ctx[canvas].stroke();
 
 	var fillColour = aFactions[faction][0];
@@ -69,6 +70,23 @@ function station(sX,sY,faction,canvas=1,stationScale=1) {
     // reset scale
 	scale = baseScale;
 }
+
+function clickable_station(sX,sY,sID) {
+	var offset = (station_radius+1)*scale;
+	var wh = (station_radius*2)*scale;
+	sX = (scale*sX)-offset;
+	sY = (scale*sY)-offset;
+	var newEl = document.createElement('a');
+	newEl.id = 'station_'+sID;
+	newEl.setAttribute("onclick", "highlight_station("+sID+")");
+	newEl.className = 'station_link';
+	newEl.style.left = sX+"px";
+	newEl.style.top  = sY+"px";
+	newEl.style.width  = wh+"px";
+	newEl.style.height = wh+"px";
+	document.getElementById('canvasHolder').appendChild(newEl);
+}
+
 
 // get selected data set from label menu and rewrite station labels
 function changeNames() {
@@ -109,7 +127,7 @@ function name_station(stationID,position,sX,sY) {
 		var stationName = searchResult[0]['station_name'];
 		if (stationName.length>0) {
 			ctx[2].lineCap = 'butt';
-			var fontSize = 10*scale;
+			var fontSize = 8*scale;
 			ctx[2].font = 'bold '+fontSize+'px sans-serif';
 			ctx[2].textAlign = 'left';
 			ctx[2].fillStyle = '#000000';
@@ -145,6 +163,58 @@ function highlight_station(stationID) {
 	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,8*scale,3);
 	ctx[3].stroke();
 }
+
+function draw_features() {
+			// draw features
+			for (i=0;i<features.length;i++) {
+				thisFeature = features[i];
+				ctx[1].fillStyle = '#FFFFFF';
+				ctx[1].strokeStyle = '#000000';
+      			ctx[1].lineWidth = 1*scale;
+
+				sX = thisFeature['x_position']*scale;
+				sY = thisFeature['y_position']*scale;
+				sW = thisFeature['width']*scale;
+				sH = thisFeature['height']*scale;
+				sC = 4*scale; // corner size
+
+				// draw box
+				ctx[1].beginPath();
+				ctx[1].moveTo(sX-(sW/2)+sC,sY-(sH/2));
+				ctx[1].lineTo(sX+(sW/2)-sC,sY-(sH/2));
+				ctx[1].quadraticCurveTo( sX+(sW/2),sY-(sH/2), sX+(sW/2),sY-(sH/2)+sC);
+				ctx[1].lineTo(sX+(sW/2),sY+(sH/2)-sC);
+				ctx[1].quadraticCurveTo( sX+(sW/2),sY+(sH/2), sX+(sW/2)-sC,sY+(sH/2));
+				ctx[1].lineTo(sX-(sW/2)+sC,sY+(sH/2));
+				ctx[1].quadraticCurveTo( sX-(sW/2),sY+(sH/2), sX-(sW/2),sY+(sH/2)-sC);
+				ctx[1].lineTo(sX-(sW/2),sY-(sH/2)+sC);
+				ctx[1].quadraticCurveTo( sX-(sW/2),sY-(sH/2), sX-(sW/2)+sC,sY-(sH/2));
+				ctx[1].closePath();
+      			ctx[1].fill();     			
+      			ctx[1].stroke();
+
+      			// label
+      			var textlines = thisFeature['feature_name'];
+      			if (textlines.indexOf("|")>0) {textlines = textlines.split('|'); } else { textlines = [textlines]; }
+				var fontSize = 8*scale;
+				ctx[1].font = "bold "+fontSize+"px 'trebuchet ms',sans-serif";
+				ctx[1].textAlign = 'center';
+				ctx[1].fillStyle = '#000000';
+				lineCount=0;
+				for (l=0;l<textlines.length;l++) {
+
+					yPoint = sY;
+					if (textlines.length>1) {
+						if (lineCount==0) yPoint = yPoint-(5*scale);
+						if (lineCount==1) yPoint = yPoint+(5*scale);
+					}
+					ctx[1].fillText(textlines[l],sX,yPoint);
+					lineCount++;
+				}
+
+			}
+		}
+
 
 // interchange code - will need to be checked through and probably rewritten
 function interchange_2(fX,fY, sX,sY, canvas=1) {

@@ -32,16 +32,10 @@
 			background-color:#FFF;
 		}
 
-		#bloop {
+		.station_link {
 			display:block;
-			width:20px;
-			height:20px;
-			background-color:red;
-			color:#FFF;
-			text-align:center;
 			position: absolute;
-			top:10px;
-			left:600px;
+			cursor: pointer;
 		}
 
 
@@ -96,13 +90,22 @@
 			// draw interchanges
 			interchange_2(705,368, 683,385); // Prospect Mir
  			interchange_2(521,823, 499,846); // October
-
+			interchange_2(683,472, 698,489); // Chistye Prudy
+			interchange_2(412,778, 388,778); // Park Kultry
+			interchange_2(762,425, 762,450); // Komsomol
+ 
 			// draw stations
 			for (i=0;i<stations.length;i++) {
 				ctx[2].clearRect(0, 0, 1800, 2000);
 				thisStation = stations[i];
 				station(thisStation['x_position'],thisStation['y_position'],thisStation['faction_id']);
+
+				// create HTML Object for station
+				clickable_station(thisStation['x_position'],thisStation['y_position'],thisStation['station_id']);
 			}
+
+			// label stations
+			draw_features();
 
 			// label stations
 			print_station_labels();

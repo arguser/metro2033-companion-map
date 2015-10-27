@@ -78,7 +78,6 @@ function pattern_7(sX,sY,canvas=1) {	// 4th Reich
 
 function pattern_8(sX,sY,canvas=1) {	// Emerald City
 	ctx[canvas].lineCap = 'butt';
-	sY++;
 	ctx[canvas].lineWidth = 1*scale;
 	ctx[canvas].strokeStyle = '#FFFFFF';
 	ctx[canvas].fillStyle = '#FFFFFF';
