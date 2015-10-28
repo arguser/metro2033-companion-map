@@ -30,7 +30,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
 
    	var searchResult = findRecord(stations,"station_id",stationID);
    	var thisStation = searchResult[0];
-    
+
     selectedItem(thisStation);
 
    	ctx[3].clearRect(0,0, 1800,2000);
@@ -43,8 +43,6 @@ app.controller('MapController', function($scope, FactionService, LineService, St
 
    	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,8*scale,3);
    	ctx[3].stroke();
-
-    return selectedItem(item);
    }
 
   function querySearch(query) {

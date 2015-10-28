@@ -132,4 +132,6 @@ body {
   display:block;
   position: absolute;
   cursor: pointer;
+  width: 21px;
+  height: 21px;
 }

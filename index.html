@@ -74,7 +74,9 @@
       <canvas id="stationCanvas" class="metromap" width="1800" height="2000"></canvas>
       <canvas id="labelCanvas" class="metromap" width="1800" height="2000"></canvas>
       <canvas id="effectCanvas" class="metromap" width="1800" height="2000"></canvas>
-      <a class="station_link" ng-repeat="station in stationList" ng-click="map.highlight_stations(station.station_id)" style="top: {{(1.5 * station.y_position) - ((7+1)*1.5)}}px; left: {{(1.5 * station.x_position) - ((7+1)*1.5)}}px;">{{station.station_id}}</a>
+      <a class="station_link" ng-repeat="station in stationList" ng-click="map.highlight_stations(station.station_id)"
+      style="top: {{(1.5 * station.y_position) - ((7+1)*1.5)}}px; left: {{(1.5 * station.x_position) - ((7+1)*1.5)}}px;">
+      </a>
     </div>
   </div>
   <!-- <div class="map" layout="row" flex="80">
@@ -160,7 +162,6 @@
       interchange_2(412, 778, 388, 778); // Park Kultry
       interchange_2(762, 425, 762, 450); // Komsomol
 
-/*
       // draw stations
       for (i = 0; i < stations.length; i++) {
         ctx[2].clearRect(0, 0, 1800, 2000);
@@ -168,10 +169,9 @@
         station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id']);
 
         // create HTML Object for station
-        clickable_station(thisStation['x_position'], thisStation['y_position'], thisStation['station_id']);
+        // clickable_station(thisStation['x_position'], thisStation['y_position'], thisStation['station_id']);
       }
 
-      */
 
       // label stations
       draw_features();
