@@ -14,10 +14,8 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.querySearch = querySearch;
   self.selectedItemChange = selectedItemChange;
   self.searchTextChange = searchTextChange;
-
-  function toggle() {
-    self.information = !self.information;
-  };
+  self.highlight_stations = highlight_stations;
+  $scope.stationList = stations;
 
   // ******************************
   // Internal methods
@@ -26,6 +24,29 @@ app.controller('MapController', function($scope, FactionService, LineService, St
    * Search for stations... use $timeout to simulate
    * remote dataservice call.
    */
+
+   function highlight_stations(stationID) {
+     console.log('highlight_stations');
+
+   	var searchResult = findRecord(stations,"station_id",stationID);
+   	var thisStation = searchResult[0];
+    
+    selectedItem(thisStation);
+
+   	ctx[3].clearRect(0,0, 1800,2000);
+
+   	ctx[3].lineWidth = 2*scale;
+   	ctx[3].strokeStyle = '#FF0000';
+
+   	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,12*scale,3);
+   	ctx[3].stroke();
+
+   	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,8*scale,3);
+   	ctx[3].stroke();
+
+    return selectedItem(item);
+   }
+
   function querySearch(query) {
     var results = query ? self.stations.filter(createFilterFor(query)) : self.stations,
       deferred;
@@ -44,12 +65,15 @@ app.controller('MapController', function($scope, FactionService, LineService, St
     /**
      * Refresh data on Information Panel
      */
-    if (item != null) {
-      self.station = item.display;
-      self.line = LineService.getById(item.display.line_id);
-      if (self.line != false)
-        angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
-    }
+     if (item != null) {
+       self.station = item;
+       self.line = LineService.getById(item.line_id);
+       self.faction = FactionService.getById(item.faction_id);
+       if (self.line != false)
+         angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+       if (self.faction != false)
+         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
+     }
   }
 
   function searchTextChange(text) {
@@ -63,6 +87,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
 
     if (item != null) {
       self.station = item.display;
+      highlight_station(item.display.station_id)
       self.line = LineService.getById(item.display.line_id);
       self.faction = FactionService.getById(item.display.faction_id);
       if (self.line != false)

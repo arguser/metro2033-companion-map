@@ -106,3 +106,30 @@ body {
 .clear-button-shown {
   display: block;
 }
+
+
+
+#canvasHolder {
+  margin:10px;
+  padding:0px;
+  width:1800px;
+  height:2000px;
+  position:relative;
+}
+.metromap {
+  position:absolute;
+  margin:0px;
+  padding:0px;
+  width:1800px;
+  height:2000px;
+}
+
+#lineCanvas {
+  background-color:#FFF;
+}
+
+.station_link {
+  display:block;
+  position: absolute;
+  cursor: pointer;
+}

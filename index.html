@@ -20,7 +20,7 @@
   <link href="assets/css/app.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="drawMap()">
   <div ng-controller="MapController as map" layout="column">
     <div id="toolbar" layout="column" flex="20">
       <md-content layout="row">
@@ -68,39 +68,119 @@
           </div>
         </div>
       </div>
-      <div class="map" layout="row" flex="80">
+    </div>
+    <div id="canvasHolder" flex="80">
+      <canvas id="lineCanvas" class="metromap" width="1800" height="2000"></canvas>
+      <canvas id="stationCanvas" class="metromap" width="1800" height="2000"></canvas>
+      <canvas id="labelCanvas" class="metromap" width="1800" height="2000"></canvas>
+      <canvas id="effectCanvas" class="metromap" width="1800" height="2000"></canvas>
+      <a class="station_link" ng-repeat="station in stationList" ng-click="map.highlight_stations(station.station_id)" style="top: {{(1.5 * station.y_position) - ((7+1)*1.5)}}px; left: {{(1.5 * station.x_position) - ((7+1)*1.5)}}px;">{{station.station_id}}</a>
+    </div>
+  </div>
+  <!-- <div class="map" layout="row" flex="80">
         <canvas id="map">
           <img alt="Metro 2033 Map" class="map" id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif">
         </canvas>
-      </div>
-    </div>
-    <footer>
-      Tool
-      <a href="https://github.com/arguser/metro2033-companion-map">coded</a> with love by
-      <a href="https://twitter.com/arguser">arguser</a>,
-      <a href="https://github.com/MightyGoatMan">MightyGoatMan</a> and
-      <a href="https://github.com/cristiands7">cristiands7</a>
-    </footer>
+      </div> -->
 
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
-    <!-- Angular Material -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
+  <footer>
+    Tool
+    <a href="https://github.com/arguser/metro2033-companion-map">coded</a> with love by
+    <a href="https://twitter.com/arguser">arguser</a>,
+    <a href="https://github.com/MightyGoatMan">MightyGoatMan</a> and
+    <a href="https://github.com/cristiands7">cristiands7</a>
+  </footer>
 
-    <!-- Module definition -->
-    <script src="app/app.module.js"></script>
-    <!-- Configurations -->
-    <script src="app/app.config.js"></script>
-    <!-- Data -->
-    <script src="assets/data/locations.js"></script>
-    <!-- Controllers -->
-    <script src="app/controllers/MapController.js"></script>
-    <!-- Services -->
-    <script src="app/services/FactionService.js"></script>
-    <script src="app/services/LineService.js"></script>
-    <script src="app/services/StationService.js"></script>
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+  <!-- Angular Material -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
+
+  <!-- Module definition -->
+  <script src="app/app.module.js"></script>
+  <!-- Configurations -->
+  <script src="app/app.config.js"></script>
+  <!-- Data -->
+  <script src="assets/data/locations.js"></script>
+  <!-- Controllers -->
+  <script src="app/controllers/MapController.js"></script>
+  <!-- Services -->
+  <script src="app/services/FactionService.js"></script>
+  <script src="app/services/LineService.js"></script>
+  <script src="app/services/StationService.js"></script>
+  <script type="text/javascript" src="assets/js/utilities.js"></script>
+  <script type="text/javascript" src="assets/js/symbols.js"></script>
+  <script type="text/javascript" src="assets/js/stations.js"></script>
+  <script type="text/javascript" src="assets/js/demo_locations.js"></script>
+
+  <script type="text/javascript">
+    var animHolder;
+    var animCurrentFrame;
+    var animFrames;
+
+    var ctx = []; // holder for canvases
+    var data_version = 3; // what data sets to use
+    var name_set = 0; // what name set to use
+
+    function drawMap() {
+
+      // get canvas objects
+      var canvas1 = document.getElementById('lineCanvas');
+      ctx1 = canvas1.getContext('2d');
+      var canvas2 = document.getElementById('stationCanvas');
+      ctx2 = canvas2.getContext('2d');
+      var canvas3 = document.getElementById('labelCanvas');
+      ctx3 = canvas3.getContext('2d');
+      var canvas4 = document.getElementById('effectCanvas');
+      ctx4 = canvas4.getContext('2d');
+
+      // put them in array
+      ctx = [ctx1, ctx2, ctx3, ctx4];
+
+      // initialise canvases
+      for (i = 0; i < ctx.length; i++) {
+        ctx[i].clearRect(0, 0, 1800, 2000);
+        ctx[i].scale(1, 1);
+        ctx[i].lineCap = 'round';
+        ctx[i].textBaseline = 'middle'
+      }
+
+      // draw rail lines
+      for (i = 0; i < lines.length; i++) {
+        thisLine = lines[i];
+        drawLine(thisLine);
+      }
+
+      // draw interchanges
+      interchange_2(705, 368, 683, 385); // Prospect Mir
+      interchange_2(521, 823, 499, 846); // October
+      interchange_2(683, 472, 698, 489); // Chistye Prudy
+      interchange_2(412, 778, 388, 778); // Park Kultry
+      interchange_2(762, 425, 762, 450); // Komsomol
+
+/*
+      // draw stations
+      for (i = 0; i < stations.length; i++) {
+        ctx[2].clearRect(0, 0, 1800, 2000);
+        thisStation = stations[i];
+        station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id']);
+
+        // create HTML Object for station
+        clickable_station(thisStation['x_position'], thisStation['y_position'], thisStation['station_id']);
+      }
+
+      */
+
+      // label stations
+      draw_features();
+
+      // label stations
+      print_station_labels();
+
+    }
+  </script>
 </body>
 
 </html>
