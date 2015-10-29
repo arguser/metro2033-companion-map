@@ -71,21 +71,24 @@ function station(sX,sY,faction,canvas=1,stationScale=1) {
 	scale = baseScale;
 }
 
-function clickable_station(sX,sY,sID) {
-	var offset = (station_radius+1)*scale;
-	var wh = (station_radius*2)*scale;
-	sX = (scale*sX)-offset;
-	sY = (scale*sY)-offset;
-	var newEl = document.createElement('a');
-	newEl.id = 'station_'+sID;
-	newEl.setAttribute("ng-click", "map.highlight_stations("+sID+")");
-	newEl.className = 'station_link';
-	newEl.style.left = sX+"px";
-	newEl.style.top  = sY+"px";
-	newEl.style.width  = wh+"px";
-	newEl.style.height = wh+"px";
-	document.getElementById('canvasHolder').appendChild(newEl);
-}
+
+// Handled by Angular
+
+// function clickable_station(sX,sY,sID) {
+// 	var offset = (station_radius+1)*scale;
+// 	var wh = (station_radius*2)*scale;
+// 	sX = (scale*sX)-offset;
+// 	sY = (scale*sY)-offset;
+// 	var newEl = document.createElement('a');
+// 	newEl.id = 'station_'+sID;
+// 	newEl.setAttribute("ng-click", "map.highlight_stations("+sID+")");
+// 	newEl.className = 'station_link';
+// 	newEl.style.left = sX+"px";
+// 	newEl.style.top  = sY+"px";
+// 	newEl.style.width  = wh+"px";
+// 	newEl.style.height = wh+"px";
+// 	document.getElementById('canvasHolder').appendChild(newEl);
+// }
 
 
 // get selected data set from label menu and rewrite station labels

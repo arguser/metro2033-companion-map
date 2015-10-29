@@ -10,15 +10,21 @@ body {
   background-color: #FFFFFF;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+
 .panel-toggle-button {
   position: absolute;
-  right: 0;
+  right: 70%;
   transform: translateX(100%);
   width: 22px;
   height: 42px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+}
+
+.panel-toggle-button.panel-toggle-button-hidden {
+  right: 98.5%;
 }
 .panel-header-image {
   overflow: hidden;
@@ -83,6 +89,9 @@ body {
   top: 10px;
   background: rgba(255, 255, 255, 0.9) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAUCAYAAAC9BQwsAAAAwklEQVQYlZ3OPQrCQBAF4ETwp1NShJ3NKEPMDUTwDmIhXkEE8QIiaC/aiYW39W2IEIwmO3mwzcz7mA0CfUIt6BDRxlo79hYiMgA4JEny8obMHKF8ccgbxnE8RfH+QV4QpQVKzzJqgiERrb9BLcyyrI/l/h/6CZk5wuJchyrQGCMY3JpQBaZpOsTgqIZFuhhu28A8WC6JSA9dAGcoPNTQBYUJ3lUNXURkhOsnNSzSY+ZdG+gSAqxwXQ3zGGPm+L5Rw3Lere9h2lhzZZEAAAAASUVORK5CYII=") no-repeat scroll 7px center / 7px 10px
 }
+#toolbar .panel-toggle-button.panel-toggle-button-hidden {
+  transform: scaleX(-1);
+}
 #toolbar .panel-autocomplete {
   background-color: #FFF;
   border-radius: 0px 0px 2px 2px;
@@ -91,7 +100,6 @@ body {
   overflow: hidden;
   width: 392px;
 }
-
 .searchbox-hamburger-cointariner {
   position: absolute;
   z-index: 1003;
@@ -106,30 +114,25 @@ body {
 .clear-button-shown {
   display: block;
 }
-
-
-
 #canvasHolder {
-  margin:10px;
-  padding:0px;
-  width:1800px;
-  height:2000px;
-  position:relative;
+  margin: 10px;
+  padding: 0px;
+  width: 1800px;
+  height: 2000px;
+  position: relative;
 }
 .metromap {
-  position:absolute;
-  margin:0px;
-  padding:0px;
-  width:1800px;
-  height:2000px;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  width: 1800px;
+  height: 2000px;
 }
-
 #lineCanvas {
-  background-color:#FFF;
+  background-color: #FFF;
 }
-
 .station_link {
-  display:block;
+  display: block;
   position: absolute;
   cursor: pointer;
   width: 21px;

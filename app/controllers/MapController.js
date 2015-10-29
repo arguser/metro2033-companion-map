@@ -2,7 +2,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   var self = this;
   self.simulateQuery = false;
   self.isDisabled = false;
-
+  self.toggled = true;
   // list of `stations` value/display objects
   self.factions = FactionService.getList();
   self.lines = LineService.getList();
@@ -15,7 +15,8 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.selectedItemChange = selectedItemChange;
   self.searchTextChange = searchTextChange;
   self.highlight_stations = highlight_stations;
-  $scope.stationList = stations;
+  self.toggle = true;
+  self.togglePanel = togglePanel;
 
   // ******************************
   // Internal methods
@@ -25,13 +26,15 @@ app.controller('MapController', function($scope, FactionService, LineService, St
    * remote dataservice call.
    */
 
-   function highlight_stations(stationID) {
-     console.log('highlight_stations');
+   /**
+   *
+   * Map functions
+   *
+   */
 
-   	var searchResult = findRecord(stations,"station_id",stationID);
-   	var thisStation = searchResult[0];
+   function highlight_stations(station) {
 
-    selectedItem(thisStation);
+     selectedItem(station);
 
    	ctx[3].clearRect(0,0, 1800,2000);
 
@@ -44,6 +47,18 @@ app.controller('MapController', function($scope, FactionService, LineService, St
    	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,8*scale,3);
    	ctx[3].stroke();
    }
+
+
+  /**
+  *
+  * Searchbox functions
+  *
+  */
+
+  function togglePanel() {
+    self.toggle = !self.toggle;
+    self.toggled = self.toggle;
+  }
 
   function querySearch(query) {
     var results = query ? self.stations.filter(createFilterFor(query)) : self.stations,
@@ -64,9 +79,9 @@ app.controller('MapController', function($scope, FactionService, LineService, St
      * Refresh data on Information Panel
      */
      if (item != null) {
-       self.station = item;
-       self.line = LineService.getById(item.line_id);
-       self.faction = FactionService.getById(item.faction_id);
+       self.station = item.display;
+       self.line = LineService.getById(item.display.line_id);
+       self.faction = FactionService.getById(item.display.faction_id);
        if (self.line != false)
          angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
        if (self.faction != false)
@@ -75,13 +90,14 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   }
 
   function searchTextChange(text) {
-    // $log.info('Text changed to ' + text);
+    self.station = null;
   }
 
   function selectedItemChange(item) {
     /**
      * Refresh data on Information Panel
      */
+     self.toggle = true;
 
     if (item != null) {
       self.station = item.display;
@@ -89,12 +105,14 @@ app.controller('MapController', function($scope, FactionService, LineService, St
       self.line = LineService.getById(item.display.line_id);
       self.faction = FactionService.getById(item.display.faction_id);
       if (self.line != false)
+        // This should be handled "the angular way"
         angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
       if (self.faction != false)
+        // This should be handled "the angular way"
         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
     }
-    // $log.info('Item changed to ' + JSON.stringify(item));
   }
+
   /**
    * Build `stations` list of key/value pairs
    */
@@ -107,6 +125,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
       };
     });
   }
+
   /**
    * Create filter function for a query string
    */

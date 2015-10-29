@@ -24,7 +24,7 @@
   <div ng-controller="MapController as map" layout="column">
     <div id="toolbar" layout="column" flex="20">
       <md-content layout="row">
-        <form ng-submit="$event.preventDefault()" class="form-search" flex>
+        <form ng-submit="$event.preventDefault()" class="form-search" ng-show="map.toggled">
           <md-autocomplete id="omnibox" md-floating-label="Station" md-item-text="item.display.station_name" md-items="item in map.querySearch(map.searchText)" md-min-length="0" md-no-cache="map.noCache" md-search-text-change="map.searchTextChange(map.searchText)"
           md-search-text="map.searchText" md-selected-item-change="map.selectedItemChange(item)" md-selected-item="map.selectedItem" ng-disabled="map.isDisabled" role="listbox">
             <md-item-template>
@@ -36,8 +36,9 @@
           </md-autocomplete>
         </form>
       </md-content>
-      <div class="panel" ng-show="map.station != null" layout="column">
-        <div class="panel-toggle-button"></div>
+      <div class="panel-toggle-button" ng-click="map.togglePanel()" ng-class="{'panel-toggle-button-hidden': !map.toggle}" ng-show="map.station != null"></div>
+      <div class="panel" ng-show="map.station != null && map.toggle" layout="column" data-ng-animate="{enter: 'ng-enter'}">
+
         <div class="panel-header-image" flex="35">
           <img alt="" src="assets/img/card.jpg">
         </div>
@@ -74,8 +75,7 @@
       <canvas id="stationCanvas" class="metromap" width="1800" height="2000"></canvas>
       <canvas id="labelCanvas" class="metromap" width="1800" height="2000"></canvas>
       <canvas id="effectCanvas" class="metromap" width="1800" height="2000"></canvas>
-      <a class="station_link" ng-repeat="station in stationList" ng-click="map.highlight_stations(station.station_id)"
-      style="top: {{(1.5 * station.y_position) - ((7+1)*1.5)}}px; left: {{(1.5 * station.x_position) - ((7+1)*1.5)}}px;">
+      <a class="station_link" ng-repeat="station in map.stations" ng-click="map.highlight_stations(station)" style="top: {{(1.5 * station.display.y_position) - ((7+1)*1.5)}}px; left: {{(1.5 * station.display.x_position) - ((7+1)*1.5)}}px;">
       </a>
     </div>
   </div>
@@ -115,7 +115,6 @@
   <script type="text/javascript" src="assets/js/utilities.js"></script>
   <script type="text/javascript" src="assets/js/symbols.js"></script>
   <script type="text/javascript" src="assets/js/stations.js"></script>
-  <script type="text/javascript" src="assets/js/demo_locations.js"></script>
 
   <script type="text/javascript">
     var animHolder;
