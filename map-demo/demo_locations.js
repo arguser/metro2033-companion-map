@@ -261,7 +261,7 @@ var stations = [{
   "faction_id": 28,
   "version_id": 3,
   "station_open": 0,
-  "label_point": 3
+  "label_point": 6
 }, {
   "station_name": "YASENEVO",
   "x_position": 388,
@@ -529,7 +529,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
-  "label_point": 5
+  "label_point": 5.5
 }, {
   "station_name": "CHISTYE PRUDY",
   "x_position": 698,
@@ -647,6 +647,28 @@ var stations = [{
   "station_id": 65,
   "line_id": 1,
   "faction_id": 8,
+  "version_id": 3,
+  "station_open": 0,
+  "label_point": 9
+},
+
+{
+  "station_name": "KAKHOVSKAYA",
+  "x_position": 605,
+  "y_position": 1042,
+  "station_id": 167,
+  "line_id": 0,
+  "faction_id": 34,
+  "version_id": 3,
+  "station_open": 0,
+  "label_point": 1
+},{
+  "station_name": "SEVASTOPOLSKAYA",
+  "x_position": 574,
+  "y_position": 1042,
+  "station_id": 22,
+  "line_id": 0,
+  "faction_id": 34,
   "version_id": 3,
   "station_open": 0,
   "label_point": 9
@@ -934,7 +956,16 @@ var station_name = [
 { "station_id": 65,  "name_set": 0, "station_name": "YUGO-ZAPADNAYA" },
 { "station_id": 65,  "name_set": 1, "station_name": "Ю́го-За́падная" },
 { "station_id": 65,  "name_set": 2, "station_name": "SOUTHWEST" },
-  
+
+{ "station_id": 167,  "name_set": 0, "station_name": "KAKHOVSKAYA" },
+{ "station_id": 167,  "name_set": 1, "station_name": "Каховская" },
+{ "station_id": 167,  "name_set": 2, "station_name": "KAKHOVSKA" },
+
+{ "station_id": 22,  "name_set": 0, "station_name": "SEVASTOPOLSKAYA" },
+{ "station_id": 22,  "name_set": 1, "station_name": "Севастопольская" },
+{ "station_id": 22,  "name_set": 2, "station_name": "SEBASTOPOL" },
+
+
 ]
 
 /********************/

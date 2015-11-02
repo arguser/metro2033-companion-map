@@ -115,13 +115,21 @@ function name_station(stationID,position,sX,sY) {
 			case 3:  cX=11;  cY=0;   labelAlign="left";   break;
 			case 4:  cX=+10; cY=+7;  labelAlign="left";   break;
 			case 5:  cX=+7;  cY=+11; labelAlign="left";   break;
-			case 6:  cX=0;   cY=15;  labelAlign="center"; break;
+
+			case 5.5: cX=0;   cY=15;  labelAlign="left"; break;
+			case 6:   cX=0;   cY=15;  labelAlign="center"; break;
+			case 6.5: cX=0;   cY=15;  labelAlign="right"; break;
+			
 			case 7:  cX=-7;  cY=+11; labelAlign="right";  break;
 			case 8:  cX=-10; cY=+7;  labelAlign="right";  break;
 			case 9:  cX=-11; cY=0;   labelAlign="right";  break;
 			case 10: cX=-10; cY=-7;  labelAlign="right";  break;
 			case 11: cX=-7;  cY=-10; labelAlign="right";  break;
-			case 12: cX=0;   cY=-11; labelAlign="center"; break;
+
+			case 11.5: cX=0;   cY=-11; labelAlign="right"; break;
+			case 12:   cX=0;   cY=-11; labelAlign="center"; break;
+			case 12.5: cX=0;   cY=-11; labelAlign="left"; break;
+
 		}
 
 		var stationName = searchResult[0]['station_name'];
@@ -488,3 +496,4 @@ aFactions[30]  = Array("#000000","Hazardous");
 aFactions[31]  = Array("#323232","Occupied by Mutants");
 aFactions[32]  = Array("#00BE00","Savage Cannibals of the Great Worm");
 aFactions[33]  = Array("#000000","Satanists (Locations Conjectured)");
+aFactions[34]  = Array("#0080C1","Sebastapol");

@@ -471,6 +471,38 @@ function pattern_33(sX,sY,canvas=1) { // Satanists
 	ctx[canvas].stroke();
 }
 
+function pattern_34(sX,sY,canvas=1) { // Sebastapol
+	ctx[canvas].lineCap = 'butt';
+	ctx[canvas].lineWidth = 1*scale;
+	ctx[canvas].strokeStyle = "#0080C1";
+	ctx[canvas].fillStyle   = "#FFFFFF";
+
+	circle(sX,sY,5*scale);
+	ctx[canvas].fill();
+	ctx[canvas].closePath();
+	
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY);
+	ctx[canvas].quadraticCurveTo(sX+5*scale,sY-5*scale,  sX,sY-5*scale);
+	ctx[canvas].stroke();
+	
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY);
+	ctx[canvas].quadraticCurveTo(sX+5*scale,sY+5*scale,  sX+5*scale,sY);
+	ctx[canvas].stroke();
+
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY);
+	ctx[canvas].quadraticCurveTo(sX-5*scale,sY+5*scale,  sX,sY+5*scale);
+	ctx[canvas].stroke();
+	
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY);
+	ctx[canvas].quadraticCurveTo(sX-5*scale,sY-5*scale,  sX-5*scale,sY);
+	ctx[canvas].stroke();
+	
+}
+
 function pattern_star(sX,sY,colorFill,canvas=1) { // Generic Star
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].beginPath();
