@@ -9,6 +9,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.stations = loadAll();
   self.station = null;
   self.line = null;
+  self.faction = null;
   // self.stations = loadAll();
   self.form = {};
   self.querySearch = querySearch;
@@ -18,6 +19,8 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.toggle = true;
   self.togglePanel = togglePanel;
 
+
+
   // ******************************
   // Internal methods
   // ******************************
@@ -26,34 +29,37 @@ app.controller('MapController', function($scope, FactionService, LineService, St
    * remote dataservice call.
    */
 
-   /**
+  /**
    *
    * Map functions
    *
    */
 
-   function highlight_stations(station) {
+  function highlight_stations(station) {
 
-     selectedItem(station);
+    self.searchText = station.display.station_name;
 
-   	ctx[3].clearRect(0,0, 1800,2000);
+    ctx[3].clearRect(0, 0, 1800, 2000);
 
-   	ctx[3].lineWidth = 2*scale;
-   	ctx[3].strokeStyle = '#FF0000';
+    ctx[3].lineWidth = 2 * scale;
+    ctx[3].strokeStyle = '#FF0000';
 
-   	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,12*scale,3);
-   	ctx[3].stroke();
+    circle(station.display['x_position'] * scale, station.display['y_position'] * scale, 12 * scale, 3);
+    ctx[3].stroke();
 
-   	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,8*scale,3);
-   	ctx[3].stroke();
-   }
+    circle(station.display['x_position'] * scale, station.display['y_position'] * scale, 8 * scale, 3);
+    ctx[3].stroke();
+
+
+    selectedItem(station);
+  }
 
 
   /**
-  *
-  * Searchbox functions
-  *
-  */
+   *
+   * Searchbox functions
+   *
+   */
 
   function togglePanel() {
     self.toggle = !self.toggle;
@@ -78,26 +84,33 @@ app.controller('MapController', function($scope, FactionService, LineService, St
     /**
      * Refresh data on Information Panel
      */
-     if (item != null) {
-       self.station = item.display;
-       self.line = LineService.getById(item.display.line_id);
-       self.faction = FactionService.getById(item.display.faction_id);
-       if (self.line != false)
-         angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
-       if (self.faction != false)
-         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
-     }
+
+    self.toggle = true;
+
+    if (item != null) {
+      self.station = item.display;
+      self.line = LineService.getById(item.display.line_id);
+      self.faction = FactionService.getById(item.display.faction_id);
+      if (self.line != false)
+        angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+      if (self.faction != false)
+        angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
+    }
   }
 
   function searchTextChange(text) {
-    self.station = null;
+    var station = StationService.getByName(text);
+    if (!station) {
+      self.station = null;
+      self.faction = null;
+    }
   }
 
   function selectedItemChange(item) {
     /**
      * Refresh data on Information Panel
      */
-     self.toggle = true;
+    self.toggle = true;
 
     if (item != null) {
       self.station = item.display;
@@ -105,10 +118,10 @@ app.controller('MapController', function($scope, FactionService, LineService, St
       self.line = LineService.getById(item.display.line_id);
       self.faction = FactionService.getById(item.display.faction_id);
       if (self.line != false)
-        // This should be handled "the angular way"
+      // This should be handled "the angular way"
         angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
       if (self.faction != false)
-        // This should be handled "the angular way"
+      // This should be handled "the angular way"
         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
     }
   }

@@ -28,12 +28,11 @@ body {
 }
 .panel-header-image {
   overflow: hidden;
-  height: 256px;
+  height: 100%;
 }
 .panel-header-image img {
-  width: auto;
+  width: inherit;
   height: 100%;
-  transform: translateX(-25%);
 }
 .panel-header-description {
   background-color: #4285F4;

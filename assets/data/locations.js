@@ -910,6 +910,7 @@ var stations = [{
   "station_id": 1,
   "station_name": "ALTUF'YEVO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 480,
   "y_position": 110,
@@ -919,6 +920,7 @@ var stations = [{
   "station_id": 2,
   "station_name": "BIBIREVO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 506,
   "y_position": 135.5,
@@ -928,6 +930,7 @@ var stations = [{
   "station_id": 3,
   "station_name": "OTRADNOE",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 506,
   "y_position": 168,
@@ -937,6 +940,7 @@ var stations = [{
   "station_id": 4,
   "station_name": "VLADYKINO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 506,
   "y_position": 201,
@@ -946,6 +950,7 @@ var stations = [{
   "station_id": 5,
   "station_name": "PETROVSKO-RAZUMOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 482,
   "y_position": 224,
@@ -955,6 +960,7 @@ var stations = [{
   "station_id": 6,
   "station_name": "TIMIRYAZEVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 481.5,
   "y_position": 255.5,
@@ -964,6 +970,7 @@ var stations = [{
   "station_id": 7,
   "station_name": "DMITROVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 482,
   "y_position": 285.5,
@@ -973,6 +980,7 @@ var stations = [{
   "station_id": 8,
   "station_name": "SAVELOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 482,
   "y_position": 314,
@@ -982,6 +990,7 @@ var stations = [{
   "station_id": 9,
   "station_name": "MENDELEEVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 482.5,
   "y_position": 346,
@@ -996,11 +1005,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 11
 }, {
   "station_id": 11,
   "station_name": "TSVETNOY BULVAR",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 578,
   "y_position": 446,
@@ -1010,6 +1021,7 @@ var stations = [{
   "station_id": 12,
   "station_name": "CHEKHOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 500,
   "y_position": 524,
@@ -1019,6 +1031,7 @@ var stations = [{
   "station_id": 13,
   "station_name": "ALEKSANDROVSKIY SAD",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 501,
   "y_position": 624,
@@ -1028,6 +1041,7 @@ var stations = [{
   "station_id": 14,
   "station_name": "BOROVITSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 502,
   "y_position": 667,
@@ -1037,6 +1051,7 @@ var stations = [{
   "station_id": 15,
   "station_name": "POLYANKA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 515,
   "y_position": 761,
@@ -1051,11 +1066,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 6
 }, {
   "station_id": 17,
   "station_name": "BULVAR DMITRIYA DONSKOGO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 609,
   "y_position": 1212,
@@ -1065,6 +1082,7 @@ var stations = [{
   "station_id": 18,
   "station_name": "ANNINO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 610,
   "y_position": 1184,
@@ -1074,6 +1092,7 @@ var stations = [{
   "station_id": 19,
   "station_name": "UL. AKADEMIKA YANGELYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 609,
   "y_position": 1159,
@@ -1083,6 +1102,7 @@ var stations = [{
   "station_id": 20,
   "station_name": "PRAZHSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 609,
   "y_position": 1131,
@@ -1092,6 +1112,7 @@ var stations = [{
   "station_id": 21,
   "station_name": "YUZHNAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 610,
   "y_position": 1104,
@@ -1101,6 +1122,7 @@ var stations = [{
   "station_id": 22,
   "station_name": "CHERTANOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 575,
   "y_position": 1072,
@@ -1110,6 +1132,7 @@ var stations = [{
   "station_id": 23,
   "station_name": "SEVASTAPOLSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 574,
   "y_position": 1042,
@@ -1119,6 +1142,7 @@ var stations = [{
   "station_id": 24,
   "station_name": "NAKHIMOVSKIY PROSPEKT",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 575,
   "y_position": 1014,
@@ -1128,6 +1152,7 @@ var stations = [{
   "station_id": 25,
   "station_name": "NAGORNAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 574,
   "y_position": 986,
@@ -1137,6 +1162,7 @@ var stations = [{
   "station_id": 26,
   "station_name": "NAGATINSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 607,
   "y_position": 955,
@@ -1146,6 +1172,7 @@ var stations = [{
   "station_id": 27,
   "station_name": "TUL'SKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 608,
   "y_position": 921,
@@ -1155,6 +1182,7 @@ var stations = [{
   "station_id": 28,
   "station_name": "SERPUKHOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 608,
   "y_position": 884,
@@ -1169,6 +1197,7 @@ var stations = [{
   "faction_id": 0,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 30,
@@ -1179,6 +1208,7 @@ var stations = [{
   "faction_id": 0,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 31,
@@ -1189,6 +1219,7 @@ var stations = [{
   "faction_id": 0,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 32,
@@ -1199,6 +1230,7 @@ var stations = [{
   "faction_id": 30,
   "version_id": 3,
   "station_open": 1,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 33,
@@ -1209,6 +1241,7 @@ var stations = [{
   "faction_id": 5,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 34,
@@ -1219,6 +1252,7 @@ var stations = [{
   "faction_id": 5,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 35,
@@ -1229,6 +1263,7 @@ var stations = [{
   "faction_id": 5,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 36,
@@ -1239,6 +1274,7 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 11
 }, {
   "station_id": 37,
@@ -1249,6 +1285,7 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 38,
@@ -1259,6 +1296,7 @@ var stations = [{
   "faction_id": 26,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 39,
@@ -1269,6 +1307,7 @@ var stations = [{
   "faction_id": 30,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 40,
@@ -1279,6 +1318,7 @@ var stations = [{
   "faction_id": 19,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 41,
@@ -1289,6 +1329,7 @@ var stations = [{
   "faction_id": 21,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 42,
@@ -1299,6 +1340,7 @@ var stations = [{
   "faction_id": 0,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 43,
@@ -1309,6 +1351,7 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 8
 }, {
   "station_id": 44,
@@ -1319,6 +1362,7 @@ var stations = [{
   "faction_id": 28,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 6
 }, {
   "station_id": 45,
@@ -1329,6 +1373,7 @@ var stations = [{
   "faction_id": 14,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 46,
@@ -1339,6 +1384,7 @@ var stations = [{
   "faction_id": 14,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 47,
@@ -1349,6 +1395,7 @@ var stations = [{
   "faction_id": 14,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 48,
@@ -1359,6 +1406,7 @@ var stations = [{
   "faction_id": 14,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 49,
@@ -1370,6 +1418,7 @@ var stations = [{
   "faction_id": 14,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 50,
@@ -1381,6 +1430,7 @@ var stations = [{
   "faction_id": 21,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 51,
@@ -1391,6 +1441,7 @@ var stations = [{
   "faction_id": 19,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 52,
@@ -1401,6 +1452,7 @@ var stations = [{
   "faction_id": 18,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 53,
@@ -1411,6 +1463,7 @@ var stations = [{
   "faction_id": 20,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 54,
@@ -1422,6 +1475,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 },  {
   "station_id": 55,
@@ -1432,6 +1486,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 56,
@@ -1442,6 +1497,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 57,
@@ -1452,6 +1508,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 58,
@@ -1462,6 +1519,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 59,
@@ -1472,6 +1530,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 60,
@@ -1482,6 +1541,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 61,
@@ -1491,6 +1551,7 @@ var stations = [{
   "line_id": 5,
   "faction_id": 1,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 62,
@@ -1501,6 +1562,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 5.5
 }, {
   "station_id": 63,
@@ -1511,11 +1573,13 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 5
 }, {
   "station_id": 64,
   "station_name": "TEATRAL'NAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 567,
   "y_position": 603,
@@ -1530,6 +1594,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 66,
@@ -1540,6 +1605,7 @@ var stations = [{
   "faction_id": 8,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 67,
@@ -1550,6 +1616,7 @@ var stations = [{
   "faction_id": 8,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 68,
@@ -1560,6 +1627,7 @@ var stations = [{
   "faction_id": 8,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 69,
@@ -1570,6 +1638,7 @@ var stations = [{
   "faction_id": 27,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 },   {
   "station_id": 70,
@@ -1580,6 +1649,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 },  {
   "station_id": 71,
@@ -1590,6 +1660,7 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 72,
@@ -1600,11 +1671,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 },{
   "station_id": 73,
   "station_name": "SCHELKOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 986,
   "y_position": 427,
@@ -1614,6 +1687,7 @@ var stations = [{
   "station_id": 74,
   "station_name": "PERVOMAYSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 987,
   "y_position": 463,
@@ -1623,6 +1697,7 @@ var stations = [{
   "station_id": 75,
   "station_name": "IZMAYLOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 987,
   "y_position": 502,
@@ -1632,6 +1707,7 @@ var stations = [{
   "station_id": 76,
   "station_name": "PARTIZANSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 961,
   "y_position": 528,
@@ -1641,6 +1717,7 @@ var stations = [{
   "station_id": 77,
   "station_name": "SEMYONOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 935,
   "y_position": 555,
@@ -1650,6 +1727,7 @@ var stations = [{
   "station_id": 78,
   "station_name": "ELEKTROZAVODSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 910,
   "y_position": 581,
@@ -1659,6 +1737,7 @@ var stations = [{
   "station_id": 79,
   "station_name": "BAUMANSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 885,
   "y_position": 607,
@@ -1668,6 +1747,7 @@ var stations = [{
   "station_id": 80,
   "station_name": "KURSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 846,
   "y_position": 643,
@@ -1677,6 +1757,7 @@ var stations = [{
   "station_id": 81,
   "station_name": "CHKALOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 831,
   "y_position": 669,
@@ -1691,11 +1772,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 83,
   "station_name": "PLOSCHAD' REVOLUTSII",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 612,
   "y_position": 644,
@@ -1710,11 +1793,13 @@ var stations = [{
   "faction_id": 3,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 85,
   "station_name": "ARBATSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 479,
   "y_position": 645,
@@ -1724,6 +1809,7 @@ var stations = [{
   "station_id": 86,
   "station_name": "SMOLENSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 418,
   "y_position": 646,
@@ -1733,6 +1819,7 @@ var stations = [{
   "station_id": 87,
   "station_name": "PARK POBEDY",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 180,
   "y_position": 737,
@@ -1742,6 +1829,7 @@ var stations = [{
   "station_id": 88,
   "station_name": "KIEVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 327,
   "y_position": 741,
@@ -1751,6 +1839,7 @@ var stations = [{
   "station_id": 89,
   "station_name": "KIEVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 325,
   "y_position": 698,
@@ -1765,11 +1854,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 91,
   "station_name": "NOVOGIREEVO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 1010,
   "y_position": 657,
@@ -1779,6 +1870,7 @@ var stations = [{
   "station_id": 92,
   "station_name": "PEROVO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 983,
   "y_position": 685,
@@ -1788,6 +1880,7 @@ var stations = [{
   "station_id": 93,
   "station_name": "SCHOSSE ENTUZIASTOV",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 956,
   "y_position": 712,
@@ -1797,6 +1890,7 @@ var stations = [{
   "station_id": 94,
   "station_name": "AVIAMOTORNAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 928,
   "y_position": 739,
@@ -1806,6 +1900,7 @@ var stations = [{
   "station_id": 95,
   "station_name": "PLOSHAD' IL'YICHA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 867,
   "y_position": 765,
@@ -1815,6 +1910,7 @@ var stations = [{
   "station_id": 96,
   "station_name": "MARKSISTSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 801,
   "y_position": 766,
@@ -1824,6 +1920,7 @@ var stations = [{
   "station_id": 97,
   "station_name": "NOVOKUZNETSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 619,
   "y_position": 767,
@@ -1833,6 +1930,7 @@ var stations = [{
   "station_id": 98,
   "station_name": "VYKHINO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 1032,
   "y_position": 896,
@@ -1842,6 +1940,7 @@ var stations = [{
   "station_id": 99,
   "station_name": "RYAZANSKY PROSPEKT",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 997,
   "y_position": 898,
@@ -1851,6 +1950,7 @@ var stations = [{
   "station_id": 100,
   "station_name": "KUZMINKY",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 961,
   "y_position": 896,
@@ -1860,6 +1960,7 @@ var stations = [{
   "station_id": 101,
   "station_name": "TEKSTIL'SCHIKI",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 941,
   "y_position": 876,
@@ -1869,6 +1970,7 @@ var stations = [{
   "station_id": 102,
   "station_name": "VOLGOGRADSKY PROSPEKT",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 910,
   "y_position": 845,
@@ -1878,6 +1980,7 @@ var stations = [{
   "station_id": 103,
   "station_name": "PROLETARSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 867,
   "y_position": 803,
@@ -1887,6 +1990,7 @@ var stations = [{
   "station_id": 104,
   "station_name": "TAGANSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 801,
   "y_position": 737,
@@ -1900,11 +2004,13 @@ var stations = [{
   "line_id": 5,
   "faction_id": 1,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 106,
   "station_name": "KITAY-GOROD",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 726,
   "y_position": 664,
@@ -1914,6 +2020,7 @@ var stations = [{
   "station_id": 107,
   "station_name": "KUZNETSKY MOST",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 638,
   "y_position": 574,
@@ -1928,11 +2035,13 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 109,
   "station_name": "TVERSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 515,
   "y_position": 550,
@@ -1942,6 +2051,7 @@ var stations = [{
   "station_id": 110,
   "station_name": "PUSHKINSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 486,
   "y_position": 550,
@@ -1951,6 +2061,7 @@ var stations = [{
   "station_id": 111,
   "station_name": "BARRIKADNAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 357,
   "y_position": 553,
@@ -1960,6 +2071,7 @@ var stations = [{
   "station_id": 112,
   "station_name": "PLANERNAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 199,
   "y_position": 303,
@@ -1969,6 +2081,7 @@ var stations = [{
   "station_id": 113,
   "station_name": "SHODNENSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 200,
   "y_position": 345,
@@ -1978,6 +2091,7 @@ var stations = [{
   "station_id": 114,
   "station_name": "TUSHINSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 200,
   "y_position": 387,
@@ -1987,6 +2101,7 @@ var stations = [{
   "station_id": 115,
   "station_name": "SCHUKINSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 200,
   "y_position": 429,
@@ -1996,6 +2111,7 @@ var stations = [{
   "station_id": 116,
   "station_name": "OKTYABR'SKOE POLE",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 225,
   "y_position": 454,
@@ -2005,6 +2121,7 @@ var stations = [{
   "station_id": 117,
   "station_name": "POLEZHAEVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 250,
   "y_position": 478,
@@ -2014,6 +2131,7 @@ var stations = [{
   "station_id": 118,
   "station_name": "BEGOVAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 275,
   "y_position": 503,
@@ -2023,6 +2141,7 @@ var stations = [{
   "station_id": 119,
   "station_name": "ULITSA 1905 GODA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 300,
   "y_position": 528,
@@ -2037,11 +2156,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 121,
   "station_name": "MAR'YINO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 907,
   "y_position": 1042,
@@ -2051,6 +2172,7 @@ var stations = [{
   "station_id": 122,
   "station_name": "BRATISLAVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 907,
   "y_position": 1015,
@@ -2060,6 +2182,7 @@ var stations = [{
   "station_id": 123,
   "station_name": "LYUBLINO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 907,
   "y_position": 991,
@@ -2069,6 +2192,7 @@ var stations = [{
   "station_id": 124,
   "station_name": "VOLZHSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 907,
   "y_position": 964,
@@ -2078,6 +2202,7 @@ var stations = [{
   "station_id": 125,
   "station_name": "PECHATNIKI",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 888,
   "y_position": 945,
@@ -2087,6 +2212,7 @@ var stations = [{
   "station_id": 126,
   "station_name": "KOZHUHOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 866,
   "y_position": 925,
@@ -2096,6 +2222,7 @@ var stations = [{
   "station_id": 127,
   "station_name": "DUBROVKA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 866,
   "y_position": 887,
@@ -2105,6 +2232,7 @@ var stations = [{
   "station_id": 128,
   "station_name": "KREST'YANSKAYA ZASTAVA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 866,
   "y_position": 834,
@@ -2114,6 +2242,7 @@ var stations = [{
   "station_id": 129,
   "station_name": "RIMSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 867,
   "y_position": 734,
@@ -2123,6 +2252,7 @@ var stations = [{
   "station_id": 130,
   "station_name": "SRETENSKY BULVAR",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 648,
   "y_position": 488,
@@ -2132,6 +2262,7 @@ var stations = [{
   "station_id": 131,
   "station_name": "TRUBNAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 608,
   "y_position": 446,
@@ -2141,6 +2272,7 @@ var stations = [{
   "station_id": 132,
   "station_name": "DOSTOYEVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 607,
   "y_position": 333,
@@ -2150,6 +2282,7 @@ var stations = [{
   "station_id": 133,
   "station_name": "MAR'YINA ROSCHA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 607,
   "y_position": 297,
@@ -2159,6 +2292,7 @@ var stations = [{
   "station_id": 134,
   "station_name": "RECHNOY VOKZAL",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 302,
   "y_position": 208,
@@ -2168,6 +2302,7 @@ var stations = [{
   "station_id": 135,
   "station_name": "VODNY STADION",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 302,
   "y_position": 248,
@@ -2177,6 +2312,7 @@ var stations = [{
   "station_id": 136,
   "station_name": "VOIKOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 302,
   "y_position": 288,
@@ -2186,6 +2322,7 @@ var stations = [{
   "station_id": 137,
   "station_name": "SOKOL",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 302,
   "y_position": 332,
@@ -2195,6 +2332,7 @@ var stations = [{
   "station_id": 138,
   "station_name": "AEROPORT",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 324,
   "y_position": 355,
@@ -2204,6 +2342,7 @@ var stations = [{
   "station_id": 139,
   "station_name": "DINAMO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 349,
   "y_position": 380,
@@ -2213,6 +2352,7 @@ var stations = [{
   "station_id": 140,
   "station_name": "BELORUSSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 376,
   "y_position": 409,
@@ -2227,11 +2367,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3
 }, {
   "station_id": 142,
   "station_name": "MAYAKOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 447,
   "y_position": 480,
@@ -2246,11 +2388,13 @@ var stations = [{
   "faction_id": 2,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 9
 }, {
   "station_id": 144,
   "station_name": "NOVOKUZNETSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 592,
   "y_position": 783,
@@ -2260,6 +2404,7 @@ var stations = [{
   "station_id": 145,
   "station_name": "KRASNOGVARDEYSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 847,
   "y_position": 1181,
@@ -2269,6 +2414,7 @@ var stations = [{
   "station_id": 146,
   "station_name": "DOMODEDOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 823,
   "y_position": 1155,
@@ -2278,6 +2424,7 @@ var stations = [{
   "station_id": 147,
   "station_name": "OREHOVO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 799,
   "y_position": 1131,
@@ -2287,6 +2434,7 @@ var stations = [{
   "station_id": 148,
   "station_name": "TSARITSYNO",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 773,
   "y_position": 1105,
@@ -2296,6 +2444,7 @@ var stations = [{
   "station_id": 149,
   "station_name": "KANTEMIROVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 748,
   "y_position": 1080,
@@ -2305,6 +2454,7 @@ var stations = [{
   "station_id": 150,
   "station_name": "KASHIRSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 749,
   "y_position": 1043,
@@ -2314,6 +2464,7 @@ var stations = [{
   "station_id": 151,
   "station_name": "KOLOMENSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 749,
   "y_position": 1008,
@@ -2323,6 +2474,7 @@ var stations = [{
   "station_id": 152,
   "station_name": "AVTOZAVODSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 749,
   "y_position": 936,
@@ -2332,6 +2484,7 @@ var stations = [{
   "station_id": 153,
   "station_name": "PAVELETSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 676,
   "y_position": 861,
@@ -2346,11 +2499,13 @@ var stations = [{
   "faction_id": 1,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 4
 }, {
   "station_id": 155,
   "station_name": "KRYLATSKOE",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 99,
   "y_position": 514,
@@ -2360,6 +2515,7 @@ var stations = [{
   "station_id": 156,
   "station_name": "MOLODEZHNAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 99,
   "y_position": 559,
@@ -2369,6 +2525,7 @@ var stations = [{
   "station_id": 157,
   "station_name": "KUNTSEVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 99,
   "y_position": 606,
@@ -2378,6 +2535,7 @@ var stations = [{
   "station_id": 158,
   "station_name": "PIONERSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 123,
   "y_position": 632,
@@ -2387,6 +2545,7 @@ var stations = [{
   "station_id": 159,
   "station_name": "FILEVSKIY PARK",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 145,
   "y_position": 655,
@@ -2396,6 +2555,7 @@ var stations = [{
   "station_id": 160,
   "station_name": "BAGRATIONOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 167,
   "y_position": 676,
@@ -2405,6 +2565,7 @@ var stations = [{
   "station_id": 161,
   "station_name": "FILI",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 189,
   "y_position": 699,
@@ -2414,6 +2575,7 @@ var stations = [{
   "station_id": 162,
   "station_name": "KUTUZOVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 210,
   "y_position": 719,
@@ -2423,6 +2585,7 @@ var stations = [{
   "station_id": 163,
   "station_name": "STUDENCHESKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 257,
   "y_position": 762,
@@ -2432,6 +2595,7 @@ var stations = [{
   "station_id": 164,
   "station_name": "SMOLENSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 398,
   "y_position": 626,
@@ -2441,6 +2605,7 @@ var stations = [{
   "station_id": 165,
   "station_name": "ARBATSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 460,
   "y_position": 625,
@@ -2450,6 +2615,7 @@ var stations = [{
   "station_id": 166,
   "station_name": "BELORUSSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 398,
   "y_position": 430,
@@ -2464,11 +2630,13 @@ var stations = [{
   "faction_id": 17,
   "version_id": 3,
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 1
 }, {
   "station_id": 169,
   "station_name": "VARSHAVSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 664,
   "y_position": 1043,
@@ -2478,6 +2646,7 @@ var stations = [{
   "station_id": 170,
   "station_name": "KASHIRSKAYA",
   "station_open": 0,
+  "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 721,
   "y_position": 1043,

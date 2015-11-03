@@ -15,4 +15,15 @@ app.service('StationService', function($filter) {
       return false;
     }
   };
+
+  this.getByName = function(name) {
+    var found = $filter('filter')(this._stations, {
+      station_name: name
+    }, true);
+    if (found.length) {
+      return found[0];
+    } else {
+      return false;
+    }
+  };
 });

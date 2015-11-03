@@ -22,7 +22,7 @@
 
 <body onload="drawMap()">
   <div ng-controller="MapController as map" layout="column">
-    <div id="toolbar" layout="column" flex="20">
+    <div id="toolbar" layout="column" flex="20" ng-class="{'sarasa': !map.toggle}">
       <md-content layout="row">
         <form ng-submit="$event.preventDefault()" class="form-search" ng-show="map.toggled">
           <md-autocomplete id="omnibox" md-floating-label="Station" md-item-text="item.display.station_name" md-items="item in map.querySearch(map.searchText)" md-min-length="0" md-no-cache="map.noCache" md-search-text-change="map.searchTextChange(map.searchText)"
@@ -37,37 +37,23 @@
         </form>
       </md-content>
       <div class="panel-toggle-button" ng-click="map.togglePanel()" ng-class="{'panel-toggle-button-hidden': !map.toggle}" ng-show="map.station != null"></div>
-      <div class="panel" ng-show="map.station != null && map.toggle" layout="column" data-ng-animate="{enter: 'ng-enter'}">
-
-        <div class="panel-header-image" flex="35">
-          <img alt="" src="assets/img/card.jpg">
-        </div>
-        <div class="panel-header-description" layout="row">
-          <div layout="column" flex="90">
-            <div class="panel-header-title" flex="50">{{map.station.station_name}}</div>
-            <div class="panel-header-subtitle" flex="50">{{map.line.line_name}}</div>
-          </div>
-          <div layout="column" flex="10">
-            <div class="panel-header-number">{{map.line.line_number}}</div>
-          </div>
-        </div>
-        <div class="panel-content" layout="column">
-          <div class="panel-content-title" flex="50">Description</div>
-          <div class="panel-content-text" flex="50">{{map.station.station_description}}</div>
-        </div>
-        <div ng-show="map.faction != null">
-          <div class="panel-header-description" layout="row">
-            <div layout="column" flex="90">
-              <div class="panel-header-title" flex="50">{{map.faction.faction_name}}</div>
-            </div>
-            <div layout="column" flex="10">
-              <div class="panel-header-number">{{map.faction.icon}}</div>
-            </div>
-          </div>
-          <div class="panel-content" layout="column">
-            <div class="panel-content-text" flex="50">{{map.faction.faction_description}}</div>
-          </div>
-        </div>
+      <div class="panel" ng-show="map.station != null && map.toggle" layout="column" data-ng-animate="{enter: 'ng-enter'}" flex="100">
+        <station-image flex="35"></station-image>
+        <station-name></station-name>
+        <md-tabs class="md-accent" md-selected="self.selectedIndex" layout="column" flex="100" md-stretch-tabs="auto">
+          <md-tab id="station-tab" ng-disabled="map.station.station_description == ''">
+            <md-tab-label>Description</md-tab-label>
+            <md-tab-body>
+              <station-description></station-description>
+            </md-tab-body>
+          </md-tab>
+          <md-tab id="faction-tab" ng-disabled="map.faction == false">
+            <md-tab-label>Faction</md-tab-label>
+            <md-tab-body>
+              <faction-description></faction-description>
+            </md-tab-body>
+          </md-tab>
+        </md-tabs>
       </div>
     </div>
     <div id="canvasHolder" flex="80">
@@ -108,6 +94,8 @@
   <script src="assets/data/locations.js"></script>
   <!-- Controllers -->
   <script src="app/controllers/MapController.js"></script>
+  <!-- Directives -->
+  <script src="app/directives/MapDirectives.js"></script>
   <!-- Services -->
   <script src="app/services/FactionService.js"></script>
   <script src="app/services/LineService.js"></script>
