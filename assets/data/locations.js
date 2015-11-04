@@ -99,8 +99,20 @@ var lines = [{
   "line_id": 10,
   "line_number": 10,
   "line_name": "Lyublinsko-Dmitrovskaya",
-  "line_nodes": [],
-  "line_colour": "#89e87d"
+  "line_nodes": [
+    [0, 600,297],
+    [1, 600,446],
+    [0, 620,464],
+    [1, 648,464],
+    [0, 668,484],
+    [1, 668,505],
+    [0, 678,530],
+    [0, 800,620],
+    [1, 850,655],
+    [0, 870,678],   
+    [0, 870,925]
+  ],
+  "line_colour": "#a0bd3d"
 }, {
   "line_id": 11,
   "line_number": 11,
@@ -900,6 +912,7 @@ var station_name = [
 //     station_id - (unique id number)
 //     station_name - (name of station, used for internal tracking)
 //     station_open - (is station open to surface, 1=yes 0=no)
+//     station_img - image for station
 //     label_point - where to place label, based on clock face 1-12
 //     x_position
 //     y_position
@@ -1749,25 +1762,25 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 846,
-  "y_position": 643,
+  "x_position": 800,
+  "y_position": 588,
   "line_id": 3,
-  "faction_id": 2
+  "faction_id": 1
 }, {
   "station_id": 81,
   "station_name": "CHKALOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 831,
-  "y_position": 669,
+  "x_position": 800,
+  "y_position": 620,
   "line_id": 10,
-  "faction_id": 2
+  "faction_id": 1
 }, {
   "station_id": 82,
   "station_name": "KURSKAYA (HANSA)",
-  "x_position": 816,
-  "y_position": 644,
+  "x_position": 820,
+  "y_position": 604,
   "line_id": 5,
   "faction_id": 1,
   "version_id": 3,
@@ -1902,10 +1915,10 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 867,
+  "x_position": 870,
   "y_position": 765,
   "line_id": 8,
-  "faction_id": 0
+  "faction_id": 12
 }, {
   "station_id": 96,
   "station_name": "MARKSISTSKAYA",
@@ -1982,7 +1995,7 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 867,
+  "x_position": 870,
   "y_position": 803,
   "line_id": 7,
   "faction_id": 0
@@ -2187,7 +2200,7 @@ var stations = [{
   "x_position": 907,
   "y_position": 991,
   "line_id": 10,
-  "faction_id": 13
+  "faction_id": 33
 }, {
   "station_id": 124,
   "station_name": "VOLZHSKAYA",
@@ -2207,34 +2220,34 @@ var stations = [{
   "x_position": 888,
   "y_position": 945,
   "line_id": 10,
-  "faction_id": 0
+  "faction_id": 13
 }, {
   "station_id": 126,
   "station_name": "KOZHUHOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 866,
+  "x_position": 870,
   "y_position": 925,
   "line_id": 10,
-  "faction_id": 0
+  "faction_id": 13
 }, {
   "station_id": 127,
   "station_name": "DUBROVKA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 866,
+  "x_position": 870,
   "y_position": 887,
   "line_id": 10,
-  "faction_id": 0
+  "faction_id": 30
 }, {
   "station_id": 128,
   "station_name": "KREST'YANSKAYA ZASTAVA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 866,
+  "x_position": 870,
   "y_position": 834,
   "line_id": 10,
   "faction_id": 0
@@ -2244,51 +2257,55 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 867,
+  "x_position": 870,
   "y_position": 734,
   "line_id": 10,
-  "faction_id": 0
+  "faction_id": 17
 }, {
   "station_id": 130,
   "station_name": "SRETENSKY BULVAR",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 648,
-  "y_position": 488,
+  "x_position": 668,
+  "y_position": 489,
   "line_id": 10,
-  "faction_id": 0
+  "faction_id": 27
 }, {
   "station_id": 131,
   "station_name": "TRUBNAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 608,
-  "y_position": 446,
+  "x_position": 600,
+  "y_position": 439,
   "line_id": 10,
-  "faction_id": 0
+  "faction_id": 27
 }, {
   "station_id": 132,
   "station_name": "DOSTOYEVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 607,
+  "x_position": 600,
   "y_position": 333,
   "line_id": 0,
-  "faction_id": 0
+  "faction_id": 27
 }, {
   "station_id": 133,
   "station_name": "MAR'YINA ROSCHA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 607,
+  "x_position": 600,
   "y_position": 297,
   "line_id": 10,
-  "faction_id": 0
-}, {
+  "faction_id": 27
+}, 
+
+
+
+{
   "station_id": 134,
   "station_name": "RECHNOY VOKZAL",
   "station_open": 0,
@@ -2748,8 +2765,8 @@ var factions = [{
 var features = [{
     "feature_name": "Hansa Bunker|(GO-42)",
     "feature_id": 0,
-    "x_position": 844,
-    "y_position": 690,
+    "x_position": 830,
+    "y_position": 710,
     "width": 55,
     "height": 30,
     "version_id": 3
