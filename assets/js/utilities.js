@@ -1,6 +1,12 @@
 var baseScale = 1.5;  // scale factor for map. Should never be changed programatically
 var scale=baseScale;
-var station_radius=7; // radius os station circles
+var station_radius=7; // radius of station circles
+
+// utility - is object defined?
+function isDefined(x) {
+    var undefined;
+    return x !== undefined;
+}
 
 // converts degrees of a circle into insane radians units
 function rad(deg) {
@@ -42,7 +48,7 @@ function bezier(sX,sY,c1X,c1Y,c2X,c2Y,eX,eY,canvas=1) {
 }
 
 // draw a station for a specific faction at a given point
-function station(sX,sY,faction,canvas=1,stationScale=1) {
+function station(sX,sY,factionID,symbol,canvas=1,stationScale=1) {
 	sX = scale*sX;
 	sY = scale*sY;
 
@@ -56,7 +62,12 @@ function station(sX,sY,faction,canvas=1,stationScale=1) {
 	circle(sX,sY,station_radius*scale,canvas);
 	ctx[canvas].stroke();
 
-	var fillColour = aFactions[faction][0];
+	// get faction
+	faction = findRecord(factions,"faction_id",factionID);
+	if (isDefined(faction[0])) {
+		var fillColour = faction[0]["faction_colour"];
+	} else {var fillColour="#FF0000";}
+
 	ctx[canvas].fillStyle = fillColour;
 	ctx[canvas].fill();
 
@@ -65,7 +76,7 @@ function station(sX,sY,faction,canvas=1,stationScale=1) {
 	ctx[canvas].font = 'normal 12px sans-serif';
 	ctx[canvas].textAlign = 'center';
 
-    eval("pattern_"+faction+"("+sX+","+sY+")");
+    eval("pattern_"+symbol+"("+sX+","+sY+")");
 
     // reset scale
 	scale = baseScale;
@@ -113,18 +124,25 @@ function name_station(stationID,position,sX,sY) {
 	if (searchResult.length>0) {
 
 		switch(position) {
-			case 1:  cX=7;   cY=-10; labelAlign="left";   break;
-			case 2:  cX=10;  cY=-7;  labelAlign="left";   break;
-			case 3:  cX=11;  cY=0;   labelAlign="left";   break;
-			case 4:  cX=+10; cY=+7;  labelAlign="left";   break;
-			case 5:  cX=+7;  cY=+11; labelAlign="left";   break;
-			case 6:  cX=0;   cY=15;  labelAlign="center"; break;
-			case 7:  cX=-7;  cY=+11; labelAlign="right";  break;
-			case 8:  cX=-10; cY=+7;  labelAlign="right";  break;
-			case 9:  cX=-11; cY=0;   labelAlign="right";  break;
-			case 10: cX=-10; cY=-7;  labelAlign="right";  break;
-			case 11: cX=-7;  cY=-10; labelAlign="right";  break;
-			case 12: cX=0;   cY=-11; labelAlign="center"; break;
+			case 1:    cX=7;   cY=-10; labelAlign="left";   break;
+			case 2:    cX=10;  cY=-7;  labelAlign="left";   break;
+			case 3:    cX=11;  cY=0;   labelAlign="left";   break;
+			case 4:    cX=+10; cY=+7;  labelAlign="left";   break;
+			case 5:    cX=+7;  cY=+11; labelAlign="left";   break;
+
+			case 5.5:  cX=0;   cY=15;  labelAlign="left"; break;		
+			case 6:    cX=0;   cY=15;  labelAlign="center"; break;
+			case 6.5:  cX=0;   cY=15;  labelAlign="right"; break;
+			
+			case 7:    cX=-7;  cY=+11; labelAlign="right";  break;
+			case 8:    cX=-10; cY=+7;  labelAlign="right";  break;
+			case 9:    cX=-11; cY=0;   labelAlign="right";  break;
+			case 10:   cX=-10; cY=-7;  labelAlign="right";  break;
+			case 11:   cX=-7;  cY=-10; labelAlign="right";  break;
+
+			case 11.5: cX=0;   cY=-13; labelAlign="right"; break;
+			case 12:   cX=0;   cY=-13; labelAlign="center"; break;
+			case 12.5: cX=0;   cY=-13; labelAlign="left"; break;
 		}
 
 		var stationName = searchResult[0]['station_name'];
@@ -209,82 +227,59 @@ function interchange_2(fX,fY, sX,sY, canvas=1) {
 			fX = fX*scale;	fY = fY*scale;
 			sX = sX*scale;	sY = sY*scale;
 
-
 			ctx[canvas].strokeStyle = '#000000';
 			ctx[canvas].fillStyle = '#FFFFFF';
 			ctx[canvas].lineWidth = 2*scale;
-
-			ctx[canvas].beginPath();
-			circle(fX,fY,9*scale); ctx[canvas].stroke();
-			ctx[canvas].closePath();
-			ctx[canvas].fill();
-
-			ctx[canvas].beginPath();
-			circle(sX,sY,9*scale); ctx[canvas].stroke();
-			ctx[canvas].closePath();
-			ctx[canvas].fill();
+			ctx[canvas].beginPath(); circle(fX,fY,9*scale); ctx[canvas].stroke();ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); circle(sX,sY,9*scale); ctx[canvas].stroke();ctx[canvas].closePath(); ctx[canvas].fill();
 
 			ctx[canvas].strokeStyle = '#000000';
 			ctx[canvas].lineWidth = 10*scale;
-      		ctx[canvas].beginPath();
-      		ctx[canvas].moveTo(fX,fY);
-			ctx[canvas].lineTo(sX,sY);
-			ctx[canvas].closePath();
-			ctx[canvas].stroke();
-
+      		ctx[canvas].beginPath();ctx[canvas].moveTo(fX,fY);ctx[canvas].lineTo(sX,sY);ctx[canvas].closePath();ctx[canvas].stroke();
+			
 			ctx[canvas].strokeStyle = '#FFFFFF';
 			ctx[canvas].lineWidth = 8*scale;
-      		ctx[canvas].beginPath();
-      		ctx[canvas].moveTo(fX,fY);
-			ctx[canvas].lineTo(sX,sY);
-			ctx[canvas].closePath();
-			ctx[canvas].stroke();
+      		ctx[canvas].beginPath();ctx[canvas].moveTo(fX,fY);ctx[canvas].lineTo(sX,sY);ctx[canvas].closePath();ctx[canvas].stroke();
 
 			ctx[canvas].fillStyle = '#FFFFFF';
-
-			ctx[canvas].beginPath();
-			ctx[canvas].arc(fX,fY,9*scale,0,rad(360));
-			ctx[canvas].closePath();
-			ctx[canvas].fill();
-
-			ctx[canvas].beginPath();
-			ctx[canvas].arc(sX,sY,9*scale,0,rad(360));
-			ctx[canvas].closePath();
-			ctx[canvas].fill();
+			ctx[canvas].beginPath();ctx[canvas].arc(fX,fY,9*scale,0,rad(360));ctx[canvas].closePath();ctx[canvas].fill();
+			ctx[canvas].beginPath();ctx[canvas].arc(sX,sY,9*scale,0,rad(360));ctx[canvas].closePath();ctx[canvas].fill();
 		}
-function interchange_3(fX,fY, sX,sY, tX,tY, loop) {
+function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
+
+			fX = fX*scale;	fY = fY*scale;
+			sX = sX*scale;	sY = sY*scale;
+			tX = tX*scale;	tY = tY*scale;
 
 			// Base circles
-			ctx[0].strokeStyle = '#000000';
-			ctx[0].fillStyle = '#FFFFFF';
-			ctx[0].lineWidth = 2;
-			ctx[0].beginPath(); circle(fX,fY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
-			ctx[0].beginPath(); circle(sX,sY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
-			ctx[0].beginPath(); circle(tX,tY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
+			ctx[canvas].strokeStyle = '#000000';
+			ctx[canvas].fillStyle = '#FFFFFF';
+			ctx[canvas].lineWidth = 2*scale;
+			ctx[canvas].beginPath(); circle(fX,fY,9*scale); ctx[canvas].stroke(); ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); circle(sX,sY,9*scale); ctx[canvas].stroke(); ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); circle(tX,tY,9*scale); ctx[canvas].stroke(); ctx[canvas].closePath(); ctx[canvas].fill();
 
 			// Black Connections
-			ctx[0].strokeStyle = '#000000';
-			ctx[0].lineWidth = 10;
-      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
-      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
-
-      		if (loop) ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
+			ctx[canvas].strokeStyle = '#000000';
+			ctx[canvas].lineWidth = 10*scale;		
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(fX,fY); ctx[canvas].lineTo(sX,sY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		if (loop) ctx[canvas].beginPath(); ctx[canvas].moveTo(tX,tY); ctx[canvas].lineTo(fX,fY); ctx[canvas].closePath(); ctx[canvas].stroke();
 
 			// White Connections
-			ctx[0].strokeStyle = '#FFFFFF';
-			ctx[0].lineWidth = 8;
-      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
-      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
+			ctx[canvas].strokeStyle = '#FFFFFF';
+			ctx[canvas].lineWidth = 8*scale;
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(fX,fY); ctx[canvas].lineTo(sX,sY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		if (loop) ctx[canvas].beginPath(); ctx[canvas].moveTo(tX,tY); ctx[canvas].lineTo(fX,fY); ctx[canvas].closePath(); ctx[canvas].stroke();
 
-      		if (loop) ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
-
-
-			// Circle Overlays
-			ctx[0].fillStyle = '#FFFFFF';
-			ctx[0].beginPath(); ctx[0].arc(fX,fY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
-			ctx[0].beginPath(); ctx[0].arc(sX,sY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
-			ctx[0].beginPath(); ctx[0].arc(tX,tY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+			// Circle Overlays	
+			ctx[canvas].fillStyle = '#FFFFFF';
+			ctx[canvas].beginPath(); ctx[canvas].arc(fX,fY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); ctx[canvas].arc(sX,sY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); ctx[canvas].arc(tX,tY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
 		}
+
 function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY) {
 
 			// Base circles
@@ -332,7 +327,7 @@ function drawLine(line) {
 	ctx[0].lineCap = 'round';
 	ctx[0].strokeStyle = line['line_colour'];
 	nodes = line['line_nodes'];
-	ctx[0].lineWidth = 3*scale;
+	ctx[0].lineWidth = 3.5*scale;
 
 	var undef;
 
@@ -438,40 +433,3 @@ function findRecord(source,property,value) {
 	return newDataArray;
 }
 
-// array of factions - [station background color, faction name]
-// will be rewritten into the factions object at some point
-var aFactions  = Array();
-aFactions[0]   = Array("#FFFFFF","Unexplored or No Info");
-aFactions[1]   = Array("#8C9091","Community of the Ring Stations (Hansa)");
-aFactions[2]   = Array("#FF0000","Red Line");
-aFactions[3]   = Array("#0080C1","Polis");
-aFactions[4]   = Array("#0080C1","Arbat Confederation");
-aFactions[5]   = Array("#EFA508","VDNKh Commonwealth");
-aFactions[6]   = Array("#A53E00","1905 Confederation");
-aFactions[7]   = Array("#2E2A26","Fourth Reich");
-aFactions[8]   = Array("#4DC11A","University/Emerald City (Rumoured)");
-aFactions[9]   = Array("#C7DC23","Collective Farms and Factories");
-aFactions[10]  = Array("#67C1D9","Baumansky Alliance");
-aFactions[11]  = Array("#1D58FF","Pervomay Republic");
-aFactions[12]  = Array("#FFFF08","Kalinin Confederation");
-aFactions[13]  = Array("#B000BF","Pechatniki Confederation");
-aFactions[14]  = Array("#00CBFF","Yasenevo Confederation");
-aFactions[15]  = Array("#2E2A26","Technicians");
-aFactions[16]  = Array("#323232","Commonwealth of Human Mutants");
-aFactions[17]  = Array("#297EFF","Independent Station");
-aFactions[18]  = Array("#FFFFFF","Gangsters"); // hearts
-aFactions[19]  = Array("#FFFFFF","Gangsters"); // clubs
-aFactions[20]  = Array("#FFFFFF","Gangsters"); // diamonds
-aFactions[21]  = Array("#FFFFFF","Gangsters"); // spades
-aFactions[22]  = Array("#FFFFFF","Gangsters"); // stars
-aFactions[23]  = Array("#FF0000","Trotskyists");
-aFactions[24]  = Array("#8C9091","Anarchists");
-aFactions[25]  = Array("#FF6500","Hare Krishnas");
-aFactions[26]  = Array("#B2B2B2","Transit Station");
-aFactions[27]  = Array("#727272","Destroyed");
-aFactions[28]  = Array("#B2B2B2","Abandoned");
-aFactions[29]  = Array("#FFFF08","Irradiated");
-aFactions[30]  = Array("#000000","Hazardous");
-aFactions[31]  = Array("#323232","Occupied by Mutants");
-aFactions[32]  = Array("#00BE00","Savage Cannibals of the Great Worm");
-aFactions[33]  = Array("#000000","Satanists (Locations Conjectured)");

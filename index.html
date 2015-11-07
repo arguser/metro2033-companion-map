@@ -102,7 +102,7 @@
   <script src="app/services/StationService.js"></script>
   <script type="text/javascript" src="assets/js/utilities.js"></script>
   <script type="text/javascript" src="assets/js/symbols.js"></script>
-  <script type="text/javascript" src="assets/js/stations.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/stations.js"></script> -->
 
   <script type="text/javascript">
     var animHolder;
@@ -148,12 +148,16 @@
       interchange_2(683, 472, 698, 489); // Chistye Prudy
       interchange_2(412, 778, 388, 778); // Park Kultry
       interchange_2(762, 425, 762, 450); // Komsomol
+      interchange_3(800,588, 800,620, 820,604); // Kursk
+      interchange_2(708,662, 683,662); // Kitay Gorod
+      interchange_2(390,410, 390,435); // Belarus
+      interchange_2(890,766, 870,745); // Rimskaya    
 
       // draw stations
       for (i = 0; i < stations.length; i++) {
         ctx[2].clearRect(0, 0, 1800, 2000);
         thisStation = stations[i];
-        station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id']);
+        station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id'], thisStation['symbol_id']);
 
         // create HTML Object for station
         // clickable_station(thisStation['x_position'], thisStation['y_position'], thisStation['station_id']);
