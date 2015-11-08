@@ -216,13 +216,14 @@ function pattern_14(sX,sY,canvas=1) {	// Arbat Confederation
 }
 
 function pattern_15(sX,sY,canvas=1) { // Pervomay Republic
+
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].strokeStyle = '#FFFF00';
 	ctx[canvas].fillStyle = '#FFFF00';
 	ctx[canvas].lineWidth = 1*scale;
 
 	ctx[canvas].beginPath();
-	ctx[canvas].moveTo(sX,sY-5);
+	ctx[canvas].moveTo(sX,sY-5*scale);
 	ctx[canvas].lineTo(sX+1*scale,sY-4*scale);
 	ctx[canvas].lineTo(sX+2*scale,sY-4*scale);
 	ctx[canvas].lineTo(sX+3*scale,sY-5*scale);
@@ -230,18 +231,12 @@ function pattern_15(sX,sY,canvas=1) { // Pervomay Republic
 	ctx[canvas].lineTo(sX+4*scale,sY-2*scale);	
 	ctx[canvas].quadraticCurveTo(sX+5*scale,sY+2*scale, sX+4*scale,sY+4*scale);
 	ctx[canvas].quadraticCurveTo(sX+2*scale,sY+4*scale, sX,sY+6*scale);
-	ctx[canvas].closePath();
-	ctx[canvas].fill();
-
-	ctx[canvas].beginPath();
-	ctx[canvas].moveTo(sX,sY-5*scale);
-	ctx[canvas].lineTo(sX-1*scale,sY-4*scale);
-	ctx[canvas].lineTo(sX-2*scale,sY-4*scale);
-	ctx[canvas].lineTo(sX-3*scale,sY-5*scale);
+	ctx[canvas].quadraticCurveTo(sX-2*scale,sY+4*scale, sX-4*scale,sY+4*scale);
+	ctx[canvas].quadraticCurveTo(sX-5*scale,sY+2*scale, sX-4*scale,sY-2*scale);
 	ctx[canvas].lineTo(sX-5*scale,sY-3*scale);
-	ctx[canvas].lineTo(sX-4*scale,sY-2*scale);	
-	ctx[canvas].quadraticCurveTo(sX-5*scale,sY+2*scale, sX-4*scale,sY+4*scale);
-	ctx[canvas].quadraticCurveTo(sX-2*scale,sY+4*scale, sX,sY+6*scale);
+	ctx[canvas].lineTo(sX-3*scale,sY-5*scale);
+	ctx[canvas].lineTo(sX-2*scale,sY-4*scale);
+	ctx[canvas].lineTo(sX-1*scale,sY-4*scale);
 	ctx[canvas].closePath();
 	ctx[canvas].fill();
 

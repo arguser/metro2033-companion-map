@@ -221,7 +221,7 @@ function draw_features() {
 		}
 
 
-// interchange code - will need to be checked through and probably rewritten
+// interchange code
 function interchange_2(fX,fY, sX,sY, canvas=1) {
 
 			fX = fX*scale;	fY = fY*scale;
@@ -280,43 +280,48 @@ function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
 			ctx[canvas].beginPath(); ctx[canvas].arc(tX,tY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
 		}
 
-function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY) {
+function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY, canvas=1) {
+
+			fX = fX*scale;	fY = fY*scale;
+			sX = sX*scale;	sY = sY*scale;
+			tX = tX*scale;	tY = tY*scale;
+			rX = rX*scale;	rY = rY*scale;
 
 			// Base circles
-			ctx[0].strokeStyle = '#000000';
-			ctx[0].fillStyle = '#FFFFFF';
-			ctx[0].lineWidth = 2;
-			ctx[0].beginPath(); circle(fX,fY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
-			ctx[0].beginPath(); circle(sX,sY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
-			ctx[0].beginPath(); circle(tX,tY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
-			ctx[0].beginPath(); circle(rX,rY,9); ctx[0].closePath(); ctx[0].stroke(); ctx[0].fill();
+			ctx[canvas].strokeStyle = '#000000';
+			ctx[canvas].fillStyle = '#FFFFFF';
+			ctx[canvas].lineWidth = 2*scale;
+			ctx[canvas].beginPath(); circle(fX,fY,9*scale); ctx[canvas].closePath(); ctx[canvas].stroke(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); circle(sX,sY,9*scale); ctx[canvas].closePath(); ctx[canvas].stroke(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); circle(tX,tY,9*scale); ctx[canvas].closePath(); ctx[canvas].stroke(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); circle(rX,rY,9*scale); ctx[canvas].closePath(); ctx[canvas].stroke(); ctx[canvas].fill();
 
 			// Black Connections
-			ctx[0].strokeStyle = '#000000';
-			ctx[0].lineWidth = 8;
-      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
-      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
-      		ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(rX,rY); ctx[0].closePath(); ctx[0].stroke();
-			ctx[0].beginPath(); ctx[0].moveTo(rX,rY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
+			ctx[canvas].strokeStyle = '#000000';
+			ctx[canvas].lineWidth = 8*scale;
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(fX,fY); ctx[canvas].lineTo(sX,sY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(tX,tY); ctx[canvas].lineTo(rX,rY); ctx[canvas].closePath(); ctx[canvas].stroke();
+			ctx[canvas].beginPath(); ctx[canvas].moveTo(rX,rY); ctx[canvas].lineTo(fX,fY); ctx[canvas].closePath(); ctx[canvas].stroke();
 
-			ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
+			ctx[canvas].beginPath(); ctx[canvas].moveTo(fX,fY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
 
 			// White Connections
-			ctx[0].strokeStyle = '#FFFFFF';
-			ctx[0].lineWidth = 6;
-      		ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(sX,sY); ctx[0].closePath(); ctx[0].stroke();
-      		ctx[0].beginPath(); ctx[0].moveTo(sX,sY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
-      		ctx[0].beginPath(); ctx[0].moveTo(tX,tY); ctx[0].lineTo(rX,rY); ctx[0].closePath(); ctx[0].stroke();
-      		ctx[0].beginPath(); ctx[0].moveTo(rX,rY); ctx[0].lineTo(fX,fY); ctx[0].closePath(); ctx[0].stroke();
+			ctx[canvas].strokeStyle = '#FFFFFF';
+			ctx[canvas].lineWidth = 6*scale;
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(fX,fY); ctx[canvas].lineTo(sX,sY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(tX,tY); ctx[canvas].lineTo(rX,rY); ctx[canvas].closePath(); ctx[canvas].stroke();
+      		ctx[canvas].beginPath(); ctx[canvas].moveTo(rX,rY); ctx[canvas].lineTo(fX,fY); ctx[canvas].closePath(); ctx[canvas].stroke();
 
-			ctx[0].beginPath(); ctx[0].moveTo(fX,fY); ctx[0].lineTo(tX,tY); ctx[0].closePath(); ctx[0].stroke();
+			ctx[canvas].beginPath(); ctx[canvas].moveTo(fX,fY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
 
 			// Circle Overlays
-			ctx[0].fillStyle = '#FFFFFF';
-			ctx[0].beginPath(); ctx[0].arc(fX,fY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
-			ctx[0].beginPath(); ctx[0].arc(sX,sY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
-			ctx[0].beginPath(); ctx[0].arc(tX,tY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
-			ctx[0].beginPath(); ctx[0].arc(rX,rY,9,0,rad(360)); ctx[0].closePath(); ctx[0].fill();
+			ctx[canvas].fillStyle = '#FFFFFF';
+			ctx[canvas].beginPath(); ctx[canvas].arc(fX,fY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); ctx[canvas].arc(sX,sY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); ctx[canvas].arc(tX,tY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
+			ctx[canvas].beginPath(); ctx[canvas].arc(rX,rY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
 }
 
 // draw a rail line from coordinates
