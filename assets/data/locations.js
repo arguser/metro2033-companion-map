@@ -43,8 +43,12 @@ var lines = [{
     [0, 598,621], // Teatral
     [0, 572,763],
     [0, 592,783], // Novokuznetskaya
-    [0, 676,861]
-
+    [0, 676,861], // Pavelets
+    [1, 739,924],
+    [0, 749,944],
+    [0, 749,1080],
+    [0, 847,1181],
+    [0, 847,1210]
   ],
   "line_colour": "#2dcb41"
 },
@@ -190,13 +194,19 @@ var lines = [{
     [0, 880,935],
     [0, 906,961],
     [0, 906,1051],
+    [0, 907,1121],
+    [0, 847,1181]
   ],
   "line_colour": "#a0bd3d"
-}, {
+}, 
+{ // Teal Line
   "line_id": 11,
   "line_number": 11,
   "line_name": "Kakhovskaya",
-  "line_nodes": [],
+  "line_nodes": [
+    [0, 602,1030],
+    [0, 749,1030]
+  ],
   "line_colour": "#65ddc0"
 }, 
 {
@@ -736,6 +746,21 @@ var station_name = [
   {"station_id": 143, "name_set": 2, "station_name": "OKHOTNY ROW"},
 
 /* ******* */
+  {"station_id": 150, "name_set": 0, "station_name": "KASHIRSKAYA"},
+  {"station_id": 150, "name_set": 1, "station_name": "Каширская"},
+  {"station_id": 150, "name_set": 2, "station_name": "KASHIRA"}, 
+
+  {"station_id": 151, "name_set": 0, "station_name": "KOLOMENSKAYA"},
+  {"station_id": 151, "name_set": 1, "station_name": "Коло́менская"},
+  {"station_id": 151, "name_set": 2, "station_name": "KOLOMENSKOE"}, 
+
+  {"station_id": 152, "name_set": 0, "station_name": "AVTOZAVODSKAYA"},
+  {"station_id": 152, "name_set": 1, "station_name": "Автозаво́дская"},
+  {"station_id": 152, "name_set": 2, "station_name": "AVTOZAVOD"}, 
+
+  {"station_id": 153, "name_set": 0, "station_name": "PAVELETSKAYA"},
+  {"station_id": 153, "name_set": 1, "station_name": "Павелецкая"},
+  {"station_id": 153, "name_set": 2, "station_name": "PAVELETS"}, 
 
   {"station_id": 154, "name_set": 0, "station_name": "PAVELETSKAYA"},
   {"station_id": 154, "name_set": 1, "station_name": "Павеле́цкая"},
@@ -743,16 +768,63 @@ var station_name = [
 
 /* ******* */
 
+  {"station_id": 166, "name_set": 0, "station_name": "TEKHNOPARK"},
+  {"station_id": 166, "name_set": 1, "station_name": "Технопарк"},
+  {"station_id": 166, "name_set": 2, "station_name": "TECHNOPARK"},
+
+  {"station_id": 167, "name_set": 0, "station_name": "KAKHOVSKAYA"},
+  {"station_id": 167, "name_set": 1, "station_name": "Каховская"},
+  {"station_id": 167, "name_set": 2, "station_name": "KAKHOVSKA"},
+
+/* ******* */
+
+  {"station_id": 169, "name_set": 0, "station_name": "VARSHAVSKAYA"},
+  {"station_id": 169, "name_set": 1, "station_name": "Варшавская"},
+  {"station_id": 169, "name_set": 2, "station_name": "WARSAW"},
+
+  /* not required
+  {"station_id": 170, "name_set": 0, "station_name": "KASHIRSKAYA"},
+  {"station_id": 170, "name_set": 1, "station_name": "Каширская"},
+  {"station_id": 170, "name_set": 2, "station_name": "KASHIRA"}, 
+  */
+
   /* not required
   { "station_id": 171, "name_set": 0, "station_name": "PARK KULTURY" },
   { "station_id": 171, "name_set": 1, "station_name": "Парк Культу́ры" },
   { "station_id": 171, "name_set": 2, "station_name": "CULTURE PARK" },
   */
 
-/* ******* */
   {"station_id": 172, "name_set": 0, "station_name": "NOVOKOSINO"},
   {"station_id": 172, "name_set": 1, "station_name": "Новокосино"},
   {"station_id": 172, "name_set": 2, "station_name": "NOVOKOSINO"},
+
+  {"station_id": 173, "name_set": 0, "station_name": "BITTSEVSKY PARK"},
+  {"station_id": 173, "name_set": 1, "station_name": "Би́тцевский парк"},
+  {"station_id": 173, "name_set": 2, "station_name": "BITTSEVSKI PARK"},
+
+  {"station_id": 174, "name_set": 0, "station_name": "LESOPARKOVAYA"},
+  {"station_id": 174, "name_set": 1, "station_name": "Лесопа́рковая"},
+  {"station_id": 174, "name_set": 2, "station_name": "PARKS"},
+
+  {"station_id": 175, "name_set": 0, "station_name": "ULITSA STAROKACHALOVSKAYA"},
+  {"station_id": 175, "name_set": 1, "station_name": "У́лица Ста́рокачаловская"},
+  {"station_id": 175, "name_set": 2, "station_name": "STAROKACHALOV ST."},
+
+  {"station_id": 176, "name_set": 0, "station_name": "ULITSA SKOBELEVSKAYA"},
+  {"station_id": 176, "name_set": 1, "station_name": "У́лица Ско́белевская"},
+  {"station_id": 176, "name_set": 2, "station_name": "SKOBELEV ST."},
+
+  {"station_id": 177, "name_set": 0, "station_name": "BULVAR ADMIRALA USHAKOVA"},
+  {"station_id": 177, "name_set": 1, "station_name": "Бульва́р Адмира́ла Ушако́ва"},
+  {"station_id": 177, "name_set": 2, "station_name": "ADMIRAL USHAKOV BLVD."},
+
+  {"station_id": 178, "name_set": 0, "station_name": "ULITSA GORCHAKOVA"},
+  {"station_id": 178, "name_set": 1, "station_name": "У́лица Горчако́ва"},
+  {"station_id": 178, "name_set": 2, "station_name": "GORCHAKOV ST."},
+
+  {"station_id": 179, "name_set": 0, "station_name": "BUNINSKAYA ALLEYA"},
+  {"station_id": 179, "name_set": 1, "station_name": "Бу́нинская алле́я"},
+  {"station_id": 179, "name_set": 2, "station_name": "BUNIN ALLEY"},
 
 ]
 
@@ -1006,7 +1078,7 @@ var stations = [{
   "station_name": "CHERTANOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
+  "label_point": 9,
   "x_position": 578,
   "y_position": 1060,
   "line_id": 9,
@@ -2148,7 +2220,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 906,
-  "y_position": 1051,
+  "y_position": 1080,
   "line_id": 10,
   "faction_id": 1,
   "symbol_id": 1
@@ -2159,7 +2231,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 906,
-  "y_position": 1021,
+  "y_position": 1040,
   "line_id": 10,
   "faction_id": 1,
   "symbol_id": 1
@@ -2170,7 +2242,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 906,
-  "y_position": 991,
+  "y_position": 1000,
   "line_id": 10,
   "faction_id": 25,
   "symbol_id": 25
@@ -2416,8 +2488,8 @@ var stations = [{
   "x_position": 847,
   "y_position": 1181,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 146,
   "station_name": "DOMODEDOVSKAYA",
@@ -2427,8 +2499,8 @@ var stations = [{
   "x_position": 823,
   "y_position": 1155,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 147,
   "station_name": "OREHOVO",
@@ -2438,8 +2510,8 @@ var stations = [{
   "x_position": 799,
   "y_position": 1131,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 148,
   "station_name": "TSARITSYNO",
@@ -2449,19 +2521,19 @@ var stations = [{
   "x_position": 773,
   "y_position": 1105,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 149,
   "station_name": "KANTEMIROVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 748,
+  "x_position": 749,
   "y_position": 1080,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 150,
   "station_name": "KASHIRSKAYA",
@@ -2469,10 +2541,10 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 749,
-  "y_position": 1043,
+  "y_position": 1030,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 3,
+  "symbol_id": 3
 }, {
   "station_id": 151,
   "station_name": "KOLOMENSKAYA",
@@ -2480,21 +2552,21 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 749,
-  "y_position": 1008,
+  "y_position": 1000,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 3,
+  "symbol_id": 3
 }, {
   "station_id": 152,
   "station_name": "AVTOZAVODSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
-  "x_position": 749,
-  "y_position": 936,
+  "label_point": 9,
+  "x_position": 734,
+  "y_position": 919,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 21,
+  "symbol_id": 21
 }, {
   "station_id": 153,
   "station_name": "PAVELETSKAYA",
@@ -2504,19 +2576,19 @@ var stations = [{
   "x_position": 676,
   "y_position": 861,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 4,
+  "symbol_id": 4
 }, {
   "station_id": 154,
   "station_name": "PAVELETSKAYA (HANSA)",
-  "x_position": 655,
-  "y_position": 842,
+  "x_position": 676,
+  "y_position": 834,
   "line_id": 5,
   "faction_id": 5,
   "version_id": 3,
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 4,
+  "label_point": 3,
   "symbol_id": 5
 }, {
   "station_id": 155,
@@ -2639,24 +2711,18 @@ var stations = [{
   "line_id": 4,
   "faction_id": 0,
   "symbol_id": 0
-},
-
-/* This station has been doubled up as id 141
- {
+}, {
   "station_id": 166,
-  "station_name": "BELORUSSKAYA",
+  "station_name": "TEKHNOPARK",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 398,
-  "y_position": 430,
+  "x_position": 749,
+  "y_position": 960,
   "line_id": 2,
-  "faction_id": 0,
-  "symbol_id": 0
-},
-
-*/
- {
+  "faction_id": 2,
+  "symbol_id": 2
+}, {
   "station_id": 167,
   "station_name": "KAKHOVSKAYA",
   "x_position": 602,
@@ -2665,7 +2731,7 @@ var stations = [{
   "version_id": 3,
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 1,
+  "label_point": 12.5,
   "faction_id": 23,
   "symbol_id": 23
 }, {
@@ -2673,9 +2739,9 @@ var stations = [{
   "station_name": "VARSHAVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
+  "label_point": 6,
   "x_position": 664,
-  "y_position": 1043,
+  "y_position": 1030,
   "line_id": 11,
   "faction_id": 23,
   "symbol_id": 23
@@ -2685,11 +2751,11 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 721,
-  "y_position": 1043,
+  "x_position": 725,
+  "y_position": 1030,
   "line_id": 11,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 3,
+  "symbol_id": 3
 }, {
   "station_id": 171,
   "station_name": "PARK KULTURY",
@@ -2714,8 +2780,7 @@ var stations = [{
   "label_point": 12,
   "faction_id": 16,
   "symbol_id": 16
-},
-{
+}, {
   "station_id": 173,
   "station_name": "BITTSEVSKY PARK",
   "x_position": 435,
@@ -2724,10 +2789,10 @@ var stations = [{
   "version_id": 3,
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 1,
+  "label_point": 6,
   "faction_id": 1,
   "symbol_id": 1
-},{
+}, {
   "station_id": 174,
   "station_name": "LESOPARKOVAYA",
   "x_position": 505,
@@ -2736,7 +2801,7 @@ var stations = [{
   "version_id": 3,
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 6,
+  "label_point": 12,
   "faction_id": 1,
   "symbol_id": 1
 },{
@@ -2744,7 +2809,7 @@ var stations = [{
   "station_name": "ULITSA STAROKACHALOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
+  "label_point": 9,
   "x_position": 584,
   "y_position": 1210,
   "line_id": 12,
@@ -2784,7 +2849,7 @@ var stations = [{
   "faction_id": 2,
   "symbol_id": 2
 },{
-  "station_id": 178,
+  "station_id": 179,
   "station_name": "BUNINSKAYA ALLEYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
@@ -2794,8 +2859,51 @@ var stations = [{
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2
-}
-
+}, {
+  "station_id": 180,
+  "station_name": "ALMA-ATINSKAYA",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 847,
+  "y_position": 1210,
+  "line_id": 2,
+  "faction_id": 1,
+  "symbol_id": 1
+}, {
+  "station_id": 181,
+  "station_name": "ZYABLIKOVO",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 867,
+  "y_position": 1161,
+  "line_id": 2,
+  "faction_id": 1,
+  "symbol_id": 1
+}, {
+  "station_id": 182,
+  "station_name": "SHIPILOVSKAYA",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 887,
+  "y_position": 1141,
+  "line_id": 2,
+  "faction_id": 1,
+  "symbol_id": 1
+}, {
+  "station_id": 183,
+  "station_name": "BORISOVO",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 907,
+  "y_position": 1121,
+  "line_id": 2,
+  "faction_id": 1,
+  "symbol_id": 1
+},
 
 
 
@@ -2837,27 +2945,27 @@ var factions = [{
 }, {
   "faction_id": 5,
   "faction_name": "Community of the Ring Stations (Hansa)",
-  "faction_description": "This faction is a collection of stations that occupy the Koltsevaya Ring Line of the Metro. Formed during the early days of the Metro when Central Metro Command fell, Hansa is the most powerful faction in the Metro. Their influence stretches in all directions due to their line being impossible to bypass, meaning Hansa grew incredibly rich. Although their security forces are well equipped, they rarely seek war, preferring to use economic sanctions to suppress their neighbours. They also protect a number of satellite factions, in return for food, electricity and so on. Their leader is the mysterious Prime Minister Rusakov.",
+  "faction_description": "This faction is a collection of stations that occupy the Koltsevaya Ring Line of the Metro. Formed during the early days of the Metro, Hansa is the most powerful faction in the Metro. Their influence stretches in all directions due to their line being impossible to bypass, meaning Hansa grew incredibly rich. Although their security forces are well equipped, they rarely seek war, preferring to use economic sanctions to suppress their neighbours. They also protect a number of satellite factions, in return for food, electricity and so on. Their leader is the mysterious Prime Minister Rusakov. The official name of the faction is the Community of the Ring Line Stations - the almost universal nickname of 'Hansa' is a reference to the Hanseatic trading league of early modern Europe.",
   "faction_colour": "#8C9091"
 }, {
   "faction_id": 6,
   "faction_name": "Red Line",
-  "faction_description": "The Red Line are a politically far-left faction who emulate the former Soviet-Union, particularly that of Stalin's era. Occupying the Sokolnicheskaya Line (minus the two stations of the Ring and the Lenin Libray), the Red Line are a powerful faction. Although not as openly hostile as their enemies, the Fourth Reich, they are nonetheless an oppressive society, with many executions and imprisonments. Their huge (relative to the rest of the Metro) population makes them a major consumer of food and other resources, despite this hunger is common. Initially the Red Line intended to convert the entire Metro to communism, but after a costly war with the Hansa and the Arbat Confederation they settled on their current borders. While previously at war with the Neo-Nazis of the Fourth Reich they are currently limiting themselves to supporting freelance revolutionary brigades that fight the Nazis unofficially. The leader of the red line is the notably harsh General Secretary Moskvin.",
+  "faction_description": "The Red Line are a politically far-left faction who emulate the former Soviet-Union, particularly that of Stalin's era. Occupying the Sokolnicheskaya Line (minus the two stations of the Ring and the Lenin Libray), the Red Line are a powerful faction. Although not as openly hostile as their enemies, the Fourth Reich, they are nonetheless an oppressive society, with many executions and imprisonments. Their huge (relative to the rest of the Metro) population makes them a major consumer of food and other resources, despite this hunger is common. Initially the Red Line intended to convert the entire Metro to communism, but after a costly war with Hansa and the Arbat Confederation they settled on their current borders. While previously at war with the Neo-Nazis of the Fourth Reich they are currently limiting themselves to supporting freelance revolutionary brigades that fight the Nazis unofficially. The leader of the red line is the notably harsh General Secretary Moskvin.",
   "faction_colour": "#FF0000"
 }, {
   "faction_id": 7,
   "faction_name": "Polis",
-  "faction_description": "Occupying the Arbatskaya, Alexandrovsky Sad, Biblioteka Im Lenina and Borovitskaya stations, Polis is the beacon of light in the post-apocalyptic Metro. Created by surving members of the Russian government, military, and police, and staff from the Lenin Library, Polis is the faction closest to pre-war life, with electric lighting and relatively comfortable living conditions. Basing their society on the Indian caste system, they are divided into the Brahmin (researchers and keepers of knowledge), the Kshatriya (military), the Vashiya (merchants) and the Shudra (servants). Members of each caste are tattooed for easy identification. The castes often vye for control of the station, with the Kshatriya recently taking power from the Brahmin, a fact that still rankles with the researchers. Polis actively seeks to preserve as much of the old world as possible and frequently send Stalkers to the Library on the surface to hunt for pre-war books that they then distribute to the entire Metro.",
+  "faction_description": "Occupying the Arbatskaya, Alexandrovsky Sad, Biblioteka Im Lenina and Borovitskaya stations, Polis is the beacon of light in the post-apocalyptic Metro. Created by surving members of the Russian government, military, and police, and staff from the Lenin Library, Polis is the faction closest to pre-war life, with electric lighting and relatively comfortable living conditions. Basing their society on the Indian caste system, they are divided into the Brahmin (researchers and keepers of knowledge), the Kshatriya (military), the Vashiya (merchants) and the Shudra (servants). Members of each caste are tattooed for easy identification. The castes often vye for control of the station, with the Kshatriya recently taking power from the Brahmin, a fact that still rankles with the researchers. Polis actively seeks to preserve as much of the old world as possible and frequently sends Stalkers to the vast Library on the surface to hunt for pre-war books that they then distribute to the entire Metro.",
   "faction_colour": "#0080C1"
 }, {
   "faction_id": 8,
   "faction_name": "Fourth Reich",
-  "faction_description": "A politically far right neo-Nazi faction who embrace many of the ideals of World War II Nazi Germany. Their leader, the Führer, enforces a policy of oppression against all those who are considered 'inferior' which includes people who have been mutated by radiation. They are based at the triple station of Tverskaya-Chekhovskaya-Pushkinskaya but have ambitions for expansion. They are in a state of perpetual war with their political opposites, the Red Line, and are violently prejudiced against the Metro's Caucasian population.",
+  "faction_description": "A politically far right neo-Nazi faction who embrace many of the ideals of World War II Nazi Germany. Their leader, the Führer, enforces a policy of oppression against all those who are considered 'inferior', in particular non-ethnic Russians from the Caucasus regions who make up a substantial part of the Metro's population. The Fourth Reich are based at the triple station of Tverskaya-Chekhovskaya-Pushkinskaya but have ambitions for expansion. They are often at war with their ideological opposites on the Red Line.",
   "faction_colour": "#2E2A26"
 }, {
   "faction_id": 9,
   "faction_name": "VDNKh Commonwealth",
-  "faction_description": "One of the youngest factions in the Metro, the VDNKh Commonwealth is a recent alliance between VDNKh, Alexeyevskaya and Rizhskaya to monopolise VDNKh's tea production and prevent annexation by Hansa. A strong faction, with schools, a library and a decent security force, the VDNKh Commonwealth will likely grow into a powerful faction.",
+  "faction_description": "One of the youngest factions in the Metro, the VDNKh Commonwealth is a recent alliance between VDNKh, Alexeyevskaya and Rizhskaya to monopolise VDNKh's tea production and prevent annexation by Hansa. Already a strong faction, with schools, a library and a decent security force, the VDNKh Commonwealth has the potential to grow into a major player in the Metro.",
   "faction_colour": "#EFA508"
 }, {
   "faction_id": 10,
@@ -2867,7 +2975,7 @@ var factions = [{
 }, {
   "faction_id": 11,
   "faction_name": "University/Emerald City (Rumoured)",
-  "faction_description": "A rumoured colony of scientists and academics centered around the old Moscow University. Rumours about the Emerald City are legion, but no proof of their existence has ever been produced.",
+  "faction_description": "Rumours of a vast secret bunker beneath the Moscow State University existed even before the war. After the bombs fell the stories evolved into tales of a secret civilisation of scientists and academics, working together to preserve knowledge and culture, and quietly observing the greater Metro. No convincing evidence of the Emerald City has ever been produced, although some point out that without electricty to support the freezing plant the soft soil beneath the university site should have melted, tumbling the buildings into the river - something Stalkers state has not happened.",
   "faction_colour": "#4DC11A"
 }, {
   "faction_id": 12,
@@ -2882,7 +2990,7 @@ var factions = [{
 }, {
   "faction_id": 14,
   "faction_name": "Arbat Confederation",
-  "faction_description": "Another small faction, occupying Kievskaya and its close neighbours. They are a Capitalist society, with a large number of Caucasians. Although they were previously a strong faction, their role in the Hansa - Red Line War reduced them to another Hansa satellite.",
+  "faction_description": "Another small faction, occupying Kievskaya and its close neighbours. They are a capitalist society, with a large number of Caucasians. Although they were previously a strong faction, their role in the Hansa - Red Line War reduced them to another Hansa satellite.",
   "faction_colour": "#0080C1"
 }, {
   "faction_id": 15,
