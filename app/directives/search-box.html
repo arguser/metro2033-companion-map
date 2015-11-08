@@ -1,0 +1,24 @@
+<div id="omnibox" class="vasquette-margin-enabled">
+    <div class="searchbox-hamburger-container">
+      <md-button aria-label="Settings" class="md-icon-button md-primary" ng-click="map.toggleOptionPanel()">
+        <md-icon md-font-icon="material-icons">menu</md-icon>
+      </md-button>
+    </div>
+    <div id="searchbox" class="searchbox searchbox-shadow">
+      <form id="searchbox_form" class="initial-searchbox-wrapper" ng-submit="$event.preventDefault()">
+        <md-autocomplete  md-input-id="searchboxinput" md-item-text="item.display.station_name" md-items="item in map.querySearch(map.searchText)" md-min-length="0" md-no-cache="map.noCache" md-search-text-change="map.searchTextChange(map.searchText)" md-search-text="map.searchText" md-selected-item-change="map.selectedItemChange(item)" md-selected-item="map.selectedItem" ng-disabled="map.isDisabled" role="listbox">
+          <md-item-template>
+            <span md-highlight-flags="^i" md-highlight-text="map.searchText">{{item.display.station_name}}</span>
+          </md-item-template>
+          <md-not-found>
+            No station matching "{{map.searchText}}" were found.
+          </md-not-found>
+        </md-autocomplete>
+      </form>
+      <div class="searchbox-searchbutton-container">
+        <md-button aria-label="Search" class="md-icon-button md-primary">
+          <md-icon md-font-icon="material-icons">search</md-icon>
+        </md-button>
+      </div>
+    </div>
+</div>

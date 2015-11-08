@@ -15,55 +15,29 @@
   <link href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- App styles -->
   <link href="assets/css/app.css" rel="stylesheet">
 </head>
 
-<body onload="drawMap()">
-  <div ng-controller="MapController as map" layout="column">
-    <div id="toolbar" layout="column" flex="20" ng-class="{'sarasa': !map.toggle}">
-      <md-content layout="row">
-        <form ng-submit="$event.preventDefault()" class="form-search" ng-show="map.toggled">
-          <md-autocomplete id="omnibox" md-floating-label="Station" md-item-text="item.display.station_name" md-items="item in map.querySearch(map.searchText)" md-min-length="0" md-no-cache="map.noCache" md-search-text-change="map.searchTextChange(map.searchText)"
-          md-search-text="map.searchText" md-selected-item-change="map.selectedItemChange(item)" md-selected-item="map.selectedItem" ng-disabled="map.isDisabled" role="listbox">
-            <md-item-template>
-              <span md-highlight-flags="^i" md-highlight-text="map.searchText">{{item.display.station_name}}</span>
-            </md-item-template>
-            <md-not-found>
-              No station matching "{{map.searchText}}" were found.
-            </md-not-found>
-          </md-autocomplete>
-        </form>
-      </md-content>
-      <div class="panel-toggle-button" ng-click="map.togglePanel()" ng-class="{'panel-toggle-button-hidden': !map.toggle}" ng-show="map.station != null"></div>
-      <div class="panel" ng-show="map.station != null && map.toggle" layout="column" data-ng-animate="{enter: 'ng-enter'}" flex="100">
-        <station-image flex="35"></station-image>
-        <station-name></station-name>
-        <md-tabs class="md-accent" md-selected="self.selectedIndex" layout="column" flex="100" md-stretch-tabs="auto">
-          <md-tab id="station-tab" ng-disabled="map.station.station_description == ''">
-            <md-tab-label>Description</md-tab-label>
-            <md-tab-body>
-              <station-description></station-description>
-            </md-tab-body>
-          </md-tab>
-          <md-tab id="faction-tab" ng-disabled="map.faction == false">
-            <md-tab-label>Faction</md-tab-label>
-            <md-tab-body>
-              <faction-description></faction-description>
-            </md-tab-body>
-          </md-tab>
-        </md-tabs>
+<body onload="drawMap()" class="screen-mode">
+  <div ng-controller="MapController as map" layout="column" ng-class="{'pane-collapsed-mode': map.toggled}" id="app-container">
+
+    <search-box class="omnibox-cards-transformations"></search-box>
+    <information-panel></information-panel>
+
+    <div id="scene">
+      <div id="canvasHolder" class="widget-scene">
+        <canvas id="lineCanvas" class="metromap widget-scene-canvas" width="1800" height="2000"></canvas>
+        <canvas id="stationCanvas" class="metromap widget-scene-canvas" width="1800" height="2000"></canvas>
+        <canvas id="labelCanvas" class="metromap widget-scene-canvas" width="1800" height="2000"></canvas>
+        <canvas id="effectCanvas" class="metromap widget-scene-canvas" width="1800" height="2000"></canvas>
+        <a class="station_link" ng-repeat="station in map.stations" ng-click="map.highlight_stations(station)" style="top: {{(1.5 * station.display.y_position) - ((7+1)*1.5)}}px; left: {{(1.5 * station.display.x_position) - ((7+1)*1.5)}}px;">
+        </a>
       </div>
     </div>
-    <div id="canvasHolder" flex="80">
-      <canvas id="lineCanvas" class="metromap" width="1800" height="2000"></canvas>
-      <canvas id="stationCanvas" class="metromap" width="1800" height="2000"></canvas>
-      <canvas id="labelCanvas" class="metromap" width="1800" height="2000"></canvas>
-      <canvas id="effectCanvas" class="metromap" width="1800" height="2000"></canvas>
-      <a class="station_link" ng-repeat="station in map.stations" ng-click="map.highlight_stations(station)" style="top: {{(1.5 * station.display.y_position) - ((7+1)*1.5)}}px; left: {{(1.5 * station.display.x_position) - ((7+1)*1.5)}}px;">
-      </a>
-    </div>
+
+    <options-panel></options-panel>
   </div>
   <!-- <div class="map" layout="row" flex="80">
         <canvas id="map">

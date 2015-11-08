@@ -1,0 +1,28 @@
+<div id="pane">
+  <div class="widget-pane" layout="column" ng-class="{'widget-pane-visible': map.station != null, 'widget-pane-collapsed': map.toggled, 'widget-pane-offscreen': map.toggled}" ng-show="map.station != null">
+    <div class="widget-pane-content">
+      <div class="widget-pane-content-holder">
+        <station-image></station-image>
+        <station-name></station-name>
+        <md-tabs class="md-accent" layout="column" md-selected="self.selectedIndex" md-stretch-tabs="auto" flex="100">
+          <md-tab id="station-tab" ng-disabled="map.station.station_description == ''">
+            <md-tab-label>Description</md-tab-label>
+            <md-tab-body>
+              <station-description></station-description>
+            </md-tab-body>
+          </md-tab>
+          <md-tab id="faction-tab" ng-disabled="map.faction == false">
+            <md-tab-label>Faction</md-tab-label>
+            <md-tab-body>
+              <faction-description></faction-description>
+            </md-tab-body>
+          </md-tab>
+        </md-tabs>
+      </div>
+      <div class="widget-pane-content-shim noprint"></div>
+      <div class="widget-pane-toggle-button-container" ng-click="map.togglePanel()">
+        <button class="widget-pane-toggle-button"></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="noprint" id="hidewidgets"></div>
+<div class="noprint" id="showwidgets"></div>
+<div id="settings">
+  <div class="widget-settings" ng-class="{'widget-settings-open': map.showOptions, 'widget-settings-offscreen': !map.showOptions}">
+    <div class="widget-settings-shim" ng-click="map.toggleOptionPanel()"></div>
+    <div class="widget-settings-pane">
+      <div flex="100" layout="column">
+        <div class="widget-setting-content">
+          <md-toolbar class="md-theme-light">
+            <h2 class="md-toolbar-tools">
+              <span>Options</span>
+            </h2>
+          </md-toolbar>
+          <div flex="80" layout="row">
+            <md-button flex="50">Book</md-button>
+            <md-button flex="50">Game</md-button>
+          </div>
+          <div flex="80" layout="row">
+            <md-button flex="50">2033</md-button>
+            <md-button flex="50">2034</md-button>
+          </div>
+          <div class="language-settings" flex="20" layout="row">
+            <md-icon md-font-icon="material-icons">language</md-icon>
+            <md-button>EN</md-button>
+            <md-button>ES</md-button>
+            <md-button>RU</md-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
