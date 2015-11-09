@@ -2,7 +2,8 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   var self = this;
   self.simulateQuery = false;
   self.isDisabled = false;
-  self.toggled = true;
+  self.toggled = false;
+  self.showOptions = false;
   // list of `stations` value/display objects
   self.factions = FactionService.getList();
   self.lines = LineService.getList();
@@ -18,6 +19,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.highlight_stations = highlight_stations;
   self.toggle = true;
   self.togglePanel = togglePanel;
+  self.toggleOptionPanel = toggleOptionPanel;
 
 
 
@@ -63,7 +65,11 @@ app.controller('MapController', function($scope, FactionService, LineService, St
 
   function togglePanel() {
     self.toggle = !self.toggle;
-    self.toggled = self.toggle;
+    self.toggled = !self.toggled;
+  }
+
+  function toggleOptionPanel() {
+    self.showOptions = !self.showOptions;
   }
 
   function querySearch(query) {
@@ -92,7 +98,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
       self.line = LineService.getById(item.display.line_id);
       self.faction = FactionService.getById(item.display.faction_id);
       if (self.line != false)
-        angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+        angular.element(document.querySelector('div.widget-pane-section-header-description')).css('background-color', self.line.line_colour);
       if (self.faction != false)
         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
     }

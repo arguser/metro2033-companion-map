@@ -25,3 +25,24 @@ app.directive('stationImage', function (){
     templateUrl: 'app/directives/station-image.html'
   }
 });
+
+app.directive('optionsPanel', function (){
+  return {
+    restrict: 'E',
+    templateUrl: 'app/directives/options-panel.html'
+  }
+});
+
+app.directive('searchBox', function (){
+  return {
+    restrict: 'E',
+    templateUrl: 'app/directives/search-box.html'
+  }
+});
+
+app.directive('informationPanel', function (){
+  return {
+    restrict: 'E',
+    templateUrl: 'app/directives/information-panel.html'
+  }
+});
