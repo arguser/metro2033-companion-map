@@ -325,21 +325,19 @@ function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY, canvas=1) {
 }
 
 // draw a rail line from coordinates
-function drawLine(line) {
+function drawLine(line,border=0) {
 
 	var offset = 10; // larger offset equals more extreme curves
 
 	ctx[0].lineCap = 'round';
-	ctx[0].strokeStyle = line['line_colour'];
+	ctx[0].strokeStyle = (border==0) ? line['line_colour'] : "#000000" ;
 	nodes = line['line_nodes'];
-	ctx[0].lineWidth = 3.5*scale;
+	ctx[0].lineWidth =  (border==0) ? 3.5*scale : 4.5*scale ;
 
 	var undef;
 
 	for (j=0;j<nodes.length;j++) {
-
 		startNode 	= nodes[j];
-
 		if (nodes[j+1]!=undef) {
 			endNode = nodes[j+1];
 		} else {
@@ -396,7 +394,6 @@ function drawLine(line) {
 				ctx[0].arc(startNode[1]*scale,startNode[2]*scale,startNode[3]*scale,0,rad(360));
 				ctx[0].stroke();
 			break;
-
 		}
 	}
 }

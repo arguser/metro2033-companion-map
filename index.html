@@ -139,6 +139,7 @@
       // draw rail lines
       for (i = 0; i < lines.length; i++) {
         thisLine = lines[i];
+        drawLine(thisLine,1); // borders
         drawLine(thisLine);
       }
 
@@ -147,24 +148,25 @@
       interchange_2(521, 823, 499, 846); // October
       interchange_2(683, 472, 698, 489); // Chistye Prudy
       interchange_2(412, 778, 388, 778); // Park Kultry
-      interchange_2(762, 425, 762, 450); // Komsomol
-      interchange_3(800,588, 800,620, 820,604); // Kursk
+      interchange_2(762, 425, 762, 450); // Komsomol      
       interchange_2(708,662, 683,662); // Kitay Gorod
       interchange_2(390,410, 390,435); // Belarus
       interchange_2(890,766, 870,745); // Rimskaya
       interchange_2(490,350, 490,372); // Novoslobodskaya
-      interchange_3(800,766, 800,740, 775,751); // Taganskaya
       interchange_2(870,810, 847,810); // Proletariat
       interchange_2(578,1030, 602,1030); // Sebastapol
       interchange_2(411,1150, 435,1150); // Bittsevsky Park
       interchange_2(584,1210, 608,1210); // Bulvar Dmitriya Donskogo
       interchange_2(590,855, 608,875); // Dobryninskaya
-      interchange_4(542,648, 510,660, 485,636, 525,617); // Polis
       interchange_2(578,1030, 602,1030); // Tetr
       interchange_2(749,1030, 725,1030); // Kashirskaya
       interchange_2(676,861, 676,834); // Pavelets
 
+      interchange_3(800,766, 800,740, 775,751); // Taganskaya
+      interchange_3(800,588, 800,620, 820,604); // Kursk
+      interchange_3(337,731, 318,708, 342,707); // Kievskaya
 
+      interchange_4(527,663, 485,678, 485,636, 527,621); // Polis
 
 
       // draw stations
