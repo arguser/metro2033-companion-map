@@ -404,6 +404,11 @@ html[dir='rtl'] .widget-pane-collapsed .widget-pane-toggle-button {
 .widget-pane-section-header-number {
   font-size: 36pt;
 }
+
+station-image {
+  height: 380px;
+}
+
 .widget-pane-section-header-hero {
   overflow: hidden;
   direction: ltr;

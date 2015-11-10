@@ -1,5 +1,5 @@
 <div id="pane">
-  <div class="widget-pane" layout="column" ng-class="{'widget-pane-visible': map.station != null, 'widget-pane-collapsed': map.toggled, 'widget-pane-offscreen': map.toggled}" ng-show="map.station != null">
+  <div class="widget-pane" layout="column" ng-class="{'widget-pane-visible': map.station != null, 'widget-pane-collapsed': map.toggled, 'widget-pane-offscreen': map.station == null}" ng-show="map.station != null">
     <div class="widget-pane-content">
       <div class="widget-pane-content-holder">
         <station-image></station-image>
