@@ -481,9 +481,10 @@ html[dir='rtl'] .widget-pane-collapsed .widget-pane-toggle-button {
 #canvasHolder {
   margin: 10px;
   padding: 0px;
-  width: 1800px;
-  height: 2000px;
+  width: 2000px;
+  height: 100vh;
   position: relative;
+  overflow:auto;
 }
 .metromap {
   position: absolute;
