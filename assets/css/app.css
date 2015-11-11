@@ -419,7 +419,7 @@ station-image {
 .widget-pane-section-header-description {
   padding: 20px 24px;
 	color: #FFFFFF;
-	background-color: #4285F4
+	background-color: #4285F4;
 }
 .widget-pane-section-header-title {
   font-size: 18px;
@@ -445,7 +445,6 @@ station-image {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.54);
   margin-bottom: 12px;
-
 }
 .widget-pane-section-content-text {
   color: rgba(0, 0, 0, 0.87);
@@ -494,7 +493,7 @@ station-image {
   height: 2200px;
 }
 #lineCanvas {
-  background-color: #FFF;
+  background-color: antiqueaqua;
 }
 .station_link {
   display: block;
