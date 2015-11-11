@@ -14,7 +14,7 @@
   <!-- Angular Material -->
   <link href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.css" rel="stylesheet">
   <!-- Google Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- App styles -->
   <link href="assets/css/app.css" rel="stylesheet">
@@ -27,12 +27,12 @@
     <information-panel></information-panel>
 
     <div id="scene">
-      <div id="canvasHolder" class="widget-scene dragscroll" style="cursor: grab; cursor : -o-grab; cursor : -moz-grab; cursor : -webkit-grab;">
+      <div id="canvasHolder" class="widget-scene">
         <canvas id="lineCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
         <canvas id="stationCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
         <canvas id="labelCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
         <canvas id="effectCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
-        <!--
+        <!-- 
           // values from utilities.js
           Scale value = 1.5
           Station Radius = 7
@@ -81,7 +81,6 @@
   <script src="app/services/FactionService.js"></script>
   <script src="app/services/LineService.js"></script>
   <script src="app/services/StationService.js"></script>
-  <script type="text/javascript" src="assets/js/dragscroll.js"></script>
   <script type="text/javascript" src="assets/js/utilities.js"></script>
   <script type="text/javascript" src="assets/js/symbols.js"></script>
   <!-- <script type="text/javascript" src="assets/js/stations.js"></script> -->
@@ -130,7 +129,7 @@
       interchange_2(521, 823, 499, 846); // October
       interchange_2(683, 472, 698, 489); // Chistye Prudy
       interchange_2(412, 778, 388, 778); // Park Kultry
-      interchange_2(762, 425, 762, 450); // Komsomol
+      interchange_2(762, 425, 762, 450); // Komsomol      
       interchange_2(708,662, 683,662); // Kitay Gorod
       interchange_2(390,410, 390,435); // Belarus
       interchange_2(890,766, 870,745); // Rimskaya

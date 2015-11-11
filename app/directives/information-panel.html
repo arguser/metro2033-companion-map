@@ -4,9 +4,9 @@
       <div class="widget-pane-content-holder">
         <station-image></station-image>
         <station-name></station-name>
-        <md-tabs layout="column" md-selected="self.selectedIndex" md-stretch-tabs="auto" flex="100">
-          <md-tab id="station-tab">
-            <md-tab-label>Station</md-tab-label>
+        <md-tabs class="md-accent" layout="column" md-selected="self.selectedIndex" md-stretch-tabs="auto" flex="100">
+          <md-tab id="station-tab" ng-disabled="map.station.station_description == ''">
+            <md-tab-label>Description</md-tab-label>
             <md-tab-body>
               <station-description></station-description>
             </md-tab-body>
