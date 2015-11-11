@@ -48,7 +48,7 @@ var lines = [{
     [0, 598,730],
     [0, 572,730],
     [0, 572,763],
-    
+
 
     [0, 592,783], // Novokuznetskaya
     [0, 676,861], // Pavelets
@@ -144,13 +144,13 @@ var lines = [{
   "line_number": 7,
   "line_name": "Tagansko-Krasnopresnenskaya",
   "line_nodes": [
-  
+
     [0, 200,533],
     [0, 631,533], // Kuznetsy Most
-    [0, 708,610],  
+    [0, 708,610],
     [0, 708,662], // kitay gorod
     [0, 748,702],
-    [0, 762,702],  
+    [0, 762,702],
     [0, 800,740], // taganskaya
     [1, 818,758],
     [0, 847,792],
