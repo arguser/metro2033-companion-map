@@ -4,6 +4,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.isDisabled = false;
   self.toggled = false;
   self.showOptions = false;
+  self.language = 0;
   // list of `stations` value/display objects
   self.factions = FactionService.getList();
   self.lines = LineService.getList();
@@ -11,6 +12,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.station = null;
   self.line = null;
   self.faction = null;
+  self.station_name = null;
   // self.stations = loadAll();
   self.form = {};
   self.querySearch = querySearch;
@@ -20,6 +22,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
   self.toggle = true;
   self.togglePanel = togglePanel;
   self.toggleOptionPanel = toggleOptionPanel;
+  self.changeNames = changeNames;
 
 
 
@@ -30,6 +33,15 @@ app.controller('MapController', function($scope, FactionService, LineService, St
    * Search for stations... use $timeout to simulate
    * remote dataservice call.
    */
+
+  //  Option functions
+
+  function changeNames(locale) {
+    self.language = locale;
+  	name_set = self.language;
+  	print_station_labels();
+    self.station = null;
+  }
 
   /**
    *
@@ -46,10 +58,10 @@ app.controller('MapController', function($scope, FactionService, LineService, St
     ctx[3].lineWidth = 2 * scale;
     ctx[3].strokeStyle = '#FF0000';
 
-    circle(station.display['x_position'] * scale, station.display['y_position'] * scale, 12 * scale, 3);
+    circle(station.display['x_position'] * scale + xShim, station.display['y_position'] * scale + yShim, 12 * scale, 3);
     ctx[3].stroke();
 
-    circle(station.display['x_position'] * scale, station.display['y_position'] * scale, 8 * scale, 3);
+    circle(station.display['x_position'] * scale  + xShim, station.display['y_position'] * scale  + yShim, 8 * scale, 3);
     ctx[3].stroke();
 
 
@@ -95,13 +107,21 @@ app.controller('MapController', function($scope, FactionService, LineService, St
 
     if (item != null) {
       self.station = item.display;
+      self.station_name = StationService.getNameByIdAndLocale(item.display.station_id, self.language);
       self.line = LineService.getById(item.display.line_id);
       self.faction = FactionService.getById(item.display.faction_id);
-      if (self.line != false)
+      if (self.line != false) {
         angular.element(document.querySelector('div.widget-pane-section-header-description')).css('background-color', self.line.line_colour);
+        angular.element(document.querySelector('md-tabs-canvas')).css('background-color', shadeColor(self.line.line_colour, -20));
+        }
       if (self.faction != false)
         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
     }
+  }
+
+  function shadeColor(color, percent) {  // deprecated. See below.
+      var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, G = (num >> 8 & 0x00FF) + amt, B = (num & 0x0000FF) + amt;
+      return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
   }
 
   function searchTextChange(text) {
@@ -120,12 +140,14 @@ app.controller('MapController', function($scope, FactionService, LineService, St
 
     if (item != null) {
       self.station = item.display;
+      self.station_name = StationService.getNameByIdAndLocale(item.display.station_id, self.language);
       highlight_station(item.display.station_id)
       self.line = LineService.getById(item.display.line_id);
       self.faction = FactionService.getById(item.display.faction_id);
-      if (self.line != false)
-      // This should be handled "the angular way"
-        angular.element(document.querySelector('div.panel-header-description')).css('background-color', self.line.line_colour);
+      if (self.line != false) {
+        angular.element(document.querySelector('div.widget-pane-section-header-description')).css('background-color', self.line.line_colour);
+        angular.element(document.querySelector('md-tabs-canvas')).css('background-color', shadeColor(self.line.line_colour, -20));
+        }
       if (self.faction != false)
       // This should be handled "the angular way"
         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);

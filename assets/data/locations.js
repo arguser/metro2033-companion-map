@@ -73,7 +73,7 @@ var lines = [{
     [1, 422,646],
     [0, 442,636],
     [0, 485,636], // ARBAT (POLIS)
-    [1, 742,636],   
+    [1, 742,636],
     [0, 762,626],
     [0, 800,588],
     [0, 863,525],
@@ -89,7 +89,7 @@ var lines = [{
   "line_name": "Filyovskaya",
   "line_nodes": [
   [0, 527,621], // ALEKSANDROVSKY SAD
-  [1, 527,610], 
+  [1, 527,610],
   [0, 517,600],
   [1, 436,600],
   [0, 416,610],
@@ -97,7 +97,7 @@ var lines = [{
   [1, 264,762],
   [0, 244,762],
   [1, 110,628],
-  [0, 100,608],  
+  [0, 100,608],
   [0, 100,385], // PYATNITSKOYE SHOSSE
   ],
   "line_colour": "#1cbcd9"
@@ -195,14 +195,14 @@ var lines = [{
 
     [0, 465,500], // temp
 
-    [1, 465,648],   
+    [1, 465,648],
     [0, 475,668],
 
     [0, 485,678], // Arbat
-    
+
     [1, 495,688],
     [0, 505,708],
-  
+
     [1, 505,727],
     [0, 515,747],
 
@@ -242,7 +242,7 @@ var lines = [{
     [0, 847,1181]
   ],
   "line_colour": "#a0bd3d"
-}, 
+},
 { // Teal Line
   "line_id": 11,
   "line_number": 11,
@@ -252,7 +252,7 @@ var lines = [{
     [0, 749,1030]
   ],
   "line_colour": "#65ddc0"
-}, 
+},
 {
   // Pale blue line
   "line_id": 12,
@@ -326,7 +326,7 @@ var name_set = [{
 //     name_set
 //     station_name
 
-var station_name = [
+var station_names = [
 
 
   {"station_id": 1, "name_set": 0, "station_name": "ALTUFYEVO"},
@@ -462,7 +462,7 @@ var station_name = [
   {"station_id": 36, "name_set": 0, "station_name": "PROSPEKT MIRA"},
   {"station_id": 36, "name_set": 1, "station_name": "Проспект Мира"},
   {"station_id": 36, "name_set": 2, "station_name": "PEACE PROSPECT"},
-  
+
   /* Not required
   { "station_id": 37, "name_set": 0,  "station_name" : "PROSPEKT MIRA"  },
   { "station_id": 37, "name_set": 1,  "station_name" : "Проспект Мира"  },
@@ -512,7 +512,7 @@ var station_name = [
   {"station_id": 48, "name_set": 0, "station_name": "BELYAYEVO"},
   {"station_id": 48, "name_set": 1, "station_name": "Беля́ево"},
   {"station_id": 48, "name_set": 2, "station_name": "BELYAEVO"},
-  
+
   {"station_id": 49, "name_set": 0, "station_name": "KALUZHSKAYA"},
   {"station_id": 49, "name_set": 1, "station_name": "Калужская"},
   {"station_id": 49, "name_set": 2, "station_name": "KALUZHSKI"},
@@ -630,7 +630,7 @@ var station_name = [
   {"station_id": 78,    "name_set": 0,    "station_name": "ELEKTROZAVODSKAYA"},
   {"station_id": 78,    "name_set": 1,    "station_name": "Электрозаводская"},
   {"station_id": 78,    "name_set": 2,    "station_name": "ELECTROZAVOD"},
-  
+
   {"station_id": 79,    "name_set": 0,    "station_name": "BAUMANSKAYA"},
   {"station_id": 79,    "name_set": 1,    "station_name": "Бауманская"},
   {"station_id": 79,    "name_set": 2,    "station_name": "BAUMAN"},
@@ -871,19 +871,19 @@ var station_name = [
 
   {"station_id": 150, "name_set": 0, "station_name": "KASHIRSKAYA"},
   {"station_id": 150, "name_set": 1, "station_name": "Каширская"},
-  {"station_id": 150, "name_set": 2, "station_name": "KASHIRA"}, 
+  {"station_id": 150, "name_set": 2, "station_name": "KASHIRA"},
 
   {"station_id": 151, "name_set": 0, "station_name": "KOLOMENSKAYA"},
   {"station_id": 151, "name_set": 1, "station_name": "Коло́менская"},
-  {"station_id": 151, "name_set": 2, "station_name": "KOLOMENSKOE"}, 
+  {"station_id": 151, "name_set": 2, "station_name": "KOLOMENSKOE"},
 
   {"station_id": 152, "name_set": 0, "station_name": "AVTOZAVODSKAYA"},
   {"station_id": 152, "name_set": 1, "station_name": "Автозаво́дская"},
-  {"station_id": 152, "name_set": 2, "station_name": "AVTOZAVOD"}, 
+  {"station_id": 152, "name_set": 2, "station_name": "AVTOZAVOD"},
 
   {"station_id": 153, "name_set": 0, "station_name": "PAVELETSKAYA"},
   {"station_id": 153, "name_set": 1, "station_name": "Павелецкая"},
-  {"station_id": 153, "name_set": 2, "station_name": "PAVELETS"}, 
+  {"station_id": 153, "name_set": 2, "station_name": "PAVELETS"},
 
   {"station_id": 154, "name_set": 0, "station_name": "PAVELETSKAYA"},
   {"station_id": 154, "name_set": 1, "station_name": "Павеле́цкая"},
@@ -950,7 +950,7 @@ var station_name = [
   /* not required
   {"station_id": 170, "name_set": 0, "station_name": "KASHIRSKAYA"},
   {"station_id": 170, "name_set": 1, "station_name": "Каширская"},
-  {"station_id": 170, "name_set": 2, "station_name": "KASHIRA"}, 
+  {"station_id": 170, "name_set": 2, "station_name": "KASHIRA"},
   */
 
   /* not required
@@ -2017,7 +2017,7 @@ var stations = [{
   "station_name": "PLOSHCHAD REVOLUTSII",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,  
+  "label_point": 3,
   "x_position": 613,
   "y_position": 636,
   "line_id": 3,
@@ -2321,7 +2321,7 @@ var stations = [{
   "x_position": 486,
   "y_position": 550,
   "line_id": 7,
-  "faction_id": 0, // 8 
+  "faction_id": 0, // 8
   "symbol_id": 0
 }, {
   "station_id": 111,
@@ -3363,27 +3363,27 @@ var factions = [{
   "faction_name": "Savage Cannibals of the Great Worm Cult",
   "faction_description": "A technophobic, xenophobic, primative sect residing at Park Pobedy, the Great Worm Cult have descended into a state of degeneracy. They worship an entity known as the 'Great Worm', allegedly the being that created the entire world, and kidnap children from other stations to be raised in the cult. Any adults they capture are eaten. Mutation is common among the cultists but this has resulted in the development of preternatural night vision and hypnotic abilities verging on the psychic. The cult was founded and is led by an old man who hated how technology destroyed the world and sees his new religion as the best hope for preserving humanity past the point where the Metro fails entirely.",
   "faction_colour": "#00BE00"
-}, { 
+}, {
   "faction_id": 21,
   "faction_name": "Trotskyists",
   "faction_description": "Several scattered stations have fallen to Trotskyist revolutionaries. Ideological differences put them at odds with the Red Line, however they still support the roving bands of revolutionaries that travel the metro.",
   "faction_colour": "#FF0000"
-}, { 
+}, {
   "faction_id": 22,
   "faction_name": "Gangsters",
   "faction_description": "Various criminal groups - including the Russian mafia - survived the war and occupy stations in the south of the Metro. They spend much of their time staging attacks and raids on each other's stations.",
   "faction_colour": "#FFFFFF"
-},  { 
+},  {
   "faction_id": 23,
   "faction_name": "Sevastapol",
   "faction_description": "Sevastapol and Kakhovska stations take advantage of the high groundwater in their region by maintaining dozens of small hydroelectric plants in their tunnels. They sell electricity to Hansa in exchange for ammunition to fight off the horrific creatures that creep north from the mysterious caverns known as 'The Gates'. Sevastapol's influence theoretically extends as far as Varshavskaya, however the station is so heavily irradiated as to be uninhabitable.",
   "faction_colour": "#499EFF"
-}, { 
+}, {
   "faction_id": 24,
   "faction_name": "Occupied by Mutants",
   "faction_description": "Various stations have been occupied by mutated creatures. Some are relatively harmless while others are as nightmarish as anything encountered on the surface.",
   "faction_colour": "#323232"
-}, { 
+}, {
   "faction_id": 25,
   "faction_name": "Satanists",
   "faction_description": "The Satanists are a group of malevolent metro inhabitants, who believe that the metro is the gateway to hell. Little is known about the location of the Satanists. One witness was kidnapped on Belorusskaya and brought to their station. He did not recognize it, although based on his description and the fact that it's beyond Pechatniki, Lyublino (Lyublinsko-Dmitrovskaya Line) is the most likely candidate. In contrast, some rumours place the Satanists at Timiryazevskaya on the Serpukhovsko-Timiryazevskaya line, suggesting there may be more than one colony of Satan worshipers in the Metro. The Satanist station is vandalized, all name-boards are ripped off and the walls and floor are blood-stained. The floor in the center is ripped up, and there's a huge pit, 30 metres deep, where kidnapped slaves from other stations are forced to dig further down. The Satanists believe that the end of the world already happened, and the Moscow metro is the Hellgate – if they dig a bit deeper, they would get to Hell and see Satan himself. The Satanists do not appear to maintain any industry, and they also brutally murder slaves on a constant basis. How they survive remains a mystery.",

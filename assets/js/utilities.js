@@ -105,10 +105,10 @@ function station(sX,sY,factionID,symbol,canvas=1,stationScale=1) {
 
 
 // get selected data set from label menu and rewrite station labels
-function changeNames() {
-	name_set=document.getElementById('name_set_dd').options[document.getElementById('name_set_dd').selectedIndex].value;
-	print_station_labels();
-}
+// function changeNames() {
+// 	name_set=document.getElementById('name_set_dd').options[document.getElementById('name_set_dd').selectedIndex].value;
+// 	print_station_labels();
+// }
 
 // print out station labels
 function print_station_labels() {
@@ -121,7 +121,7 @@ function print_station_labels() {
 
 // print out label for a specific station
 function name_station(stationID,position,sX,sY) {
-	var searchResult = findRecord(station_name,"station_id",stationID);
+	var searchResult = findRecord(station_names,"station_id",stationID);
 	searchResult = findRecord(searchResult,"name_set",name_set);
 	if (searchResult.length>0) {
 
@@ -132,10 +132,10 @@ function name_station(stationID,position,sX,sY) {
 			case 4:    cX=+10; cY=+7;  labelAlign="left";   break;
 			case 5:    cX=+7;  cY=+11; labelAlign="left";   break;
 
-			case 5.5:  cX=0;   cY=15;  labelAlign="left"; break;		
+			case 5.5:  cX=0;   cY=15;  labelAlign="left"; break;
 			case 6:    cX=0;   cY=15;  labelAlign="center"; break;
 			case 6.5:  cX=0;   cY=15;  labelAlign="right"; break;
-			
+
 			case 7:    cX=-7;  cY=+11; labelAlign="right";  break;
 			case 8:    cX=-10; cY=+7;  labelAlign="right";  break;
 			case 9:    cX=-11; cY=0;   labelAlign="right";  break;
@@ -229,7 +229,7 @@ function interchange_2(fX,fY, sX,sY, canvas=1) {
 			ctx[canvas].strokeStyle = '#000000';
 			ctx[canvas].lineWidth = 10*scale;
       		ctx[canvas].beginPath();ctx[canvas].moveTo(fX,fY);ctx[canvas].lineTo(sX,sY);ctx[canvas].closePath();ctx[canvas].stroke();
-			
+
 			ctx[canvas].strokeStyle = '#FFFFFF';
 			ctx[canvas].lineWidth = 8*scale;
       		ctx[canvas].beginPath();ctx[canvas].moveTo(fX,fY);ctx[canvas].lineTo(sX,sY);ctx[canvas].closePath();ctx[canvas].stroke();
@@ -254,7 +254,7 @@ function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
 
 			// Black Connections
 			ctx[canvas].strokeStyle = '#000000';
-			ctx[canvas].lineWidth = 10*scale;		
+			ctx[canvas].lineWidth = 10*scale;
       		ctx[canvas].beginPath(); ctx[canvas].moveTo(fX,fY); ctx[canvas].lineTo(sX,sY); ctx[canvas].closePath(); ctx[canvas].stroke();
       		ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
       		if (loop) ctx[canvas].beginPath(); ctx[canvas].moveTo(tX,tY); ctx[canvas].lineTo(fX,fY); ctx[canvas].closePath(); ctx[canvas].stroke();
@@ -266,7 +266,7 @@ function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
       		ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY); ctx[canvas].lineTo(tX,tY); ctx[canvas].closePath(); ctx[canvas].stroke();
       		if (loop) ctx[canvas].beginPath(); ctx[canvas].moveTo(tX,tY); ctx[canvas].lineTo(fX,fY); ctx[canvas].closePath(); ctx[canvas].stroke();
 
-			// Circle Overlays	
+			// Circle Overlays
 			ctx[canvas].fillStyle = '#FFFFFF';
 			ctx[canvas].beginPath(); ctx[canvas].arc(fX,fY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
 			ctx[canvas].beginPath(); ctx[canvas].arc(sX,sY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
@@ -427,4 +427,3 @@ function findRecord(source,property,value) {
 	}
 	return newDataArray;
 }
-
