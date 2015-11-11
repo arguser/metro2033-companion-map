@@ -1,4 +1,14 @@
 <div class="widget-pane-section-content" layout="column">
-  <div class="widget-pane-section-content-title" flex="50">Description</div>
-  <div class="widget-pane-section-content-text" flex="50">{{map.station.station_description}}</div>
+<div id="stationStatus" ng-hide="map.station_status == false" layout="row">
+  <div class="widget-pane-section-content-title" flex="30">Status</div>
+  <div class="widget-pane-section-content-title" flex="70">{{map.station_status.status}}</div>
+</div>
+<div id="stationDescription" ng-hide="map.station.station_description == ''" layout="row">
+  <div class="widget-pane-section-content-title" flex="30">Description</div>
+  <div class="widget-pane-section-content-text" flex="70">{{map.station.station_description}}</div>
+</div>
+<div id="stationFaction" ng-hide="map.faction == false" layout="row">
+  <div class="widget-pane-section-content-title" flex="30">Faction</div>
+  <div class="widget-pane-section-content-title" ng-click="self.selectedIndex = 1" flex="70">{{map.faction.faction_name}}</div>
+</div>
 </div>

@@ -393,16 +393,6 @@ html[dir='rtl'] .widget-pane-collapsed .widget-pane-toggle-button {
 
 /*CONTENT*/
 
-.panel-header-image {
-  overflow: hidden;
-  height: 100%;
-}
-.panel-header-image img {
-  width: inherit;
-  height: 100%;
-}
-
-
 .widget-pane-section-header-number {
   font-size: 36pt;
 }
@@ -429,7 +419,7 @@ station-image {
 .widget-pane-section-header-description {
   padding: 20px 24px;
 	color: #FFFFFF;
-	background-color: #4285F4
+	background-color: #4285F4;
 }
 .widget-pane-section-header-title {
   font-size: 18px;
@@ -450,6 +440,7 @@ station-image {
 .widget-pane-section-content {
   padding: 20px 25px;
 }
+
 .widget-pane-section-content-title {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.54);
@@ -485,13 +476,14 @@ station-image {
   left: 0;
   top: 0;
 }
+
 #canvasHolder {
   margin: 10px auto;
   padding: 0px;
-  width: 2215px;
+  width: auto;
   height: 100vh;
   position: relative;
-  overflow:auto;
+  overflow: hidden;
 }
 .metromap {
   position: absolute;
@@ -501,7 +493,7 @@ station-image {
   height: 2200px;
 }
 #lineCanvas {
-  background-color: #FFF;
+  background-color: antiqueaqua;
 }
 .station_link {
   display: block;
