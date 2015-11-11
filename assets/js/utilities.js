@@ -1,6 +1,8 @@
 var baseScale = 1.5;  // scale factor for map. Should never be changed programatically
 var scale=baseScale;
 var station_radius=7; // radius of station circles
+var xShim = 150*scale; // shifts the map on the x axis
+var yShim = 20*scale; // shifts the map on the y axis
 
 // utility - is object defined?
 function isDefined(x) {
@@ -49,8 +51,8 @@ function bezier(sX,sY,c1X,c1Y,c2X,c2Y,eX,eY,canvas=1) {
 
 // draw a station for a specific faction at a given point
 function station(sX,sY,factionID,symbol,canvas=1,stationScale=1) {
-	sX = scale*sX;
-	sY = scale*sY;
+	sX = (scale*sX)+xShim;
+	sY = (scale*sY)+yShim;
 
 	// change size of station graphic (if necessary)
 	scale = scale*stationScale;
@@ -110,7 +112,7 @@ function changeNames() {
 
 // print out station labels
 function print_station_labels() {
-	ctx[2].clearRect(0, 0, 1800, 2000);
+	ctx[2].clearRect(0, 0, 2200, 2200);
 	for (i=0;i<stations.length;i++) {
 		thisStation = stations[i];
 		name_station(thisStation['station_id'],thisStation['label_point'],thisStation['x_position'],thisStation['y_position']);
@@ -155,18 +157,9 @@ function name_station(stationID,position,sX,sY) {
 			ctx[2].shadowBlur=4;
 			ctx[2].shadowColor="#FFFFFF";
 			ctx[2].textAlign = labelAlign;
-			ctx[2].fillText(stationName,(sX+cX)*scale,(sY+cY)*scale);
+			ctx[2].fillText(stationName,((sX+cX)*scale)+xShim,((sY+cY)*scale)+yShim);
 		}
 	}
-}
-
-// removes a station from the map
-function clear_station(stationID,canvas=1) {
-	var searchResult = findRecord(stations,"station_id",stationID);
-	var thisStation = searchResult[0];
-	var x1 = (thisStation['x_position']-9)*scale;
-	var y1 = (thisStation['y_position']-9)*scale;
-    ctx[1].clearRect(x1,y1, 18*scale,18*scale);
 }
 
 function draw_features() {
@@ -177,10 +170,10 @@ function draw_features() {
 				ctx[1].strokeStyle = '#000000';
       			ctx[1].lineWidth = 1*scale;
 
-				sX = thisFeature['x_position']*scale;
-				sY = thisFeature['y_position']*scale;
-				sW = thisFeature['width']*scale;
-				sH = thisFeature['height']*scale;
+				sX = (thisFeature['x_position']*scale)+xShim;
+				sY = (thisFeature['y_position']*scale)+yShim;
+				sW = (thisFeature['width']*scale);
+				sH = (thisFeature['height']*scale);
 				sC = 4*scale; // corner size
 
 				// draw box
@@ -224,8 +217,8 @@ function draw_features() {
 // interchange code
 function interchange_2(fX,fY, sX,sY, canvas=1) {
 
-			fX = fX*scale;	fY = fY*scale;
-			sX = sX*scale;	sY = sY*scale;
+			fX = (fX*scale)+xShim;	fY = (fY*scale)+yShim;
+			sX = (sX*scale)+xShim;	sY = (sY*scale)+yShim;
 
 			ctx[canvas].strokeStyle = '#000000';
 			ctx[canvas].fillStyle = '#FFFFFF';
@@ -247,9 +240,9 @@ function interchange_2(fX,fY, sX,sY, canvas=1) {
 		}
 function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
 
-			fX = fX*scale;	fY = fY*scale;
-			sX = sX*scale;	sY = sY*scale;
-			tX = tX*scale;	tY = tY*scale;
+			fX = (fX*scale)+xShim;	fY = (fY*scale)+yShim;
+			sX = (sX*scale)+xShim;	sY = (sY*scale)+yShim;
+			tX = (tX*scale)+xShim;	tY = (tY*scale)+yShim;
 
 			// Base circles
 			ctx[canvas].strokeStyle = '#000000';
@@ -282,10 +275,10 @@ function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
 
 function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY, canvas=1) {
 
-			fX = fX*scale;	fY = fY*scale;
-			sX = sX*scale;	sY = sY*scale;
-			tX = tX*scale;	tY = tY*scale;
-			rX = rX*scale;	rY = rY*scale;
+			fX = (fX*scale)+xShim;	fY = (fY*scale)+yShim;
+			sX = (sX*scale)+xShim;	sY = (sY*scale)+yShim;
+			tX = (tX*scale)+xShim;	tY = (tY*scale)+yShim;
+			rX = (rX*scale)+xShim;	rY = (rY*scale)+yShim;
 
 			// Base circles
 			ctx[canvas].strokeStyle = '#000000';
@@ -348,8 +341,8 @@ function drawLine(line,border=0) {
 
 			case 0: // straight section
 				ctx[0].beginPath();
-		    	ctx[0].moveTo(startNode[1]*scale,startNode[2]*scale);
-		    	ctx[0].lineTo(endNode[1]*scale,endNode[2]*scale);
+		    	ctx[0].moveTo( (startNode[1]*scale)+xShim, (startNode[2]*scale)+yShim);
+		    	ctx[0].lineTo( (endNode[1]*scale)+xShim,   (endNode[2]*scale)+yShim);
       			ctx[0].stroke();
 			break;
 
@@ -383,15 +376,15 @@ function drawLine(line,border=0) {
 				controlNode2 = Array(ControlX,ControlY);
 
 				ctx[0].beginPath();
-		      	ctx[0].moveTo(startNode[1]*scale,startNode[2]*scale);
-		      	ctx[0].bezierCurveTo(controlNode1[0]*scale,controlNode1[1]*scale, controlNode2[0]*scale,controlNode2[1]*scale, endNode[1]*scale,endNode[2]*scale);
+		      	ctx[0].moveTo((startNode[1]*scale)+xShim, (startNode[2]*scale)+yShim);
+		      	ctx[0].bezierCurveTo((controlNode1[0]*scale)+xShim, (controlNode1[1]*scale)+yShim, (controlNode2[0]*scale)+xShim, (controlNode2[1]*scale)+yShim, (endNode[1]*scale)+xShim, (endNode[2]*scale)+yShim);
       			ctx[0].stroke();
 
 			break;
 
 			case 2: // circle section
 				ctx[0].beginPath();
-				ctx[0].arc(startNode[1]*scale,startNode[2]*scale,startNode[3]*scale,0,rad(360));
+				ctx[0].arc((startNode[1]*scale)+xShim,(startNode[2]*scale)+yShim,startNode[3]*scale,0,rad(360));
 				ctx[0].stroke();
 			break;
 		}
@@ -408,16 +401,16 @@ function highlight_station(stationID) {
 function animate_station() {
 	var searchResult = findRecord(stations,"station_id",animHolder);
 	var thisStation = searchResult[0];
-	ctx[3].clearRect(0, 0, 1800, 2000);
+	ctx[3].clearRect(0, 0, 2200, 2200);
 	ctx[3].lineWidth = 2*scale;
 	ctx[3].strokeStyle = '#FF0000';
-	circle(thisStation['x_position']*scale,thisStation['y_position']*scale,animFrames[animCurrentFrame]*scale,3);
+	circle((thisStation['x_position']*scale)+xShim,(thisStation['y_position']*scale)+yShim,animFrames[animCurrentFrame]*scale,3);
 	ctx[3].stroke();
 	animCurrentFrame++;
 	if (animCurrentFrame<animFrames.length) {
 		setTimeout(animate_station,20);
 	} else {
-		ctx[3].clearRect(0, 0, 1800, 2000);
+		ctx[3].clearRect(0, 0, 2200, 2200);
 	}
 }
 
