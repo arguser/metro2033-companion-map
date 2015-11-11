@@ -276,11 +276,9 @@ var lines = [{
     [0, 265,600], // DELOVOY TSENTR
     [1, 240,600],
     [0, 220,610],
-    
-    [0, 169,661],  
-
-    [0, 173,681],
-    [0, 173,727], // PARK POBEDY
+    [1, 183,650],
+    [0, 173,680],
+    [0, 173,750], // PARK POBEDY
   ],
   "line_colour": "#ebd82d"
 },
@@ -1993,8 +1991,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 159,
-  "y_position": 751,
+  "x_position": 173,
+  "y_position": 766,
   "line_id": 3,
   "faction_id": 20,
   "symbol_id": 20
@@ -2805,8 +2803,8 @@ var stations = [{
   "x_position": 156,
   "y_position": 674,
   "line_id": 4,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 161,
   "station_name": "FILI",
@@ -2816,8 +2814,8 @@ var stations = [{
   "x_position": 188,
   "y_position": 706,
   "line_id": 4,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 162,
   "station_name": "KUTUZOVSKAYA",
@@ -2827,8 +2825,8 @@ var stations = [{
   "x_position": 210,
   "y_position": 728,
   "line_id": 4,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 163,
   "station_name": "STUDENCHESKAYA",
@@ -2838,8 +2836,8 @@ var stations = [{
   "x_position": 232,
   "y_position": 750,
   "line_id": 4,
-  "faction_id": 0,
-  "symbol_id": 0
+  "faction_id": 1,
+  "symbol_id": 1
 }, {
   "station_id": 164,
   "station_name": "SMOLENSKAYA",
@@ -3096,8 +3094,8 @@ var stations = [{
   "x_position": 100,
   "y_position": 475,
   "line_id": 3,
-  "faction_id": 1,
-  "symbol_id": 1
+  "faction_id": 2,
+  "symbol_id": 2
 }, {
   "station_id": 188,
   "station_name": "VOLOKOLAMSKAYA",
@@ -3170,8 +3168,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 159,
-  "y_position": 727,
+  "x_position": 173,
+  "y_position": 742,
   "line_id": 3,
   "faction_id": 20,
   "symbol_id": 20
