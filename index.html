@@ -16,6 +16,8 @@
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Github Icons -->
+  <link rel="stylesheet" href="assets/css/octicons.css">
   <!-- App styles -->
   <link href="assets/css/app.css" rel="stylesheet">
 </head>
@@ -43,23 +45,17 @@
         </a>
       </div>
     </div>
-
+    <div class="noprint" id="hidewidgets"></div>
+    <div class="noprint" id="showwidgets"></div>
     <options-panel></options-panel>
+
+    <footer-box></footer-box>
   </div>
   <!-- <div class="map" layout="row" flex="80">
         <canvas id="map">
           <img alt="Metro 2033 Map" class="map" id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif">
         </canvas>
       </div> -->
-
-  <footer>
-    Tool
-    <a href="https://github.com/arguser/metro2033-companion-map">coded</a> with love by
-    <a href="https://twitter.com/arguser">arguser</a>,
-    <a href="https://github.com/MightyGoatMan">MightyGoatMan</a> and
-    <a href="https://github.com/cristiands7">cristiands7</a>
-  </footer>
-
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
@@ -85,6 +81,7 @@
   <script type="text/javascript" src="assets/js/angular-scroll.min.js"></script>
   <script type="text/javascript" src="assets/js/utilities.js"></script>
   <script type="text/javascript" src="assets/js/symbols.js"></script>
+
   <!-- <script type="text/javascript" src="assets/js/stations.js"></script> -->
 
   <script type="text/javascript">
@@ -122,7 +119,7 @@
       // draw rail lines
       for (i = 0; i < lines.length; i++) {
         thisLine = lines[i];
-        drawLine(thisLine,1); // borders
+        drawLine(thisLine, 1); // borders
         drawLine(thisLine);
       }
 
@@ -132,29 +129,29 @@
       interchange_2(683, 472, 698, 489); // Chistye Prudy
       interchange_2(412, 778, 388, 778); // Park Kultry
       interchange_2(762, 425, 762, 450); // Komsomol
-      interchange_2(708,648, 683,662); // Kitay Gorod
-      interchange_2(390,410, 390,435); // Belarus
-      interchange_2(890,766, 870,745); // Rimskaya
-      interchange_2(490,350, 490,372); // Novoslobodskaya
-      interchange_2(870,835, 896,835); // Proletariat
-      interchange_2(578,1030, 602,1030); // Sebastapol
-      interchange_2(411,1150, 435,1150); // Bittsevsky Park
-      interchange_2(584,1210, 608,1210); // Bulvar Dmitriya Donskogo
-      interchange_2(590,855, 608,875); // Dobryninskaya
-      interchange_2(578,1030, 602,1030); // Tetr
-      interchange_2(749,1030, 725,1030); // Kashirskaya
-      interchange_2(676,861, 676,834); // Pavelets
-      interchange_2(173,742, 173,766); // Park Pobedy
-      interchange_2(270,620, 290,600); // Delovoy Tsentr
-      interchange_2(350,533, 327,553); // Barrikadnaya
-      interchange_2(631,557, 631,533); // Kuznetsky Most
+      interchange_2(708, 648, 683, 662); // Kitay Gorod
+      interchange_2(390, 410, 390, 435); // Belarus
+      interchange_2(890, 766, 870, 745); // Rimskaya
+      interchange_2(490, 350, 490, 372); // Novoslobodskaya
+      interchange_2(870, 835, 896, 835); // Proletariat
+      interchange_2(578, 1030, 602, 1030); // Sebastapol
+      interchange_2(411, 1150, 435, 1150); // Bittsevsky Park
+      interchange_2(584, 1210, 608, 1210); // Bulvar Dmitriya Donskogo
+      interchange_2(590, 855, 608, 875); // Dobryninskaya
+      interchange_2(578, 1030, 602, 1030); // Tetr
+      interchange_2(749, 1030, 725, 1030); // Kashirskaya
+      interchange_2(676, 861, 676, 834); // Pavelets
+      interchange_2(173, 742, 173, 766); // Park Pobedy
+      interchange_2(270, 620, 290, 600); // Delovoy Tsentr
+      interchange_2(350, 533, 327, 553); // Barrikadnaya
+      interchange_2(631, 557, 631, 533); // Kuznetsky Most
 
-      interchange_3(800,766, 800,740, 775,751); // Taganskaya
-      interchange_3(800,588, 800,620, 820,604); // Kursk
-      interchange_3(337,731, 318,708, 342,707); // Kievskaya
-      interchange_3(593,783, 593,752, 613,766); // Tretyakovskaya
+      interchange_3(800, 766, 800, 740, 775, 751); // Taganskaya
+      interchange_3(800, 588, 800, 620, 820, 604); // Kursk
+      interchange_3(337, 731, 318, 708, 342, 707); // Kievskaya
+      interchange_3(593, 783, 593, 752, 613, 766); // Tretyakovskaya
 
-      interchange_4(527,663, 485,678, 485,636, 527,621); // Polis
+      interchange_4(527, 663, 485, 678, 485, 636, 527, 621); // Polis
 
 
       // draw stations
@@ -175,6 +172,19 @@
       print_station_labels();
     }
   </script>
+  <script>
+    ! function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        p = /^http:/.test(d.location) ? 'http' : 'https';
+      if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+    }(document, 'script', 'twitter-wjs');
+  </script>
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>

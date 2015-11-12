@@ -1,5 +1,3 @@
-<div class="noprint" id="hidewidgets"></div>
-<div class="noprint" id="showwidgets"></div>
 <div id="settings">
   <div class="widget-settings" ng-class="{'widget-settings-open': map.showOptions, 'widget-settings-offscreen': !map.showOptions}">
     <div class="widget-settings-shim" ng-click="map.toggleOptionPanel()"></div>
@@ -21,10 +19,21 @@
           </div>
           <div class="language-settings" flex="20" layout="row">
             <md-icon md-font-icon="material-icons">language</md-icon>
-            <md-button ng-click="map.changeNames(0)" ng-class="{'md-raised md-primary': map.language == 0}">EN</md-button>
-            <md-button ng-click="map.changeNames(2)" ng-class="{'md-raised md-primary': map.language == 2}">ES</md-button>
-            <md-button ng-click="map.changeNames(1)" ng-class="{'md-raised md-primary': map.language == 1}">RU</md-button>
+            <md-button ng-class="{'md-raised md-primary': map.language == 0}" ng-click="map.changeNames(0)">EN</md-button>
+            <md-button ng-class="{'md-raised md-primary': map.language == 2}" ng-click="map.changeNames(2)">ES</md-button>
+            <md-button ng-class="{'md-raised md-primary': map.language == 1}" ng-click="map.changeNames(1)">RU</md-button>
           </div>
+          <footer class="made-with-heart">
+            <span>
+              <span class="octicon octicon-pencil"></span>
+              with
+              <span class="octicon octicon-heart"></span>
+              by
+              <a href="https://github.com/arguser">arguser</a>
+              and
+              <a href="https://github.com/MightyGoatMan">MightyGoatMan</a>
+            </span>
+          </footer>
         </div>
       </div>
     </div>

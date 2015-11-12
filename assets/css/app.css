@@ -34,6 +34,11 @@ a, button, h1, h2, h3, h4, h5, h6, input, ol, p, textarea, th, ul {
 
 /*OPTIONS PANEL*/
 
+.made-with-heart{
+  	position: absolute;
+  	bottom: 0px;
+  	left: 25px;
+  }
 
 /**/
 
@@ -453,6 +458,23 @@ station-image {
 	padding: 20px 24px;
 }
 
+/*FOOTER*/
+
+.scene-footer-container {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	z-index: 3;
+}
+
+.scene-footer {
+	float: right;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding-left: 3px;
+	display: table-row;
+	font-size: 10px;
+	color: #000;
+}
 
 /*CANVAS*/
 

@@ -46,3 +46,10 @@ app.directive('informationPanel', function (){
     templateUrl: 'app/directives/information-panel.html'
   }
 });
+
+app.directive('footerBox', function (){
+  return {
+    restrict: 'E',
+    templateUrl: 'app/directives/footer-box.html'
+  }
+});
