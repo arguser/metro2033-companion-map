@@ -409,6 +409,12 @@ function pattern_50(sX,sY,canvas=1) { // Anarchists
 }
 
 function pattern_51(sX,sY,canvas=1) { // Krishnas
+
+	// override background
+	ctx[canvas].fillStyle = '#FF8800';
+	circle(sX,sY,station_radius*scale,canvas);
+	ctx[canvas].fill();
+
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].fillStyle = '#7F007F';
 	var fontSize = 12*scale;
@@ -416,7 +422,7 @@ function pattern_51(sX,sY,canvas=1) { // Krishnas
 	ctx[canvas].textAlign = 'center';
 	var h= '0950';
 	var sym = String.fromCharCode(parseInt(h, 16));
-	ctx[canvas].fillText(sym,sX,sY);
+	ctx[canvas].fillText(sym,sX,sY+1*scale);
 }
 
 function pattern_star(sX,sY,colorFill,canvas=1) { // Generic Star
