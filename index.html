@@ -17,7 +17,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Github Icons -->
-  <link rel="stylesheet" href="assets/css/octicons.css">
+  <link rel="stylesheet" href="assets/font/octicons.css">
   <!-- App styles -->
   <link href="assets/css/app.css" rel="stylesheet">
 </head>
@@ -49,7 +49,7 @@
     <div class="noprint" id="showwidgets"></div>
     <options-panel></options-panel>
 
-    <footer-box></footer-box>
+    <footer-buttons></footer-buttons>
   </div>
   <!-- <div class="map" layout="row" flex="80">
         <canvas id="map">
@@ -171,18 +171,6 @@
       // label stations
       print_station_labels();
     }
-  </script>
-  <script>
-    ! function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        p = /^http:/.test(d.location) ? 'http' : 'https';
-      if (!d.getElementById(id)) {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = p + '://platform.twitter.com/widgets.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }
-    }(document, 'script', 'twitter-wjs');
   </script>
   <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>

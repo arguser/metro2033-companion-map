@@ -47,9 +47,9 @@ app.directive('informationPanel', function (){
   }
 });
 
-app.directive('footerBox', function (){
+app.directive('footerButtons', function (){
   return {
     restrict: 'E',
-    templateUrl: 'app/directives/footer-box.html'
+    templateUrl: 'app/directives/footer-buttons.html'
   }
 });
