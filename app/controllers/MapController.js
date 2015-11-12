@@ -1,10 +1,11 @@
-app.controller('MapController', function($scope, FactionService, LineService, StationService) {
+app.controller('MapController', function($scope, $document, FactionService, LineService, StationService) {
   var self = this;
   self.simulateQuery = false;
   self.isDisabled = false;
   self.toggled = false;
   self.showOptions = false;
   self.language = 0;
+  angular.element(document.querySelector('div.dragscroll')).duScrollTo(150,500);
   // list of `stations` value/display objects
   self.factions = FactionService.getList();
   self.lines = LineService.getList();
@@ -64,6 +65,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
     circle(station.display['x_position'] * scale  + xShim, station.display['y_position'] * scale  + yShim, 8 * scale, 3);
     ctx[3].stroke();
 
+    angular.element(document.querySelector('div.dragscroll')).duScrollTo((station.display['x_position'] * scale + xShim) / 2, (station.display['y_position'] * scale + yShim) / 2, 500);
 
     selectedItem(station);
   }
@@ -141,7 +143,7 @@ app.controller('MapController', function($scope, FactionService, LineService, St
     if (item != null) {
       self.station = item.display;
       self.station_name = StationService.getNameByIdAndLocale(item.display.station_id, self.language);
-      highlight_station(item.display.station_id)
+      highlight_stations(item);
       self.line = LineService.getById(item.display.line_id);
       self.faction = FactionService.getById(item.display.faction_id);
       if (self.line != false) {
