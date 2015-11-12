@@ -29,6 +29,12 @@ TODO
   - Factions
 
 
+Micro Libraries
+---------------
+- [dragscroll](https://github.com/asvd/dragscroll)
+- [angular-scroll](https://github.com/oblador/angular-scroll)
+
+
 Feedback
 --------
 [Reddit](https://www.reddit.com/r/metro2033/comments/3ocep3/metro_2033_companion_map_early_functional_version/)
@@ -37,6 +43,9 @@ Feedback
 Contributors
 ------------
 
-- [cristiands7](https://github.com/cristiands7)
 - [MightyGoatMan](https://github.com/MightyGoatMan)
 - [arguser](https://github.com/arguser)
+
+Reach Out
+---------
+[Twitter](https://twitter.com/arguser)
