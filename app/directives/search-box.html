@@ -6,7 +6,7 @@
   </div>
   <div class="searchbox searchbox-shadow" id="searchbox">
     <form class="initial-searchbox-wrapper" id="searchbox_form" ng-submit="$event.preventDefault()">
-      <md-autocomplete md-input-id="searchboxinput" md-item-text="item.display.station_name" md-items="item in map.querySearch(map.searchText)" md-min-length="1" md-no-cache="map.noCache" md-search-text-change="map.searchTextChange(map.searchText)" md-search-text="map.searchText" md-selected-item-change="map.selectedItemChange(item)" md-selected-item="map.selectedItem" ng-disabled="map.isDisabled" role="listbox">
+      <md-autocomplete placeholder="Search Station" md-input-id="searchboxinput" md-item-text="item.display.station_name" md-items="item in map.querySearch(map.searchText)" md-min-length="1" md-no-cache="map.noCache" md-search-text-change="map.searchTextChange(map.searchText)" md-search-text="map.searchText" md-selected-item-change="map.selectedItemChange(item)" md-selected-item="map.selectedItem" ng-disabled="map.isDisabled" role="listbox">
         <md-item-template>
           <span md-highlight-flags="^i" md-highlight-text="map.searchText">{{item.display.station_name}}</span>
         </md-item-template>

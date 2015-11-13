@@ -1452,7 +1452,7 @@ var stations = [{
   "line_id": 6,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Medved_Antares_01.jpg/640px-Medved_Antares_01.jpg",
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -1464,7 +1464,7 @@ var stations = [{
   "line_id": 6,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Babushkinskaya_Station_Moscow.jpg/640px-Babushkinskaya_Station_Moscow.jpg",
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -1476,7 +1476,7 @@ var stations = [{
   "line_id": 6,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Sviblovo_13.jpg/640px-Sviblovo_13.jpg",
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -1489,7 +1489,7 @@ var stations = [{
   "faction_id": 3,
   "version_id": 3,
   "station_open": 1,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Bsad_Antares_03.jpg/640px-Bsad_Antares_03.jpg",
   "label_point": 3,
   "symbol_id": 3
 }, {
@@ -1501,7 +1501,7 @@ var stations = [{
   "faction_id": 9,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/f/ff/VDNKh.jpg",
   "label_point": 3,
   "symbol_id": 9
 }, {
@@ -1513,7 +1513,7 @@ var stations = [{
   "faction_id": 9,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Alexeevskaya-mm.jpg/640px-Alexeevskaya-mm.jpg",
   "label_point": 3,
   "symbol_id": 9
 }, {
@@ -1525,7 +1525,7 @@ var stations = [{
   "faction_id": 9,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Rizhskaya_station.jpg/640px-Rizhskaya_station.jpg",
   "label_point": 3,
   "symbol_id": 9
 }, {
@@ -1537,7 +1537,7 @@ var stations = [{
   "faction_id": 5,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/ProspmiraKRL-mm.jpg/640px-ProspmiraKRL-mm.jpg",
   "label_point": 10,
   "symbol_id": 5
 }, {
@@ -1549,7 +1549,7 @@ var stations = [{
   "faction_id": 5,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/ProspmiraKRL-mm.jpg/640px-ProspmiraKRL-mm.jpg",
   "label_point": 9,
   "symbol_id": 5
 }, {
@@ -1561,7 +1561,7 @@ var stations = [{
   "faction_id": 3,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Sukharevskaya-mm.jpg/640px-Sukharevskaya-mm.jpg",
   "label_point": 11.5,
   "symbol_id": 3
 }, {
@@ -1573,7 +1573,7 @@ var stations = [{
   "faction_id": 3,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Turgenevskaya-mm.jpg/640px-Turgenevskaya-mm.jpg",
   "label_point": 12,
   "symbol_id": 3
 }, {
@@ -1585,7 +1585,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Kitay-Gorod.jpg/640px-Kitay-Gorod.jpg",
   "label_point": 5.5,
   "symbol_id": 221
 }, {
@@ -1597,7 +1597,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tretyakovskaya_North_2010.jpg/640px-Tretyakovskaya_North_2010.jpg",
   "label_point": 3,
   "symbol_id": 223
 }, {
@@ -1608,7 +1608,7 @@ var stations = [{
   "line_id": 6,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://en.wikipedia.org/wiki/File:OktyabrskayaKRL-mm.jpg",
   "label_point": 10,
   "faction_id": 1,
   "symbol_id": 1
@@ -1620,7 +1620,7 @@ var stations = [{
   "line_id": 5,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://en.wikipedia.org/wiki/File:OktyabrskayaKRL-mm.jpg",
   "label_point": 8,
   "faction_id": 5,
   "symbol_id": 5
@@ -1633,7 +1633,7 @@ var stations = [{
   "faction_id": 3,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bitsevsky-mm.jpg/640px-Bitsevsky-mm.jpg",
   "label_point": 9,
   "symbol_id": 3
 }, {
@@ -1645,7 +1645,7 @@ var stations = [{
   "faction_id": 18,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Yasenevo_05.jpg/640px-Yasenevo_05.jpg",
   "label_point": 9,
   "symbol_id": 18
 }, {
@@ -1657,7 +1657,7 @@ var stations = [{
   "faction_id": 18,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Teplystan-mm.jpg/640px-Teplystan-mm.jpg",
   "label_point": 9,
   "symbol_id": 18
 }, {
@@ -1669,7 +1669,7 @@ var stations = [{
   "faction_id": 18,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Konkovo_02.jpg/640px-Konkovo_02.jpg",
   "label_point": 9,
   "symbol_id": 18
 }, {
@@ -1681,7 +1681,7 @@ var stations = [{
   "faction_id": 18,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Belyaevo-mm.jpg/640px-Belyaevo-mm.jpg",
   "label_point": 9,
   "symbol_id": 18
 }, {
@@ -1693,7 +1693,7 @@ var stations = [{
   "faction_id": 18,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Kaluzhskaya-mm.jpg/640px-Kaluzhskaya-mm.jpg",
   "label_point": 9,
   "symbol_id": 18
 }, {
@@ -1705,7 +1705,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Cherem_Antares_02.jpg/640px-Cherem_Antares_02.jpg",
   "label_point": 9,
   "symbol_id": 223
 }, {
@@ -1717,7 +1717,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Profsoyuznaya-mm.jpg/640px-Profsoyuznaya-mm.jpg",
   "label_point": 9,
   "symbol_id": 221
 }, {
@@ -1729,7 +1729,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Akad_YuVyh.JPG/640px-Akad_YuVyh.JPG",
   "label_point": 9,
   "symbol_id": 220
 }, {
@@ -1741,7 +1741,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Len_Prosp_Antares_02.jpg/640px-Len_Prosp_Antares_02.jpgg",
   "label_point": 9,
   "symbol_id": 222
 }, {
@@ -1753,7 +1753,7 @@ var stations = [{
   "faction_id": 22,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Shabol_Antares_07.jpg/640px-Shabol_Antares_07.jpg",
   "label_point": 9,
   "symbol_id": 224
 },  {

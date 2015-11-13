@@ -50,8 +50,8 @@ a, button, h1, h2, h3, h4, h5, h6, input, ol, p, textarea, th, ul {
 .widget-settings-pane {
   position: absolute;
   z-index: 1;
-  left: -340px;
-  width: 320px;
+  left: -380px;
+  width: 364px;
   height: 100%;
   background-color: white;
   -webkit-transform: translateX(0);
@@ -62,7 +62,7 @@ a, button, h1, h2, h3, h4, h5, h6, input, ol, p, textarea, th, ul {
 }
 .widget-settings-open .widget-settings-pane {
   -webkit-transform: translateX(340px);
-  transform: translateX(340px)
+  transform: translateX(380px)
 }
 .widget-settings-shim {
   position: fixed;
@@ -74,6 +74,10 @@ a, button, h1, h2, h3, h4, h5, h6, input, ol, p, textarea, th, ul {
   background: black;
   width: 100%;
   height: 100%
+}
+
+md-toolbar {
+	width: 364px;
 }
 .widget-settings-pane, .widget-settings-shim {
   transition-duration: 0.3s
@@ -139,7 +143,7 @@ label.widget-settings-setting-title {
 }
 #omnibox {
   position: absolute;
-  left: 0px;
+  left: 10px;
   margin: 16px;
   top: 0px;
   z-index: 10;
@@ -279,12 +283,12 @@ html[dir="rtl"] .searchbox-searchbutton {
   transform: scaleX(-1)
 }
 .md-autocomplete-suggestions-container {
-  background-color: #FFF;
-  border-radius: 0px 0px 2px 2px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  font-size: 15px;
-  overflow: hidden;
-  width: 392px;
+  background-color: #FFF !important;
+  border-radius: 0px 0px 2px 2px !important;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2) !important;
+  font-size: 15px !important;
+  overflow: hidden !important;
+  width: 392px !important;
 }
 
 .md-autocomplete-suggestions li {
@@ -292,13 +296,13 @@ html[dir="rtl"] .searchbox-searchbutton {
 }
 
 .md-virtual-repeat-container.md-autocomplete-suggestions-container {
-  	left: 16px !important;
+  	left: 26px !important;
   	min-width: 230px !important;
   	max-width: 1192px !important;
-  	top: 64px !important;
+  	top: 62px !important;
   	bottom: auto !important;
   	max-height: 225.5px !important;
-  	width: 351px !important;
+  	width: 350px !important;
 }
 /**/
 
