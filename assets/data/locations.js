@@ -1128,12 +1128,13 @@ var station_names = [
 //     y_position
 //     line_id
 //     faction_id
+//     images from https://en.wikipedia.org/wiki/List_of_Moscow_Metro_stations
 
 var stations = [{
   "station_id": 1,
   "station_name": "ALTUFYEVO",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Metro_station_Altyfievo_Moscow.jpg/640px-Metro_station_Altyfievo_Moscow.jpg",
   "label_point": 3,
   "x_position": 490,
   "y_position": 90,
@@ -1144,7 +1145,7 @@ var stations = [{
   "station_id": 2,
   "station_name": "BIBIREVO",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/f/f9/The-Bibirevo-Metro--3.jpg",
   "label_point": 3,
   "x_position": 515,
   "y_position": 115,
@@ -1155,7 +1156,7 @@ var stations = [{
   "station_id": 3,
   "station_name": "OTRADNOE",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Otradnoe-mm.jpg/640px-Otradnoe-mm.jpg",
   "label_point": 3,
   "x_position": 515,
   "y_position": 150,
@@ -1166,7 +1167,7 @@ var stations = [{
   "station_id": 4,
   "station_name": "VLADYKINO",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vladykino-mm.jpg/640px-Vladykino-mm.jpg",
   "label_point": 3,
   "x_position": 515,
   "y_position": 185,
@@ -1177,7 +1178,7 @@ var stations = [{
   "station_id": 5,
   "station_name": "PETROVSKO-RAZUMOVSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Petrazum-mm.jpg/640px-Petrazum-mm.jpg",
   "label_point": 3,
   "x_position": 490,
   "y_position": 210,
@@ -1188,7 +1189,7 @@ var stations = [{
   "station_id": 6,
   "station_name": "TIMIRYAZEVSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Timiryazevskaya.jpg/640px-Timiryazevskaya.jpg",
   "label_point": 3,
   "x_position": 490,
   "y_position": 245,
@@ -1199,7 +1200,7 @@ var stations = [{
   "station_id": 7,
   "station_name": "DMITROVSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dmitrovskaya-mm.jpg/640px-Dmitrovskaya-mm.jpg",
   "label_point": 9,
   "x_position": 490,
   "y_position": 280,
@@ -1210,7 +1211,7 @@ var stations = [{
   "station_id": 8,
   "station_name": "SAVELOVSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/SavelovskayaMoscow.jpg/640px-SavelovskayaMoscow.jpg",
   "label_point": 9,
   "x_position": 490,
   "y_position": 315,
@@ -1221,7 +1222,7 @@ var stations = [{
   "station_id": 9,
   "station_name": "MENDELEYEVSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/MendeleevskayaMoscow.jpg/640px-MendeleevskayaMoscow.jpg",
   "label_point": 9,
   "x_position": 490,
   "y_position": 350,
@@ -1236,7 +1237,7 @@ var stations = [{
   "line_id": 5,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Novoslobodskaya_%28Moscow_Metro%29_002.jpg/640px-Novoslobodskaya_%28Moscow_Metro%29_002.jpg",
   "label_point": 5,
   "faction_id": 5,
   "symbol_id": 5
@@ -1244,7 +1245,7 @@ var stations = [{
   "station_id": 11,
   "station_name": "TSVETNOY BULVAR",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Cv_bulvar.JPG/640px-Cv_bulvar.JPG",
   "label_point": 9,
   "x_position": 580,
   "y_position": 440,
@@ -1255,7 +1256,7 @@ var stations = [{
   "station_id": 12,
   "station_name": "CHEKHOVSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Chekhovskaya_station.jpg/640px-Chekhovskaya_station.jpg",
   "label_point": 3,
   "x_position": 500,
   "y_position": 524,
@@ -1266,7 +1267,7 @@ var stations = [{
   "station_id": 13,
   "station_name": "ALEKSANDROVSKY SAD",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/2/28/AleksandrovskySad.jpg",
   "label_point": 12,
   "x_position": 527,
   "y_position": 621,
@@ -1277,7 +1278,7 @@ var stations = [{
   "station_id": 14,
   "station_name": "BOROVITSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/MosMetro_Borovitskaya_2011.jpg/640px-MosMetro_Borovitskaya_2011.jpg",
   "label_point": 6.5,
   "x_position": 485,
   "y_position": 678,
@@ -1288,7 +1289,7 @@ var stations = [{
   "station_id": 15,
   "station_name": "POLYANKA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Polyanka_subway_%282%29.jpg/640px-Polyanka_subway_%282%29.jpg",
   "label_point": 9,
   "x_position": 520,
   "y_position": 751,
@@ -1303,7 +1304,7 @@ var stations = [{
   "line_id": 5,
   "version_id": 3,
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Dobryninskaya-mm.jpg/640px-Dobryninskaya-mm.jpg",
   "label_point": 11.5,
   "faction_id": 5,
   "symbol_id": 5
@@ -1311,7 +1312,7 @@ var stations = [{
   "station_id": 17,
   "station_name": "BULVAR DMITRIYA DONSKOGO",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bulvar_Dmitriya_Donskogo_2007_2.JPG/640px-Bulvar_Dmitriya_Donskogo_2007_2.JPG",
   "label_point": 3,
   "x_position": 608,
   "y_position": 1210,
@@ -1322,7 +1323,7 @@ var stations = [{
   "station_id": 18,
   "station_name": "ANNINO",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Annino_station.jpg/640px-Annino_station.jpg",
   "label_point": 3,
   "x_position": 608,
   "y_position": 1180,
@@ -1333,7 +1334,7 @@ var stations = [{
   "station_id": 19,
   "station_name": "ULITSA AKADEMIKA YANGELYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Ulitsa_Akademika_Yangelya_%28%D0%A3%D0%BB%D0%B8%D1%86%D0%B0_%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0_%D0%AF%D0%BD%D0%B3%D0%B5%D0%BB%D1%8F%29_%285461683692%29.jpg/640px-Ulitsa_Akademika_Yangelya_%28%D0%A3%D0%BB%D0%B8%D1%86%D0%B0_%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0_%D0%AF%D0%BD%D0%B3%D0%B5%D0%BB%D1%8F%29_%285461683692%29.jpg",
   "label_point": 3,
   "x_position": 608,
   "y_position": 1150,
@@ -1344,7 +1345,7 @@ var stations = [{
   "station_id": 20,
   "station_name": "PRAZHSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Metro_station_Prazhskaya_Moscow.jpg/640px-Metro_station_Prazhskaya_Moscow.jpg",
   "label_point": 9,
   "x_position": 608,
   "y_position": 1120,
@@ -1355,7 +1356,7 @@ var stations = [{
   "station_id": 21,
   "station_name": "YUZHNAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Yuzhnaya_04.JPG/640px-Yuzhnaya_04.JPG",
   "label_point": 9,
   "x_position": 608,
   "y_position": 1090,
@@ -1366,7 +1367,7 @@ var stations = [{
   "station_id": 22,
   "station_name": "CHERTANOVSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Chertanovskaya_%28%D0%A7%D0%B5%D1%80%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%29_%285456525592%29.jpg/640px-Chertanovskaya_%28%D0%A7%D0%B5%D1%80%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%29_%285456525592%29.jpg",
   "label_point": 9,
   "x_position": 578,
   "y_position": 1060,
@@ -1377,7 +1378,7 @@ var stations = [{
   "station_id": 23,
   "station_name": "SEVASTAPOLSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sevastopolskaya_03.JPG/635px-Sevastopolskaya_03.JPG",
   "label_point": 9,
   "x_position": 578,
   "y_position": 1030,
@@ -1388,7 +1389,7 @@ var stations = [{
   "station_id": 24,
   "station_name": "NAKHIMOVSKIY PROSPEKT",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nahimovsky_05.jpg/639px-Nahimovsky_05.jpg",
   "label_point": 9,
   "x_position": 578,
   "y_position": 1000,
@@ -1399,7 +1400,7 @@ var stations = [{
   "station_id": 25,
   "station_name": "NAGORNAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/The-Nagornaya-Metro.jpg",
   "label_point": 9,
   "x_position": 578,
   "y_position": 970,
@@ -1410,7 +1411,7 @@ var stations = [{
   "station_id": 26,
   "station_name": "NAGATINSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/The-Nagatinskaya-Metro.jpg",
   "label_point": 9,
   "x_position": 608,
   "y_position": 940,
@@ -1421,7 +1422,7 @@ var stations = [{
   "station_id": 27,
   "station_name": "TULSKAYA",
   "station_open": 0,
-  "station_img": "assets/img/example.png",
+  "station_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Tulskaya_01.jpg/640px-Tulskaya_01.jpg",
   "label_point": 9,
   "x_position": 608,
   "y_position": 910,
@@ -3330,6 +3331,66 @@ var stations = [{
 
 ]
 
+// STATUS
+//     status_id
+//     status_name
+//     status_description
+var status = [{
+  "status_id": 1,
+  "status_name": "Unknown/Unexplored",
+  "status_description": "No information is currently available about this station."
+},{
+  "status_id": 2,
+  "status_name": "Destroyed",
+  "status_description": "These stations were completely destroyed by the war, or were still under construction when the bombs fell."
+},{
+  "status_id": 3,
+  "status_name": "Uninhabited or Abandoned",
+  "status_description": "Stations that are uninhabited, or were once inhabited and have since been abandoned."
+},{
+  "status_id": 4,
+  "status_name": "Occupied by Mutants",
+  "status_description": "Various stations have been occupied by mutated creatures. Some are relatively harmless while others are as nightmarish as anything encountered on the surface."
+},{
+  "status_id": 5,
+  "status_name": "Struck by Plague Epidemic",
+  "status_description": "Various stations have been occupied by mutated creatures. Some are relatively harmless while others are as nightmarish as anything encountered on the surface."
+},]
+
+// HAZARDS
+//     hazard_id
+//     hazard_name
+//     hazard_description
+var hazards = [{
+  "hazard_id": 1,
+  "hazard_name": "Radiation Hazard",
+  "hazard_description": ""
+}, {
+  "hazard_id": 2,
+  "hazard_name": "Biohazard",
+  "hazard_description": ""
+}, {
+  "hazard_id": 3,
+  "hazard_name": "Mental Hazard",
+  "hazard_description": ""
+}, {
+  "hazard_id": 4,
+  "hazard_name": "Tunnel Collapse Hazard",
+  "hazard_description": ""
+}, {
+  "hazard_id": 5,
+  "hazard_name": "Various Hazards",
+  "hazard_description": ""
+}, {
+  "hazard_id": 6,
+  "hazard_name": "Krishnaites",
+  "hazard_description": ""
+}, {
+  "hazard_id": 7,
+  "hazard_name": "Jehowa's Witnesses",
+  "hazard_description": ""
+}, ]
+
 
 // FACTION
 //     faction_id
@@ -3459,11 +3520,6 @@ var factions = [{
   "faction_colour": "#499EFF"
 }, {
   "faction_id": 24,
-  "faction_name": "Occupied by Mutants",
-  "faction_description": "Various stations have been occupied by mutated creatures. Some are relatively harmless while others are as nightmarish as anything encountered on the surface.",
-  "faction_colour": "#323232"
-}, {
-  "faction_id": 25,
   "faction_name": "Satanists",
   "faction_description": "The Satanists are a group of malevolent metro inhabitants, who believe that the metro is the gateway to hell. Little is known about the location of the Satanists. One witness was kidnapped on Belorusskaya and brought to their station. He did not recognize it, although based on his description and the fact that it's beyond Pechatniki, Lyublino (Lyublinsko-Dmitrovskaya Line) is the most likely candidate. In contrast, some rumours place the Satanists at Timiryazevskaya on the Serpukhovsko-Timiryazevskaya line, suggesting there may be more than one colony of Satan worshipers in the Metro. The Satanist station is vandalized, all name-boards are ripped off and the walls and floor are blood-stained. The floor in the center is ripped up, and there's a huge pit, 30 metres deep, where kidnapped slaves from other stations are forced to dig further down. The Satanists believe that the end of the world already happened, and the Moscow metro is the Hellgate – if they dig a bit deeper, they would get to Hell and see Satan himself. The Satanists do not appear to maintain any industry, and they also brutally murder slaves on a constant basis. How they survive remains a mystery.",
   "faction_colour": "#000000"

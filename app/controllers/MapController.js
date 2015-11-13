@@ -1,31 +1,37 @@
 app.controller('MapController', function($scope, $document, FactionService, LineService, StationService) {
+
+  //Initialization
   var self = this;
-  self.simulateQuery = false;
   self.isDisabled = false;
-  self.toggled = false;
-  self.showOptions = false;
-  self.language = 0;
-  angular.element(document.querySelector('div.dragscroll')).duScrollTo(150,500);
-  // list of `stations` value/display objects
-  self.factions = FactionService.getList();
-  self.lines = LineService.getList();
-  self.stations = loadAll();
+
   self.station = null;
   self.line = null;
   self.faction = null;
   self.station_name = null;
-  // self.stations = loadAll();
-  self.form = {};
+  self.station_status = null;
+  self.factions = FactionService.getList();
+  self.lines = LineService.getList();
+  self.stations = loadAll();
+
+  // Map
+  angular.element(document.querySelector('div.dragscroll')).duScrollTo(150, 500);
+  self.highlight_stations = highlight_stations;
+  
+  //Search Panel
+  self.simulateQuery = false;
   self.querySearch = querySearch;
   self.selectedItemChange = selectedItemChange;
   self.searchTextChange = searchTextChange;
-  self.highlight_stations = highlight_stations;
+
+  //Information Panel
+  self.toggled = false;
   self.toggle = true;
   self.togglePanel = togglePanel;
+  //Option Panel
+  self.showOptions = false;
+  self.language = 0;
   self.toggleOptionPanel = toggleOptionPanel;
   self.changeNames = changeNames;
-
-
 
   // ******************************
   // Internal methods
@@ -39,8 +45,8 @@ app.controller('MapController', function($scope, $document, FactionService, Line
 
   function changeNames(locale) {
     self.language = locale;
-  	name_set = self.language;
-  	print_station_labels();
+    name_set = self.language;
+    print_station_labels();
     self.station = null;
   }
 
@@ -62,10 +68,11 @@ app.controller('MapController', function($scope, $document, FactionService, Line
     circle(station.display['x_position'] * scale + xShim, station.display['y_position'] * scale + yShim, 12 * scale, 3);
     ctx[3].stroke();
 
-    circle(station.display['x_position'] * scale  + xShim, station.display['y_position'] * scale  + yShim, 8 * scale, 3);
+    circle(station.display['x_position'] * scale + xShim, station.display['y_position'] * scale + yShim, 8 * scale, 3);
     ctx[3].stroke();
 
-    angular.element(document.querySelector('div.dragscroll')).duScrollTo((station.display['x_position'] * scale + xShim) / 2, (station.display['y_position'] * scale + yShim) / 2, 500);
+    var stationPos = angular.element(document.getElementById('link-' + station.display.station_id));
+    angular.element(document.querySelector('div.dragscroll')).scrollToElement(stationPos, 100, 500);
 
     selectedItem(station);
   }
@@ -115,15 +122,19 @@ app.controller('MapController', function($scope, $document, FactionService, Line
       if (self.line != false) {
         angular.element(document.querySelector('div.widget-pane-section-header-description')).css('background-color', self.line.line_colour);
         angular.element(document.querySelector('md-tabs-canvas')).css('background-color', shadeColor(self.line.line_colour, -20));
-        }
+      }
       if (self.faction != false)
         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);
     }
   }
 
-  function shadeColor(color, percent) {  // deprecated. See below.
-      var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, G = (num >> 8 & 0x00FF) + amt, B = (num & 0x0000FF) + amt;
-      return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
+  function shadeColor(color, percent) { // deprecated. See below.
+    var num = parseInt(color.slice(1), 16),
+      amt = Math.round(2.55 * percent),
+      R = (num >> 16) + amt,
+      G = (num >> 8 & 0x00FF) + amt,
+      B = (num & 0x0000FF) + amt;
+    return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
   }
 
   function searchTextChange(text) {
@@ -149,7 +160,7 @@ app.controller('MapController', function($scope, $document, FactionService, Line
       if (self.line != false) {
         angular.element(document.querySelector('div.widget-pane-section-header-description')).css('background-color', self.line.line_colour);
         angular.element(document.querySelector('md-tabs-canvas')).css('background-color', shadeColor(self.line.line_colour, -20));
-        }
+      }
       if (self.faction != false)
       // This should be handled "the angular way"
         angular.element(document.querySelector('div.panel-header-faction')).css('background-color', self.faction.faction_colour);

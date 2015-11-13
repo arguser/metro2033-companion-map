@@ -41,7 +41,7 @@
           xShim = 150
           yShim = 20
         -->
-        <a class="station_link" ng-repeat="station in map.stations" ng-click="map.highlight_stations(station)" style="top: {{((1.5 * station.display.y_position)+(20*1.5)) - ((7+1)*1.5)}}px; left: {{((1.5 * station.display.x_position)+(150*1.5)) - ((7+1)*1.5)}}px;">
+        <a id="link-{{station.display.station_id}}" class="station_link" ng-repeat="station in map.stations" ng-click="map.highlight_stations(station)" style="top: {{((1.5 * station.display.y_position)+(20*1.5)) - ((7+1)*1.5)}}px; left: {{((1.5 * station.display.x_position)+(150*1.5)) - ((7+1)*1.5)}}px;">
         </a>
       </div>
     </div>

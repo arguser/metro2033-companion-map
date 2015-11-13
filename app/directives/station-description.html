@@ -1,9 +1,9 @@
 <div class="widget-pane-section-content" layout="column">
-<div id="stationStatus" ng-hide="map.station_status == false" layout="row">
+<div id="stationStatus" ng-hide="map.station_status == null" layout="row">
   <div class="widget-pane-section-content-title" flex="30">Status</div>
   <div class="widget-pane-section-content-title" flex="70">{{map.station_status.status}}</div>
 </div>
-<div id="stationDescription" ng-hide="map.station.station_description == ''" layout="row">
+<div id="stationDescription" ng-hide="map.station.station_description == null" layout="row">
   <div class="widget-pane-section-content-title" flex="30">Description</div>
   <div class="widget-pane-section-content-text" flex="70">{{map.station.station_description}}</div>
 </div>

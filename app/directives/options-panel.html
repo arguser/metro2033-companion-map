@@ -2,35 +2,52 @@
   <div class="widget-settings" ng-class="{'widget-settings-open': map.showOptions, 'widget-settings-offscreen': !map.showOptions}">
     <div class="widget-settings-shim" ng-click="map.toggleOptionPanel()"></div>
     <div class="widget-settings-pane">
-      <div flex="100" layout="column">
+      <div flex="100" layout="column" layout-align="start start">
         <div class="widget-setting-content">
           <md-toolbar class="md-theme-light">
             <h2 class="md-toolbar-tools">
               <span>Options</span>
             </h2>
           </md-toolbar>
-          <div flex="80" layout="row">
-            <md-button flex="50">Book</md-button>
-            <md-button flex="50">Game</md-button>
-          </div>
-          <div flex="80" layout="row">
-            <md-button flex="50">2033</md-button>
-            <md-button flex="50">2034</md-button>
-          </div>
-          <div class="language-settings" flex="20" layout="row">
-            <md-icon md-font-icon="material-icons">language</md-icon>
-            <md-button ng-class="{'md-raised md-primary': map.language == 0}" ng-click="map.changeNames(0)">EN</md-button>
-            <md-button ng-class="{'md-raised md-primary': map.language == 2}" ng-click="map.changeNames(2)">ES</md-button>
-            <md-button ng-class="{'md-raised md-primary': map.language == 1}" ng-click="map.changeNames(1)">RU</md-button>
-          </div>
+          <md-content>
+            <div class="widget-settings-setting-setting">
+              <div class="widget-settings-setting-title">
+                <md-icon md-font-icon="material-icons">book</md-icon>
+                <label>Metro Books</label>
+              </div>
+              <div>
+                <md-button ng-disabled="true">2034</md-button>
+                <md-button ng-disabled="true">2033</md-button>
+                <md-button ng-disabled="true">2035</md-button>
+              </div>
+            </div>
+            <div class="widget-settings-setting-setting">
+              <div class="widget-settings-setting-title">
+                <md-icon md-font-icon="material-icons">games</md-icon> <label>Metro Games</label>
+              </div>
+              <div>
+                <md-button ng-disabled="true">2033</md-button>
+                <md-button ng-disabled="true">Last Light</md-button>
+              </div>
+            </div>
+            <div class="widget-settings-setting-setting">
+              <div class="widget-settings-setting-title">
+                <md-icon md-font-icon="material-icons">language</md-icon> <label>Languages</label>
+              </div>
+              <div>
+                <md-button ng-class="{'md-raised md-primary': map.language == 0}" ng-click="map.changeNames(0)">EN</md-button>
+                <md-button ng-class="{'md-raised md-primary': map.language == 2}" ng-click="map.changeNames(2)">ES</md-button>
+                <md-button ng-class="{'md-raised md-primary': map.language == 1}" ng-click="map.changeNames(1)">RU</md-button>
+              </div>
+            </div>
+          </md-content>
           <footer class="made-with-heart">
             <span>
               <span class="octicon octicon-pencil"></span>
               with
               <span class="octicon octicon-heart"></span>
               by
-              <a href="https://github.com/arguser">arguser</a>
-              and
+              <a href="https://github.com/arguser">arguser</a> and
               <a href="https://github.com/MightyGoatMan">MightyGoatMan</a>
             </span>
           </footer>
