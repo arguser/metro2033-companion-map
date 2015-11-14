@@ -391,6 +391,78 @@ function drawLine(line,border=0) {
 	}
 }
 
+function surface_link(angle, sX,sY, canvas=0) {
+
+	sX = (sX*scale)+xShim;
+	sY = (sY*scale)+yShim;
+	ctx[canvas].lineCap = "butt";
+	ctx[canvas].strokeStyle = '#444444';
+	ctx[canvas].lineWidth =  4*scale;
+
+	straightLength = 27*scale;
+	capLength = 7*scale;
+	
+	slantLength = 17*scale;
+	capLengthSlant = 4*scale;
+
+	ctx[canvas].moveTo(sX, sY);
+
+	switch(angle) {
+
+		case 0:
+			ctx[canvas].lineTo(sX+straightLength, sY);
+			ctx[canvas].lineTo(sX+straightLength, sY-capLength);
+			ctx[canvas].lineTo(sX+straightLength, sY+capLength);
+		break;
+
+		case 45:
+			ctx[canvas].lineTo(sX+slantLength, sY+slantLength);
+			ctx[canvas].lineTo(sX+slantLength+capLengthSlant, sY+slantLength-capLengthSlant);
+			ctx[canvas].lineTo(sX+slantLength-capLengthSlant, sY+slantLength+capLengthSlant);
+		break;
+
+		case 90:
+			ctx[canvas].lineTo(sX,     			sY+straightLength);
+			ctx[canvas].lineTo(sX-capLength,	sY+straightLength);
+			ctx[canvas].lineTo(sX+capLength,	sY+straightLength);
+		break;
+
+		case 135:
+			ctx[canvas].lineTo(sX-slantLength, sY+slantLength);		
+			ctx[canvas].lineTo(sX-slantLength-capLengthSlant, sY+slantLength-capLengthSlant);
+			ctx[canvas].lineTo(sX-slantLength+capLengthSlant, sY+slantLength+capLengthSlant);
+		break;
+
+		case 180:
+			ctx[canvas].lineTo(sX-straightLength, sY);
+			ctx[canvas].lineTo(sX-straightLength, sY-capLength);
+			ctx[canvas].lineTo(sX-straightLength, sY+capLength);
+		break;
+
+		case 225:
+			ctx[canvas].lineTo(sX-slantLength, sY-slantLength);
+			ctx[canvas].lineTo(sX-slantLength+capLengthSlant, sY-slantLength-capLengthSlant);
+			ctx[canvas].lineTo(sX-slantLength-capLengthSlant, sY-slantLength+capLengthSlant);
+		break;
+
+		case 270:
+			ctx[canvas].lineTo(sX, 				sY-straightLength);
+			ctx[canvas].lineTo(sX-capLength,	sY-straightLength);
+			ctx[canvas].lineTo(sX+capLength,	sY-straightLength);
+		break;
+
+		case 315:
+			ctx[canvas].lineTo(sX+slantLength, sY-slantLength);
+			ctx[canvas].lineTo(sX+slantLength-capLengthSlant, sY-slantLength-capLengthSlant);
+			ctx[canvas].lineTo(sX+slantLength+capLengthSlant, sY-slantLength+capLengthSlant);
+		break;
+
+	}
+
+
+	ctx[canvas].stroke();
+}
+
 function break_line(sX,sY, canvas=0) {
 
 	sX = sX*scale;

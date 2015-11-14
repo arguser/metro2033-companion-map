@@ -116,6 +116,12 @@
         ctx[i].textBaseline = 'middle'
       }
 
+      // draw rail line surface links
+      for (i = 0; i < surface_links.length; i++) {
+        thisLink = surface_links[i];
+        surface_link(thisLink[0],thisLink[1],thisLink[2]);
+      }
+
       // draw rail lines
       for (i = 0; i < lines.length; i++) {
         thisLine = lines[i];

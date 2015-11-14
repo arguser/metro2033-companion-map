@@ -78,8 +78,8 @@ var lines = [{
     [0, 762,626],
     [0, 800,588],
     [0, 863,525],
-    [0, 935,452],
-    [0, 935,388] // SHCHYOLKOVSKAYA
+    [0, 945,442],
+    [0, 945,378] // SHCHYOLKOVSKAYA
   ],
   "line_colour": "#2192e4"
 },
@@ -300,8 +300,9 @@ var line_breaks = [
   // 1 - Red Line
   [300,892],
   [286,906],
-  // 1 - Green Line (No breaks)
+  // 2 - Green Line (No breaks)
   // 3 - dark blue line
+  [925, 462],
   [307,761],
   [140,732],
   [76,630],
@@ -328,6 +329,47 @@ var line_breaks = [
   [216,635],
   [187,665],
 ]
+
+// **************************************************************************************************************************************************
+// SURFACE_LINKS
+// Tunnels to surface [angle, x, y]
+var surface_links = [
+  // 1 - Red Line
+  [180, 872,290],
+  [225, 776,408],
+  [135, 341,888],
+  // 2 - Green Line
+  [0, 322,320],
+  [180, 749,1055],
+  [180, 847,1195],
+  // 3 - Dark Blue line
+  [225, 937,450],
+  // 4 - Light Blue Line
+  [315, 178,696],
+  // 5 - Circle Line
+  [180, 363,470],
+  // 6 - Orange line
+  [225, 742,178],
+  [45,  398,1004],
+  // 7 - Purple Line
+  [225, 192,305],
+  // 8 - Yellow Line
+  [225, 1008,655],
+  // 9 - Grey line
+  [45, 502,197],
+  [315, 598,1080],
+  // 10 - Lime Green Line
+  [315, 885,920],
+  // 11 - Teal Line
+  [90,  630,1030],
+  // 12 - Pale Blue Line
+  [45, 574,1220],
+
+
+  // 13 - Light Blue Extension
+  // 14 - Yellow Line Extension
+]
+
 
 // **************************************************************************************************************************************************
 
@@ -633,9 +675,9 @@ var station_names = [
   {"station_id": 68, "name_set": 1, "station_name": "Университе́т"},
   {"station_id": 68, "name_set": 2, "station_name": "UNIVERSITY"},
 
-  {"station_id": 69, "name_set": 0, "station_name": "LENINSKIYE GORY"},
-  {"station_id": 69, "name_set": 1, "station_name": "Ле́нинские го́ры"},
-  {"station_id": 69, "name_set": 2, "station_name": "LENIN HILLS"},
+  {"station_id": 69, "name_set": 0, "station_name": "VOROBYOVY GORY"},
+  {"station_id": 69, "name_set": 1, "station_name": "Воробьёвы го́ры"},
+  {"station_id": 69, "name_set": 2, "station_name": "SPARROW HILLS"},
 
   {"station_id": 70, "name_set": 0, "station_name": "SPORTIVNAYA"},
   {"station_id": 70, "name_set": 1, "station_name": "Спорти́вная"},
@@ -661,7 +703,7 @@ var station_names = [
   {"station_id": 75,    "name_set": 1,    "station_name": "Измайловская"},
   {"station_id": 75,    "name_set": 2,    "station_name": "IZMAILOV"},
 
-  {"station_id": 76,    "name_set": 0,    "station_name": "IZMAILOVSKY PARK"},
+  {"station_id": 76,    "name_set": 0,    "station_name": "IZMAYLOVSKY PARK"},
   {"station_id": 76,    "name_set": 1,    "station_name": "Измайловский парк"},
   {"station_id": 76,    "name_set": 2,    "station_name": "IZMAILOVSKI PARK"},
 
@@ -1138,6 +1180,11 @@ var station_names = [
   {"station_id": 195, "name_set": 0, "station_name": "KUNTSEVSKAYA"},
   {"station_id": 195, "name_set": 1, "station_name": "Кунцевская"},
   {"station_id": 195, "name_set": 2, "station_name": "KUNTSEVO"},
+
+  {"station_id": 196, "name_set": 0, "station_name": "STOROZHEVAYA BASHNYA"},
+  {"station_id": 196, "name_set": 1, "station_name": "Сторожевая башня"},
+  {"station_id": 196, "name_set": 2, "station_name": "THE WATCHTOWER"},
+
 ]
 
 // **************************************************************************************************************************************************
@@ -1202,7 +1249,7 @@ var stations = [{
   "station_name": "PETROVSKO-RAZUMOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
+  "label_point": 10,
   "x_position": 490,
   "y_position": 210,
   "line_id": 9,
@@ -1318,7 +1365,8 @@ var stations = [{
   "y_position": 751,
   "line_id": 9,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "station_description": "Polyanaka is dark, empty and abandoned. Nonetheless, travellers passing through often report strange encounters including visions of the past, confrontations with invisible foes and even detailed conversations with illusionary people. Many scoff at these experiences, citing the influence of hallucinogenic gases, but others believe Polyanka is a place of destiny, where travellers may receive messages from fate itself."
 }, {
   "station_id": 16,
   "station_name": "DOBRYNINSKAYA (HANSA)",
@@ -1410,7 +1458,7 @@ var stations = [{
   "symbol_id": 23
 }, {
   "station_id": 24,
-  "station_name": "NAKHIMOVSKIY PROSPEKT",
+  "station_name": "NAKHIMOVSKY PROSPEKT",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
@@ -1418,7 +1466,8 @@ var stations = [{
   "y_position": 1000,
   "line_id": 9,
   "faction_id": 24,
-  "symbol_id": 24
+  "symbol_id": 24,
+  "station_description": "Nakhimovskiy Prospekt is infested with mutated scavengers, hairless things resembling primates and spiders in equal measure. They feed on carrion they drag down to the platform through the open doors to the surface and the reek of decaying flesh is strong enough to make passers by dizzy. Timid creatures, they avoid conflict, retreating to the carriages of two stalled trains when travellers pass through."
 }, {
   "station_id": 25,
   "station_name": "NAGORNAYA",
@@ -1429,7 +1478,8 @@ var stations = [{
   "y_position": 970,
   "line_id": 9,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "station_description": "Nagornaya is a station of ill-repute, feared by those who have to travel through it. Sometimes it will be calm, dark and quiet, and travellers pass through without issue. But at other times it will be awake and malevolant, filled with strange mists or playing host to horrifying mutated creatures far too large to pass through the tunnels or doors. A day when one can pass through Nagornaya without problems, or avoid it alltogether is a good day."
 }, {
   "station_id": 26,
   "station_name": "NAGATINSKAYA",
@@ -1943,7 +1993,7 @@ var stations = [{
   "symbol_id": 11
 }, {
   "station_id": 69,
-  "station_name": "VOROBEVY GORY",
+  "station_name": "VOROBYOVY GORY",
   "x_position": 294,
   "y_position": 898,
   "line_id": 1,
@@ -1952,8 +2002,9 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 2
-},   {
+  "symbol_id": 2,
+  "station_description": "A surface station on the bottom level of the Luzhniki Metro Bridge, Vorobyovy Gory was utterly destroyed in the nuclear attack. Nothing remains but rubble and rusted girders poking from the waters of the Moskva River."
+},{
   "station_id": 70,
   "station_name": "SPORTIVNAYA",
   "x_position": 335,
@@ -1995,8 +2046,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 935,
-  "y_position": 388,
+  "x_position": 945,
+  "y_position": 378,
   "line_id": 3,
   "faction_id": 15,
   "symbol_id": 15
@@ -2006,8 +2057,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 935,
-  "y_position": 420,
+  "x_position": 945,
+  "y_position": 410,
   "line_id": 3,
   "faction_id": 15,
   "symbol_id": 15
@@ -2017,14 +2068,14 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 935,
-  "y_position": 452,
+  "x_position": 945,
+  "y_position": 442,
   "line_id": 3,
   "faction_id": 2,
   "symbol_id": 2
 }, {
   "station_id": 76,
-  "station_name": "IZMAILOVSKY PARK",
+  "station_name": "IZMAYLOVSKY PARK",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
@@ -2579,7 +2630,7 @@ var stations = [{
   "symbol_id": 17
 }, {
   "station_id": 126,
-  "station_name": "KOZHUHOVSKAYA",
+  "station_name": "KOZHUKHOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
@@ -2689,7 +2740,7 @@ var stations = [{
   "symbol_id": 1
 }, {
   "station_id": 136,
-  "station_name": "VOIKOVSKAYA",
+  "station_name": "VOYKOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
@@ -2841,8 +2892,9 @@ var stations = [{
   "x_position": 749,
   "y_position": 1080,
   "line_id": 2,
-  "faction_id": 1,
-  "symbol_id": 1
+  "faction_id": 3,
+  "symbol_id": 3,
+  "station_description": "It is believed that the roof of Kantemirovskaya was pierced or cracked open during the nuclear attack and a fragment of an unexploded warhead crashed nearby, flooding the station and surrounding tunnels with radiation. No one can be completely sure, as the contamination is too intense for even the most experienced stalkers to risk approaching."
 }, {
   "station_id": 150,
   "station_name": "KASHIRSKAYA",
@@ -2853,7 +2905,8 @@ var stations = [{
   "y_position": 1030,
   "line_id": 2,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "station_description": "Kashirskaya is so contaminated by radiation seeping north from Kantemirovskaya that it is unsafe to approach in even the best radiation suits."
 }, {
   "station_id": 151,
   "station_name": "KOLOMENSKAYA",
@@ -3030,7 +3083,8 @@ var stations = [{
   "y_position": 960,
   "line_id": 2,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "A surface station still under construction when the bombs hit, Teknopark lies in overgrown ruins."
 }, {
   "station_id": 167,
   "station_name": "KAKHOVSKAYA",
@@ -3064,7 +3118,8 @@ var stations = [{
   "y_position": 1030,
   "line_id": 11,
   "faction_id": 23,
-  "symbol_id": 23
+  "symbol_id": 23,
+  "station_description": "Varshavskaya is nominally under the control of Sebastopol, however its half-open hermetic doors make it so heavily irradiated as to be uninhabitable. The walls ooze murky water and the station is full of rust and mould."
 }, {
   "station_id": 170,
   "station_name": "KASHIRSKAYA",
@@ -3075,7 +3130,8 @@ var stations = [{
   "y_position": 1030,
   "line_id": 11,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "station_description": "Kashirskaya is so contaminated by radiation seeping north from Kantemirovskaya that it is unsafe to approach in even the best radiation suits."
 }, {
   "station_id": 171,
   "station_name": "PARK KULTURY",
@@ -3355,6 +3411,17 @@ var stations = [{
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1
+},{
+  "station_id": 196,
+  "station_name": "STOROZHEVAYA BASHNYA",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 640,
+  "y_position": 895,
+  "line_id": 9,
+  "faction_id": 26,
+  "symbol_id": 52
 }
 ]
 
@@ -3496,6 +3563,11 @@ var factions = [{
   "faction_name": "Satanists",
   "faction_description": "The Satanists are a group of malevolent metro inhabitants, who believe that the metro is the gateway to hell. Little is known about the location of the Satanists. One witness was kidnapped on Belorusskaya and brought to their station. He did not recognize it, although based on his description and the fact that it's beyond Pechatniki, Lyublino (Lyublinsko-Dmitrovskaya Line) is the most likely candidate. In contrast, some rumours place the Satanists at Timiryazevskaya on the Serpukhovsko-Timiryazevskaya line, suggesting there may be more than one colony of Satan worshipers in the Metro. The Satanist station is vandalized, all name-boards are ripped off and the walls and floor are blood-stained. The floor in the center is ripped up, and there's a huge pit, 30 metres deep, where kidnapped slaves from other stations are forced to dig further down. The Satanists believe that the end of the world already happened, and the Moscow metro is the Hellgate – if they dig a bit deeper, they would get to Hell and see Satan himself. The Satanists do not appear to maintain any industry, and they also brutally murder slaves on a constant basis. How they survive remains a mystery.",
   "faction_colour": "#000000"
+}, {
+  "faction_id": 26,
+  "faction_name": "The Watchtower",
+  "faction_description": "The Watchtower are a religious order based in a train stalled in the tunnel between Serpukhhovskaya and Tulskaya. Composing mainly of Jehova's Witnesses, their brothers travel the Metro, taking in waifs and strays to indoctrinate into their religion. Their offer of food and accommodation in exchange for faith has seen them assemble quite a collection of the desperate and destitute.",
+  "faction_colour": "#FFA530"
 }
 
 
@@ -3513,11 +3585,6 @@ var factions = [{
   "faction_id": 16,
   "faction_name": "Bandits",
   "faction_description": "Bandits is the catchall term for loosely organised gangs and thugs. Controlling certain stations throughout the Metro system, though rarely more than one, bandits are known to rob and murder defenceless travellers in the tunnels, taking their goods to sell on. However, some 'bandits' are simply lawless factions, such as those ruling Venice or Kitai-Gorod, and are not as extreme as other bandits. Although their businesses may be lucrative, and they are not afraid to kill to get what they want, they are not openly hostile. Many bandit factions are also rumoured to create and sell poor quality or fake merchandise to gullible travellers, often for the same price as a genuine copy.",
-  "faction_colour": "#784805"
-
-  "faction_id": 14,
-  "faction_name": "The Watchtower",
-  "faction_description": "The Watchtower are a religious faction occupying the tunnels south of Serpukhhovskaya. Composing mainly of Jehova's Witnesses, their brothers travel the Metro, taking in waifs and strays to indoctrinate into their order. One, Brother Timothy, rescues Artyom, but Artyom soon grows bored of the hypocritical ramblings of the priest.",
   "faction_colour": "#784805"
 
 */
