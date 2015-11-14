@@ -156,11 +156,11 @@ var lines = [{
     [1, 770,720],
     [0, 790,730],
     [0, 800,740], // taganskaya
-    [1, 966,906],
-    [0, 986,916],
-    [1, 1050,916],
-    [0, 1070,936],    
-    [0, 1070,975]
+    [1, 976,916],
+    [0, 996,926],
+    [1, 1050,926],
+    [0, 1070,946],    
+    [0, 1070,985]
   ],
   "line_colour": "#832396"
 },
@@ -220,7 +220,7 @@ var lines = [{
   "line_number": 10,
   "line_name": "Lyublinsko-Dmitrovskaya",
   "line_nodes": [
-    [0, 600,297], // Maryina Roshcha
+    [0, 600,270], // Maryina Roshcha
     [1, 600,440],
     [0, 620,460],
     [1, 630,460],
@@ -295,7 +295,7 @@ var lines = [{
 // **************************************************************************************************************************************************
 
 // LINE BREAKS
-//     Where the various lines are broken or blocked
+//  Where the various lines are broken or blocked
 var line_breaks = [
   // 1 - Red Line
   [300,892],
@@ -307,15 +307,26 @@ var line_breaks = [
   [76,630],
   // 4 - Light Blue Line
   [500,600],
-
-
+  // 5 - Circle Line (No breaks)
+  // 6 - Orange line (No Breaks)
   // 7 - Purple Line
   [261,494],
-
+  [936,875],
+  // 8 Yellow Line (No Breaks)
+  // 9 Grey line (No Breaks)
+  // 10 Line Green Line
+  [600,290],
+  [600,340],
+  [600,400],
+  [635,460],
+  [708,529],
+  [738,559],
+  // 11 Teal Line (No Breaks)
+  // 12 Pale Blue Line (No Breaks)
+  // 13 Pale Bue Extension (No Breaks)
   // 14 - Yellow Line Extension
   [216,635],
   [187,665],
-
 ]
 
 // **************************************************************************************************************************************************
@@ -2262,8 +2273,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 12,
-  "x_position": 1042,
-  "y_position": 916,
+  "x_position": 1052,
+  "y_position": 926,
   "line_id": 7,
   "faction_id": 2,
   "symbol_id": 2
@@ -2273,8 +2284,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 6,
-  "x_position": 1000,
-  "y_position": 916,
+  "x_position": 1010,
+  "y_position": 926,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1
@@ -2284,8 +2295,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 2,
-  "x_position": 961,
-  "y_position": 900,
+  "x_position": 971,
+  "y_position": 910,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1
@@ -2295,8 +2306,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 2,
-  "x_position": 941,
-  "y_position": 880,
+  "x_position": 951,
+  "y_position": 890,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1
@@ -2305,9 +2316,9 @@ var stations = [{
   "station_name": "VOLGOGRADSKY PROSPEKT",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 2,
-  "x_position": 921,
-  "y_position": 860,
+  "label_point": 3,
+  "x_position": 916,
+  "y_position": 855,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1
@@ -2639,7 +2650,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 600,
-  "y_position": 333,
+  "y_position": 320,
   "line_id": 0,
   "faction_id": 2,
   "symbol_id": 2
@@ -2650,7 +2661,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 600,
-  "y_position": 297,
+  "y_position": 270,
   "line_id": 10,
   "faction_id": 2,
   "symbol_id": 2
@@ -3219,7 +3230,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 1070,
-  "y_position": 945,
+  "y_position": 955,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1
@@ -3230,7 +3241,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 1070,
-  "y_position": 975,
+  "y_position": 985,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1
