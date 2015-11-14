@@ -123,35 +123,45 @@
         drawLine(thisLine);
       }
 
+      // draw rail line breaks
+      for (i = 0; i < line_breaks.length; i++) {
+        thisBreak = line_breaks[i];
+        break_line(thisBreak[0],thisBreak[1]);
+      }
+
       // draw interchanges
       interchange_2(705, 368, 683, 385); // Prospect Mir
       interchange_2(521, 823, 499, 846); // October
       interchange_2(683, 472, 698, 489); // Chistye Prudy
       interchange_2(412, 778, 388, 778); // Park Kultry
       interchange_2(762, 425, 762, 450); // Komsomol
-      interchange_2(708, 648, 683, 662); // Kitay Gorod
-      interchange_2(390, 410, 390, 435); // Belarus
-      interchange_2(890, 766, 870, 745); // Rimskaya
-      interchange_2(490, 350, 490, 372); // Novoslobodskaya
-      interchange_2(870, 835, 896, 835); // Proletariat
-      interchange_2(578, 1030, 602, 1030); // Sebastapol
-      interchange_2(411, 1150, 435, 1150); // Bittsevsky Park
-      interchange_2(584, 1210, 608, 1210); // Bulvar Dmitriya Donskogo
-      interchange_2(590, 855, 608, 875); // Dobryninskaya
-      interchange_2(578, 1030, 602, 1030); // Tetr
-      interchange_2(749, 1030, 725, 1030); // Kashirskaya
-      interchange_2(676, 861, 676, 834); // Pavelets
-      interchange_2(173, 742, 173, 766); // Park Pobedy
-      interchange_2(270, 620, 290, 600); // Delovoy Tsentr
-      interchange_2(350, 533, 327, 553); // Barrikadnaya
-      interchange_2(631, 557, 631, 533); // Kuznetsky Most
+      interchange_2(76,  595, 100, 595); // Kuntsevskaya
 
-      interchange_3(800, 766, 800, 740, 775, 751); // Taganskaya
-      interchange_3(800, 588, 800, 620, 820, 604); // Kursk
-      interchange_3(337, 731, 318, 708, 342, 707); // Kievskaya
-      interchange_3(593, 783, 593, 752, 613, 766); // Tretyakovskaya
+      interchange_2(708,662, 683,662); // Kitay Gorod
+      interchange_2(390,410, 390,435); // Belarus
+      interchange_2(890,766, 870,745); // Rimskaya
+      interchange_2(490,350, 490,372); // Novoslobodskaya
+      interchange_2(870,835, 896,835); // Proletariat
+      interchange_2(578,1030, 602,1030); // Sebastapol
+      interchange_2(411,1150, 435,1150); // Bittsevsky Park
+      interchange_2(584,1210, 608,1210); // Bulvar Dmitriya Donskogo
+      interchange_2(590,855, 608,875); // Dobryninskaya
+      interchange_2(578,1030, 602,1030); // Tetr
+      interchange_2(749,1030, 725,1030); // Kashirskaya
+      interchange_2(676,861, 676,834); // Pavelets
+      interchange_2(173,742, 173,766); // Park Pobedy
+      interchange_2(270,620, 290,600); // Delovoy Tsentr
+      interchange_2(350,533, 327,553); // Barrikadnaya
+      interchange_2(631,557, 631,533); // Kuznetsky Most
 
-      interchange_4(527, 663, 485, 678, 485, 636, 527, 621); // Polis
+      interchange_3(800,766, 800,740, 775,751); // Taganskaya
+      interchange_3(800,588, 800,620, 820,604); // Kursk
+      interchange_3(337,731, 318,708, 342,707); // Kievskaya
+      interchange_3(593,783, 593,752, 613,766); // Tretyakovskaya
+      interchange_3(583,606, 598,621, 613,636); // Ploschad Revolutski
+      interchange_3(489,513, 509,533, 529,513); // Pushkin
+
+      interchange_4(527,663, 485,678, 485,636, 527,621); // Polis
 
 
       // draw stations

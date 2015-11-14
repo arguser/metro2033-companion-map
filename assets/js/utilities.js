@@ -391,6 +391,47 @@ function drawLine(line,border=0) {
 	}
 }
 
+function break_line(sX,sY, canvas=0) {
+
+	sX = sX*scale;
+	sY = sY*scale;
+	breakSize = 9*scale;
+
+	// breaks a line to indicate damaged or blocked tunnel
+	//ctx[canvas].fillStyle = '#880000';
+	 ctx[canvas].fillStyle = '#ede9dd';
+	ctx[canvas].beginPath();
+
+	ctx[canvas].moveTo((sX-breakSize)+xShim,(sY-breakSize)+yShim);
+
+	ctx[canvas].lineTo((sX-(breakSize/2))+xShim,(sY-breakSize)+yShim);
+	ctx[canvas].lineTo((sX)+xShim,(sY-(breakSize/2))+yShim);
+	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY-breakSize)+yShim);
+
+	ctx[canvas].lineTo((sX+breakSize)+xShim,(sY-breakSize)+yShim); 
+
+	ctx[canvas].lineTo((sX+breakSize)+xShim,(sY-breakSize/2)+yShim);
+	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY)+yShim);
+	ctx[canvas].lineTo((sX+breakSize)+xShim,(sY+breakSize/2)+yShim);
+
+	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY+(breakSize/2))+yShim); 
+
+	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY+breakSize)+yShim);
+	ctx[canvas].lineTo((sX)+xShim,(sY+(breakSize*1.5))+yShim);
+	ctx[canvas].lineTo((sX-(breakSize/2))+xShim,(sY+breakSize)+yShim);
+
+	ctx[canvas].lineTo((sX-(breakSize/2))+xShim,(sY+(breakSize/2))+yShim); 
+
+	ctx[canvas].lineTo((sX-breakSize)+xShim,(sY+breakSize/2)+yShim);
+	ctx[canvas].lineTo((sX-(breakSize*1.5))+xShim,(sY)+yShim);
+	ctx[canvas].lineTo((sX-breakSize)+xShim,(sY-breakSize/2)+yShim);
+
+	ctx[canvas].closePath();
+
+	ctx[canvas].fill();
+}
+
+
 function highlight_station(stationID) {
 	animHolder = stationID;
 	animCurrentFrame = 0;
