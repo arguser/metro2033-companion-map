@@ -154,9 +154,11 @@ function name_station(stationID,position,sX,sY) {
 			ctx[2].font = 'bold '+fontSize+'px sans-serif';
 			ctx[2].textAlign = 'left';
 			ctx[2].fillStyle = '#000000';
-			ctx[2].shadowBlur=4;
+			ctx[2].strokeStyle = '#ede9dd';
 			ctx[2].shadowColor="#FFFFFF";
+			ctx[2].lineWidth = 3*scale;
 			ctx[2].textAlign = labelAlign;
+			ctx[2].strokeText(stationName,((sX+cX)*scale)+xShim,((sY+cY)*scale)+yShim);
 			ctx[2].fillText(stationName,((sX+cX)*scale)+xShim,((sY+cY)*scale)+yShim);
 		}
 	}
@@ -388,6 +390,23 @@ function drawLine(line,border=0) {
 				ctx[0].stroke();
 			break;
 		}
+	}
+}
+
+function side_tunnel(tunnel,canvas=0) {
+
+	ctx[canvas].lineCap = "butt";
+	ctx[canvas].strokeStyle = '#444444';
+	ctx[canvas].lineWidth =  5*scale;
+
+	ctx[canvas].beginPath();
+	for (j=0;j<tunnel.length;j++) {
+		if (j==0) {
+			ctx[canvas].moveTo(tunnel[j][0]*scale+xShim, tunnel[j][1]*scale+yShim);
+		} else {
+			ctx[canvas].lineTo(tunnel[j][0]*scale+xShim, tunnel[j][1]*scale+yShim)
+		}
+		ctx[canvas].stroke();
 	}
 }
 

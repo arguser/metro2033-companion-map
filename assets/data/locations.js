@@ -178,6 +178,21 @@ var lines = [{
   "line_colour": "#ebd82d"
 },
 {
+  // Yellow Line Extension
+  "line_id": 14,
+  "line_number": 8,
+  "line_name": "Kalininsko-Solntsevskaya",
+  "line_nodes": [
+    [0, 265,620], // DELOVOY TSENTR
+    [1, 240,620],
+    [0, 220,630],
+    [1, 183,670],
+    [0, 173,694],
+    [0, 173,750], // PARK POBEDY
+  ],
+  "line_colour": "#ebd82d"
+},
+{
   // grey line
   "line_id": 9,
   "line_number": 9,
@@ -274,21 +289,6 @@ var lines = [{
   [0, 290,600],  // DELOVOY TSENTR
   ],
   "line_colour": "#1cbcd9"
-},
-{
-  // Yellow Line Extension
-  "line_id": 14,
-  "line_number": 8,
-  "line_name": "Kalininsko-Solntsevskaya",
-  "line_nodes": [
-    [0, 265,620], // DELOVOY TSENTR
-    [1, 240,620],
-    [0, 220,630],
-    [1, 183,670],
-    [0, 173,694],
-    [0, 173,750], // PARK POBEDY
-  ],
-  "line_colour": "#ebd82d"
 }
 ]
 
@@ -364,12 +364,18 @@ var surface_links = [
   [90,  630,1030],
   // 12 - Pale Blue Line
   [45, 574,1220],
-
-
   // 13 - Light Blue Extension
   // 14 - Yellow Line Extension
 ]
+// **************************************************************************************************************************************************
+// SIDE_TUNNELS
+// Side Tunnels
+var side_tunnels = [
+  [[323,870],[342,889]],
+]
 
+
+  
 
 // **************************************************************************************************************************************************
 
@@ -3165,7 +3171,7 @@ var stations = [{
   "version_id": 3,
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 6,
+  "label_point": 5.5,
   "faction_id": 1,
   "symbol_id": 1
 }, {

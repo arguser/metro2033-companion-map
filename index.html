@@ -116,6 +116,12 @@
         ctx[i].textBaseline = 'middle'
       }
 
+      // draw side tunnels
+      for (i = 0; i < side_tunnels.length; i++) {
+        thisLink = side_tunnels[i];
+        side_tunnel(thisLink);
+      }
+
       // draw rail line surface links
       for (i = 0; i < surface_links.length; i++) {
         thisLink = surface_links[i];
