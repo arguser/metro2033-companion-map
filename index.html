@@ -30,10 +30,11 @@
 
     <div id="scene">
       <div id="canvasHolder" class="widget-scene dragscroll" style="cursor: grab; cursor : -o-grab; cursor : -moz-grab; cursor : -webkit-grab;">
-        <canvas id="lineCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="riverCanvas"   class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="lineCanvas"    class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
         <canvas id="stationCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
-        <canvas id="labelCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
-        <canvas id="effectCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="labelCanvas"   class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="effectCanvas"  class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
         <!--
           // values from utilities.js
           Scale value = 1.5
@@ -104,9 +105,11 @@
       ctx3 = canvas3.getContext('2d');
       var canvas4 = document.getElementById('effectCanvas');
       ctx4 = canvas4.getContext('2d');
-
+      var canvas5 = document.getElementById('riverCanvas');
+      ctx5 = canvas5.getContext('2d');
+      
       // put them in array
-      ctx = [ctx1, ctx2, ctx3, ctx4];
+      ctx = [ctx1, ctx2, ctx3, ctx4, ctx5];
 
       // initialise canvases
       for (i = 0; i < ctx.length; i++) {
@@ -115,6 +118,9 @@
         ctx[i].lineCap = 'round';
         ctx[i].textBaseline = 'middle'
       }
+
+      // draw rivers
+      // drawRiver();
 
       // draw side tunnels
       for (i = 0; i < side_tunnels.length; i++) {
@@ -134,6 +140,8 @@
         drawLine(thisLine, 1); // borders
         drawLine(thisLine);
       }
+
+      dangerous_tunnel();
 
       // draw rail line breaks
       for (i = 0; i < line_breaks.length; i++) {

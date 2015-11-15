@@ -23,8 +23,8 @@ var lines = [{
   "line_number": 1,
   "line_name": "Sokolnicheskaya",
   "line_nodes": [
-    [0, 872, 269],
-    [0, 872, 311],
+    [0, 882, 259],
+    [0, 882, 301],
     [0, 762, 425],
     [0, 201, 993],
   ],
@@ -99,7 +99,7 @@ var lines = [{
   [0, 244,762],
   [1, 110,628],
   [0, 100,608],
-  [0, 100,385], // PYATNITSKOYE SHOSSE
+  [0, 100,365], // PYATNITSKOYE SHOSSE
   ],
   "line_colour": "#1cbcd9"
 },
@@ -287,10 +287,19 @@ var lines = [{
   [1, 310,708],
   [0, 290,688],
   [0, 290,600],  // DELOVOY TSENTR
+  [0, 290,565]
   ],
   "line_colour": "#1cbcd9"
 }
 ]
+
+// **************************************************************************************************************************************************
+// RIVERS
+//  Rivers
+var rivers = [
+  [5, [20,450], [130,450], [240,680], [340,640], [400,680], [400,720],[360,750], [270, 840],[294,898],[340,910],[370,860]],
+]
+
 
 // **************************************************************************************************************************************************
 
@@ -320,8 +329,8 @@ var line_breaks = [
   [600,340],
   [600,400],
   [635,460],
-  [708,529],
-  [738,559],
+  [709,529],
+  [739,559],
   // 11 Teal Line (No Breaks)
   // 12 Pale Blue Line (No Breaks)
   // 13 Pale Bue Extension (No Breaks)
@@ -335,7 +344,7 @@ var line_breaks = [
 // Tunnels to surface [angle, x, y]
 var surface_links = [
   // 1 - Red Line
-  [180, 872,290],
+  [180, 882,280],
   [225, 776,408],
   [135, 341,888],
   // 2 - Green Line
@@ -371,9 +380,67 @@ var surface_links = [
 // SIDE_TUNNELS
 // Side Tunnels
 var side_tunnels = [
-  [[323,870],[342,889]],
+  // 1 - Red Line
+  [[323,870],[341,888],[336,893]],
+  [[527,621],[565,621],[580,636]],
+  [[574,630],[580,624],[575,619]],
+  [[386,805],[356,775],[370,761]],
+  // 2 - Green Line
+  [[475,460],[500,435]],
+  [[598,621],[640,621],[654,635]],
+  [[531,814],[540,823],[610,823],[633,846]],
+  [[610,823],[620,813]],
+  [[542,821],[564,799]],
+  [[694,1030],[694,1000],[749,1000]],
+  // 3 - Dark Blue line
+  [[319,749],[307,737],[285,759],[295,769]],
+  // 4 - Light Blue Line
+  // 5 - Circle Line
+  // 6 - Orange line
+  [[705,368],[670,368],[662,376]],
+  // 7 - Purple Line
+  [[840,766],[840,740],[802,702]],
+  [[815,755],[835,735]],
+  [[800,740],[820,720]],
+  // 8 - Yellow Line
+  [[172,722],[153,704]],
+  // 9 - Grey line
+  [[445,227],[490,227]],
+  [[655,1105],[610,1105]],
+  // 10 - Lime Green Line
+  [[890,915],[885,920],[870,920]],
+  // 11 - Teal Line
+  // 12 - Pale Blue Line
+  // 13 - Light Blue Extension
+  // 14 - Yellow Line Extension
 ]
 
+// **************************************************************************************************************************************************
+// DANGEROUS TUNNELS
+var dangerous_tunnels = [
+  // 1 - red line
+  {"line_nodes": [[0,855,329],[0,820,365]], "line_colour": "#000000"}, // sokolniki to preobrazhenska square
+  // 2 - Green Line
+  {"line_nodes": [[0,749,1080],[0,749,1000]], "line_colour": "#000000"}, // kolomenskaya to kantemirovskaya
+  // 6 - Orange line
+  {"line_nodes": [[0,705,217],[0,705,255]], "line_colour": "#000000"}, // Botanic Gardens to VDNKh
+  {"line_nodes": [[0,705,293],[0,705,333]], "line_colour": "#000000"}, // Alekseevska to Rizhskaya
+  {"line_nodes": [[0, 705, 368],[1, 705, 391],[0, 695, 411],[0, 683, 423],[0, 683, 662]], "line_colour": "#000000"}, // Prospekt Mira to Kitai-Gorod
+  // 8 - Yellow Line
+  {"line_nodes": [[0,800,766],[0,613,766]], "line_colour": "#000000"}, // Marksistkaya to Tretyakovskaya
+  // 9 - Grey line
+  {"line_nodes": [[0, 490,210],[0, 490,320]], "line_colour": "#000000"}, // Petrovsko to Savyolovskaya
+  {"line_nodes": [[0, 489,513],[1, 475,527],[0, 465,547],[1, 465,648],[0, 475,668],[0, 485,678]], "line_colour": "#000000"}, // Chekhovskaya to Borovitskaya
+  {"line_nodes": [[0, 608,940],[0, 578,970],[0, 578,1000]], "line_colour": "#000000"}, // Nagatinskaya to Nakhimovsky
+  {"line_nodes": [[0, 578,1040],[0, 578,1060],[0, 608,1090],[0, 608,1120]], "line_colour": "#000000"}, // Sevastapol to Prazhskaya
+  // 10 - Lime Green Line
+  {"line_nodes": [[0, 870,870],[0, 870,905]], "line_colour": "#000000"}, // Dubrovka to Kozhukhovskaya
+  // 11 - Teal Line
+  {"line_nodes": [[0, 664,1030],[0, 725,1030]], "line_colour": "#000000"}, // Varshavskaya to Kashirskaya
+  // 12 - Pale Blue Line
+  // 13 - Light Blue Extension
+  // 14 - Yellow Line Extension
+]
 
   
 
@@ -693,45 +760,45 @@ var station_names = [
   {"station_id": 71, "name_set": 1, "station_name": "Фру́нзенская"},
   {"station_id": 71, "name_set": 2, "station_name": "FRUNZE"},
 
-  {"station_id": 72,  "name_set": 0, "station_name": "PARK KULTURY"},
-  {"station_id": 72,  "name_set": 1, "station_name": "Парк культу́ры"},
-  {"station_id": 72,  "name_set": 2, "station_name": "CULTURE PARK"},
+  {"station_id": 72, "name_set": 0, "station_name": "PARK KULTURY"},
+  {"station_id": 72, "name_set": 1, "station_name": "Парк культу́ры"},
+  {"station_id": 72, "name_set": 2, "station_name": "CULTURE PARK"},
 
-  {"station_id": 73,    "name_set": 0,    "station_name": "SHCHYOLKOVSKAYA"},
-  {"station_id": 73,    "name_set": 1,    "station_name": "Щёлковская"},
-  {"station_id": 73,    "name_set": 2,    "station_name": "SCHOLKOVO"},
+  {"station_id": 73, "name_set": 0, "station_name": "SHCHYOLKOVSKAYA"},
+  {"station_id": 73, "name_set": 1, "station_name": "Щёлковская"},
+  {"station_id": 73, "name_set": 2, "station_name": "SCHOLKOVO"},
 
-  {"station_id": 74,    "name_set": 0,    "station_name": "PERVOMAYSKAYA"},
-  {"station_id": 74,    "name_set": 1,    "station_name": "Первомайская"},
-  {"station_id": 74,    "name_set": 2,    "station_name": "MAY DAY"},
+  {"station_id": 74, "name_set": 0, "station_name": "PERVOMAYSKAYA"},
+  {"station_id": 74, "name_set": 1, "station_name": "Первомайская"},
+  {"station_id": 74, "name_set": 2, "station_name": "MAY DAY"},
 
-  {"station_id": 75,    "name_set": 0,    "station_name": "IZMAYLOVSKAYA"},
-  {"station_id": 75,    "name_set": 1,    "station_name": "Измайловская"},
-  {"station_id": 75,    "name_set": 2,    "station_name": "IZMAILOV"},
+  {"station_id": 75, "name_set": 0, "station_name": "IZMAYLOVSKAYA"},
+  {"station_id": 75, "name_set": 1, "station_name": "Измайловская"},
+  {"station_id": 75, "name_set": 2, "station_name": "IZMAILOV"},
 
-  {"station_id": 76,    "name_set": 0,    "station_name": "IZMAYLOVSKY PARK"},
-  {"station_id": 76,    "name_set": 1,    "station_name": "Измайловский парк"},
-  {"station_id": 76,    "name_set": 2,    "station_name": "IZMAILOVSKI PARK"},
+  {"station_id": 76, "name_set": 0, "station_name": "IZMAYLOVSKY PARK"},
+  {"station_id": 76, "name_set": 1, "station_name": "Измайловский парк"},
+  {"station_id": 76, "name_set": 2, "station_name": "IZMAILOVSKI PARK"},
 
-  {"station_id": 77,    "name_set": 0,    "station_name": "SEMENOVSKAYA"},
-  {"station_id": 77,    "name_set": 1,    "station_name": "Семёновская"},
-  {"station_id": 77,    "name_set": 2,    "station_name": "SEMENOV"},
+  {"station_id": 77, "name_set": 0, "station_name": "SEMENOVSKAYA"},
+  {"station_id": 77, "name_set": 1, "station_name": "Семёновская"},
+  {"station_id": 77, "name_set": 2, "station_name": "SEMENOV"},
 
-  {"station_id": 78,    "name_set": 0,    "station_name": "ELEKTROZAVODSKAYA"},
-  {"station_id": 78,    "name_set": 1,    "station_name": "Электрозаводская"},
-  {"station_id": 78,    "name_set": 2,    "station_name": "ELECTROZAVOD"},
+  {"station_id": 78, "name_set": 0, "station_name": "ELEKTROZAVODSKAYA"},
+  {"station_id": 78, "name_set": 1, "station_name": "Электрозаводская"},
+  {"station_id": 78, "name_set": 2, "station_name": "ELECTROZAVOD"},
 
-  {"station_id": 79,    "name_set": 0,    "station_name": "BAUMANSKAYA"},
-  {"station_id": 79,    "name_set": 1,    "station_name": "Бауманская"},
-  {"station_id": 79,    "name_set": 2,    "station_name": "BAUMAN"},
+  {"station_id": 79, "name_set": 0, "station_name": "BAUMANSKAYA"},
+  {"station_id": 79, "name_set": 1, "station_name": "Бауманская"},
+  {"station_id": 79, "name_set": 2, "station_name": "BAUMAN"},
 
-  {"station_id": 80,    "name_set": 0,    "station_name": "KURSKAYA"},
-  {"station_id": 80,    "name_set": 1,    "station_name": "Курская"},
-  {"station_id": 80,    "name_set": 2,    "station_name": "KURSK"},
+  {"station_id": 80, "name_set": 0, "station_name": "KURSKAYA"},
+  {"station_id": 80, "name_set": 1, "station_name": "Курская"},
+  {"station_id": 80, "name_set": 2, "station_name": "KURSK"},
 
-  {"station_id": 81,    "name_set": 0,    "station_name": "CHKALOVSKAYA"},
-  {"station_id": 81,    "name_set": 1,    "station_name": "Чка́ловская"},
-  {"station_id": 81,    "name_set": 2,    "station_name": "CHAKALOV"},
+  {"station_id": 81, "name_set": 0, "station_name": "CHKALOVSKAYA"},
+  {"station_id": 81, "name_set": 1, "station_name": "Чка́ловская"},
+  {"station_id": 81, "name_set": 2, "station_name": "CHAKALOV"},
 
   {"station_id": 82,  "name_set": 0, "station_name": "KURSKAYA"},
   {"station_id": 82,  "name_set": 1, "station_name": "Ку́рская"},
@@ -799,7 +866,7 @@ var station_names = [
   {"station_id": 98,  "name_set": 1, "station_name": "Выхино"},
   {"station_id": 98,  "name_set": 2, "station_name": "VYKHINO"},
 
-  {"station_id": 99,  "name_set": 0, "station_name": "RYAZANSKIY PROSPECKT"},
+  {"station_id": 99,  "name_set": 0, "station_name": "RYAZANSKIY PROSPEKT"},
   {"station_id": 99,  "name_set": 1, "station_name": "Рязанский проспект"},
   {"station_id": 99,  "name_set": 2, "station_name": "RYAZAN PROSPECT"},
 
@@ -1191,6 +1258,9 @@ var station_names = [
   {"station_id": 196, "name_set": 1, "station_name": "Сторожевая башня"},
   {"station_id": 196, "name_set": 2, "station_name": "THE WATCHTOWER"},
 
+  {"station_id": 197, "name_set": 0, "station_name": "MEZHDUNARODNAYA"},
+  {"station_id": 197, "name_set": 1, "station_name": "Междунаро́дная"},
+  {"station_id": 197, "name_set": 2, "station_name": "INTERNATIONAL"},
 ]
 
 // **************************************************************************************************************************************************
@@ -1322,7 +1392,7 @@ var stations = [{
   "station_name": "TSVETNOY BULVAR",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 9,
+  "label_point": 7,
   "x_position": 580,
   "y_position": 440,
   "line_id": 9,
@@ -1571,7 +1641,7 @@ var stations = [{
   "station_id": 33,
   "station_name": "VDNKH (EXHIBITION)",
   "x_position": 705,
-  "y_position": 255.5,
+  "y_position": 255,
   "line_id": 6,
   "faction_id": 9,
   "version_id": 3,
@@ -1649,7 +1719,7 @@ var stations = [{
   "version_id": 3,
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 12,
+  "label_point": 9,
   "symbol_id": 3
 }, {
   "station_id": 40,
@@ -1834,8 +1904,8 @@ var stations = [{
 },  {
   "station_id": 55,
   "station_name": "BULVAR ROKOSSOVSKOGO",
-  "x_position": 872,
-  "y_position": 269,
+  "x_position": 882,
+  "y_position": 259,
   "line_id": 1,
   "faction_id": 6,
   "version_id": 3,
@@ -1846,8 +1916,8 @@ var stations = [{
 }, {
   "station_id": 56,
   "station_name": "CHERKIZOVSKAYA",
-  "x_position": 872,
-  "y_position": 311,
+  "x_position": 882,
+  "y_position": 301,
   "line_id": 1,
   "faction_id": 6,
   "version_id": 3,
@@ -1858,8 +1928,8 @@ var stations = [{
 }, {
   "station_id": 57,
   "station_name": "PREOBRAZHENSKAYA PLOSHCHAD'",
-  "x_position": 846,
-  "y_position": 339,
+  "x_position": 856,
+  "y_position": 329,
   "line_id": 1,
   "faction_id": 6,
   "version_id": 3,
@@ -1943,7 +2013,7 @@ var stations = [{
   "station_name": "TEATRALNAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
+  "label_point": 2,
   "x_position": 598,
   "y_position": 621,
   "line_id": 2,
@@ -2162,7 +2232,7 @@ var stations = [{
   "station_name": "PLOSHCHAD REVOLYUTSII",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 4,
+  "label_point": 5,
   "x_position": 613,
   "y_position": 636,
   "line_id": 3,
@@ -2672,7 +2742,7 @@ var stations = [{
   "station_name": "RIMSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 9,
+  "label_point": 1,
   "x_position": 870,
   "y_position": 745,
   "line_id": 10,
@@ -3336,7 +3406,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 445,
+  "y_position": 425,
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -3347,7 +3417,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 415,
+  "y_position": 395,
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -3358,7 +3428,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 385,
+  "y_position": 365,
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -3428,7 +3498,19 @@ var stations = [{
   "line_id": 9,
   "faction_id": 26,
   "symbol_id": 52
-}
+},{
+  "station_id": 197,
+  "station_name": "MEZHDUNARODNAYA",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 9,
+  "x_position": 290,
+  "y_position": 565,
+  "line_id": 4,
+  "faction_id": 1,
+  "symbol_id": 1
+},
+
 ]
 
 // **************************************************************************************************************************************************

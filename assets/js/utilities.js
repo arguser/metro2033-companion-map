@@ -319,6 +319,27 @@ function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY, canvas=1) {
 			ctx[canvas].beginPath(); ctx[canvas].arc(rX,rY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
 }
 
+// draw a river
+function drawRiver(canvas=4) {
+	for (i=0;i<rivers.length;i++) {
+		var thisRiver=rivers[i];
+		ctx[canvas].lineWidth = thisRiver[0];
+		ctx[canvas].strokeStyle = '#65D6EA';
+
+		ctx[canvas].beginPath();
+		ctx[canvas].moveTo((thisRiver[1][0]*scale)+xShim, (thisRiver[1][1]*scale)+yShim);
+
+		for (j=2;j<thisRiver.length;j++) {
+			var thisNode = thisRiver[j];
+
+			
+
+			ctx[canvas].lineTo( (thisRiver[j][0]*scale)+xShim,   (thisRiver[j][1]*scale)+yShim);
+		}
+   		ctx[canvas].stroke();
+	}
+}
+
 // draw a rail line from coordinates
 function drawLine(line,border=0) {
 
@@ -327,7 +348,11 @@ function drawLine(line,border=0) {
 	ctx[0].lineCap = 'round';
 	ctx[0].strokeStyle = (border==0) ? line['line_colour'] : "#000000" ;
 	nodes = line['line_nodes'];
-	ctx[0].lineWidth =  (border==0) ? 3.5*scale : 4.5*scale ;
+	switch(border) {
+		case 0: ctx[0].lineWidth =  3.5*scale; break;
+		case 1: ctx[0].lineWidth =  4.5*scale; break;
+		case 2: ctx[0].lineWidth =    2*scale; break;
+	}
 
 	var undef;
 
@@ -393,11 +418,21 @@ function drawLine(line,border=0) {
 	}
 }
 
+function dangerous_tunnel(canvas=0) {
+
+	ctx[canvas].lineCap = "square";
+	
+	for (i=0;i<dangerous_tunnels.length;i++) {
+		tunnel = dangerous_tunnels[i];
+		drawLine(tunnel,2);
+	}
+}
+
 function side_tunnel(tunnel,canvas=0) {
 
-	ctx[canvas].lineCap = "butt";
+	ctx[canvas].lineCap = "square";
 	ctx[canvas].strokeStyle = '#444444';
-	ctx[canvas].lineWidth =  5*scale;
+	ctx[canvas].lineWidth =  4*scale;
 
 	ctx[canvas].beginPath();
 	for (j=0;j<tunnel.length;j++) {
@@ -406,8 +441,8 @@ function side_tunnel(tunnel,canvas=0) {
 		} else {
 			ctx[canvas].lineTo(tunnel[j][0]*scale+xShim, tunnel[j][1]*scale+yShim)
 		}
-		ctx[canvas].stroke();
 	}
+	ctx[canvas].stroke();
 }
 
 function surface_link(angle, sX,sY, canvas=0) {
