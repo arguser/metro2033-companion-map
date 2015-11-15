@@ -441,8 +441,35 @@ var dangerous_tunnels = [
   // 13 - Light Blue Extension
   // 14 - Yellow Line Extension
 ]
-
-  
+// **************************************************************************************************************************************************
+// TUNNEL ENTRANCES
+var tunnel_entrances = [
+  // 1 - Red Line
+  [135, 846,339],
+  [315, 830,355], 
+  [135, 314,878],
+  [315, 274,918],
+  // 2 - Green Line
+  [45,  744,929], 
+  [270, 749,985],
+  // 3 - Dark Blue line
+  [90,  945,425],
+  [315, 915,472],
+  [270, 76,615],
+  // 4 - Light Blue Line
+  [135, 386,640],
+  [315, 346,680],
+  // 5 - Circle Line
+  // 6 - Orange line
+  // 7 - Purple Line
+  // 8 - Yellow Line
+  // 9 - Grey line
+  // 10 - Lime Green Line
+  // 11 - Teal Line
+  // 12 - Pale Blue Line
+  // 13 - Light Blue Extension
+  // 14 - Yellow Line Extension
+]
 
 // **************************************************************************************************************************************************
 
@@ -1947,7 +1974,7 @@ var stations = [{
   "version_id": 3,
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
+  "label_point": 9,
   "symbol_id": 6
 }, {
   "station_id": 59,
@@ -2154,9 +2181,9 @@ var stations = [{
   "station_name": "IZMAYLOVSKY PARK",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
-  "x_position": 910,
-  "y_position": 477,
+  "label_point": 9,
+  "x_position": 905,
+  "y_position": 482,
   "line_id": 3,
   "faction_id": 21,
   "symbol_id": 21
@@ -2166,8 +2193,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 885,
-  "y_position": 502,
+  "x_position": 880,
+  "y_position": 507,
   "line_id": 3,
   "faction_id": 13,
   "symbol_id": 13
@@ -2177,8 +2204,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 860,
-  "y_position": 527,
+  "x_position": 855,
+  "y_position": 532,
   "line_id": 3,
   "faction_id": 13,
   "symbol_id": 13
@@ -2188,8 +2215,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 835,
-  "y_position": 552,
+  "x_position": 830,
+  "y_position": 557,
   "line_id": 3,
   "faction_id": 13,
   "symbol_id": 13
@@ -2267,8 +2294,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 6.5,
-  "x_position": 408,
-  "y_position": 661,
+  "x_position": 418,
+  "y_position": 651,
   "line_id": 3,
   "faction_id": 14,
   "symbol_id": 14
@@ -3133,8 +3160,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 386,
-  "y_position": 640,
+  "x_position": 406,
+  "y_position": 620,
   "line_id": 4,
   "faction_id": 24,
   "symbol_id": 24
@@ -3156,7 +3183,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 749,
-  "y_position": 960,
+  "y_position": 955,
   "line_id": 2,
   "faction_id": 2,
   "symbol_id": 2,

@@ -445,6 +445,99 @@ function side_tunnel(tunnel,canvas=0) {
 	ctx[canvas].stroke();
 }
 
+function tunnel_entrance(canvas=0) {
+
+	ctx[canvas].lineCap = "butt";
+	ctx[canvas].strokeStyle = '#000000';
+	ctx[canvas].lineWidth =  3*scale;
+
+	for (i=0;i<tunnel_entrances.length;i++) {
+		thisEntrance = tunnel_entrances[i];
+
+		sX = (thisEntrance[1]*scale)+xShim;
+		sY = (thisEntrance[2]*scale)+yShim;
+
+		ctx[canvas].beginPath();
+		switch(thisEntrance[0]) {
+			case 0:
+				ctx[canvas].moveTo(sX, sY-8*scale);
+				ctx[canvas].lineTo(sX+2*scale, sY-10*scale);
+				ctx[canvas].lineTo(sX, sY-10*scale);
+				ctx[canvas].lineTo(sX, sY+10*scale);
+				ctx[canvas].lineTo(sX+2*scale, sY+10*scale);
+				ctx[canvas].lineTo(sX, sY+8*scale);
+			break;
+
+			case 45:
+				ctx[canvas].moveTo(sX+7*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX+9*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX+8*scale, sY-8*scale);
+				ctx[canvas].lineTo(sX-8*scale, sY+8*scale);
+				ctx[canvas].lineTo(sX-7*scale, sY+9*scale);
+				ctx[canvas].lineTo(sX-7*scale, sY+7*scale);
+			break;
+
+			case 90:
+				ctx[canvas].moveTo(sX-8*scale, sY);
+				ctx[canvas].lineTo(sX-10*scale, sY+2*scale);
+				ctx[canvas].lineTo(sX-10*scale, sY);
+				ctx[canvas].lineTo(sX+10*scale, sY);
+				ctx[canvas].lineTo(sX+10*scale, sY+2*scale);
+				ctx[canvas].lineTo(sX+8*scale, sY);
+			break;
+
+			case 135:
+				ctx[canvas].moveTo(sX-7*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX-9*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX-8*scale, sY-8*scale);
+				ctx[canvas].lineTo(sX+8*scale, sY+8*scale);
+				ctx[canvas].lineTo(sX+7*scale, sY+9*scale);
+				ctx[canvas].lineTo(sX+7*scale, sY+7*scale);
+			break;
+
+			case 180:
+				ctx[canvas].moveTo(sX, sY-8*scale);
+				ctx[canvas].lineTo(sX-2*scale, sY-10*scale);
+				ctx[canvas].lineTo(sX, sY-10*scale);
+				ctx[canvas].lineTo(sX, sY+10*scale);
+				ctx[canvas].lineTo(sX-2*scale, sY+10*scale);
+				ctx[canvas].lineTo(sX, sY+8*scale);
+			break;
+
+			case 225:
+				ctx[canvas].moveTo(sX+7*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX+7*scale, sY-9*scale);
+				ctx[canvas].lineTo(sX+8*scale, sY-8*scale);
+				ctx[canvas].lineTo(sX-8*scale, sY+8*scale);
+				ctx[canvas].lineTo(sX-9*scale, sY+7*scale);
+				ctx[canvas].lineTo(sX-7*scale, sY+7*scale);
+			break;
+
+			case 270:
+				ctx[canvas].moveTo(sX-8*scale, sY);
+				ctx[canvas].lineTo(sX-10*scale, sY-2*scale);
+				ctx[canvas].lineTo(sX-10*scale, sY);
+				ctx[canvas].lineTo(sX+10*scale, sY);
+				ctx[canvas].lineTo(sX+10*scale, sY-2*scale);
+				ctx[canvas].lineTo(sX+8*scale, sY);
+			break;
+
+			case 315:
+				ctx[canvas].moveTo(sX-7*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX-7*scale, sY-9*scale);
+				ctx[canvas].lineTo(sX-8*scale, sY-8*scale);
+				ctx[canvas].lineTo(sX+8*scale, sY+8*scale);
+				ctx[canvas].lineTo(sX+9*scale, sY+7*scale);
+				ctx[canvas].lineTo(sX+7*scale, sY+7*scale);						
+			break;
+		}
+		ctx[canvas].stroke();
+
+	}
+}
+
+
+
 function surface_link(angle, sX,sY, canvas=0) {
 
 	sX = (sX*scale)+xShim;
