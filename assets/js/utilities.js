@@ -536,8 +536,6 @@ function tunnel_entrance(canvas=0) {
 	}
 }
 
-
-
 function surface_link(angle, sX,sY, canvas=0) {
 
 	sX = (sX*scale)+xShim;
@@ -605,7 +603,6 @@ function surface_link(angle, sX,sY, canvas=0) {
 		break;
 
 	}
-
 
 	ctx[canvas].stroke();
 }

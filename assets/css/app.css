@@ -553,7 +553,7 @@ station-image img{
   top: 0;
 }
 #canvasHolder {
-  margin: 10px auto;
+  margin: 10px 0 10px 200px;
   padding: 0px;
   height: 100vh;
   position: relative;

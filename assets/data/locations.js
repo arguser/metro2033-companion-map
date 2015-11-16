@@ -99,7 +99,7 @@ var lines = [{
   [0, 244,762],
   [1, 110,628],
   [0, 100,608],
-  [0, 100,365], // PYATNITSKOYE SHOSSE
+  [0, 100,335], // PYATNITSKOYE SHOSSE
   ],
   "line_colour": "#1cbcd9"
 },
@@ -273,7 +273,7 @@ var lines = [{
     [1, 564,1150],
     [0, 584,1170],
     [0, 584,1210],
-    [0, 494,1300]
+    [0, 484,1310]
   ],
   "line_colour": "#959fc8"
 },
@@ -355,6 +355,7 @@ var surface_links = [
   [225, 937,450],
   // 4 - Light Blue Line
   [315, 178,696],
+  [270, 100,335],
   // 5 - Circle Line
   [180, 363,470],
   // 6 - Orange line
@@ -457,16 +458,25 @@ var tunnel_entrances = [
   [315, 915,472],
   [270, 76,615],
   // 4 - Light Blue Line
-  [135, 386,640],
-  [315, 346,680],
+  [135, 391,635],
+  [315, 370,656],
+  [135, 271,755],
+  [90, 100,570],
+  [90,  100,410],
+  [270, 100,465],
   // 5 - Circle Line
   // 6 - Orange line
   // 7 - Purple Line
+  [45, 925,864],
+  [225, 943,882],
+  [0, 1030,926],
   // 8 - Yellow Line
   // 9 - Grey line
   // 10 - Lime Green Line
   // 11 - Teal Line
   // 12 - Pale Blue Line
+  [135, 554,1240],
+
   // 13 - Light Blue Extension
   // 14 - Yellow Line Extension
 ]
@@ -1546,8 +1556,9 @@ var stations = [{
   "x_position": 578,
   "y_position": 1060,
   "line_id": 9,
-  "faction_id": 3,
-  "symbol_id": 3
+  "faction_id": 24,
+  "symbol_id": 24,
+  "station_description": "It is considered a grim joke that the name of this station starts with 'Chert' - a Russian word for 'demon' or 'devil'. The station and tunnels southwards are overrun by hideous creatures swarming up from the mysterious caverns known as 'The Gates'. The inhabitants of Sevastapolskaya once hoped to colonise Chertanovskaya, but all attempts were driven back and it was thought that Sevastapolskaya itself would have to be evacuated. However it seems as if Chertanovskaya is some kind of boundary, with the Upyrs and other monsters only launching raids northwards rather than full scale assaults. Nowdays no Sevastapolite dares to venture closer to the station platform than 100 metres - and only then when the hydroelectric plants need maintenence."
 }, {
   "station_id": 23,
   "station_name": "SEVASTAPOLSKAYA",
@@ -1582,7 +1593,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 3,
   "symbol_id": 3,
-  "station_description": "Nagornaya is a station of ill-repute, feared by those who have to travel through it. Sometimes it will be calm, dark and quiet, and travellers pass through without issue. But at other times it will be awake and malevolant, filled with strange mists or playing host to horrifying mutated creatures far too large to pass through the tunnels or doors. A day when one can pass through Nagornaya without problems, or avoid it alltogether is a good day."
+  "station_description": "Nagornaya is a station of ill-repute, feared by those who have to travel through it. Sometimes it will be calm, dark and quiet, and travellers pass through without issue. But at other times it will be awake and malevolant, filled with strange mists or playing host to horrifying mutated creatures far too large to pass through the tunnels or doors. A day when one can pass through Nagornaya without problems, or avoid it alltogether, is a good day."
 }, {
   "station_id": 26,
   "station_name": "NAGATINSKAYA",
@@ -2293,7 +2304,7 @@ var stations = [{
   "station_name": "SMOLENSKAYA (2)",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 6.5,
+  "label_point": 6,
   "x_position": 418,
   "y_position": 651,
   "line_id": 3,
@@ -3062,7 +3073,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 535,
+  "y_position": 515,
   "line_id": 3,
   "faction_id": 19,
   "symbol_id": 19
@@ -3073,7 +3084,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 565,
+  "y_position": 545,
   "line_id": 3,
   "faction_id": 19,
   "symbol_id": 19
@@ -3300,8 +3311,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 554,
-  "y_position": 1240,
+  "x_position": 544,
+  "y_position": 1250,
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2
@@ -3311,8 +3322,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 534,
-  "y_position": 1260,
+  "x_position": 524,
+  "y_position": 1270,
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2
@@ -3322,8 +3333,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 514,
-  "y_position": 1280,
+  "x_position": 504,
+  "y_position": 1290,
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2
@@ -3333,8 +3344,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 494,
-  "y_position": 1300,
+  "x_position": 484,
+  "y_position": 1310,
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2
@@ -3411,7 +3422,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 505,
+  "y_position": 485,
   "line_id": 3,
   "faction_id": 19,
   "symbol_id": 19
@@ -3422,7 +3433,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 475,
+  "y_position": 450,
   "line_id": 3,
   "faction_id": 2,
   "symbol_id": 2
@@ -3433,7 +3444,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 425,
+  "y_position": 395,
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -3444,7 +3455,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 395,
+  "y_position": 365,
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1
@@ -3455,7 +3466,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 100,
-  "y_position": 365,
+  "y_position": 335,
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1
