@@ -78,7 +78,7 @@ function station(sX,sY,factionID,symbol,canvas=1,stationScale=1) {
 	ctx[canvas].font = 'normal 12px sans-serif';
 	ctx[canvas].textAlign = 'center';
 
-    eval("pattern_"+symbol+"("+sX+","+sY+")");
+    eval("pattern_"+symbol+"("+sX+","+sY+","+canvas+")");
 
     // reset scale
 	scale = baseScale;
@@ -112,7 +112,7 @@ function station(sX,sY,factionID,symbol,canvas=1,stationScale=1) {
 
 // print out station labels
 function print_station_labels() {
-	ctx[2].clearRect(0, 0, 2200, 2200);
+	ctx[3].clearRect(0, 0, 2200, 2200);
 	for (i=0;i<stations.length;i++) {
 		thisStation = stations[i];
 		name_station(thisStation['station_id'],thisStation['label_point'],thisStation['x_position'],thisStation['y_position']);
@@ -150,6 +150,7 @@ function name_station(stationID,position,sX,sY) {
 		var stationName = searchResult[0]['station_name'];
 		if (stationName.length>0) {
 			ctx[3].lineCap = 'butt';
+			ctx[3].lineJoin = "round";
 			var fontSize = 8*scale;
 			ctx[3].font = 'bold '+fontSize+'px sans-serif';
 			ctx[3].textAlign = 'left';
@@ -165,55 +166,54 @@ function name_station(stationID,position,sX,sY) {
 }
 
 function draw_features() {
-			// draw features
-			for (i=0;i<features.length;i++) {
-				thisFeature = features[i];
-				ctx[2].fillStyle = '#FFFFFF';
-				ctx[2].strokeStyle = '#000000';
-      			ctx[2].lineWidth = 1*scale;
+	// draw features
+	for (i=0;i<features.length;i++) {
+		thisFeature = features[i];
+		ctx[2].fillStyle = '#FFFFFF';
+		ctx[2].strokeStyle = '#000000';
+    	ctx[2].lineWidth = 1*scale;
 
-				sX = (thisFeature['x_position']*scale)+xShim;
-				sY = (thisFeature['y_position']*scale)+yShim;
-				sW = (thisFeature['width']*scale);
-				sH = (thisFeature['height']*scale);
-				sC = 4*scale; // corner size
+		sX = (thisFeature['x_position']*scale)+xShim;
+		sY = (thisFeature['y_position']*scale)+yShim;
+		sW = (thisFeature['width']*scale);
+		sH = (thisFeature['height']*scale);
+		sC = 4*scale; // corner size
 
-				// draw box
-				ctx[2].beginPath();
-				ctx[2].moveTo(sX-(sW/2)+sC,sY-(sH/2));
-				ctx[2].lineTo(sX+(sW/2)-sC,sY-(sH/2));
-				ctx[2].quadraticCurveTo( sX+(sW/2),sY-(sH/2), sX+(sW/2),sY-(sH/2)+sC);
-				ctx[2].lineTo(sX+(sW/2),sY+(sH/2)-sC);
-				ctx[2].quadraticCurveTo( sX+(sW/2),sY+(sH/2), sX+(sW/2)-sC,sY+(sH/2));
-				ctx[2].lineTo(sX-(sW/2)+sC,sY+(sH/2));
-				ctx[2].quadraticCurveTo( sX-(sW/2),sY+(sH/2), sX-(sW/2),sY+(sH/2)-sC);
-				ctx[2].lineTo(sX-(sW/2),sY-(sH/2)+sC);
-				ctx[2].quadraticCurveTo( sX-(sW/2),sY-(sH/2), sX-(sW/2)+sC,sY-(sH/2));
-				ctx[2].closePath();
-      			ctx[2].fill();
-      			ctx[2].stroke();
+		// draw box
+		ctx[2].beginPath();
+		ctx[2].moveTo(sX-(sW/2)+sC,sY-(sH/2));
+		ctx[2].lineTo(sX+(sW/2)-sC,sY-(sH/2));
+		ctx[2].quadraticCurveTo( sX+(sW/2),sY-(sH/2), sX+(sW/2),sY-(sH/2)+sC);
+		ctx[2].lineTo(sX+(sW/2),sY+(sH/2)-sC);
+		ctx[2].quadraticCurveTo( sX+(sW/2),sY+(sH/2), sX+(sW/2)-sC,sY+(sH/2));
+		ctx[2].lineTo(sX-(sW/2)+sC,sY+(sH/2));
+		ctx[2].quadraticCurveTo( sX-(sW/2),sY+(sH/2), sX-(sW/2),sY+(sH/2)-sC);
+		ctx[2].lineTo(sX-(sW/2),sY-(sH/2)+sC);
+		ctx[2].quadraticCurveTo( sX-(sW/2),sY-(sH/2), sX-(sW/2)+sC,sY-(sH/2));
+		ctx[2].closePath();
+    	ctx[2].fill();
+    	ctx[2].stroke();
 
-      			// label
-      			var textlines = thisFeature['feature_name'];
-      			if (textlines.indexOf("|")>0) {textlines = textlines.split('|'); } else { textlines = [textlines]; }
-				var fontSize = 8*scale;
-				ctx[2].font = "bold "+fontSize+"px 'trebuchet ms',sans-serif";
-				ctx[2].textAlign = 'center';
-				ctx[2].fillStyle = '#000000';
-				lineCount=0;
-				for (l=0;l<textlines.length;l++) {
-
-					yPoint = sY;
-					if (textlines.length>1) {
-						if (lineCount==0) yPoint = yPoint-(5*scale);
-						if (lineCount==1) yPoint = yPoint+(5*scale);
-					}
-					ctx[2].fillText(textlines[l],sX,yPoint);
-					lineCount++;
-				}
-
+    	// label
+    	var textlines = thisFeature['feature_name'];
+    	if (textlines.indexOf("|")>0) {textlines = textlines.split('|'); } else { textlines = [textlines]; }
+		var fontSize = 8*scale;
+		ctx[2].font = "bold "+fontSize+"px 'trebuchet ms',sans-serif";
+		ctx[2].textAlign = 'center';
+		ctx[2].fillStyle = '#000000';
+		lineCount=0;
+		for (l=0;l<textlines.length;l++) {
+			yPoint = sY;
+			if (textlines.length>1) {
+				if (lineCount==0) yPoint = yPoint-(5*scale);
+				if (lineCount==1) yPoint = yPoint+(5*scale);
 			}
+			ctx[2].fillText(textlines[l],sX,yPoint);
+			lineCount++;
 		}
+
+	}
+}
 
 
 // interchange code
@@ -324,6 +324,7 @@ function drawRiver(canvas=0) {
 	for (i=0;i<rivers.length;i++) {
 		var thisRiver=rivers[i];
 		ctx[canvas].lineWidth = thisRiver[0];
+		ctx[canvas].lineJoin = "round";
 		ctx[canvas].strokeStyle = '#65D6EA';
 
 		ctx[canvas].beginPath();
@@ -667,6 +668,13 @@ function animate_station() {
 	} else {
 		ctx[5].clearRect(0, 0, 2200, 2200);
 	}
+}
+
+function draw_D6() {
+	for (i = 0; i < d6_stations.length; i++) {
+        thisStation = d6_stations[i];
+        station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id'], thisStation['symbol_id'],4);
+    }
 }
 
 

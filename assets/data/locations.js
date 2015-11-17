@@ -297,7 +297,7 @@ var lines = [{
 // RIVERS
 //  Rivers
 var rivers = [
-  [5, [20,450], [130,450], [240,680], [340,640], [400,680], [400,720],[360,750], [270, 840],[294,898],[340,910],[370,860]],
+  [20, [50,430], [140,430], [140,585], [250,695], [340,605], [420,685], [250,855], [325,930], [475,780], [455,760], [555,660], [610,660], [780,830], [680,930], [680,972], [880,972], [880,1031],  [780,1031],   [800,1090], [950,1090] ],
 ]
 
 
@@ -403,6 +403,7 @@ var side_tunnels = [
   [[840,766],[840,740],[802,702]],
   [[815,755],[835,735]],
   [[800,740],[820,720]],
+  [[876,815],[1000,815]],
   // 8 - Yellow Line
   [[172,722],[153,704]],
   // 9 - Grey line
@@ -1474,8 +1475,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "x_position": 520,
-  "y_position": 751,
+  "x_position": 530,
+  "y_position": 761,
   "line_id": 9,
   "faction_id": 3,
   "symbol_id": 3,
@@ -2121,8 +2122,8 @@ var stations = [{
 },{
   "station_id": 70,
   "station_name": "SPORTIVNAYA",
-  "x_position": 335,
-  "y_position": 855,
+  "x_position": 345,
+  "y_position": 845,
   "line_id": 1,
   "faction_id": 6,
   "version_id": 3,
@@ -2694,7 +2695,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 906,
-  "y_position": 1080,
+  "y_position": 1065,
   "line_id": 10,
   "faction_id": 1,
   "symbol_id": 1
@@ -2705,7 +2706,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 906,
-  "y_position": 1040,
+  "y_position": 1030,
   "line_id": 10,
   "faction_id": 1,
   "symbol_id": 1
@@ -2716,7 +2717,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 906,
-  "y_position": 1000,
+  "y_position": 995,
   "line_id": 10,
   "faction_id": 25,
   "symbol_id": 25
@@ -3194,7 +3195,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 749,
-  "y_position": 955,
+  "y_position": 950,
   "line_id": 2,
   "faction_id": 2,
   "symbol_id": 2,
@@ -3744,6 +3745,54 @@ var features = [{
     "width": 50,
     "height": 20,
     "version_id": 3
+  }, {
+    "feature_name": "Tunnel to|Urals (?)",
+    "feature_id": 3,
+    "x_position": 1000,
+    "y_position": 815,
+    "width": 50,
+    "height": 30,
+    "version_id": 3
   }
-
 ]
+
+
+// D6 Stuff
+
+var d6_stations = [{
+  "station_id": 200,
+  "station_name": "DOM PRAVITELSTVA",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 412,
+  "y_position": 636,
+  "line_id": 20,
+  "faction_id": 3,
+  "symbol_id": 3
+}, {
+  "station_id": 201,
+  "station_name": "GENSHTAB",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 505,
+  "y_position": 650,
+  "line_id": 20,
+  "faction_id": 3,
+  "symbol_id": 3
+}, {
+  "station_id": 202,
+  "station_name": "KREMLIN",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 3,
+  "x_position": 555,
+  "y_position": 636,
+  "line_id": 20,
+  "faction_id": 3,
+  "symbol_id": 3
+}
+]
+
+
