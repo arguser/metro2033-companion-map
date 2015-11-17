@@ -30,11 +30,12 @@
 
     <div id="scene">
       <div id="canvasHolder" class="widget-scene dragscroll" style="cursor: grab; cursor : -o-grab; cursor : -moz-grab; cursor : -webkit-grab;">
-        <canvas id="riverCanvas"   class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
-        <canvas id="lineCanvas"    class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
-        <canvas id="stationCanvas" class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
-        <canvas id="labelCanvas"   class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
-        <canvas id="effectCanvas"  class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="riverCanvas"    class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="lineCanvas"     class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="stationCanvas"  class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="labelCanvas"    class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="d6Canvas"       class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="effectCanvas"   class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
         <!--
           // values from utilities.js
           Scale value = 1.5
@@ -97,19 +98,21 @@
     function drawMap() {
 
       // get canvas objects
-      var canvas1 = document.getElementById('lineCanvas');
+      var canvas1 = document.getElementById('riverCanvas');
       ctx1 = canvas1.getContext('2d');
-      var canvas2 = document.getElementById('stationCanvas');
+      var canvas2 = document.getElementById('lineCanvas');
       ctx2 = canvas2.getContext('2d');
-      var canvas3 = document.getElementById('labelCanvas');
+      var canvas3 = document.getElementById('stationCanvas');
       ctx3 = canvas3.getContext('2d');
-      var canvas4 = document.getElementById('effectCanvas');
+      var canvas4 = document.getElementById('labelCanvas');
       ctx4 = canvas4.getContext('2d');
-      var canvas5 = document.getElementById('riverCanvas');
+      var canvas5 = document.getElementById('d6Canvas');
       ctx5 = canvas5.getContext('2d');
-      
+      var canvas6 = document.getElementById('effectCanvas');
+      ctx6 = canvas6.getContext('2d');
+
       // put them in array
-      ctx = [ctx1, ctx2, ctx3, ctx4, ctx5];
+      ctx = [ctx1, ctx2, ctx3, ctx4, ctx5, ctx6];
 
       // initialise canvases
       for (i = 0; i < ctx.length; i++) {
@@ -195,7 +198,6 @@
         // create HTML Object for station
         // clickable_station(thisStation['x_position'], thisStation['y_position'], thisStation['station_id']);
       }
-
 
       // label stations
       draw_features();
