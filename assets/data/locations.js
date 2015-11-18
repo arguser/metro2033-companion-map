@@ -3792,7 +3792,29 @@ var d6_stations = [{
   "line_id": 20,
   "faction_id": 3,
   "symbol_id": 3
-}
+},{
+  "station_id": 203,
+  "station_name": "PARK POBEDY",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 9,
+  "x_position": 173,
+  "y_position": 742,
+  "line_id": 20,
+  "faction_id": 20,
+  "symbol_id": 20
+},{
+  "station_id": 204,
+  "station_name": "MAYAKOVSKAYA",
+  "station_open": 0,
+  "station_img": "assets/img/example.png",
+  "label_point": 9,
+  "x_position": 475,
+  "y_position": 460,
+  "line_id": 20,
+  "faction_id": 4,
+  "symbol_id": 4
+},  
 ]
 
 

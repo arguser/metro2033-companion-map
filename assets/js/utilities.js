@@ -671,10 +671,25 @@ function animate_station() {
 }
 
 function draw_D6() {
+	var canvas = 4;
+
+	// fade out main metro
+	ctx[canvas].globalAlpha = 0.80;
+    ctx[canvas].rect(0, 0, 2200, 2200);
+    ctx[canvas].fillStyle = '#EDE9DD';
+    ctx[canvas].fill();
+   	ctx[canvas].globalAlpha = 1;
+
+	// draw stations
 	for (i = 0; i < d6_stations.length; i++) {
         thisStation = d6_stations[i];
-        station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id'], thisStation['symbol_id'],4);
+        station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id'], thisStation['symbol_id'],canvas);
     }
+}
+
+
+function hide_D6() {
+	ctx[4].clearRect(0, 0, 2200, 2200); // Poof! Gone!
 }
 
 
