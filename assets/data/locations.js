@@ -297,7 +297,8 @@ var lines = [{
 // RIVERS
 //  Rivers
 var rivers = [
-  [20, [50,430], [140,430], [140,585], [250,695], [340,605], [420,685], [250,855], [325,930], [475,780], [455,760], [555,660], [610,660], [780,830], [680,930], [680,972], [880,972], [880,1031],  [780,1031],   [800,1090], [950,1090] ],
+  [20, [0,430], [140,430], [140,585], [250,695], [340,605], [420,685], [250,855], [325,930], [475,780], [455,760], [555,660], [610,660], [780,830], [680,930], [680,972], [880,972], [880,1031], [780,1031], [800,1090], [1090,1090] ],
+  [10, [470,790], [565,695], [600,695], [760,855] ],
 ]
 
 
@@ -3753,11 +3754,70 @@ var features = [{
     "width": 50,
     "height": 30,
     "version_id": 3
+  }, {
+    "feature_name": "D6",
+    "feature_id": 4,
+    "x_position": 154,
+    "y_position": 706,
+    "width": 18,
+    "height": 16,
+    "version_id": 3
+  }, {
+    "feature_name": "D6",
+    "feature_id": 5,
+    "x_position": 502,
+    "y_position": 436,
+    "width": 18,
+    "height": 16,
+    "version_id": 3
   }
 ]
 
 
 // D6 Stuff
+var d6_lines = [{
+  "line_id": 15,
+  "line_number": 13,
+  "line_name": "D6",
+  "line_nodes": [
+    [0, 173,740], // PARK POBEDY
+    [1, 173,732],
+    [0, 163,712],
+    [1, 153,702],
+    [0, 153,682],  
+    [1, 170,665],
+    [0, 190,665],
+    [1, 245,720],
+    [0, 265,720],
+    [1, 410,575],   
+    [0, 430,575],
+    [1, 512,657],
+    [0, 532,657],
+    [1, 612,577], 
+    [0, 612,557],
+    [0, 422,367],
+  ],
+  "line_colour": "#F9C010"
+},{
+  "line_id": 16,
+  "line_number": 13,
+  "line_name": "D6",
+  "line_nodes": [
+      [0, 520,599],
+      [0, 590,669]
+  ],
+  "line_colour": "#F9C010"
+},{
+  "line_id": 17,
+  "line_number": 13,
+  "line_name": "D6",
+  "line_nodes": [
+      [0, 555,584],
+      [0, 555,684]
+  ],
+  "line_colour": "#F9C010"
+}
+]
 
 var d6_stations = [{
   "station_id": 200,
@@ -3765,8 +3825,8 @@ var d6_stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 412,
-  "y_position": 636,
+  "x_position": 372,
+  "y_position": 613,
   "line_id": 20,
   "faction_id": 3,
   "symbol_id": 3
@@ -3788,10 +3848,10 @@ var d6_stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 555,
-  "y_position": 636,
+  "y_position": 634,
   "line_id": 20,
-  "faction_id": 3,
-  "symbol_id": 3
+  "faction_id": 24,
+  "symbol_id": 24
 },{
   "station_id": 203,
   "station_name": "PARK POBEDY",

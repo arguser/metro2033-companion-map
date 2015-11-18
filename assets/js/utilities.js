@@ -340,17 +340,17 @@ function drawRiver(canvas=0) {
 }
 
 // draw a rail line from coordinates
-function drawLine(line,border=0) {
+function drawLine(line,border=0,canvas=1) {
 
 	var offset = 10; // larger offset equals more extreme curves
 
-	ctx[1].lineCap = 'round';
-	ctx[1].strokeStyle = (border==0) ? line['line_colour'] : "#000000" ;
+	ctx[canvas].lineCap = 'round';
+	ctx[canvas].strokeStyle = (border==0) ? line['line_colour'] : "#000000" ;
 	nodes = line['line_nodes'];
 	switch(border) {
-		case 0: ctx[1].lineWidth =  3.5*scale; break;
-		case 1: ctx[1].lineWidth =  4.5*scale; break;
-		case 2: ctx[1].lineWidth =    2*scale; break;
+		case 0: ctx[canvas].lineWidth =  3.5*scale; break;
+		case 1: ctx[canvas].lineWidth =  4.5*scale; break;
+		case 2: ctx[canvas].lineWidth =    2*scale; break;
 	}
 
 	var undef;
@@ -366,10 +366,10 @@ function drawLine(line,border=0) {
 		switch(startNode[0]) {
 
 			case 0: // straight section
-				ctx[1].beginPath();
-		    	ctx[1].moveTo( (startNode[1]*scale)+xShim, (startNode[2]*scale)+yShim);
-		    	ctx[1].lineTo( (endNode[1]*scale)+xShim,   (endNode[2]*scale)+yShim);
-      			ctx[1].stroke();
+				ctx[canvas].beginPath();
+		    	ctx[canvas].moveTo( (startNode[1]*scale)+xShim, (startNode[2]*scale)+yShim);
+		    	ctx[canvas].lineTo( (endNode[1]*scale)+xShim,   (endNode[2]*scale)+yShim);
+      			ctx[canvas].stroke();
 			break;
 
 			case 1: // curved section
@@ -401,17 +401,17 @@ function drawLine(line,border=0) {
 
 				controlNode2 = Array(ControlX,ControlY);
 
-				ctx[1].beginPath();
-		      	ctx[1].moveTo((startNode[1]*scale)+xShim, (startNode[2]*scale)+yShim);
-		      	ctx[1].bezierCurveTo((controlNode1[0]*scale)+xShim, (controlNode1[1]*scale)+yShim, (controlNode2[0]*scale)+xShim, (controlNode2[1]*scale)+yShim, (endNode[1]*scale)+xShim, (endNode[2]*scale)+yShim);
-      			ctx[1].stroke();
+				ctx[canvas].beginPath();
+		      	ctx[canvas].moveTo((startNode[1]*scale)+xShim, (startNode[2]*scale)+yShim);
+		      	ctx[canvas].bezierCurveTo((controlNode1[0]*scale)+xShim, (controlNode1[1]*scale)+yShim, (controlNode2[0]*scale)+xShim, (controlNode2[1]*scale)+yShim, (endNode[1]*scale)+xShim, (endNode[2]*scale)+yShim);
+      			ctx[canvas].stroke();
 
 			break;
 
 			case 2: // circle section
-				ctx[1].beginPath();
-				ctx[1].arc((startNode[1]*scale)+xShim,(startNode[2]*scale)+yShim,startNode[3]*scale,0,rad(360));
-				ctx[1].stroke();
+				ctx[canvas].beginPath();
+				ctx[canvas].arc((startNode[1]*scale)+xShim,(startNode[2]*scale)+yShim,startNode[3]*scale,0,rad(360));
+				ctx[canvas].stroke();
 			break;
 		}
 	}
@@ -680,11 +680,19 @@ function draw_D6() {
     ctx[canvas].fill();
    	ctx[canvas].globalAlpha = 1;
 
+	// draw line
+	for (i = 0; i < d6_lines.length; i++) {
+		var line = d6_lines[i];
+		drawLine(line,1,canvas);
+		drawLine(line,0,canvas);
+	}
+
 	// draw stations
 	for (i = 0; i < d6_stations.length; i++) {
         thisStation = d6_stations[i];
         station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id'], thisStation['symbol_id'],canvas);
     }
+
 }
 
 

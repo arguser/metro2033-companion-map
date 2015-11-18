@@ -60,16 +60,16 @@ app.controller('MapController', function($scope, $document, FactionService, Line
 
     self.searchText = station.display.station_name;
 
-    ctx[3].clearRect(0, 0, 1800, 2000);
+    ctx[5].clearRect(0, 0, 2200, 2200);
 
-    ctx[3].lineWidth = 2 * scale;
-    ctx[3].strokeStyle = '#FF0000';
+    ctx[5].lineWidth = 2 * scale;
+    ctx[5].strokeStyle = '#FF0000';
 
-    circle(station.display['x_position'] * scale + xShim, station.display['y_position'] * scale + yShim, 12 * scale, 3);
-    ctx[3].stroke();
+    circle(station.display['x_position'] * scale + xShim, station.display['y_position'] * scale + yShim, 12 * scale, 5);
+    ctx[5].stroke();
 
-    circle(station.display['x_position'] * scale + xShim, station.display['y_position'] * scale + yShim, 8 * scale, 3);
-    ctx[3].stroke();
+    circle(station.display['x_position'] * scale + xShim, station.display['y_position'] * scale + yShim, 8 * scale, 5);
+    ctx[5].stroke();
 
     var stationPos = angular.element(document.getElementById('link-' + station.display.station_id));
     angular.element(document.querySelector('div.dragscroll')).scrollToElement(stationPos, 100, 500);
