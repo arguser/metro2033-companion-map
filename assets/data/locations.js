@@ -1320,65 +1320,70 @@ var stations = [{
   "station_name": "ALTUFYEVO",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
   "x_position": 490,
   "y_position": 90,
   "line_id": 9,
+  "label_point": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 2,
   "station_name": "BIBIREVO",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
   "x_position": 515,
   "y_position": 115,
   "line_id": 9,
+  "label_point": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 3,
   "station_name": "OTRADNOE",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
   "x_position": 515,
   "y_position": 150,
   "line_id": 9,
+  "label_point": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 4,
   "station_name": "VLADYKINO",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
   "x_position": 515,
   "y_position": 185,
   "line_id": 9,
+  "label_point": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 5,
   "station_name": "PETROVSKO-RAZUMOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 10,
   "x_position": 490,
   "y_position": 210,
   "line_id": 9,
+  "label_point": 10,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 6,
   "station_name": "TIMIRYAZEVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
   "x_position": 490,
   "y_position": 245,
   "line_id": 9,
+  "label_point": 3,
   "faction_id": 25,
   "symbol_id": 25
 }, {
@@ -1386,10 +1391,10 @@ var stations = [{
   "station_name": "DMITROVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 9,
   "x_position": 490,
   "y_position": 280,
   "line_id": 9,
+  "label_point": 9,
   "faction_id": 3,
   "symbol_id": 3
 }, {
@@ -1397,10 +1402,10 @@ var stations = [{
   "station_name": "SAVELOVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 9,
   "x_position": 490,
   "y_position": 315,
   "line_id": 9,
+  "label_point": 9,
   "faction_id": 4,
   "symbol_id": 4
 }, {
@@ -1408,13 +1413,16 @@ var stations = [{
   "station_name": "MENDELEYEVSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 9,
   "x_position": 490,
   "y_position": 350,
   "line_id": 9,
+  "label_point": 9,
   "faction_id": 5,
   "symbol_id": 5
-}, {
+},
+
+
+{
   "station_id": 10,
   "station_name": "NOVOSLOBODSKAYA (HANSA)",
   "x_position": 490,
@@ -1436,7 +1444,8 @@ var stations = [{
   "y_position": 440,
   "line_id": 9,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 12,
   "station_name": "CHEKHOVSKAYA",
@@ -1504,7 +1513,8 @@ var stations = [{
   "y_position": 1210,
   "line_id": 9,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 18,
   "station_name": "ANNINO",
@@ -1515,7 +1525,8 @@ var stations = [{
   "y_position": 1180,
   "line_id": 9,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 19,
   "station_name": "ULITSA AKADEMIKA YANGELYA",
@@ -1526,7 +1537,8 @@ var stations = [{
   "y_position": 1150,
   "line_id": 9,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 20,
   "station_name": "PRAZHSKAYA",
@@ -1537,7 +1549,8 @@ var stations = [{
   "y_position": 1120,
   "line_id": 9,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 21,
   "station_name": "YUZHNAYA",
@@ -1548,7 +1561,8 @@ var stations = [{
   "y_position": 1090,
   "line_id": 0,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 },{
   "station_id": 22,
   "station_name": "CHERTANOVSKAYA",
@@ -1640,7 +1654,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 30,
   "station_name": "BABUSHKINSKAYA",
@@ -1652,7 +1667,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 31,
   "station_name": "SVIBLOVO",
@@ -1664,7 +1680,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 32,
   "station_name": "BOTANICHESKIY SAD",
@@ -1796,7 +1813,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 10,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 43,
   "station_name": "OKTYABR'SKAYA (HANSA)",
@@ -2188,7 +2206,8 @@ var stations = [{
   "y_position": 442,
   "line_id": 3,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "A surface station, Izmaylovskaya can be assumed to have been destroyed in the nuclear attack."
 }, {
   "station_id": 76,
   "station_name": "IZMAYLOVSKY PARK",
@@ -2444,7 +2463,8 @@ var stations = [{
   "y_position": 926,
   "line_id": 7,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "A surface station, Vykhino can be assumed to have been destroyed in the nuclear attack."
 }, {
   "station_id": 99,
   "station_name": "RYAZANSKY PROSPEKT",
@@ -2455,7 +2475,8 @@ var stations = [{
   "y_position": 926,
   "line_id": 7,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 100,
   "station_name": "KUZMINKY",
@@ -2466,7 +2487,8 @@ var stations = [{
   "y_position": 910,
   "line_id": 7,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 101,
   "station_name": "TEKSTILSCHIKI",
@@ -2477,7 +2499,8 @@ var stations = [{
   "y_position": 890,
   "line_id": 7,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 102,
   "station_name": "VOLGOGRADSKY PROSPEKT",
@@ -2488,7 +2511,8 @@ var stations = [{
   "y_position": 855,
   "line_id": 7,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 103,
   "station_name": "PROLETARSKAYA",
@@ -2498,8 +2522,9 @@ var stations = [{
   "x_position": 896,
   "y_position": 835,
   "line_id": 7,
-  "faction_id": 0,
-  "symbol_id": 1
+  "faction_id": 1,
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 104,
   "station_name": "TAGANSKAYA",
@@ -2599,7 +2624,8 @@ var stations = [{
   "y_position": 305,
   "line_id": 7,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 113,
   "station_name": "SHODNENSKAYA",
@@ -2610,7 +2636,8 @@ var stations = [{
   "y_position": 335,
   "line_id": 7,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "station_description": "Prior to the destruction of the tunnel between Polezhayevskaya and Begovaya, Skhodnenskaya traded extensively with the rest of the Metro. Since then however the station has become notably impoverished. It is currently run by Stalkers."
 }, {
   "station_id": 114,
   "station_name": "TUSHINSKAYA",
@@ -2621,7 +2648,8 @@ var stations = [{
   "y_position": 365,
   "line_id": 7,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "station_description": "The Liberal Republic of Tushinskaya has constant problems with mutant attacks. Cut off from the rest of the Metro - apart from Spartak and Skhodnenskaya - they have a printing press and produce newspapers."
 }, {
   "station_id": 115,
   "station_name": "SCHUKINSKAYA",
@@ -2632,7 +2660,8 @@ var stations = [{
   "y_position": 425,
   "line_id": 7,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "station_description": "No Information Available."
 }, {
   "station_id": 116,
   "station_name": "OKTYABRSKOE POLE",
@@ -2643,7 +2672,8 @@ var stations = [{
   "y_position": 447,
   "line_id": 0,
   "faction_id": 4,
-  "symbol_id": 51
+  "symbol_id": 51,
+  "station_description": "Oktyabrskoe Pole was originally part of the 1905 Confederation, but was abandoned after some kind of accident rendered the station uninhabitable. It was later re-occupied by a group of Hare Krishnas. According to rumour they intend to break into the nearby Kurchatov Institute and detonate its nuclear reactor, blasting the entire Metro into enlightenment."
 }, {
   "station_id": 117,
   "station_name": "POLEZHAEVSKAYA",
@@ -2654,7 +2684,8 @@ var stations = [{
   "y_position": 469,
   "line_id": 7,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "station_description": "At one point Polezhaevskaya was a member of the 1905 Confederation. When their patrols began to vanish they requested help from Begovaya, but by the time a relief team was assembled and reached Polezhaevskaya they found the station abandoned and covered in blood. Begovaya blew up the tunnel in self defense, cutting off Polezhaevskaya and the northern end of the Tagansko-Krasnopresnenskaya line from the rest of the Metro."
 }, {
   "station_id": 118,
   "station_name": "BEGOVAYA",
@@ -2699,7 +2730,8 @@ var stations = [{
   "y_position": 1065,
   "line_id": 10,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 122,
   "station_name": "BRATISLAVSKAYA",
@@ -2710,7 +2742,8 @@ var stations = [{
   "y_position": 1030,
   "line_id": 10,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 123,
   "station_name": "LYUBLINO",
@@ -2732,7 +2765,8 @@ var stations = [{
   "y_position": 961,
   "line_id": 10,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 125,
   "station_name": "PECHATNIKI",
@@ -2775,8 +2809,9 @@ var stations = [{
   "x_position": 870,
   "y_position": 835,
   "line_id": 10,
-  "faction_id": 0,
-  "symbol_id": 1
+  "faction_id": 1,
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 129,
   "station_name": "RIMSKAYA",
@@ -2842,7 +2877,8 @@ var stations = [{
   "y_position": 218,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 135,
   "station_name": "VODNY STADION",
@@ -2853,7 +2889,8 @@ var stations = [{
   "y_position": 258,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 136,
   "station_name": "VOYKOVSKAYA",
@@ -2965,7 +3002,8 @@ var stations = [{
   "y_position": 1181,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 146,
   "station_name": "DOMODEDOVSKAYA",
@@ -2976,7 +3014,8 @@ var stations = [{
   "y_position": 1155,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 147,
   "station_name": "OREHOVO",
@@ -2987,7 +3026,8 @@ var stations = [{
   "y_position": 1131,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 148,
   "station_name": "TSARITSYNO",
@@ -2998,7 +3038,8 @@ var stations = [{
   "y_position": 1105,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 149,
   "station_name": "KANTEMIROVSKAYA",
@@ -3100,7 +3141,8 @@ var stations = [{
   "y_position": 595,
   "line_id": 3, //4
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 158,
   "station_name": "PIONERSKAYA",
@@ -3111,7 +3153,8 @@ var stations = [{
   "y_position": 630,
   "line_id": 4,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 159,
   "station_name": "FILEVSKIY PARK",
@@ -3133,7 +3176,8 @@ var stations = [{
   "y_position": 674,
   "line_id": 4,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 161,
   "station_name": "FILI",
@@ -3144,7 +3188,8 @@ var stations = [{
   "y_position": 706,
   "line_id": 4,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 162,
   "station_name": "KUTUZOVSKAYA",
@@ -3155,7 +3200,8 @@ var stations = [{
   "y_position": 728,
   "line_id": 4,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 163,
   "station_name": "STUDENCHESKAYA",
@@ -3166,7 +3212,8 @@ var stations = [{
   "y_position": 750,
   "line_id": 4,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 164,
   "station_name": "SMOLENSKAYA (1)",
@@ -3223,7 +3270,8 @@ var stations = [{
   "y_position": 395,
   "line_id": 7,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "station_description": "The ruling elite of Spartak have created their own religion by blending Aztec beliefs with Slavic paganism. Isolated from the rest of the Metro, they have contact only with Tushinskaya."
 }, {
   "station_id": 169,
   "station_name": "VARSHAVSKAYA",
@@ -3283,7 +3331,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 5.5,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 174,
   "station_name": "LESOPARKOVAYA",
@@ -3295,7 +3344,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 12,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 },{
   "station_id": 175,
   "station_name": "ULITSA STAROKACHALOVSKAYA",
@@ -3306,7 +3356,8 @@ var stations = [{
   "y_position": 1210,
   "line_id": 12,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 },{
   "station_id": 176,
   "station_name": "ULITSA SKOBELEVSKAYA",
@@ -3317,7 +3368,8 @@ var stations = [{
   "y_position": 1250,
   "line_id": 12,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "An elevated surface station, Ulitsa Skobelevskaya can be assumed to have been destroyed in the nuclear attack."
 },{
   "station_id": 177,
   "station_name": "BULVAR ADMIRALA USHAKOVA",
@@ -3328,7 +3380,8 @@ var stations = [{
   "y_position": 1270,
   "line_id": 12,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "An elevated surface station, Bulvar Admirala Ushakova can be assumed to have been destroyed in the nuclear attack."
 },{
   "station_id": 178,
   "station_name": "ULITSA GORCHAKOVA",
@@ -3339,7 +3392,8 @@ var stations = [{
   "y_position": 1290,
   "line_id": 12,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "An elevated surface station, Ulitsa Gorchakova can be assumed to have been destroyed in the nuclear attack."
 },{
   "station_id": 179,
   "station_name": "BUNINSKAYA ALLEYA",
@@ -3350,7 +3404,8 @@ var stations = [{
   "y_position": 1310,
   "line_id": 12,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "An elevated surface station, Buninskaya Alleya can be assumed to have been destroyed in the nuclear attack."
 }, {
   "station_id": 180,
   "station_name": "ALMA-ATINSKAYA",
@@ -3361,7 +3416,8 @@ var stations = [{
   "y_position": 1210,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 181,
   "station_name": "ZYABLIKOVO",
@@ -3372,7 +3428,8 @@ var stations = [{
   "y_position": 1161,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 182,
   "station_name": "SHIPILOVSKAYA",
@@ -3383,7 +3440,8 @@ var stations = [{
   "y_position": 1141,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 183,
   "station_name": "BORISOVO",
@@ -3394,7 +3452,8 @@ var stations = [{
   "y_position": 1121,
   "line_id": 2,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 184,
   "station_name": "LERMONTOVSKY PROSPEKT",
@@ -3405,7 +3464,8 @@ var stations = [{
   "y_position": 955,
   "line_id": 7,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 185,
   "station_name": "ZHULEBINO",
@@ -3416,7 +3476,8 @@ var stations = [{
   "y_position": 985,
   "line_id": 7,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 186,
   "station_name": "STROGINO",
@@ -3438,7 +3499,8 @@ var stations = [{
   "y_position": 450,
   "line_id": 3,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "station_description": "A surface station, Myakinino is likely to have been destroyed in the nuclear attack."
 }, {
   "station_id": 188,
   "station_name": "VOLOKOLAMSKAYA",
@@ -3449,7 +3511,8 @@ var stations = [{
   "y_position": 395,
   "line_id": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 189,
   "station_name": "MITINO",
@@ -3460,7 +3523,8 @@ var stations = [{
   "y_position": 365,
   "line_id": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 190,
   "station_name": "PYATNITSKOYE SHOSSE",
@@ -3471,7 +3535,8 @@ var stations = [{
   "y_position": 335,
   "line_id": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 191,
   "station_name": "DELOVOY TSENTR",
@@ -3493,7 +3558,8 @@ var stations = [{
   "y_position": 600,
   "line_id": 4,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 }, {
   "station_id": 193,
   "station_name": "SLAVYANSKY BULVAR",
@@ -3526,7 +3592,8 @@ var stations = [{
   "y_position": 595,
   "line_id": 3,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 },{
   "station_id": 196,
   "station_name": "STOROZHEVAYA BASHNYA",
@@ -3548,7 +3615,8 @@ var stations = [{
   "y_position": 565,
   "line_id": 4,
   "faction_id": 1,
-  "symbol_id": 1
+  "symbol_id": 1,
+  "station_description": "No Information Available."
 },
 
 ]
