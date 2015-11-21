@@ -441,7 +441,7 @@ var dangerous_tunnels = [
   {"line_nodes": [[0, 608,940],[0, 578,970],[0, 578,1000]], "line_colour": "#000000"}, // Nagatinskaya to Nakhimovsky
   {"line_nodes": [[0, 578,1040],[0, 578,1060],[0, 608,1090],[0, 608,1120]], "line_colour": "#000000"}, // Sevastapol to Prazhskaya
   // 10 - Lime Green Line
-  {"line_nodes": [[0, 800,620],[0, 668,488],               [0, 640,460],       [0, 616,460],[0, 610,457],[0, 605,453],[0, 600,445],[0, 600,270]], "line_colour": "#000000"}, // Destroyed Section
+  {"line_nodes": [[0, 800,620],[0, 668,488],[0, 640,460],[0, 616,460],[0, 610,457],[0, 605,453],[0, 600,445],[0, 600,270]], "line_colour": "#000000"}, // Destroyed Section
   {"line_nodes": [[0, 870,870],[0, 870,905]], "line_colour": "#000000"}, // Dubrovka to Kozhukhovskaya
   // 11 - Teal Line
   {"line_nodes": [[0, 664,1030],[0, 725,1030]], "line_colour": "#000000"}, // Varshavskaya to Kashirskaya
@@ -1341,6 +1341,29 @@ var station_names = [
   {"station_id": 197, "name_set": 0, "station_name": "MEZHDUNARODNAYA"},
   {"station_id": 197, "name_set": 1, "station_name": "Междунаро́дная"},
   {"station_id": 197, "name_set": 2, "station_name": "INTERNATIONAL"},
+
+// D6
+
+  {"station_id": 200, "name_set": 0, "station_name": "DOM PRAVITELSTVA"},
+  {"station_id": 200, "name_set": 1, "station_name": "Дом Правительства"},
+  {"station_id": 200, "name_set": 2, "station_name": "WHITE HOUSE"},
+
+  {"station_id": 201, "name_set": 0, "station_name": "GENSHTAB"},
+  {"station_id": 201, "name_set": 1, "station_name": "Генштаб"},
+  {"station_id": 201, "name_set": 2, "station_name": "GENERAL STAFF"},
+
+  {"station_id": 202, "name_set": 0, "station_name": "KREMLIN"},
+  {"station_id": 202, "name_set": 1, "station_name": "кремль"},
+  {"station_id": 202, "name_set": 2, "station_name": "KREMLIN"},
+
+  {"station_id": 203,  "name_set": 0, "station_name": "PARK POBEDY"},
+  {"station_id": 203,  "name_set": 1, "station_name": "Парк Победы"},
+  {"station_id": 203,  "name_set": 2, "station_name": "VICTORY PARK"},
+
+  {"station_id": 204, "name_set": 0,    "station_name": "MAYAKOVSKAYA"},
+  {"station_id": 204, "name_set": 1,    "station_name": "Маяковская"},
+  {"station_id": 204, "name_set": 2,    "station_name": "MAYAKOVSKY"},
+
 ]
 
 // **************************************************************************************************************************************************
@@ -1475,11 +1498,11 @@ var stations = [{
 {
   "station_id": 10,
   "station_name": "NOVOSLOBODSKAYA (HANSA)",
+  "station_open": 0,
   "x_position": 490,
   "y_position": 372,
   "line_id": 5,
   "version_id": 3,
-  "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 5,
   "faction_id": 5,
@@ -4095,7 +4118,10 @@ var features = [{
 ]
 
 
-// D6 Stuff
+/*****************************************************************************************************/
+/* D6                                                                                                */
+/*****************************************************************************************************/
+
 var d6_lines = [{
   "line_id": 15,
   "line_number": 13,
@@ -4110,13 +4136,11 @@ var d6_lines = [{
     [0, 190,665],
     [1, 245,720],
     [0, 265,720],
-    [1, 410,575],   
-    [0, 430,575],
-    [1, 512,657],
-    [0, 532,657],
-    [1, 612,577], 
-    [0, 612,557],
-    [0, 422,367],
+    [1, 380,605],   
+    [0, 400,605],
+    [1, 482,687],
+    [0, 502,687],
+    [0, 583,606], 
   ],
   "line_colour": "#F9C010"
 },{
@@ -4133,7 +4157,13 @@ var d6_lines = [{
   "line_number": 13,
   "line_name": "D6",
   "line_nodes": [
-      [0, 555,584],
+      [0, 840,435],
+      [0, 520,435],
+      [0, 530,435],
+      [1, 530,535],
+      [0, 540,555],
+      [1, 545,560],
+      [0, 555,580],
       [0, 555,684]
   ],
   "line_colour": "#F9C010"
@@ -4145,7 +4175,7 @@ var d6_stations = [{
   "station_name": "DOM PRAVITELSTVA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 3,
+  "label_point": 9,
   "x_position": 372,
   "y_position": 613,
   "line_id": 20,
@@ -4157,7 +4187,7 @@ var d6_stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "x_position": 505,
+  "x_position": 445,
   "y_position": 650,
   "line_id": 20,
   "faction_id": 3,
@@ -4198,4 +4228,63 @@ var d6_stations = [{
 },  
 ]
 
+// FEATURES - (Objects on the map that aren't stations)
 
+var d6_features = [{
+    "feature_name": "To Missile Bunker|(~20km Away)",
+    "feature_id": 50,
+    "x_position": 840,
+    "y_position": 435,
+    "width": 75,
+    "height": 35,
+    "version_id": 3
+  }, {
+    "feature_name": "?",
+    "feature_id": 51,
+    "x_position": 585,
+    "y_position": 604,
+    "width": 14,
+    "height": 16,
+    "version_id": 3
+  }, {
+    "feature_name": "?",
+    "feature_id": 52,
+    "x_position": 555,
+    "y_position": 678,
+    "width": 14,
+    "height": 16,
+    "version_id": 3
+  }, {
+    "feature_name": "?",
+    "feature_id": 53,
+    "x_position": 525,
+    "y_position": 604,
+    "width": 14,
+    "height": 16,
+    "version_id": 3
+  }, {
+    "feature_name": "?",
+    "feature_id": 54,
+    "x_position": 585,
+    "y_position": 664,
+    "width": 14,
+    "height": 16,
+    "version_id": 3
+  }
+  ]
+
+var d6_side_tunnels = [
+
+  [[395,600],[405,590]],
+  [[400,605],[390,615]], 
+  [[405,610],[415,600]],
+  [[410,615],[400,625]],
+  [[415,620],[425,610]],
+  [[420,625],[410,635]],
+  [[425,630],[435,620]],
+  [[430,635],[420,645]],
+  [[435,640],[445,630]],
+  
+  [[520,435],[500,435],[480,455]],
+
+  ]

@@ -57,12 +57,12 @@ function pattern_4(sX,sY,canvas=1) { // Independent Stations
 	ctx[canvas].fillStyle = '#FFFFFF';
 	ctx[canvas].lineWidth = 5*scale;
 	ctx[canvas].beginPath();
-	arc(sX,sY,3*scale,330,30);
-	arc(sX,sY,3*scale,60,120);
-	arc(sX,sY,3*scale,150,210);
-	arc(sX,sY,3*scale,240,300);
+	arc(sX,sY,3*scale,330, 30,  canvas);
+	arc(sX,sY,3*scale,60,  120, canvas);
+	arc(sX,sY,3*scale,150, 210, canvas);
+	arc(sX,sY,3*scale,240, 300, canvas);
 	ctx[canvas].lineWidth = 1*scale;
-	circle(sX,sY,3*scale);
+	circle(sX,sY,3*scale, canvas);
 	ctx[canvas].fill();
 }
 
@@ -372,9 +372,9 @@ function pattern_23(sX,sY,canvas=1) { // Sebastapol
 function pattern_24(sX,sY,canvas=1) { // Occupied by Mutants
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].fillStyle = '#CBFF00';
-	circle(sX,sY-3*scale,2*scale); ctx[canvas].fill();
-	circle(sX-3*scale,sY+2*scale,2*scale); ctx[canvas].fill();
-	circle(sX+3*scale,sY+2*scale,2*scale); ctx[canvas].fill();
+	circle(sX,        sY-3*scale,2*scale,canvas); ctx[canvas].fill();
+	circle(sX-3*scale,sY+2*scale,2*scale,canvas); ctx[canvas].fill();
+	circle(sX+3*scale,sY+2*scale,2*scale,canvas); ctx[canvas].fill();
 }
 
 function pattern_25(sX,sY,canvas=1) { // Satanists

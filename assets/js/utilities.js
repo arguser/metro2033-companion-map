@@ -120,7 +120,7 @@ function print_station_labels() {
 }
 
 // print out label for a specific station
-function name_station(stationID,position,sX,sY) {
+function name_station(stationID,position,sX,sY,canvas=3) {
 	var searchResult = findRecord(station_names,"station_id",stationID);
 	searchResult = findRecord(searchResult,"name_set",name_set);
 	if (searchResult.length>0) {
@@ -149,29 +149,29 @@ function name_station(stationID,position,sX,sY) {
 
 		var stationName = searchResult[0]['station_name'];
 		if (stationName.length>0) {
-			ctx[3].lineCap = 'butt';
-			ctx[3].lineJoin = "round";
+			ctx[canvas].lineCap = 'butt';
+			ctx[canvas].lineJoin = "round";
 			var fontSize = 8*scale;
-			ctx[3].font = 'bold '+fontSize+'px sans-serif';
-			ctx[3].textAlign = 'left';
-			ctx[3].fillStyle = '#000000';
-			ctx[3].strokeStyle = '#ede9dd';
-			ctx[3].shadowColor="#FFFFFF";
-			ctx[3].lineWidth = 3*scale;
-			ctx[3].textAlign = labelAlign;
-			ctx[3].strokeText(stationName,((sX+cX)*scale)+xShim,((sY+cY)*scale)+yShim);
-			ctx[3].fillText(stationName,((sX+cX)*scale)+xShim,((sY+cY)*scale)+yShim);
+			ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
+			ctx[canvas].textAlign = 'left';
+			ctx[canvas].fillStyle = '#000000';
+			ctx[canvas].strokeStyle = '#ede9dd';
+			ctx[canvas].shadowColor="#FFFFFF";
+			ctx[canvas].lineWidth = 3*scale;
+			ctx[canvas].textAlign = labelAlign;
+			ctx[canvas].strokeText(stationName,((sX+cX)*scale)+xShim,((sY+cY)*scale)+yShim);
+			ctx[canvas].fillText(stationName,((sX+cX)*scale)+xShim,((sY+cY)*scale)+yShim);
 		}
 	}
 }
 
-function draw_features() {
+function draw_features(feature_array=features,canvas=2) {
 	// draw features
-	for (i=0;i<features.length;i++) {
-		thisFeature = features[i];
-		ctx[2].fillStyle = '#FFFFFF';
-		ctx[2].strokeStyle = '#000000';
-    	ctx[2].lineWidth = 1*scale;
+	for (i=0;i<feature_array.length;i++) {
+		thisFeature = feature_array[i];
+		ctx[canvas].fillStyle = '#FFFFFF';
+		ctx[canvas].strokeStyle = '#000000';
+    	ctx[canvas].lineWidth = 1*scale;
 
 		sX = (thisFeature['x_position']*scale)+xShim;
 		sY = (thisFeature['y_position']*scale)+yShim;
@@ -180,27 +180,27 @@ function draw_features() {
 		sC = 4*scale; // corner size
 
 		// draw box
-		ctx[2].beginPath();
-		ctx[2].moveTo(sX-(sW/2)+sC,sY-(sH/2));
-		ctx[2].lineTo(sX+(sW/2)-sC,sY-(sH/2));
-		ctx[2].quadraticCurveTo( sX+(sW/2),sY-(sH/2), sX+(sW/2),sY-(sH/2)+sC);
-		ctx[2].lineTo(sX+(sW/2),sY+(sH/2)-sC);
-		ctx[2].quadraticCurveTo( sX+(sW/2),sY+(sH/2), sX+(sW/2)-sC,sY+(sH/2));
-		ctx[2].lineTo(sX-(sW/2)+sC,sY+(sH/2));
-		ctx[2].quadraticCurveTo( sX-(sW/2),sY+(sH/2), sX-(sW/2),sY+(sH/2)-sC);
-		ctx[2].lineTo(sX-(sW/2),sY-(sH/2)+sC);
-		ctx[2].quadraticCurveTo( sX-(sW/2),sY-(sH/2), sX-(sW/2)+sC,sY-(sH/2));
-		ctx[2].closePath();
-    	ctx[2].fill();
-    	ctx[2].stroke();
+		ctx[canvas].beginPath();
+		ctx[canvas].moveTo(sX-(sW/2)+sC,sY-(sH/2));
+		ctx[canvas].lineTo(sX+(sW/2)-sC,sY-(sH/2));
+		ctx[canvas].quadraticCurveTo( sX+(sW/2),sY-(sH/2), sX+(sW/2),sY-(sH/2)+sC);
+		ctx[canvas].lineTo(sX+(sW/2),sY+(sH/2)-sC);
+		ctx[canvas].quadraticCurveTo( sX+(sW/2),sY+(sH/2), sX+(sW/2)-sC,sY+(sH/2));
+		ctx[canvas].lineTo(sX-(sW/2)+sC,sY+(sH/2));
+		ctx[canvas].quadraticCurveTo( sX-(sW/2),sY+(sH/2), sX-(sW/2),sY+(sH/2)-sC);
+		ctx[canvas].lineTo(sX-(sW/2),sY-(sH/2)+sC);
+		ctx[canvas].quadraticCurveTo( sX-(sW/2),sY-(sH/2), sX-(sW/2)+sC,sY-(sH/2));
+		ctx[canvas].closePath();
+    	ctx[canvas].fill();
+    	ctx[canvas].stroke();
 
     	// label
     	var textlines = thisFeature['feature_name'];
     	if (textlines.indexOf("|")>0) {textlines = textlines.split('|'); } else { textlines = [textlines]; }
 		var fontSize = 8*scale;
-		ctx[2].font = "bold "+fontSize+"px 'trebuchet ms',sans-serif";
-		ctx[2].textAlign = 'center';
-		ctx[2].fillStyle = '#000000';
+		ctx[canvas].font = "bold "+fontSize+"px 'trebuchet ms',sans-serif";
+		ctx[canvas].textAlign = 'center';
+		ctx[canvas].fillStyle = '#000000';
 		lineCount=0;
 		for (l=0;l<textlines.length;l++) {
 			yPoint = sY;
@@ -208,7 +208,7 @@ function draw_features() {
 				if (lineCount==0) yPoint = yPoint-(5*scale);
 				if (lineCount==1) yPoint = yPoint+(5*scale);
 			}
-			ctx[2].fillText(textlines[l],sX,yPoint);
+			ctx[canvas].fillText(textlines[l],sX,yPoint);
 			lineCount++;
 		}
 
@@ -345,12 +345,12 @@ function drawLine(line,border=0,canvas=1) {
 	var offset = 10; // larger offset equals more extreme curves
 
 	ctx[canvas].lineCap = 'round';
-	ctx[canvas].strokeStyle = (border==0) ? line['line_colour'] : "#000000" ;
+	ctx[canvas].strokeStyle = (border==1) ? "#000000" : line['line_colour']  ;
 	nodes = line['line_nodes'];
 	switch(border) {
 		case 0: ctx[canvas].lineWidth =  3.5*scale; break;
 		case 1: ctx[canvas].lineWidth =  4.5*scale; break;
-		case 2: ctx[canvas].lineWidth =    2*scale; break;
+		case 2: ctx[canvas].lineWidth =    1*scale; break;
 	}
 
 	var undef;
@@ -671,6 +671,10 @@ function animate_station() {
 }
 
 function draw_D6() {
+
+	document.getElementById('showD6').style.display="none";
+	document.getElementById('hideD6').style.display="block";
+
 	var canvas = 4;
 
 	// fade out main metro
@@ -679,6 +683,12 @@ function draw_D6() {
     ctx[canvas].fillStyle = '#EDE9DD';
     ctx[canvas].fill();
    	ctx[canvas].globalAlpha = 1;
+
+    // draw side tunnels
+    for (i = 0; i < d6_side_tunnels.length; i++) {
+       thisLink = d6_side_tunnels[i];
+       side_tunnel(thisLink,canvas);
+    }
 
 	// draw line
 	for (i = 0; i < d6_lines.length; i++) {
@@ -691,12 +701,19 @@ function draw_D6() {
 	for (i = 0; i < d6_stations.length; i++) {
         thisStation = d6_stations[i];
         station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id'], thisStation['symbol_id'],canvas);
+        name_station(thisStation['station_id'],thisStation['label_point'],thisStation['x_position'], thisStation['y_position'],canvas)
     }
+
+	// draw features
+	draw_features(d6_features,canvas);
 
 }
 
 
 function hide_D6() {
+	document.getElementById('showD6').style.display="block";
+	document.getElementById('hideD6').style.display="none";
+
 	ctx[4].clearRect(0, 0, 2200, 2200); // Poof! Gone!
 }
 

@@ -522,7 +522,23 @@ station-image img{
   width:100%;
   max-width:100%;
 }
-  
+
+/* D6 */
+#d6Button {
+  z-index: 100;
+  position:fixed;
+  top:20px;
+  right:20px;
+}
+#d6Button input {
+  border:1px solid #000;
+  border-radius:5px;
+  background-color:#CBBF9B;
+  width:80px;
+}
+#d6Button #showD6 {}
+#d6Button #hideD6 {display:none;}
+
 
 
 /*FOOTER*/
