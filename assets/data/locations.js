@@ -160,7 +160,7 @@ var lines = [{
     [0, 996,926],
     [1, 1050,926],
     [0, 1070,946],    
-    [0, 1070,985]
+    [0, 1070,995]
   ],
   "line_colour": "#832396"
 },
@@ -297,7 +297,8 @@ var lines = [{
 // RIVERS
 //  Rivers
 var rivers = [
-  [20, [0,430], [140,430], [140,585], [250,695], [340,605], [420,685], [250,855], [325,930], [475,780], [455,760], [555,660], [610,660], [780,830], [680,930], [680,972], [880,972], [880,1031], [780,1031], [800,1090], [1090,1090] ],
+  [20, [0,430],   [140,430], [140,585], [250,695], [320,625], [360,625], [400,665], [400,705], [270,835],  [270,875],  [315,920],  [335,920],
+       [475,780], [455,760], [555,660], [610,660], [780,830], [680,930], [680,972], [880,972], [880,1031], [780,1031], [800,1090], [1090,1090] ],
   [10, [470,790], [565,695], [600,695], [760,855] ],
 ]
 
@@ -364,6 +365,7 @@ var surface_links = [
   [45,  398,1004],
   // 7 - Purple Line
   [225, 192,305],
+  [315, 1065,935],
   // 8 - Yellow Line
   [225, 1008,655],
   // 9 - Grey line
@@ -383,6 +385,7 @@ var surface_links = [
 // Side Tunnels
 var side_tunnels = [
   // 1 - Red Line
+  [[328,865],[316,853],[311,858]],
   [[323,870],[341,888],[336,893]],
   [[527,621],[565,621],[580,636]],
   [[574,630],[580,624],[575,619]],
@@ -431,12 +434,14 @@ var dangerous_tunnels = [
   {"line_nodes": [[0, 705, 368],[1, 705, 391],[0, 695, 411],[0, 683, 423],[0, 683, 662]], "line_colour": "#000000"}, // Prospekt Mira to Kitai-Gorod
   // 8 - Yellow Line
   {"line_nodes": [[0,800,766],[0,613,766]], "line_colour": "#000000"}, // Marksistkaya to Tretyakovskaya
+  {"line_nodes": [[0,982,683],[0,930,740]], "line_colour": "#000000"}, // Perovo to Aviamotornaya
   // 9 - Grey line
   {"line_nodes": [[0, 490,210],[0, 490,320]], "line_colour": "#000000"}, // Petrovsko to Savyolovskaya
   {"line_nodes": [[0, 489,513],[1, 475,527],[0, 465,547],[1, 465,648],[0, 475,668],[0, 485,678]], "line_colour": "#000000"}, // Chekhovskaya to Borovitskaya
   {"line_nodes": [[0, 608,940],[0, 578,970],[0, 578,1000]], "line_colour": "#000000"}, // Nagatinskaya to Nakhimovsky
   {"line_nodes": [[0, 578,1040],[0, 578,1060],[0, 608,1090],[0, 608,1120]], "line_colour": "#000000"}, // Sevastapol to Prazhskaya
   // 10 - Lime Green Line
+  {"line_nodes": [[0, 800,620],[0, 668,488],               [0, 640,460],       [0, 616,460],[0, 610,457],[0, 605,453],[0, 600,445],[0, 600,270]], "line_colour": "#000000"}, // Destroyed Section
   {"line_nodes": [[0, 870,870],[0, 870,905]], "line_colour": "#000000"}, // Dubrovka to Kozhukhovskaya
   // 11 - Teal Line
   {"line_nodes": [[0, 664,1030],[0, 725,1030]], "line_colour": "#000000"}, // Varshavskaya to Kashirskaya
@@ -472,12 +477,48 @@ var tunnel_entrances = [
   [45, 925,864],
   [225, 943,882],
   [0, 1030,926],
+  [270, 1070,950], 
   // 8 - Yellow Line
   // 9 - Grey line
   // 10 - Lime Green Line
   // 11 - Teal Line
   // 12 - Pale Blue Line
   [135, 554,1240],
+  // 13 - Light Blue Extension
+  // 14 - Yellow Line Extension
+
+  // depots
+
+  // 1 - Red Line
+  [180, 864,280],
+  [225, 766,398],
+  [135, 331,898],
+  // 2 - Green Line
+  [0, 340,320],
+  [180, 731,1055],
+  [180, 829,1195],
+  // 3 - Dark Blue line
+  [225, 927,440],
+  // 4 - Light Blue Line
+  [270, 100,317],
+  // 5 - Circle Line
+  [180, 345,470],
+  // 6 - Orange line
+  [225, 732,168],
+  [45,  408,1014],
+  // 7 - Purple Line
+  [225, 182,295],
+  // 8 - Yellow Line
+  [225, 998,645],
+  // 9 - Grey line
+  [45, 512,207],
+  [315, 608,1070],
+  // 10 - Lime Green Line
+  [315, 895,910],
+  // 11 - Teal Line
+  [90,  630,1048],
+  // 12 - Pale Blue Line
+  [45, 584,1230],
 
   // 13 - Light Blue Extension
   // 14 - Yellow Line Extension
@@ -815,9 +856,9 @@ var station_names = [
   {"station_id": 75, "name_set": 1, "station_name": "Измайловская"},
   {"station_id": 75, "name_set": 2, "station_name": "IZMAILOV"},
 
-  {"station_id": 76, "name_set": 0, "station_name": "IZMAYLOVSKY PARK"},
-  {"station_id": 76, "name_set": 1, "station_name": "Измайловский парк"},
-  {"station_id": 76, "name_set": 2, "station_name": "IZMAILOVSKI PARK"},
+  {"station_id": 76, "name_set": 0, "station_name": "PARTIZANSKAYA"},
+  {"station_id": 76, "name_set": 1, "station_name": "Партизанская"},
+  {"station_id": 76, "name_set": 2, "station_name": "PARTISAN"},
 
   {"station_id": 77, "name_set": 0, "station_name": "SEMENOVSKAYA"},
   {"station_id": 77, "name_set": 1, "station_name": "Семёновская"},
@@ -1326,6 +1367,7 @@ var stations = [{
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 2,
@@ -1338,6 +1380,7 @@ var stations = [{
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0, 
   "station_description": "No Information Available."
 }, {
   "station_id": 3,
@@ -1350,6 +1393,7 @@ var stations = [{
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 4,
@@ -1362,6 +1406,7 @@ var stations = [{
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 5,
@@ -1374,6 +1419,7 @@ var stations = [{
   "label_point": 10,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 6,
@@ -1385,7 +1431,8 @@ var stations = [{
   "line_id": 9,
   "label_point": 3,
   "faction_id": 25,
-  "symbol_id": 25
+  "symbol_id": 25,
+  "radiation": 1,
 }, {
   "station_id": 7,
   "station_name": "DMITROVSKAYA",
@@ -1396,7 +1443,8 @@ var stations = [{
   "line_id": 9,
   "label_point": 9,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "radiation": 1,
 }, {
   "station_id": 8,
   "station_name": "SAVELOVSKAYA",
@@ -1407,7 +1455,8 @@ var stations = [{
   "line_id": 9,
   "label_point": 9,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "radiation": 1
 }, {
   "station_id": 9,
   "station_name": "MENDELEYEVSKAYA",
@@ -1418,7 +1467,8 @@ var stations = [{
   "line_id": 9,
   "label_point": 9,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 },
 
 
@@ -1433,7 +1483,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 5,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 11,
   "station_name": "TSVETNOY BULVAR",
@@ -1445,6 +1496,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 12,
@@ -1456,7 +1508,8 @@ var stations = [{
   "y_position": 513,
   "line_id": 9,
   "faction_id": 8,
-  "symbol_id": 8
+  "symbol_id": 8,
+  "radiation": 1,
 }, {
   "station_id": 13,
   "station_name": "ALEKSANDROVSKY SAD",
@@ -1467,7 +1520,8 @@ var stations = [{
   "y_position": 621,
   "line_id": 4,
   "faction_id": 7,
-  "symbol_id": 7
+  "symbol_id": 7,
+  "radiation": 1,
 }, {
   "station_id": 14,
   "station_name": "BOROVITSKAYA",
@@ -1478,7 +1532,8 @@ var stations = [{
   "y_position": 678,
   "line_id": 0,
   "faction_id": 7,
-  "symbol_id": 7
+  "symbol_id": 7,
+  "radiation": 1,
 }, {
   "station_id": 15,
   "station_name": "POLYANKA",
@@ -1490,6 +1545,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 3,
   "symbol_id": 3,
+  "radiation": 1,
   "station_description": "Polyanaka is dark, empty and abandoned. Nonetheless, travellers passing through often report strange encounters including visions of the past, confrontations with invisible foes and even detailed conversations with illusionary people. Many scoff at these experiences, citing the influence of hallucinogenic gases, but others believe Polyanka is a place of destiny, where travellers may receive messages from fate itself."
 }, {
   "station_id": 16,
@@ -1502,7 +1558,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 11.5,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 17,
   "station_name": "BULVAR DMITRIYA DONSKOGO",
@@ -1526,6 +1583,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 19,
@@ -1538,6 +1596,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 20,
@@ -1550,6 +1609,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 21,
@@ -1562,6 +1622,7 @@ var stations = [{
   "line_id": 0,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 },{
   "station_id": 22,
@@ -1574,6 +1635,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 24,
   "symbol_id": 24,
+  "radiation": 1,
   "station_description": "It is considered a grim joke that the name of this station starts with 'Chert' - a Russian word for 'demon' or 'devil'. The station and tunnels southwards are overrun by hideous creatures swarming up from the mysterious caverns known as 'The Gates'. The inhabitants of Sevastapolskaya once hoped to colonise Chertanovskaya, but all attempts were driven back and it was thought that Sevastapolskaya itself would have to be evacuated. However it seems as if Chertanovskaya is some kind of boundary, with the Upyrs and other monsters only launching raids northwards rather than full scale assaults. Nowdays no Sevastapolite dares to venture closer to the station platform than 100 metres - and only then when the hydroelectric plants need maintenence."
 }, {
   "station_id": 23,
@@ -1585,7 +1647,8 @@ var stations = [{
   "y_position": 1030,
   "line_id": 0,
   "faction_id": 23,
-  "symbol_id": 23
+  "symbol_id": 23,
+  "radiation": 1,
 }, {
   "station_id": 24,
   "station_name": "NAKHIMOVSKY PROSPEKT",
@@ -1597,6 +1660,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 24,
   "symbol_id": 24,
+  "radiation": 2,
   "station_description": "Nakhimovskiy Prospekt is infested with mutated scavengers, hairless things resembling primates and spiders in equal measure. They feed on carrion they drag down to the platform through the open doors to the surface and the reek of decaying flesh is strong enough to make passers by dizzy. Timid creatures, they avoid conflict, retreating to the carriages of two stalled trains when travellers pass through."
 }, {
   "station_id": 25,
@@ -1609,6 +1673,7 @@ var stations = [{
   "line_id": 9,
   "faction_id": 3,
   "symbol_id": 3,
+  "radiation": 1,
   "station_description": "Nagornaya is a station of ill-repute, feared by those who have to travel through it. Sometimes it will be calm, dark and quiet, and travellers pass through without issue. But at other times it will be awake and malevolant, filled with strange mists or playing host to horrifying mutated creatures far too large to pass through the tunnels or doors. A day when one can pass through Nagornaya without problems, or avoid it alltogether, is a good day."
 }, {
   "station_id": 26,
@@ -1620,7 +1685,8 @@ var stations = [{
   "y_position": 940,
   "line_id": 9,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "radiation": 1,
 }, {
   "station_id": 27,
   "station_name": "TULSKAYA",
@@ -1631,7 +1697,8 @@ var stations = [{
   "y_position": 910,
   "line_id": 9,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "radiation": 1,
 }, {
   "station_id": 28,
   "station_name": "SERPUKHOVSKAYA",
@@ -1642,7 +1709,8 @@ var stations = [{
   "y_position": 875,
   "line_id": 9,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 29,
   "station_name": "MEDVEDKOVO",
@@ -1655,6 +1723,7 @@ var stations = [{
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 30,
@@ -1668,6 +1737,7 @@ var stations = [{
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 31,
@@ -1681,6 +1751,7 @@ var stations = [{
   "label_point": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 32,
@@ -1693,7 +1764,8 @@ var stations = [{
   "station_open": 1,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "radiation": 2,
 }, {
   "station_id": 33,
   "station_name": "VDNKH (EXHIBITION)",
@@ -1705,7 +1777,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 9
+  "symbol_id": 9,
+  "radiation": 1,
 }, {
   "station_id": 34,
   "station_name": "ALEKSEEVSKAYA",
@@ -1717,7 +1790,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 9
+  "symbol_id": 9,
+  "radiation": 1,
 }, {
   "station_id": 35,
   "station_name": "RIZHSKAYA",
@@ -1729,7 +1803,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 9
+  "symbol_id": 9,
+  "radiation": 1,
 }, {
   "station_id": 36,
   "station_name": "PROSPEKT MIRA",
@@ -1741,7 +1816,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 10,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 37,
   "station_name": "PROSPEKT MIRA (HANSA)",
@@ -1753,7 +1829,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 38,
   "station_name": "SUKHAREVSKAYA",
@@ -1765,7 +1842,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 11.5,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "radiation": 1,
 }, {
   "station_id": 39,
   "station_name": "TURGENEVSKAYA",
@@ -1777,7 +1855,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "radiation": 1,
 }, {
   "station_id": 40,
   "station_name": "KITAY-GOROD",
@@ -1789,7 +1868,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 5.5,
-  "symbol_id": 221
+  "symbol_id": 221,
+  "radiation": 1,
 }, {
   "station_id": 41,
   "station_name": "TRETYAKOVSKAYA",
@@ -1801,7 +1881,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 223
+  "symbol_id": 223,
+  "radiation": 1,
 }, {
   "station_id": 42,
   "station_name": "OKTYABRSKAYA",
@@ -1814,10 +1895,11 @@ var stations = [{
   "label_point": 10,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 43,
-  "station_name": "OKTYABR'SKAYA (HANSA)",
+  "station_name": "OKTYABRSKAYA (HANSA)",
   "x_position": 499,
   "y_position": 846,
   "line_id": 5,
@@ -1826,7 +1908,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 8,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 44,
   "station_name": "NOVOYASENEVSKAYA",
@@ -1838,7 +1921,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "radiation": 1,
 }, {
   "station_id": 45,
   "station_name": "YASENEVO",
@@ -1850,7 +1934,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 18
+  "symbol_id": 18,
+  "radiation": 1,
 }, {
   "station_id": 46,
   "station_name": "TEPLIY STAN",
@@ -1862,7 +1947,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 18
+  "symbol_id": 18,
+  "radiation": 1,
 }, {
   "station_id": 47,
   "station_name": "KONKOVO",
@@ -1874,7 +1960,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 18
+  "symbol_id": 18,
+  "radiation": 1,
 }, {
   "station_id": 48,
   "station_name": "BELYAEVO",
@@ -1886,7 +1973,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 18
+  "symbol_id": 18,
+  "radiation": 1,
 }, {
   "station_id": 49,
   "station_name": "KALUZHSKAYA",
@@ -1898,7 +1986,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 18
+  "symbol_id": 18,
+  "radiation": 1,
 }, {
   "station_id": 50,
   "station_name": "NOVYE CHEREMUSHKI",
@@ -1910,7 +1999,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 223
+  "symbol_id": 223,
+  "radiation": 1,
 }, {
   "station_id": 51,
   "station_name": "PROFSOYUZNAYA",
@@ -1922,7 +2012,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 221
+  "symbol_id": 221,
+  "radiation": 1,
 }, {
   "station_id": 52,
   "station_name": "AKADEMICHESKAYA",
@@ -1934,7 +2025,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 220
+  "symbol_id": 220,
+  "radiation": 1,
 }, {
   "station_id": 53,
   "station_name": "LENINSKIY PROSPEKT",
@@ -1946,7 +2038,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 222
+  "symbol_id": 222,
+  "radiation": 1,
 }, {
   "station_id": 54,
   "station_name": "SHABOLOVSKAYA",
@@ -1958,7 +2051,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 224
+  "symbol_id": 224,
+  "radiation": 1,
 },  {
   "station_id": 55,
   "station_name": "BULVAR ROKOSSOVSKOGO",
@@ -1970,7 +2064,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 56,
   "station_name": "CHERKIZOVSKAYA",
@@ -1982,7 +2077,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 57,
   "station_name": "PREOBRAZHENSKAYA PLOSHCHAD'",
@@ -1994,7 +2090,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 58,
   "station_name": "SOKOLNIKI",
@@ -2006,7 +2103,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 2,
 }, {
   "station_id": 59,
   "station_name": "KRANSNOSELSKAYA",
@@ -2018,7 +2116,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 60,
   "station_name": "KOMSOMOLSKAYA",
@@ -2030,7 +2129,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 61,
   "station_name": "KOMSOMOLSKAYA (HANSA)",
@@ -2041,7 +2141,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 62,
   "station_name": "KRASNYE VOROTA",
@@ -2053,7 +2154,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 5.5,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 63,
   "station_name": "CHISTYE PRUDY",
@@ -2065,7 +2167,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 5,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 64,
   "station_name": "TEATRALNAYA",
@@ -2076,7 +2179,8 @@ var stations = [{
   "y_position": 621,
   "line_id": 2,
   "faction_id": 6,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 65,
   "station_name": "KROPOTKINSKAYA",
@@ -2088,7 +2192,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id":6
+  "symbol_id":6,
+  "radiation": 1,
 }, {
   "station_id": 66,
   "station_name": "YUGO-ZAPADNAYA",
@@ -2100,7 +2205,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 11
+  "symbol_id": 11,
+  "radiation": 0,
 }, {
   "station_id": 67,
   "station_name": "PROSPEKT VERNADSKOGO",
@@ -2112,7 +2218,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 11
+  "symbol_id": 11,
+  "radiation": 0,
 }, {
   "station_id": 68,
   "station_name": "UNIVERSITET",
@@ -2124,7 +2231,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 11
+  "symbol_id": 11,
+  "radiation": 0,
 }, {
   "station_id": 69,
   "station_name": "VOROBYOVY GORY",
@@ -2137,6 +2245,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "symbol_id": 2,
+  "radiation": 4,
   "station_description": "A surface station on the bottom level of the Luzhniki Metro Bridge, Vorobyovy Gory was utterly destroyed in the nuclear attack. Nothing remains but rubble and rusted girders poking from the waters of the Moskva River."
 },{
   "station_id": 70,
@@ -2149,7 +2258,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 },  {
   "station_id": 71,
   "station_name": "FRUNZENSKAYA",
@@ -2161,7 +2271,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 72,
   "station_name": "PARK KULTURY (HANSA)",
@@ -2173,7 +2284,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 },{
   "station_id": 73,
   "station_name": "SCHELKOVSKAYA",
@@ -2184,7 +2296,8 @@ var stations = [{
   "y_position": 378,
   "line_id": 3,
   "faction_id": 15,
-  "symbol_id": 15
+  "symbol_id": 15,
+  "radiation": 1,
 }, {
   "station_id": 74,
   "station_name": "PERVOMAYSKAYA",
@@ -2195,7 +2308,8 @@ var stations = [{
   "y_position": 410,
   "line_id": 3,
   "faction_id": 15,
-  "symbol_id": 15
+  "symbol_id": 15,
+  "radiation": 1,
 }, {
   "station_id": 75,
   "station_name": "IZMAYLOVSKAYA",
@@ -2207,10 +2321,11 @@ var stations = [{
   "line_id": 3,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 4,
   "station_description": "A surface station, Izmaylovskaya can be assumed to have been destroyed in the nuclear attack."
 }, {
   "station_id": 76,
-  "station_name": "IZMAYLOVSKY PARK",
+  "station_name": "PARTIZANSKAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
@@ -2218,7 +2333,8 @@ var stations = [{
   "y_position": 482,
   "line_id": 3,
   "faction_id": 21,
-  "symbol_id": 21
+  "symbol_id": 21,
+  "radiation": 1,
 }, {
   "station_id": 77,
   "station_name": "SEMYONOVSKAYA",
@@ -2229,7 +2345,8 @@ var stations = [{
   "y_position": 507,
   "line_id": 3,
   "faction_id": 13,
-  "symbol_id": 13
+  "symbol_id": 13,
+  "radiation": 1,
 }, {
   "station_id": 78,
   "station_name": "ELEKTROZAVODSKAYA",
@@ -2240,7 +2357,8 @@ var stations = [{
   "y_position": 532,
   "line_id": 3,
   "faction_id": 13,
-  "symbol_id": 13
+  "symbol_id": 13,
+  "radiation": 1,
 }, {
   "station_id": 79,
   "station_name": "BAUMANSKAYA",
@@ -2251,7 +2369,8 @@ var stations = [{
   "y_position": 557,
   "line_id": 3,
   "faction_id": 13,
-  "symbol_id": 13
+  "symbol_id": 13,
+  "radiation": 1,
 }, {
   "station_id": 80,
   "station_name": "KURSKAYA",
@@ -2262,7 +2381,8 @@ var stations = [{
   "y_position": 588,
   "line_id": 3,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 81,
   "station_name": "CHKALOVSKAYA",
@@ -2273,7 +2393,8 @@ var stations = [{
   "y_position": 620,
   "line_id": 10,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 82,
   "station_name": "KURSKAYA (HANSA)",
@@ -2285,7 +2406,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 83,
   "station_name": "PLOSHCHAD REVOLYUTSII",
@@ -2296,7 +2418,8 @@ var stations = [{
   "y_position": 636,
   "line_id": 3,
   "faction_id": 6,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 84,
   "station_name": "BIBLIOTEKA IM. LENINA",
@@ -2308,7 +2431,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 5,
-  "symbol_id": 7
+  "symbol_id": 7,
+  "radiation": 1,
 }, {
   "station_id": 85,
   "station_name": "ARBATSKAYA (2)",
@@ -2319,7 +2443,8 @@ var stations = [{
   "y_position": 636,
   "line_id": 3,
   "faction_id": 7,
-  "symbol_id": 7
+  "symbol_id": 7,
+  "radiation": 1,
 }, {
   "station_id": 86,
   "station_name": "SMOLENSKAYA (2)",
@@ -2330,7 +2455,8 @@ var stations = [{
   "y_position": 651,
   "line_id": 3,
   "faction_id": 14,
-  "symbol_id": 14
+  "symbol_id": 14,
+  "radiation": 1,
 }, {
   "station_id": 87,
   "station_name": "PARK POBEDY",
@@ -2341,7 +2467,8 @@ var stations = [{
   "y_position": 766,
   "line_id": 3,
   "faction_id": 20,
-  "symbol_id": 20
+  "symbol_id": 20,
+  "radiation": 1,
 }, {
   "station_id": 88,
   "station_name": "KIEVSKAYA",
@@ -2352,7 +2479,8 @@ var stations = [{
   "y_position": 731,
   "line_id": 3,
   "faction_id": 14,
-  "symbol_id": 14
+  "symbol_id": 14,
+  "radiation": 1,
 }, {
   "station_id": 89,
   "station_name": "KIEVSKAYA",
@@ -2363,7 +2491,8 @@ var stations = [{
   "y_position": 708,
   "line_id": 4,
   "faction_id": 14,
-  "symbol_id": 14
+  "symbol_id": 14,
+  "radiation": 1,
 }, {
   "station_id": 90,
   "station_name": "KIEVSKAYA (HANSA)",
@@ -2375,7 +2504,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 91,
   "station_name": "NOVOGIREEVO",
@@ -2386,7 +2516,8 @@ var stations = [{
   "y_position": 655,
   "line_id": 8,
   "faction_id": 16,
-  "symbol_id": 16
+  "symbol_id": 16,
+  "radiation": 1,
 }, {
   "station_id": 92,
   "station_name": "PEROVO",
@@ -2397,7 +2528,8 @@ var stations = [{
   "y_position": 683,
   "line_id": 8,
   "faction_id": 16,
-  "symbol_id": 16
+  "symbol_id": 16,
+  "radiation": 1,
 }, {
   "station_id": 93,
   "station_name": "SCHOSSE ENTUZIASTOV",
@@ -2408,7 +2540,8 @@ var stations = [{
   "y_position": 711,
   "line_id": 8,
   "faction_id": 16,
-  "symbol_id": 16
+  "symbol_id": 16,
+  "radiation": 1,
 }, {
   "station_id": 94,
   "station_name": "AVIAMOTORNAYA",
@@ -2419,7 +2552,8 @@ var stations = [{
   "y_position": 739,
   "line_id": 8,
   "faction_id": 16,
-  "symbol_id": 16
+  "symbol_id": 16,
+  "radiation": 1,
 }, {
   "station_id": 95,
   "station_name": "PLOSHCHAD ILYICHA",
@@ -2430,7 +2564,8 @@ var stations = [{
   "y_position": 766,
   "line_id": 8,
   "faction_id": 16,
-  "symbol_id": 16
+  "symbol_id": 16,
+  "radiation": 1,
 }, {
   "station_id": 96,
   "station_name": "MARKSISTSKAYA",
@@ -2441,7 +2576,8 @@ var stations = [{
   "y_position": 766,
   "line_id": 8,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 97,
   "station_name": "TRETYAKOVSKAYA",
@@ -2452,7 +2588,8 @@ var stations = [{
   "y_position": 766,
   "line_id": 8,
   "faction_id": 22,
-  "symbol_id": 220
+  "symbol_id": 220,
+  "radiation": 1,
 }, {
   "station_id": 98,
   "station_name": "VYKHINO",
@@ -2464,6 +2601,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 4,
   "station_description": "A surface station, Vykhino can be assumed to have been destroyed in the nuclear attack."
 }, {
   "station_id": 99,
@@ -2476,6 +2614,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 100,
@@ -2488,6 +2627,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 101,
@@ -2500,6 +2640,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 102,
@@ -2510,9 +2651,10 @@ var stations = [{
   "x_position": 916,
   "y_position": 855,
   "line_id": 7,
-  "faction_id": 1,
-  "symbol_id": 1,
-  "station_description": "No Information Available."
+  "faction_id": 25,
+  "symbol_id": 25,
+  "radiation": 1,
+  "station_description": "Rumoured to be occupied by Satanists."
 }, {
   "station_id": 103,
   "station_name": "PROLETARSKAYA",
@@ -2524,6 +2666,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 104,
@@ -2535,6 +2678,7 @@ var stations = [{
   "y_position": 740,
   "line_id": 7,
   "faction_id": 5,
+  "radiation": 1,
   "symbol_id": 5
 }, {
   "station_id": 105,
@@ -2546,6 +2690,7 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "faction_id": 5,
+  "radiation": 1,
   "symbol_id": 5
 }, {
   "station_id": 106,
@@ -2557,7 +2702,8 @@ var stations = [{
   "y_position": 662,
   "line_id": 7, //6
   "faction_id": 22,
-  "symbol_id": 222
+  "symbol_id": 222,
+  "radiation": 1,
 }, {
   "station_id": 107,
   "station_name": "KUZNETSKY MOST",
@@ -2568,7 +2714,8 @@ var stations = [{
   "y_position": 533,
   "line_id": 7,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "radiation": 1,
 }, {
   "station_id": 108,
   "station_name": "LUBYANKA",
@@ -2580,7 +2727,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 10,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 109,
   "station_name": "TVERSKAYA",
@@ -2591,7 +2739,8 @@ var stations = [{
   "y_position": 513,
   "line_id": 2,
   "faction_id": 8,
-  "symbol_id": 8
+  "symbol_id": 8,
+  "radiation": 1,
 }, {
   "station_id": 110,
   "station_name": "PUSHKINSKAYA",
@@ -2602,7 +2751,8 @@ var stations = [{
   "y_position": 533,
   "line_id": 7,
   "faction_id": 8,
-  "symbol_id": 8
+  "symbol_id": 8,
+  "radiation": 1,
 }, {
   "station_id": 111,
   "station_name": "BARRIKADNAYA",
@@ -2613,7 +2763,8 @@ var stations = [{
   "y_position": 533,
   "line_id": 7,
   "faction_id": 10,
-  "symbol_id": 10
+  "symbol_id": 10,
+  "radiation": 1,
 }, {
   "station_id": 112,
   "station_name": "PLANERNAYA",
@@ -2625,6 +2776,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 113,
@@ -2637,6 +2789,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 4,
   "symbol_id": 4,
+  "radiation": 1,
   "station_description": "Prior to the destruction of the tunnel between Polezhayevskaya and Begovaya, Skhodnenskaya traded extensively with the rest of the Metro. Since then however the station has become notably impoverished. It is currently run by Stalkers."
 }, {
   "station_id": 114,
@@ -2649,6 +2802,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 4,
   "symbol_id": 4,
+  "radiation": 1,
   "station_description": "The Liberal Republic of Tushinskaya has constant problems with mutant attacks. Cut off from the rest of the Metro - apart from Spartak and Skhodnenskaya - they have a printing press and produce newspapers."
 }, {
   "station_id": 115,
@@ -2661,6 +2815,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 3,
   "symbol_id": 3,
+  "radiation": 1,
   "station_description": "No Information Available."
 }, {
   "station_id": 116,
@@ -2673,6 +2828,7 @@ var stations = [{
   "line_id": 0,
   "faction_id": 4,
   "symbol_id": 51,
+  "radiation": 1,
   "station_description": "Oktyabrskoe Pole was originally part of the 1905 Confederation, but was abandoned after some kind of accident rendered the station uninhabitable. It was later re-occupied by a group of Hare Krishnas. According to rumour they intend to break into the nearby Kurchatov Institute and detonate its nuclear reactor, blasting the entire Metro into enlightenment."
 }, {
   "station_id": 117,
@@ -2685,6 +2841,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 3,
   "symbol_id": 3,
+  "radiation": 1,
   "station_description": "At one point Polezhaevskaya was a member of the 1905 Confederation. When their patrols began to vanish they requested help from Begovaya, but by the time a relief team was assembled and reached Polezhaevskaya they found the station abandoned and covered in blood. Begovaya blew up the tunnel in self defense, cutting off Polezhaevskaya and the northern end of the Tagansko-Krasnopresnenskaya line from the rest of the Metro."
 }, {
   "station_id": 118,
@@ -2696,7 +2853,8 @@ var stations = [{
   "y_position": 511,
   "line_id": 7,
   "faction_id": 10,
-  "symbol_id": 10
+  "symbol_id": 10,
+  "radiation": 1,
 }, {
   "station_id": 119,
   "station_name": "ULITSA 1905 GODA",
@@ -2707,7 +2865,8 @@ var stations = [{
   "y_position": 533,
   "line_id": 7,
   "faction_id": 10,
-  "symbol_id": 10
+  "symbol_id": 10,
+  "radiation": 1,
 }, {
   "station_id": 120,
   "station_name": "KRASNOPRESNENSKAYA (HANSA)",
@@ -2719,7 +2878,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 4,
   "faction_id": 5,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 121,
   "station_name": "MARYINO",
@@ -2729,8 +2889,9 @@ var stations = [{
   "x_position": 906,
   "y_position": 1065,
   "line_id": 10,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 27,
+  "symbol_id": 27,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 122,
@@ -2741,8 +2902,9 @@ var stations = [{
   "x_position": 906,
   "y_position": 1030,
   "line_id": 10,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 27,
+  "symbol_id": 27,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 123,
@@ -2754,7 +2916,8 @@ var stations = [{
   "y_position": 995,
   "line_id": 10,
   "faction_id": 25,
-  "symbol_id": 25
+  "symbol_id": 25,
+  "radiation": 1,
 }, {
   "station_id": 124,
   "station_name": "VOLZHSKAYA",
@@ -2766,6 +2929,7 @@ var stations = [{
   "line_id": 10,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 125,
@@ -2777,7 +2941,8 @@ var stations = [{
   "y_position": 938,
   "line_id": 10,
   "faction_id": 17,
-  "symbol_id": 17
+  "symbol_id": 17,
+  "radiation": 1,
 }, {
   "station_id": 126,
   "station_name": "KOZHUKHOVSKAYA",
@@ -2788,7 +2953,8 @@ var stations = [{
   "y_position": 905,
   "line_id": 10,
   "faction_id": 17,
-  "symbol_id": 17
+  "symbol_id": 17,
+  "radiation": 1,
 }, {
   "station_id": 127,
   "station_name": "DUBROVKA",
@@ -2798,8 +2964,9 @@ var stations = [{
   "x_position": 870,
   "y_position": 870,
   "line_id": 10,
-  "faction_id": 3,
-  "symbol_id": 3
+  "faction_id": 17,
+  "symbol_id": 17,
+  "radiation": 1,
 }, {
   "station_id": 128,
   "station_name": "KRESTYANSKAYA ZASTAVA",
@@ -2809,8 +2976,9 @@ var stations = [{
   "x_position": 870,
   "y_position": 835,
   "line_id": 10,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 17,
+  "symbol_id": 17,
+  "radiation": 1,
   "station_description": "No Information Available."
 }, {
   "station_id": 129,
@@ -2821,8 +2989,9 @@ var stations = [{
   "x_position": 870,
   "y_position": 745,
   "line_id": 10,
-  "faction_id": 4,
-  "symbol_id": 4
+  "faction_id": 17,
+  "symbol_id": 17,
+  "radiation": 1,
 }, {
   "station_id": 130,
   "station_name": "SRETENSKY BULVAR",
@@ -2833,7 +3002,9 @@ var stations = [{
   "y_position": 489,
   "line_id": 10,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "radiation": 0,
+  "station_description": "Sretensky Bulvar was still under construction when bombs fell and the planned transfer to Turgenvskaya and Chistye Prudy was never completed. Since then the station and the connecting tunnels have collapsed and - where accessible at all - are extremely dangerous."
 }, {
   "station_id": 131,
   "station_name": "TRUBNAYA",
@@ -2844,7 +3015,9 @@ var stations = [{
   "y_position": 440,
   "line_id": 10,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "radiation": 0,
+  "station_description": "Trubnaya was still under construction when bombs fell and the planned transfer to Tsvetnoy Bulvar was never completed. Since then the station and the connecting tunnels have collapsed and - where accessible at all - are extremely dangerous."
 }, {
   "station_id": 132,
   "station_name": "DOSTOYEVSKAYA",
@@ -2855,7 +3028,9 @@ var stations = [{
   "y_position": 320,
   "line_id": 0,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "radiation": 0,
+  "station_description": "Dostoyevskaya was still under construction when bombs fell. Since then the station and the connecting tunnels have collapsed and - where accessible at all - are extremely dangerous."
 }, {
   "station_id": 133,
   "station_name": "MARYINA ROSCHA",
@@ -2866,7 +3041,9 @@ var stations = [{
   "y_position": 270,
   "line_id": 10,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "radiation": 0,
+  "station_description": "Maryina Roscha was still under construction when bombs fell. Since then the station and the connecting tunnels have collapsed and - where accessible at all - are extremely dangerous."
 }, {
   "station_id": 134,
   "station_name": "RECHNOY VOKZAL",
@@ -2876,8 +3053,9 @@ var stations = [{
   "x_position": 322,
   "y_position": 218,
   "line_id": 2,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 28,
+  "symbol_id": 28,
+  "radiation": 1,
   "station_description": "No Information Available."
 }, {
   "station_id": 135,
@@ -2888,8 +3066,9 @@ var stations = [{
   "x_position": 322,
   "y_position": 258,
   "line_id": 2,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 28,
+  "symbol_id": 28,
+  "radiation": 1,
   "station_description": "No Information Available."
 }, {
   "station_id": 136,
@@ -2900,8 +3079,9 @@ var stations = [{
   "x_position": 322,
   "y_position": 298,
   "line_id": 2,
-  "faction_id": 4,
-  "symbol_id": 50
+  "faction_id": 28,
+  "symbol_id": 28,
+  "radiation": 1,
 }, {
   "station_id": 137,
   "station_name": "SOKOL",
@@ -2912,7 +3092,8 @@ var stations = [{
   "y_position": 342,
   "line_id": 2,
   "faction_id": 12,
-  "symbol_id": 12
+  "symbol_id": 12,
+  "radiation": 1,
 }, {
   "station_id": 138,
   "station_name": "AEROPORT",
@@ -2923,7 +3104,8 @@ var stations = [{
   "y_position": 364,
   "line_id": 2,
   "faction_id": 12,
-  "symbol_id": 12
+  "symbol_id": 12,
+  "radiation": 1,
 }, {
   "station_id": 139,
   "station_name": "DINAMO",
@@ -2934,7 +3116,8 @@ var stations = [{
   "y_position": 386,
   "line_id": 2,
   "faction_id": 12,
-  "symbol_id": 12
+  "symbol_id": 12,
+  "radiation": 1,
 }, {
   "station_id": 140,
   "station_name": "BELORUSSKAYA",
@@ -2945,7 +3128,8 @@ var stations = [{
   "y_position": 410,
   "line_id": 2,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "radiation": 1,
 }, {
   "station_id": 141,
   "station_name": "BELORUSSKAYA (HANSA)",
@@ -2957,7 +3141,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point":10,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 142,
   "station_name": "MAYAKOVSKAYA",
@@ -2968,7 +3153,8 @@ var stations = [{
   "y_position": 460,
   "line_id": 2,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "radiation": 1,
 },  {
   "station_id": 143,
   "station_name": "OKHOTNY RYAD",
@@ -2980,7 +3166,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 2,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 144,
   "station_name": "NOVOKUZNETSKAYA",
@@ -2991,7 +3178,8 @@ var stations = [{
   "y_position": 783,
   "line_id": 2,
   "faction_id": 22,
-  "symbol_id": 224
+  "symbol_id": 224,
+  "radiation": 1,
 }, {
   "station_id": 145,
   "station_name": "KRASNOGVARDEYSKAYA",
@@ -3003,6 +3191,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 146,
@@ -3015,6 +3204,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 147,
@@ -3027,6 +3217,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 148,
@@ -3039,6 +3230,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 149,
@@ -3051,6 +3243,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 3,
   "symbol_id": 3,
+  "radiation": 4,
   "station_description": "It is believed that the roof of Kantemirovskaya was pierced or cracked open during the nuclear attack and a fragment of an unexploded warhead crashed nearby, flooding the station and surrounding tunnels with radiation. No one can be completely sure, as the contamination is too intense for even the most experienced stalkers to risk approaching."
 }, {
   "station_id": 150,
@@ -3063,6 +3256,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 3,
   "symbol_id": 3,
+  "radiation": 4,
   "station_description": "Kashirskaya is so contaminated by radiation seeping north from Kantemirovskaya that it is unsafe to approach in even the best radiation suits."
 }, {
   "station_id": 151,
@@ -3074,7 +3268,8 @@ var stations = [{
   "y_position": 1000,
   "line_id": 2,
   "faction_id": 3,
-  "symbol_id": 3
+  "symbol_id": 3,
+  "radiation": 2,
 }, {
   "station_id": 152,
   "station_name": "AVTOZAVODSKAYA",
@@ -3085,7 +3280,8 @@ var stations = [{
   "y_position": 919,
   "line_id": 2,
   "faction_id": 21,
-  "symbol_id": 21
+  "symbol_id": 21,
+  "radiation": 1,
 }, {
   "station_id": 153,
   "station_name": "PAVELETSKAYA",
@@ -3096,7 +3292,8 @@ var stations = [{
   "y_position": 861,
   "line_id": 2,
   "faction_id": 4,
-  "symbol_id": 4
+  "symbol_id": 4,
+  "radiation": 2,
 }, {
   "station_id": 154,
   "station_name": "PAVELETSKAYA (HANSA)",
@@ -3108,7 +3305,8 @@ var stations = [{
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 3,
-  "symbol_id": 5
+  "symbol_id": 5,
+  "radiation": 1,
 }, {
   "station_id": 155,
   "station_name": "KRYLATSKOE",
@@ -3119,7 +3317,8 @@ var stations = [{
   "y_position": 515,
   "line_id": 3,
   "faction_id": 19,
-  "symbol_id": 19
+  "symbol_id": 19,
+  "radiation": 2,
 }, {
   "station_id": 156,
   "station_name": "MOLODEZHNAYA",
@@ -3130,7 +3329,8 @@ var stations = [{
   "y_position": 545,
   "line_id": 3,
   "faction_id": 19,
-  "symbol_id": 19
+  "symbol_id": 19,
+  "radiation": 2,
 }, {
   "station_id": 157,
   "station_name": "KUNTSEVSKAYA",
@@ -3142,6 +3342,7 @@ var stations = [{
   "line_id": 3, //4
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 158,
@@ -3154,6 +3355,7 @@ var stations = [{
   "line_id": 4,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 159,
@@ -3165,7 +3367,8 @@ var stations = [{
   "y_position": 652,
   "line_id": 4,
   "faction_id": 24,
-  "symbol_id": 24
+  "symbol_id": 24,
+  "radiation": 3,
 }, {
   "station_id": 160,
   "station_name": "BAGRATIONOVSKAYA",
@@ -3177,6 +3380,7 @@ var stations = [{
   "line_id": 4,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 161,
@@ -3189,6 +3393,7 @@ var stations = [{
   "line_id": 4,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 162,
@@ -3201,6 +3406,7 @@ var stations = [{
   "line_id": 4,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 163,
@@ -3213,18 +3419,20 @@ var stations = [{
   "line_id": 4,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 3,
   "station_description": "No Information Available."
 }, {
   "station_id": 164,
   "station_name": "SMOLENSKAYA (1)",
   "station_open": 0,
   "station_img": "assets/img/example.png",
-  "label_point": 9,
+  "label_point": 10,
   "x_position": 406,
   "y_position": 620,
   "line_id": 4,
   "faction_id": 24,
-  "symbol_id": 24
+  "symbol_id": 24,
+  "radiation": 2,
 }, {
   "station_id": 165,
   "station_name": "ARBATSKAYA (1)",
@@ -3235,7 +3443,8 @@ var stations = [{
   "y_position": 600,
   "line_id": 4,
   "faction_id": 24,
-  "symbol_id": 24
+  "symbol_id": 24,
+  "radiation": 1,
 }, {
   "station_id": 166,
   "station_name": "TEKHNOPARK",
@@ -3247,6 +3456,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 3,
   "station_description": "A surface station still under construction when the bombs hit, Teknopark lies in overgrown ruins."
 }, {
   "station_id": 167,
@@ -3259,7 +3469,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 12.5,
   "faction_id": 23,
-  "symbol_id": 23
+  "symbol_id": 23,
+  "radiation": 2,
 }, {
   "station_id": 168,
   "station_name": "SPARTAK",
@@ -3271,6 +3482,7 @@ var stations = [{
   "line_id": 7,
   "faction_id": 4,
   "symbol_id": 4,
+  "radiation": 1,
   "station_description": "The ruling elite of Spartak have created their own religion by blending Aztec beliefs with Slavic paganism. Isolated from the rest of the Metro, they have contact only with Tushinskaya."
 }, {
   "station_id": 169,
@@ -3283,6 +3495,7 @@ var stations = [{
   "line_id": 11,
   "faction_id": 23,
   "symbol_id": 23,
+  "radiation": 3,
   "station_description": "Varshavskaya is nominally under the control of Sebastopol, however its half-open hermetic doors make it so heavily irradiated as to be uninhabitable. The walls ooze murky water and the station is full of rust and mould."
 }, {
   "station_id": 170,
@@ -3295,6 +3508,7 @@ var stations = [{
   "line_id": 11,
   "faction_id": 3,
   "symbol_id": 3,
+  "radiation": 4,
   "station_description": "Kashirskaya is so contaminated by radiation seeping north from Kantemirovskaya that it is unsafe to approach in even the best radiation suits."
 }, {
   "station_id": 171,
@@ -3307,7 +3521,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "faction_id": 6,
-  "symbol_id": 6
+  "symbol_id": 6,
+  "radiation": 1,
 }, {
   "station_id": 172,
   "station_name": "NOVOKOSINO",
@@ -3319,7 +3534,8 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 12,
   "faction_id": 16,
-  "symbol_id": 16
+  "symbol_id": 16,
+  "radiation": 1,
 }, {
   "station_id": 173,
   "station_name": "BITTSEVSKY PARK",
@@ -3332,6 +3548,7 @@ var stations = [{
   "label_point": 5.5,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 174,
@@ -3345,6 +3562,7 @@ var stations = [{
   "label_point": 12,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 },{
   "station_id": 175,
@@ -3357,6 +3575,7 @@ var stations = [{
   "line_id": 12,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 },{
   "station_id": 176,
@@ -3369,6 +3588,7 @@ var stations = [{
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 3,
   "station_description": "An elevated surface station, Ulitsa Skobelevskaya can be assumed to have been destroyed in the nuclear attack."
 },{
   "station_id": 177,
@@ -3381,6 +3601,7 @@ var stations = [{
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 3,
   "station_description": "An elevated surface station, Bulvar Admirala Ushakova can be assumed to have been destroyed in the nuclear attack."
 },{
   "station_id": 178,
@@ -3393,6 +3614,7 @@ var stations = [{
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 3,
   "station_description": "An elevated surface station, Ulitsa Gorchakova can be assumed to have been destroyed in the nuclear attack."
 },{
   "station_id": 179,
@@ -3405,6 +3627,7 @@ var stations = [{
   "line_id": 12,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 3,
   "station_description": "An elevated surface station, Buninskaya Alleya can be assumed to have been destroyed in the nuclear attack."
 }, {
   "station_id": 180,
@@ -3417,6 +3640,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 181,
@@ -3429,6 +3653,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 182,
@@ -3441,6 +3666,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 183,
@@ -3453,6 +3679,7 @@ var stations = [{
   "line_id": 2,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 184,
@@ -3461,10 +3688,11 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 1070,
-  "y_position": 955,
+  "y_position": 965,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 185,
@@ -3473,10 +3701,11 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 3,
   "x_position": 1070,
-  "y_position": 985,
+  "y_position": 995,
   "line_id": 7,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 186,
@@ -3488,7 +3717,8 @@ var stations = [{
   "y_position": 485,
   "line_id": 3,
   "faction_id": 19,
-  "symbol_id": 19
+  "symbol_id": 19,
+  "radiation": 2,
 }, {
   "station_id": 187,
   "station_name": "MYAKININO",
@@ -3500,6 +3730,7 @@ var stations = [{
   "line_id": 3,
   "faction_id": 2,
   "symbol_id": 2,
+  "radiation": 3,
   "station_description": "A surface station, Myakinino is likely to have been destroyed in the nuclear attack."
 }, {
   "station_id": 188,
@@ -3512,6 +3743,7 @@ var stations = [{
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 189,
@@ -3524,6 +3756,7 @@ var stations = [{
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 190,
@@ -3536,6 +3769,7 @@ var stations = [{
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 191,
@@ -3547,7 +3781,9 @@ var stations = [{
   "y_position": 620,
   "line_id": 4,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "radiation": 0,
+  "station_description": "The fact that the Great Worm cultists have not occupied this station suggests it is not accessible."
 }, {
   "station_id": 192,
   "station_name": "VYSTAVOCHNAYA",
@@ -3559,6 +3795,7 @@ var stations = [{
   "line_id": 4,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 }, {
   "station_id": 193,
@@ -3570,7 +3807,9 @@ var stations = [{
   "y_position": 702,
   "line_id": 3,
   "faction_id": 2,
-  "symbol_id": 2
+  "symbol_id": 2,
+  "radiation": 0,
+  "station_description": "The fact that the Great Worm cultists have not occupied this station suggests it is not accessible."
 }, {
   "station_id": 194,
   "station_name": "PARK POBEDY",
@@ -3581,7 +3820,8 @@ var stations = [{
   "y_position": 742,
   "line_id": 3,
   "faction_id": 20,
-  "symbol_id": 20
+  "symbol_id": 20,
+  "radiation": 1,
 },{
   "station_id": 195,
   "station_name": "KUNTSEVSKAYA",
@@ -3593,6 +3833,7 @@ var stations = [{
   "line_id": 3,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 3,
   "station_description": "No Information Available."
 },{
   "station_id": 196,
@@ -3604,7 +3845,8 @@ var stations = [{
   "y_position": 895,
   "line_id": 9,
   "faction_id": 26,
-  "symbol_id": 52
+  "symbol_id": 26,
+  "radiation": 1,
 },{
   "station_id": 197,
   "station_name": "MEZHDUNARODNAYA",
@@ -3616,6 +3858,7 @@ var stations = [{
   "line_id": 4,
   "faction_id": 1,
   "symbol_id": 1,
+  "radiation": 0,
   "station_description": "No Information Available."
 },
 
@@ -3732,7 +3975,7 @@ var factions = [{
 }, {
   "faction_id": 20,
   "faction_name": "Savage Cannibals of the Great Worm Cult",
-  "faction_description": "A technophobic, xenophobic, primative sect residing at Park Pobedy, the Great Worm Cult have descended into a state of degeneracy. They worship an entity known as the 'Great Worm', allegedly the being that created the entire world, and kidnap children from other stations to be raised in the cult. Any adults they capture are eaten. Mutation is common among the cultists but this has resulted in the development of preternatural night vision and hypnotic abilities verging on the psychic. The cult was founded and is led by an old man who hated how technology destroyed the world and sees his new religion as the best hope for preserving humanity past the point where the Metro fails entirely.",
+  "faction_description": "A technophobic, xenophobic, primative sect residing at Park Pobedy, the Great Worm Cult have descended into a state of degeneracy. They worship an entity known as the 'Great Worm', allegedly the being that created the entire world, and kidnap children from other stations to be raised in the cult. Any adults they capture are eaten. Mutation is common among the cultists but this has resulted in the development of preternatural night vision and hypnotic abilities verging on the psychic. The cult was founded and is led by an old man who hates the technology that destroyed the world and sees his new religion as the best hope for preserving humanity past the point where the Metro fails entirely.",
   "faction_colour": "#00BE00"
 }, {
   "faction_id": 21,
@@ -3757,13 +4000,23 @@ var factions = [{
 }, {
   "faction_id": 25,
   "faction_name": "Satanists",
-  "faction_description": "The Satanists are a group of malevolent metro inhabitants, who believe that the metro is the gateway to hell. Little is known about the location of the Satanists. One witness was kidnapped on Belorusskaya and brought to their station. He did not recognize it, although based on his description and the fact that it's beyond Pechatniki, Lyublino (Lyublinsko-Dmitrovskaya Line) is the most likely candidate. In contrast, some rumours place the Satanists at Timiryazevskaya on the Serpukhovsko-Timiryazevskaya line, suggesting there may be more than one colony of Satan worshipers in the Metro. The Satanist station is vandalized, all name-boards are ripped off and the walls and floor are blood-stained. The floor in the center is ripped up, and there's a huge pit, 30 metres deep, where kidnapped slaves from other stations are forced to dig further down. The Satanists believe that the end of the world already happened, and the Moscow metro is the Hellgate – if they dig a bit deeper, they would get to Hell and see Satan himself. The Satanists do not appear to maintain any industry, and they also brutally murder slaves on a constant basis. How they survive remains a mystery.",
+  "faction_description": "The Satanists are a group of malevolent metro inhabitants, who believe that the metro is the gateway to hell. Little is known about the location of the Satanists. One witness was kidnapped on Belorusskaya and brought to their station. He did not recognize it, although based on his description and the fact that it's beyond Pechatniki, Lyublino (Lyublinsko-Dmitrovskaya Line) is the most likely candidate. In contrast, some rumours place the Satanists at Timiryazevskaya or Volgogradsky Prospekt, suggesting there may be more than one colony of Satan worshipers in the Metro. The Satanist station is vandalized, all name-boards are ripped off and the walls and floor are blood-stained. The floor in the center is ripped up, and there's a huge pit, 30 metres deep, where kidnapped slaves from other stations are forced to dig further down. The Satanists believe that the end of the world already happened, the Moscow metro is the Hellgate and Satan is waiting for them in Hell only a little further down. The Satanists do not appear to maintain any industry, and they also brutally murder slaves on a constant basis. How they survive remains a mystery.",
   "faction_colour": "#000000"
 }, {
   "faction_id": 26,
   "faction_name": "The Watchtower",
   "faction_description": "The Watchtower are a religious order based in a train stalled in the tunnel between Serpukhhovskaya and Tulskaya. Composing mainly of Jehova's Witnesses, their brothers travel the Metro, taking in waifs and strays to indoctrinate into their religion. Their offer of food and accommodation in exchange for faith has seen them assemble quite a collection of the desperate and destitute.",
   "faction_colour": "#FFA530"
+}, {
+  "faction_id": 27,
+  "faction_name": "Flooded",
+  "faction_description": "A few stations have been flooded by groundwater or by Moscow's rivers. The water is generally highly radioactive.",
+  "faction_colour": "#65D6EA"
+}, {
+  "faction_id": 28,
+  "faction_name": "Voykovskaya Commonwealth",
+  "faction_description": "Also known as the Republic of Gulyaypole (after the birthplace of Anarchist hero Nestor Makhno) the Voykovskaya Commonwealth is an anarchist commune.",
+  "faction_colour": "#888888"
 }
 
 

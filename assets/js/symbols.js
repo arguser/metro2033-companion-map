@@ -391,7 +391,52 @@ function pattern_25(sX,sY,canvas=1) { // Satanists
 	ctx[canvas].stroke();
 }
 
-function pattern_50(sX,sY,canvas=1) { // Anarchists
+function pattern_26(sX,sY,canvas=1) { // Jehovas Witnesses
+	ctx[canvas].lineCap = 'butt';
+	ctx[canvas].lineWidth = 2*scale;	
+	ctx[canvas].strokeStyle = "#000000";
+	
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX,sY-6*scale);
+	ctx[canvas].lineTo(sX,sY+7*scale);
+	ctx[canvas].closePath();
+	ctx[canvas].stroke();
+
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX-4.5*scale,sY-1*scale);
+	ctx[canvas].lineTo(sX+4.5*scale,sY-1*scale);
+	ctx[canvas].closePath();
+	ctx[canvas].stroke();
+
+	ctx[canvas].strokeStyle = "#444444";
+
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX-10*scale,sY);
+	ctx[canvas].lineTo(sX-26*scale,sY);
+	ctx[canvas].stroke();
+
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX-26*scale,sY);
+	ctx[canvas].lineTo(sX-23*scale,sY-3*scale);
+	ctx[canvas].lineTo(sX-23*scale,sY+3*scale);
+	ctx[canvas].closePath();
+	ctx[canvas].stroke();
+
+}
+
+function pattern_27(sX,sY,canvas=1) {	// Flooded
+	ctx[canvas].lineCap = 'butt';
+
+	ctx[canvas].lineWidth = 3*scale;
+	ctx[canvas].strokeStyle = '#35A6BA';
+	ctx[canvas].beginPath();
+	ctx[canvas].moveTo(sX+4*scale,sY+4*scale);
+	ctx[canvas].lineTo(sX-4*scale,sY-4*scale);
+	ctx[canvas].closePath();
+	ctx[canvas].stroke();
+}
+
+function pattern_28(sX,sY,canvas=1) { // Anarchists
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 1*scale;
 
@@ -425,38 +470,6 @@ function pattern_51(sX,sY,canvas=1) { // Krishnas
 	ctx[canvas].fillText(sym,sX,sY+1*scale);
 }
 
-function pattern_52(sX,sY,canvas=1) { // Jehovas Witnesses
-	ctx[canvas].lineCap = 'butt';
-	ctx[canvas].lineWidth = 2*scale;	
-	ctx[canvas].strokeStyle = "#000000";
-	
-	ctx[canvas].beginPath();
-	ctx[canvas].moveTo(sX,sY-6*scale);
-	ctx[canvas].lineTo(sX,sY+7*scale);
-	ctx[canvas].closePath();
-	ctx[canvas].stroke();
-
-	ctx[canvas].beginPath();
-	ctx[canvas].moveTo(sX-4.5*scale,sY-1*scale);
-	ctx[canvas].lineTo(sX+4.5*scale,sY-1*scale);
-	ctx[canvas].closePath();
-	ctx[canvas].stroke();
-
-	ctx[canvas].strokeStyle = "#444444";
-
-	ctx[canvas].beginPath();
-	ctx[canvas].moveTo(sX-10*scale,sY);
-	ctx[canvas].lineTo(sX-26*scale,sY);
-	ctx[canvas].stroke();
-
-	ctx[canvas].beginPath();
-	ctx[canvas].moveTo(sX-26*scale,sY);
-	ctx[canvas].lineTo(sX-23*scale,sY-3*scale);
-	ctx[canvas].lineTo(sX-23*scale,sY+3*scale);
-	ctx[canvas].closePath();
-	ctx[canvas].stroke();
-
-}
 
 
 function pattern_star(sX,sY,colorFill,canvas=1) { // Generic Star

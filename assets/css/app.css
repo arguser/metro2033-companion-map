@@ -333,7 +333,7 @@ html[dir="rtl"] .searchbox-searchbutton {
 .widget-pane-visible {
   opacity: 1;
   height: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 .pane-collapsed-mode .widget-pane {
   box-shadow: none;
@@ -361,7 +361,7 @@ html[dir="rtl"] .searchbox-searchbutton {
   overflow: visible;
   position: absolute;
   height: 100%;
-  width: 408px
+  width: 408px;
 }
 .widget-pane-offscreen .widget-pane-content {
   display: none
@@ -512,6 +512,18 @@ station-image img{
   line-height: 19.5px;
   padding: 20px 24px;
 }
+
+
+/* overriding flex box layout for station descriptions */
+#stationDescription {display:block;}
+#stationDescription .widget-pane-section-content-title {}
+#stationDescription .widget-pane-section-content-text {
+  padding:0 0 20px 0;
+  width:100%;
+  max-width:100%;
+}
+  
+
 
 /*FOOTER*/
 

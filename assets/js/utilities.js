@@ -459,75 +459,75 @@ function tunnel_entrance(canvas=1) {
 		ctx[canvas].beginPath();
 		switch(thisEntrance[0]) {
 			case 0:
-				ctx[canvas].moveTo(sX, sY-8*scale);
-				ctx[canvas].lineTo(sX+2*scale, sY-10*scale);
-				ctx[canvas].lineTo(sX, sY-10*scale);
-				ctx[canvas].lineTo(sX, sY+10*scale);
-				ctx[canvas].lineTo(sX+2*scale, sY+10*scale);
+				ctx[canvas].moveTo(sX, sY-6*scale);
+				ctx[canvas].lineTo(sX+2*scale, sY-8*scale);
+				ctx[canvas].lineTo(sX, sY-8*scale);
 				ctx[canvas].lineTo(sX, sY+8*scale);
+				ctx[canvas].lineTo(sX+2*scale, sY+8*scale);
+				ctx[canvas].lineTo(sX, sY+6*scale);
 			break;
 
 			case 45:
-				ctx[canvas].moveTo(sX+7*scale, sY-7*scale);
-				ctx[canvas].lineTo(sX+9*scale, sY-7*scale);
-				ctx[canvas].lineTo(sX+8*scale, sY-8*scale);
-				ctx[canvas].lineTo(sX-8*scale, sY+8*scale);
-				ctx[canvas].lineTo(sX-7*scale, sY+9*scale);
-				ctx[canvas].lineTo(sX-7*scale, sY+7*scale);
+				ctx[canvas].moveTo(sX+5*scale, sY-5*scale);
+				ctx[canvas].lineTo(sX+7*scale, sY-5*scale);
+				ctx[canvas].lineTo(sX+6*scale, sY-6*scale);
+				ctx[canvas].lineTo(sX-6*scale, sY+6*scale);
+				ctx[canvas].lineTo(sX-5*scale, sY+7*scale);
+				ctx[canvas].lineTo(sX-5*scale, sY+5*scale);
 			break;
 
 			case 90:
-				ctx[canvas].moveTo(sX-8*scale, sY);
-				ctx[canvas].lineTo(sX-10*scale, sY+2*scale);
-				ctx[canvas].lineTo(sX-10*scale, sY);
-				ctx[canvas].lineTo(sX+10*scale, sY);
-				ctx[canvas].lineTo(sX+10*scale, sY+2*scale);
+				ctx[canvas].moveTo(sX-6*scale, sY);
+				ctx[canvas].lineTo(sX-8*scale, sY+2*scale);
+				ctx[canvas].lineTo(sX-8*scale, sY);
 				ctx[canvas].lineTo(sX+8*scale, sY);
+				ctx[canvas].lineTo(sX+8*scale, sY+2*scale);
+				ctx[canvas].lineTo(sX+6*scale, sY);
 			break;
 
 			case 135:
-				ctx[canvas].moveTo(sX-7*scale, sY-7*scale);
-				ctx[canvas].lineTo(sX-9*scale, sY-7*scale);
-				ctx[canvas].lineTo(sX-8*scale, sY-8*scale);
-				ctx[canvas].lineTo(sX+8*scale, sY+8*scale);
-				ctx[canvas].lineTo(sX+7*scale, sY+9*scale);
-				ctx[canvas].lineTo(sX+7*scale, sY+7*scale);
+				ctx[canvas].moveTo(sX-5*scale, sY-5*scale);
+				ctx[canvas].lineTo(sX-7*scale, sY-5*scale);
+				ctx[canvas].lineTo(sX-6*scale, sY-6*scale);
+				ctx[canvas].lineTo(sX+6*scale, sY+6*scale);
+				ctx[canvas].lineTo(sX+5*scale, sY+7*scale);
+				ctx[canvas].lineTo(sX+5*scale, sY+5*scale);
 			break;
 
 			case 180:
-				ctx[canvas].moveTo(sX, sY-8*scale);
-				ctx[canvas].lineTo(sX-2*scale, sY-10*scale);
-				ctx[canvas].lineTo(sX, sY-10*scale);
-				ctx[canvas].lineTo(sX, sY+10*scale);
-				ctx[canvas].lineTo(sX-2*scale, sY+10*scale);
+				ctx[canvas].moveTo(sX, sY-6*scale);
+				ctx[canvas].lineTo(sX-2*scale, sY-8*scale);
+				ctx[canvas].lineTo(sX, sY-8*scale);
 				ctx[canvas].lineTo(sX, sY+8*scale);
+				ctx[canvas].lineTo(sX-2*scale, sY+8*scale);
+				ctx[canvas].lineTo(sX, sY+6*scale);
 			break;
 
 			case 225:
-				ctx[canvas].moveTo(sX+7*scale, sY-7*scale);
-				ctx[canvas].lineTo(sX+7*scale, sY-9*scale);
-				ctx[canvas].lineTo(sX+8*scale, sY-8*scale);
-				ctx[canvas].lineTo(sX-8*scale, sY+8*scale);
-				ctx[canvas].lineTo(sX-9*scale, sY+7*scale);
-				ctx[canvas].lineTo(sX-7*scale, sY+7*scale);
+				ctx[canvas].moveTo(sX+5*scale, sY-5*scale);
+				ctx[canvas].lineTo(sX+5*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX+6*scale, sY-6*scale);
+				ctx[canvas].lineTo(sX-6*scale, sY+6*scale);
+				ctx[canvas].lineTo(sX-7*scale, sY+5*scale);
+				ctx[canvas].lineTo(sX-5*scale, sY+5*scale);
 			break;
 
 			case 270:
-				ctx[canvas].moveTo(sX-8*scale, sY);
-				ctx[canvas].lineTo(sX-10*scale, sY-2*scale);
-				ctx[canvas].lineTo(sX-10*scale, sY);
-				ctx[canvas].lineTo(sX+10*scale, sY);
-				ctx[canvas].lineTo(sX+10*scale, sY-2*scale);
+				ctx[canvas].moveTo(sX-6*scale, sY);
+				ctx[canvas].lineTo(sX-8*scale, sY-2*scale);
+				ctx[canvas].lineTo(sX-8*scale, sY);
 				ctx[canvas].lineTo(sX+8*scale, sY);
+				ctx[canvas].lineTo(sX+8*scale, sY-2*scale);
+				ctx[canvas].lineTo(sX+6*scale, sY);
 			break;
 
 			case 315:
-				ctx[canvas].moveTo(sX-7*scale, sY-7*scale);
-				ctx[canvas].lineTo(sX-7*scale, sY-9*scale);
-				ctx[canvas].lineTo(sX-8*scale, sY-8*scale);
-				ctx[canvas].lineTo(sX+8*scale, sY+8*scale);
-				ctx[canvas].lineTo(sX+9*scale, sY+7*scale);
-				ctx[canvas].lineTo(sX+7*scale, sY+7*scale);						
+				ctx[canvas].moveTo(sX-5*scale, sY-5*scale);
+				ctx[canvas].lineTo(sX-5*scale, sY-7*scale);
+				ctx[canvas].lineTo(sX-6*scale, sY-6*scale);
+				ctx[canvas].lineTo(sX+6*scale, sY+6*scale);
+				ctx[canvas].lineTo(sX+7*scale, sY+5*scale);
+				ctx[canvas].lineTo(sX+5*scale, sY+5*scale);						
 			break;
 		}
 		ctx[canvas].stroke();
