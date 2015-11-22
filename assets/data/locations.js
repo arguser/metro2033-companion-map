@@ -1456,6 +1456,7 @@ var stations = [{
   "faction_id": 25,
   "symbol_id": 25,
   "radiation": 1,
+  "station_description": "Timiryazevskaya was an inhabited and relatively safe station for several years after the war. This changed however when an overwhelming horde of rats emerged from nearby deep tunnels (the 'Kingdom of Rats'), devouring everything in their path. Only six individuals - five men and a five year old boy - escaped, leaving the station dark and abandoned, although recent rumours suggest it may have been re-occupied by a Satanic cult."
 }, {
   "station_id": 7,
   "station_name": "DMITROVSKAYA",
@@ -1468,6 +1469,7 @@ var stations = [{
   "faction_id": 3,
   "symbol_id": 3,
   "radiation": 1,
+  "station_description": "Prior to the fall of Timiryazevskaya, Dmitrovskaya was inhabited by a small number of outcasts and hermits. They were all devoured during the rat attack and the station has been empty ever since."
 }, {
   "station_id": 8,
   "station_name": "SAVELOVSKAYA",
@@ -4130,16 +4132,22 @@ var d6_lines = [{
     [0, 173,740], // PARK POBEDY
     [1, 173,732],
     [0, 163,712],
+    
     [1, 153,702],
     [0, 153,682],  
+    
     [1, 170,665],
     [0, 190,665],
+    
     [1, 245,720],
     [0, 265,720],
     [1, 380,605],   
     [0, 400,605],
-    [1, 482,687],
-    [0, 502,687],
+
+    [1, 450,655],
+    [0, 470,665],
+    [1, 512,665], 
+    [0, 532,655],
     [0, 583,606], 
   ],
   "line_colour": "#F9C010"
