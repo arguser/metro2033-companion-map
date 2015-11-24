@@ -1401,8 +1401,8 @@ var stations = [{
   "y_position": 115,
   "line_id": 9,
   "label_point": 3,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 30,
+  "symbol_id": 30,
   "radiation": 0, 
   "station_description": "No Information Available."
 }, {
@@ -1414,8 +1414,8 @@ var stations = [{
   "y_position": 150,
   "line_id": 9,
   "label_point": 3,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 30,
+  "symbol_id": 30,
   "radiation": 0,
   "station_description": "No Information Available."
 }, {
@@ -1427,8 +1427,8 @@ var stations = [{
   "y_position": 185,
   "line_id": 9,
   "label_point": 3,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 30,
+  "symbol_id": 30,
   "radiation": 0,
   "station_description": "No Information Available."
 }, {
@@ -1440,8 +1440,8 @@ var stations = [{
   "y_position": 210,
   "line_id": 9,
   "label_point": 10,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 31,
+  "symbol_id": 31,
   "radiation": 0,
   "station_description": "No Information Available."
 }, {
@@ -2799,10 +2799,10 @@ var stations = [{
   "x_position": 192,
   "y_position": 305,
   "line_id": 7,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 3,
+  "symbol_id": 3,
   "radiation": 0,
-  "station_description": "No Information Available."
+  "station_description": "Planernaya was formerly inhabited and traded with Shodnenskaya. However in mid 2033 the inhabitants started to vanish and by the end of the year they had disapeared entirely. Pale, lemur like creatures have been seen in the vicinity, and some claim that these are the mutated remnants of the station's population."
 }, {
   "station_id": 113,
   "station_name": "SHODNENSKAYA",
@@ -2815,7 +2815,7 @@ var stations = [{
   "faction_id": 4,
   "symbol_id": 4,
   "radiation": 1,
-  "station_description": "Prior to the destruction of the tunnel between Polezhayevskaya and Begovaya, Skhodnenskaya traded extensively with the rest of the Metro. Since then however the station has become notably impoverished. It is currently run by Stalkers."
+  "station_description": "Prior to the destruction of the tunnel between Polezhayevskaya and Begovaya, Skhodnenskaya traded extensively with the rest of the Metro, drawing much of their wealth from goods salvaged from the nearby Tushino Machine-Building Plant. The sealing of the tunnel has cut off this trade however, and the station is facing severe shortages and an uncertain future."
 }, {
   "station_id": 114,
   "station_name": "TUSHINSKAYA",
@@ -2828,7 +2828,7 @@ var stations = [{
   "faction_id": 4,
   "symbol_id": 4,
   "radiation": 1,
-  "station_description": "The Liberal Republic of Tushinskaya has constant problems with mutant attacks. Cut off from the rest of the Metro - apart from Spartak and Skhodnenskaya - they have a printing press and produce newspapers."
+  "station_description": "The Liberal Republic of Tushinskaya is realtively rich in resources thanks to its location under the old Tushino market, but is prone to sometimes devastating flooding. They trade with Skhodnenskaya - and occasionally Spartak - and have a free press that often criticises the ruling council."
 }, {
   "station_id": 115,
   "station_name": "SCHUKINSKAYA",
@@ -2841,7 +2841,7 @@ var stations = [{
   "faction_id": 3,
   "symbol_id": 3,
   "radiation": 1,
-  "station_description": "No Information Available."
+  "station_description": "Schukinskaya is an empty and desolate place, abandoned after the strange incidents at Polezhaevskaya."
 }, {
   "station_id": 116,
   "station_name": "OKTYABRSKOE POLE",
@@ -3081,7 +3081,7 @@ var stations = [{
   "faction_id": 28,
   "symbol_id": 28,
   "radiation": 1,
-  "station_description": "No Information Available."
+  "station_description": "A member of the anarchist Voykovskaya Commonwealth, Rechnoy Vokzal is known to farm pigs."
 }, {
   "station_id": 135,
   "station_name": "VODNY STADION",
@@ -3344,9 +3344,10 @@ var stations = [{
   "faction_id": 19,
   "symbol_id": 19,
   "radiation": 2,
+  "station_description": "As with other nearby stations, Krylatskoe is particularly shallow, resulting in more radiation that is usual for the metro. Inhabited by mutant refugees from the rest of the system it a member station of the Commonwealth of Human Mutants."
 }, {
   "station_id": 156,
-  "station_name": "MOLODEZHNAYA",
+  "station_name": "MOLODYOZHNAYA",
   "station_open": 0,
   "station_img": "assets/img/example.png",
   "label_point": 9,
@@ -3356,6 +3357,7 @@ var stations = [{
   "faction_id": 19,
   "symbol_id": 19,
   "radiation": 2,
+  "station_description": "As with other nearby stations, Molodyozhnaya is particularly shallow, resulting in more radiation that is usual for the metro. Inhabited by mutant refugees from the rest of the system it is the capital of the Commonwealth of Human Mutants."
 }, {
   "station_id": 157,
   "station_name": "KUNTSEVSKAYA",
@@ -3394,6 +3396,7 @@ var stations = [{
   "faction_id": 24,
   "symbol_id": 24,
   "radiation": 3,
+  "station_description": "An irradiated surface station, Filevskiy Park is said to be inhabited by mutants with three legs and multiple heads."
 }, {
   "station_id": 160,
   "station_name": "BAGRATIONOVSKAYA",
@@ -3403,10 +3406,10 @@ var stations = [{
   "x_position": 156,
   "y_position": 674,
   "line_id": 4,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 3,
+  "symbol_id": 3,
   "radiation": 3,
-  "station_description": "No Information Available."
+  "station_description": "While usually empty, Bagrationovskaya is used as a trading post by the Metro's mutant population."
 }, {
   "station_id": 161,
   "station_name": "FILI",
@@ -3744,6 +3747,7 @@ var stations = [{
   "faction_id": 19,
   "symbol_id": 19,
   "radiation": 2,
+  "station_description": "As with other nearby stations, Krylatskoe is particularly shallow, resulting in more radiation that is usual for the metro. Inhabited by mutant refugees from the rest of the system it a member station of the Commonwealth of Human Mutants."
 }, {
   "station_id": 187,
   "station_name": "MYAKININO",
@@ -3805,10 +3809,10 @@ var stations = [{
   "x_position": 270,
   "y_position": 620,
   "line_id": 4,
-  "faction_id": 2,
-  "symbol_id": 2,
+  "faction_id": 29,
+  "symbol_id": 29,
   "radiation": 0,
-  "station_description": "The fact that the Great Worm cultists have not occupied this station suggests it is not accessible."
+  "station_description": "Little is known of the 'Europe' faction, or the stations they occupy."
 }, {
   "station_id": 192,
   "station_name": "VYSTAVOCHNAYA",
@@ -3818,10 +3822,10 @@ var stations = [{
   "x_position": 290,
   "y_position": 600,
   "line_id": 4,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 29,
+  "symbol_id": 29,
   "radiation": 0,
-  "station_description": "No Information Available."
+  "station_description": "Little is known of the 'Europe' faction, or the stations they occupy."
 }, {
   "station_id": 193,
   "station_name": "SLAVYANSKY BULVAR",
@@ -3879,12 +3883,12 @@ var stations = [{
   "station_img": "assets/img/example.png",
   "label_point": 9,
   "x_position": 290,
-  "y_position": 565,
+  "y_position": 570,
   "line_id": 4,
-  "faction_id": 1,
-  "symbol_id": 1,
+  "faction_id": 29,
+  "symbol_id": 29,
   "radiation": 0,
-  "station_description": "No Information Available."
+  "station_description": "Little is known of the 'Europe' faction, or the stations they occupy."
 },
 
 ]
@@ -4042,9 +4046,22 @@ var factions = [{
   "faction_name": "Voykovskaya Commonwealth",
   "faction_description": "Also known as the Republic of Gulyaypole (after the birthplace of Anarchist hero Nestor Makhno) the Voykovskaya Commonwealth is an anarchist commune.",
   "faction_colour": "#888888"
+}, {
+  "faction_id": 29,
+  "faction_name": "Europe",
+  "faction_description": "Little is known of this faction, but they can be presumed to be made up of survivors of the International Business Centre that stood above their stations",
+  "faction_colour": "#003399"
+}, {
+  "faction_id": 30,
+  "faction_name": "Commonwealth of Skaven Stations",
+  "faction_description": "Unknown to most of the metro, the northern end of the Serpukhovsko-Timiryazevskaya line is inhabited by mutated, rat-like humans. The result of a virus carried by the plague of rats that destroyed Timiryazevskaya in the early days of the metro, these mutants have adopted the name 'Skaven' from an old computer game. The Commonwealth of Skaven Stations is a Federal Republic consisting of the stations Bibirevo, Otradnoe and Vladykino. They work hard to maintain human culture and ethics in spite of their mutation and the Commonwealth is comfortable and prosperous - although highly suspicious of human outsiders. They are allied with the Northern Emirate and in constant conflict with the Freemen of Altufyevo.",
+  "faction_colour": "#73738B"
+}, {
+  "faction_id": 31,
+  "faction_name": "The Northern Emirate",
+  "faction_description": "",
+  "faction_colour": "#73738B"
 }
-
-
 /*
   "faction_id": 4,
   "faction_name": "Rangers of the Order",

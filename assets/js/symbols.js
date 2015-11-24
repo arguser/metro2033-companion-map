@@ -453,6 +453,42 @@ function pattern_28(sX,sY,canvas=1) { // Anarchists
 	ctx[canvas].moveTo(sX-6*scale,sY+1*scale);ctx[canvas].lineTo(sX+6*scale,sY+2*scale);ctx[canvas].stroke();
 }
 
+function pattern_29(sX,sY,canvas=1) { // Europe
+	ctx[canvas].lineCap = 'butt';
+	ctx[canvas].fillStyle = '#FFCC00';
+	circle(sX, sY-5*scale,1*scale,canvas); ctx[canvas].fill();
+	circle(sX, sY+5*scale,1*scale,canvas); ctx[canvas].fill();
+	circle(sX+5*scale, sY,1*scale,canvas); ctx[canvas].fill();
+	circle(sX-5*scale, sY,1*scale,canvas); ctx[canvas].fill();
+
+	circle(sX+3.5*scale, sY-3.5*scale,1*scale,canvas); ctx[canvas].fill();
+	circle(sX+3.5*scale, sY+3.5*scale,1*scale,canvas); ctx[canvas].fill();
+	circle(sX-3.5*scale, sY-3.5*scale,1*scale,canvas); ctx[canvas].fill();
+	circle(sX-3.5*scale, sY+3.5*scale,1*scale,canvas); ctx[canvas].fill();
+}
+
+function pattern_30(sX,sY,canvas=1) { // Skaven CCC
+	ctx[canvas].lineCap = 'butt';
+	var fontSize = 14*scale;
+	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
+	ctx[canvas].textAlign = 'center';
+	ctx[canvas].fillStyle = '#FF0302';
+	var h= '2623';
+	var sym = String.fromCharCode(parseInt(h, 16));
+	ctx[canvas].fillText(sym,sX,sY);
+}
+
+function pattern_31(sX,sY,canvas=1) { // Skaven Emirate
+	ctx[canvas].lineCap = 'butt';
+	var fontSize = 12*scale;
+	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
+	ctx[canvas].textAlign = 'center';
+	ctx[canvas].fillStyle = '#02FF03';
+	var h= '127769';
+	var sym = String.fromCharCode(parseInt(h, 16));
+	ctx[canvas].fillText(sym,sX,sY);
+}
+
 function pattern_51(sX,sY,canvas=1) { // Krishnas
 
 	// override background
