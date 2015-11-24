@@ -3508,7 +3508,7 @@ var stations = [{
   "faction_id": 4,
   "symbol_id": 4,
   "radiation": 1,
-  "station_description": "The ruling elite of Spartak have created their own religion by blending Aztec beliefs with Slavic paganism. Isolated from the rest of the Metro, they have contact only with Tushinskaya."
+  "station_description": "Spartak was still under construction when the bombs hit and has no direct access to the surface. The rulers of the station have created their own religion by blending Aztec beliefs with Slavic paganism and carry out regular human sacrifices. Isolated from the rest of the Metro, they have contact only with Tushinskaya."
 }, {
   "station_id": 169,
   "station_name": "VARSHAVSKAYA",
