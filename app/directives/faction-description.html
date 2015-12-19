@@ -1,0 +1,13 @@
+<div ng-show="map.faction != null">
+  <div class="widget-pane-section-header-description" layout="row">
+    <div flex="90" layout="column">
+      <div class="widget-pane-section-header-title">{{map.faction.faction_name}}</div>
+    </div>
+    <div flex="10" layout="column">
+      <div class="widget-pane-section-header-number">{{map.faction.icon}}</div>
+    </div>
+  </div>
+  <div class="panel-content" layout="column">
+    <div class="widget-pane-section-content-text" flex="100">{{map.faction.faction_description}}</div>
+  </div>
+</div>
