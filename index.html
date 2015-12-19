@@ -1,63 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
+  <!-- Metadata -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Title & favicon -->
   <title>Metro 2033 Companion Map</title>
+  <link href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png" rel="icon">
+
+  <!-- Angular Material -->
+  <link href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Github Icons -->
+  <link rel="stylesheet" href="assets/font/octicons.css">
+  <!-- App styles -->
+  <link href="assets/css/app.css" rel="stylesheet">
 </head>
 
-<body onload="initialize()">
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Moscow_Metro.svg/125px-Moscow_Metro.svg.png" alt="Brand" class="navbar-brand" />
-        <a href="#" class="navbar-brand">METRO 2033 COMPANION MAP</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar">
-        <form class="navbar-form navbar-right" role="search">
-          <div class="form-group">
-            <input id="location" type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-  <div class="map">
-    <canvas id="map">
-      <img id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif" alt="Metro 2033 Map" class="map">
-    </canvas>
-    <div class="popover fade right in">
-      <div class="arrow"></div>
-      <h3 class="popover-title"></h3>
-      <div class="popover-content">
-        Here you can see some very useful information about the station!
-        <br><br>
-        If not, then you could help! <a href="https://github.com/arguser/metro2033-companion-map/blob/master/js/locations.js#L14"><span class="glyphicon glyphicon-pencil"></span></a>
-      </div>
-    </div>
-  </div>
-  <footer>
-    Tool
-    <a href="https://github.com/arguser/metro2033-companion-map">
-      <span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-right"></span></a> with
-    <span class="glyphicon glyphicon-heart"></span> by <a href="https://twitter.com/arguser">arguser</a>
-  </footer>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="js/locations.js"></script>
+<body onload="drawMap()" class="screen-mode">
+  <div ng-controller="MapController as map" layout="column" ng-class="{'pane-collapsed-mode': map.toggled}" id="app-container">
 
+    <search-box class="omnibox-cards-transformations"></search-box>
+    <information-panel></information-panel>
+
+    <div id="scene">
+      <div id="canvasHolder" class="widget-scene dragscroll" style="cursor: grab; cursor : -o-grab; cursor : -moz-grab; cursor : -webkit-grab;">
+        <canvas id="riverCanvas"    class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="lineCanvas"     class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="stationCanvas"  class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="labelCanvas"    class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="d6Canvas"       class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <canvas id="effectCanvas"   class="metromap widget-scene-canvas" width="2200" height="2200"></canvas>
+        <!--
+          // values from utilities.js
+          Scale value = 1.5
+          Station Radius = 7
+          xShim = 150
+          yShim = 20
+        -->
+        <a id="link-{{station.display.station_id}}" class="station_link" ng-repeat="station in map.stations" ng-click="map.highlight_stations(station)" style="top: {{((1.5 * station.display.y_position)+(20*1.5)) - ((7+1)*1.5)}}px; left: {{((1.5 * station.display.x_position)+(150*1.5)) - ((7+1)*1.5)}}px;">
+        </a>
+      </div>
+    </div>
+    <div class="noprint" id="hidewidgets"></div>
+    <div class="noprint" id="showwidgets"></div>
+    <options-panel></options-panel>
+
+    <form id="d6Button">
+      <input type="button" id="showD6" value="Show D6" onclick="draw_D6();"/>
+      <input type="button" id="hideD6" value="Hide D6" onclick="hide_D6();"/>
+    </form>
+
+    <footer-buttons></footer-buttons>
+  </div>
+  <!-- <div class="map" layout="row" flex="80">
+        <canvas id="map">
+          <img alt="Metro 2033 Map" class="map" id="metro" src="http://media.moddb.com/images/games/1/13/12559/metro_guide_eng.gif">
+        </canvas>
+      </div> -->
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+  <!-- Angular Material -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
+
+  <!-- Module definition -->
+  <script src="app/app.module.js"></script>
+  <!-- Configurations -->
+  <script src="app/app.config.js"></script>
+  <!-- Data -->
+  <script src="assets/data/locations.js"></script>
+  <!-- Controllers -->
+  <script src="app/controllers/MapController.js"></script>
+  <!-- Directives -->
+  <script src="app/directives/MapDirectives.js"></script>
+  <!-- Services -->
+  <script src="app/services/FactionService.js"></script>
+  <script src="app/services/LineService.js"></script>
+  <script src="app/services/StationService.js"></script>
+  <script type="text/javascript" src="assets/js/dragscroll.js"></script>
+  <script type="text/javascript" src="assets/js/angular-scroll.min.js"></script>
+  <script type="text/javascript" src="assets/js/utilities.js"></script>
+  <script type="text/javascript" src="assets/js/symbols.js"></script>
+
+  <!-- <script type="text/javascript" src="assets/js/stations.js"></script> -->
+
+  <script type="text/javascript">
+    var animHolder;
+    var animCurrentFrame;
+    var animFrames;
+
+    var ctx = []; // holder for canvases
+    var data_version = 3; // what data sets to use
+    var name_set = 0; // what name set to use
+
+    function drawMap() {
+
+      // get canvas objects
+      var canvas1 = document.getElementById('riverCanvas');
+      ctx1 = canvas1.getContext('2d');
+      var canvas2 = document.getElementById('lineCanvas');
+      ctx2 = canvas2.getContext('2d');
+      var canvas3 = document.getElementById('stationCanvas');
+      ctx3 = canvas3.getContext('2d');
+      var canvas4 = document.getElementById('labelCanvas');
+      ctx4 = canvas4.getContext('2d');
+      var canvas5 = document.getElementById('d6Canvas');
+      ctx5 = canvas5.getContext('2d');
+      var canvas6 = document.getElementById('effectCanvas');
+      ctx6 = canvas6.getContext('2d');
+
+      // put them in array
+      ctx = [ctx1, ctx2, ctx3, ctx4, ctx5, ctx6];
+
+      // initialise canvases
+      for (i = 0; i < ctx.length; i++) {
+        ctx[i].clearRect(0, 0, 1800, 2000);
+        ctx[i].scale(1, 1);
+        ctx[i].lineCap = 'round';
+        ctx[i].textBaseline = 'middle'
+      }
+
+      // draw rivers
+      drawRiver();
+
+      // draw side tunnels
+      for (i = 0; i < side_tunnels.length; i++) {
+        thisLink = side_tunnels[i];
+        side_tunnel(thisLink);
+      }
+
+      // draw rail line surface links
+      for (i = 0; i < surface_links.length; i++) {
+        thisLink = surface_links[i];
+        surface_link(thisLink[0],thisLink[1],thisLink[2]);
+      }
+
+      // draw rail lines
+      for (i = 0; i < lines.length; i++) {
+        thisLine = lines[i];
+        drawLine(thisLine, 1); // borders
+        drawLine(thisLine);
+      }
+
+      dangerous_tunnel();
+
+      // draw rail line breaks
+      for (i = 0; i < line_breaks.length; i++) {
+        thisBreak = line_breaks[i];
+        break_line(thisBreak[0],thisBreak[1]);
+      }
+
+      tunnel_entrance();
+
+      // draw interchanges
+      interchange_2(705, 368, 683, 385); // Prospect Mir
+      interchange_2(521, 823, 499, 846); // October
+      interchange_2(683, 472, 698, 489); // Chistye Prudy
+      interchange_2(412, 778, 388, 778); // Park Kultry
+      interchange_2(762, 425, 762, 450); // Komsomol
+      interchange_2(76,  595, 100, 595); // Kuntsevskaya
+
+      interchange_2(708,662, 683,662); // Kitay Gorod
+      interchange_2(390,410, 390,435); // Belarus
+      interchange_2(890,766, 870,745); // Rimskaya
+      interchange_2(490,350, 490,372); // Novoslobodskaya
+      interchange_2(870,835, 896,835); // Proletariat
+      interchange_2(578,1030, 602,1030); // Sebastapol
+      interchange_2(411,1150, 435,1150); // Bittsevsky Park
+      interchange_2(584,1210, 608,1210); // Bulvar Dmitriya Donskogo
+      interchange_2(590,855, 608,875); // Dobryninskaya
+      interchange_2(578,1030, 602,1030); // Tetr
+      interchange_2(749,1030, 725,1030); // Kashirskaya
+      interchange_2(676,861, 676,834); // Pavelets
+      interchange_2(173,742, 173,766); // Park Pobedy
+      interchange_2(270,620, 290,600); // Delovoy Tsentr
+      interchange_2(350,533, 327,553); // Barrikadnaya
+      interchange_2(631,557, 631,533); // Kuznetsky Most
+
+      interchange_3(800,766, 800,740, 775,751); // Taganskaya
+      interchange_3(800,588, 800,620, 820,604); // Kursk
+      interchange_3(337,731, 318,708, 342,707); // Kievskaya
+      interchange_3(593,783, 593,752, 613,766); // Tretyakovskaya
+      interchange_3(583,606, 598,621, 613,636); // Ploschad Revolutski
+      interchange_3(489,513, 509,533, 529,513); // Pushkin
+
+      interchange_4(527,663, 485,678, 485,636, 527,621); // Polis
+
+
+      // draw stations
+      for (i = 0; i < stations.length; i++) {
+        ctx[2].clearRect(0, 0, 1800, 2000);
+        thisStation = stations[i];
+        station(thisStation['x_position'], thisStation['y_position'], thisStation['faction_id'], thisStation['symbol_id']);
+
+        // create HTML Object for station
+        // clickable_station(thisStation['x_position'], thisStation['y_position'], thisStation['station_id']);
+      }
+
+      // label stations
+      draw_features();
+
+      // label stations
+      print_station_labels();
+
+      // draw D6
+     // draw_D6();  // in development
+
+    }
+  </script>
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>
