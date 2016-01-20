@@ -17,32 +17,37 @@ function rad(deg) {
 }
 
 // draw a line between two points
-function line(sX,sY,eX,eY,canvas=1) {
+function line(sX,sY,eX,eY,canvas) {
+  canvas = 1;
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY);
 	ctx[canvas].lineTo(eX,eY);
 	ctx[canvas].stroke();
 }
 // draw a circle at a specific point
-function circle(cX,cY,Rad,canvas=1) {
+function circle(cX,cY,Rad,canvas) {
+  canvas = 1;
 	ctx[canvas].beginPath();
 	ctx[canvas].arc(cX,cY,Rad,0,rad(360));
 }
 // draw a section of a circle at a specific point
-function arc(cX,cY,Rad,start,end,canvas=1) {
+function arc(cX,cY,Rad,start,end,canvas) {
+  canvas = 1;
 	ctx[canvas].beginPath();
 	ctx[canvas].arc(cX,cY,Rad,rad(start),rad(end));
 	ctx[canvas].stroke();
 }
 // draw a quadratic curve between two points
-function quad(sX,sY,cX,cY,eX,eY,canvas=1) {
+function quad(sX,sY,cX,cY,eX,eY,canvas) {
+  canvas = 1;
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY);
 	ctx[canvas].quadraticCurveTo(eX,eY, cX,cY);
 	ctx[canvas].stroke();
 }
 // draw a bezier curve between two points
-function bezier(sX,sY,c1X,c1Y,c2X,c2Y,eX,eY,canvas=1) {
+function bezier(sX,sY,c1X,c1Y,c2X,c2Y,eX,eY,canvas) {
+  canvas = 1;
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY);
 	ctx[canvas].bezierCurveTo(c1X,c1Y, c2X,c2Y, eX,eY);
@@ -50,7 +55,9 @@ function bezier(sX,sY,c1X,c1Y,c2X,c2Y,eX,eY,canvas=1) {
 }
 
 // draw a station for a specific faction at a given point
-function station(sX,sY,factionID,symbol,canvas=1,stationScale=1) {
+function station(sX,sY,factionID,symbol,canvas,stationScale) {
+  stationScale = 1;
+  canvas = 1;
 	sX = (scale*sX)+xShim;
 	sY = (scale*sY)+yShim;
 
@@ -120,7 +127,8 @@ function print_station_labels() {
 }
 
 // print out label for a specific station
-function name_station(stationID,position,sX,sY,canvas=3) {
+function name_station(stationID,position,sX,sY,canvas) {
+  canvas = 3;
 	var searchResult = findRecord(station_names,"station_id",stationID);
 	searchResult = findRecord(searchResult,"name_set",name_set);
 	if (searchResult.length>0) {
@@ -165,7 +173,9 @@ function name_station(stationID,position,sX,sY,canvas=3) {
 	}
 }
 
-function draw_features(feature_array=features,canvas=2) {
+function draw_features(feature_array,canvas) {
+  feature_array = features;
+  canvas = 2;
 	// draw features
 	for (i=0;i<feature_array.length;i++) {
 		thisFeature = feature_array[i];
@@ -217,8 +227,9 @@ function draw_features(feature_array=features,canvas=2) {
 
 
 // interchange code
-function interchange_2(fX,fY, sX,sY, canvas=1) {
+function interchange_2(fX,fY, sX,sY, canvas) {
 
+      canvas = 1;
 			fX = (fX*scale)+xShim;	fY = (fY*scale)+yShim;
 			sX = (sX*scale)+xShim;	sY = (sY*scale)+yShim;
 
@@ -240,7 +251,9 @@ function interchange_2(fX,fY, sX,sY, canvas=1) {
 			ctx[canvas].beginPath();ctx[canvas].arc(fX,fY,9*scale,0,rad(360));ctx[canvas].closePath();ctx[canvas].fill();
 			ctx[canvas].beginPath();ctx[canvas].arc(sX,sY,9*scale,0,rad(360));ctx[canvas].closePath();ctx[canvas].fill();
 		}
-function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
+function interchange_3(fX,fY, sX,sY, tX,tY, loop, canvas) {
+  loop = 1;
+  canvas = 1;
 
 			fX = (fX*scale)+xShim;	fY = (fY*scale)+yShim;
 			sX = (sX*scale)+xShim;	sY = (sY*scale)+yShim;
@@ -275,8 +288,9 @@ function interchange_3(fX,fY, sX,sY, tX,tY, loop=1, canvas=1) {
 			ctx[canvas].beginPath(); ctx[canvas].arc(tX,tY,9*scale,0,rad(360)); ctx[canvas].closePath(); ctx[canvas].fill();
 		}
 
-function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY, canvas=1) {
+function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY, canvas) {
 
+canvas = 1;
 			fX = (fX*scale)+xShim;	fY = (fY*scale)+yShim;
 			sX = (sX*scale)+xShim;	sY = (sY*scale)+yShim;
 			tX = (tX*scale)+xShim;	tY = (tY*scale)+yShim;
@@ -320,7 +334,8 @@ function interchange_4(fX,fY, sX,sY, tX,tY, rX,rY, canvas=1) {
 }
 
 // draw a river
-function drawRiver(canvas=0) {
+function drawRiver(canvas) {
+  canvas = 0;
 	for (i=0;i<rivers.length;i++) {
 		var thisRiver=rivers[i];
 		ctx[canvas].lineWidth = thisRiver[0];
@@ -340,7 +355,9 @@ function drawRiver(canvas=0) {
 }
 
 // draw a rail line from coordinates
-function drawLine(line,border=0,canvas=1) {
+function drawLine(line,border,canvas) {
+  border = 0;
+  canvas = 1;
 
 	var offset = 10; // larger offset equals more extreme curves
 
@@ -417,17 +434,20 @@ function drawLine(line,border=0,canvas=1) {
 	}
 }
 
-function dangerous_tunnel(canvas=1) {
+function dangerous_tunnel(canvas) {
 
+canvas = 1;
 	ctx[canvas].lineCap = "square";
-	
+
 	for (i=0;i<dangerous_tunnels.length;i++) {
 		tunnel = dangerous_tunnels[i];
 		drawLine(tunnel,2);
 	}
 }
 
-function side_tunnel(tunnel,canvas=1) {
+function side_tunnel(tunnel,canvas) {
+
+  canvas = 1;
 
 	ctx[canvas].lineCap = "square";
 	ctx[canvas].strokeStyle = '#444444';
@@ -444,7 +464,9 @@ function side_tunnel(tunnel,canvas=1) {
 	ctx[canvas].stroke();
 }
 
-function tunnel_entrance(canvas=1) {
+function tunnel_entrance(canvas) {
+
+  canvas = 1;
 
 	ctx[canvas].lineCap = "butt";
 	ctx[canvas].strokeStyle = '#000000';
@@ -527,7 +549,7 @@ function tunnel_entrance(canvas=1) {
 				ctx[canvas].lineTo(sX-6*scale, sY-6*scale);
 				ctx[canvas].lineTo(sX+6*scale, sY+6*scale);
 				ctx[canvas].lineTo(sX+7*scale, sY+5*scale);
-				ctx[canvas].lineTo(sX+5*scale, sY+5*scale);						
+				ctx[canvas].lineTo(sX+5*scale, sY+5*scale);
 			break;
 		}
 		ctx[canvas].stroke();
@@ -535,7 +557,9 @@ function tunnel_entrance(canvas=1) {
 	}
 }
 
-function surface_link(angle, sX,sY, canvas=1) {
+function surface_link(angle, sX,sY, canvas) {
+
+  canvas = 1;
 
 	sX = (sX*scale)+xShim;
 	sY = (sY*scale)+yShim;
@@ -545,7 +569,7 @@ function surface_link(angle, sX,sY, canvas=1) {
 
 	straightLength = 27*scale;
 	capLength = 7*scale;
-	
+
 	slantLength = 17*scale;
 	capLengthSlant = 4*scale;
 
@@ -572,7 +596,7 @@ function surface_link(angle, sX,sY, canvas=1) {
 		break;
 
 		case 135:
-			ctx[canvas].lineTo(sX-slantLength, sY+slantLength);		
+			ctx[canvas].lineTo(sX-slantLength, sY+slantLength);
 			ctx[canvas].lineTo(sX-slantLength-capLengthSlant, sY+slantLength-capLengthSlant);
 			ctx[canvas].lineTo(sX-slantLength+capLengthSlant, sY+slantLength+capLengthSlant);
 		break;
@@ -606,7 +630,9 @@ function surface_link(angle, sX,sY, canvas=1) {
 	ctx[canvas].stroke();
 }
 
-function break_line(sX,sY, canvas=1) {
+function break_line(sX,sY, canvas) {
+
+  canvas = 1;
 
 	sX = sX*scale;
 	sY = sY*scale;
@@ -623,19 +649,19 @@ function break_line(sX,sY, canvas=1) {
 	ctx[canvas].lineTo((sX)+xShim,(sY-(breakSize/2))+yShim);
 	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY-breakSize)+yShim);
 
-	ctx[canvas].lineTo((sX+breakSize)+xShim,(sY-breakSize)+yShim); 
+	ctx[canvas].lineTo((sX+breakSize)+xShim,(sY-breakSize)+yShim);
 
 	ctx[canvas].lineTo((sX+breakSize)+xShim,(sY-breakSize/2)+yShim);
 	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY)+yShim);
 	ctx[canvas].lineTo((sX+breakSize)+xShim,(sY+breakSize/2)+yShim);
 
-	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY+(breakSize/2))+yShim); 
+	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY+(breakSize/2))+yShim);
 
 	ctx[canvas].lineTo((sX+(breakSize/2))+xShim,(sY+breakSize)+yShim);
 	ctx[canvas].lineTo((sX)+xShim,(sY+(breakSize*1.5))+yShim);
 	ctx[canvas].lineTo((sX-(breakSize/2))+xShim,(sY+breakSize)+yShim);
 
-	ctx[canvas].lineTo((sX-(breakSize/2))+xShim,(sY+(breakSize/2))+yShim); 
+	ctx[canvas].lineTo((sX-(breakSize/2))+xShim,(sY+(breakSize/2))+yShim);
 
 	ctx[canvas].lineTo((sX-breakSize)+xShim,(sY+breakSize/2)+yShim);
 	ctx[canvas].lineTo((sX-(breakSize*1.5))+xShim,(sY)+yShim);
