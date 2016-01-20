@@ -3,7 +3,8 @@
 // faction. A miracle of rare device!
 /*****************************************/
 
-function pattern_0(sX,sY,canvas=1) { // Holder
+function pattern_0(sX,sY,canvas) { // Holder
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 2*scale;
 	ctx[canvas].strokeStyle = '#AAAAAA';
@@ -18,15 +19,17 @@ function pattern_0(sX,sY,canvas=1) { // Holder
 	ctx[canvas].stroke();
 }
 
-function pattern_1(sX,sY,canvas=1) { // unexplored
+function pattern_1(sX,sY,canvas) { // unexplored
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 12*scale;
 	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
 	ctx[canvas].fillStyle = '#AAAAAA';
 	ctx[canvas].fillText('?',sX,sY);
-} 
+}
 
-function pattern_2(sX,sY,canvas=1) { // Destroyed
+function pattern_2(sX,sY,canvas) { // Destroyed
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 3*scale;
 	ctx[canvas].strokeStyle = '#000000';
@@ -37,10 +40,11 @@ function pattern_2(sX,sY,canvas=1) { // Destroyed
 	arc(sX,sY,6*scale,300,340);
 	ctx[canvas].lineWidth = 2*scale;
 	circle(sX,sY,4*scale);
-	ctx[canvas].fill();	
+	ctx[canvas].fill();
 }
 
-function pattern_3(sX,sY,canvas=1) {	// Abandoned
+function pattern_3(sX,sY,canvas) {	// Abandoned
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 3*scale;
 	ctx[canvas].strokeStyle = '#323232';
@@ -51,7 +55,8 @@ function pattern_3(sX,sY,canvas=1) {	// Abandoned
 	ctx[canvas].stroke();
 }
 
-function pattern_4(sX,sY,canvas=1) { // Independent Stations
+function pattern_4(sX,sY,canvas) { // Independent Stations
+	canvas = 1;
 	ctx[canvas].lineCap = "butt";
 	ctx[canvas].strokeStyle = '#FFFFFF';
 	ctx[canvas].fillStyle = '#FFFFFF';
@@ -66,7 +71,8 @@ function pattern_4(sX,sY,canvas=1) { // Independent Stations
 	ctx[canvas].fill();
 }
 
-function pattern_5(sX,sY,canvas=1) {	// Hansa
+function pattern_5(sX,sY,canvas) {	// Hansa
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	// ring
 	ctx[canvas].strokeStyle = '#FFFFFF';
@@ -77,10 +83,11 @@ function pattern_5(sX,sY,canvas=1) {	// Hansa
 	circle(sX,sY-4*scale,1*scale); ctx[canvas].stroke(); ctx[canvas].fill();
 	circle(sX,sY+4*scale,1*scale); ctx[canvas].stroke(); ctx[canvas].fill();
 	circle(sX-4*scale,sY,1*scale); ctx[canvas].stroke(); ctx[canvas].fill();
-	circle(sX+4*scale,sY,1*scale); ctx[canvas].stroke(); ctx[canvas].fill();	
+	circle(sX+4*scale,sY,1*scale); ctx[canvas].stroke(); ctx[canvas].fill();
 }
 
-function pattern_6(sX,sY,canvas=1) { // Red Line
+function pattern_6(sX,sY,canvas) { // Red Line
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 14*scale;
 	ctx[canvas].font = 'normal '+fontSize+'px sans-serif';
@@ -91,7 +98,8 @@ function pattern_6(sX,sY,canvas=1) { // Red Line
 	ctx[canvas].fillText(sym,sX,sY);
 }
 
-function pattern_7(sX,sY,canvas=1) {	// Polis
+function pattern_7(sX,sY,canvas) {	// Polis
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 1*scale;
 	ctx[canvas].fillStyle = '#FFFFFF';
@@ -117,20 +125,22 @@ function pattern_7(sX,sY,canvas=1) {	// Polis
 	ctx[canvas].beginPath(); ctx[canvas].moveTo(sX+2*scale,sY+2*scale); ctx[canvas].lineTo(sX+2*scale,sY-2*scale); ctx[canvas].stroke();
 }
 
-function pattern_8(sX,sY,canvas=1) {	// 4th Reich
+function pattern_8(sX,sY,canvas) {	// 4th Reich
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 2*scale;
 	ctx[canvas].strokeStyle = '#FFFFFF';
-	ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY,canvas=1); ctx[canvas].lineTo(sX,sY-5*scale); ctx[canvas].lineTo(sX+4*scale,sY-4*scale); ctx[canvas].stroke();
-	ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY,canvas=1); ctx[canvas].lineTo(sX+5*scale,sY+2*scale); ctx[canvas].lineTo(sX+3*scale,sY+5*scale); ctx[canvas].stroke();
-	ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY,canvas=1); ctx[canvas].lineTo(sX-4*scale,sY+3*scale); ctx[canvas].lineTo(sX-5*scale,sY-1*scale); ctx[canvas].stroke();
+	ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY,canvas); ctx[canvas].lineTo(sX,sY-5*scale); ctx[canvas].lineTo(sX+4*scale,sY-4*scale); ctx[canvas].stroke();
+	ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY,canvas); ctx[canvas].lineTo(sX+5*scale,sY+2*scale); ctx[canvas].lineTo(sX+3*scale,sY+5*scale); ctx[canvas].stroke();
+	ctx[canvas].beginPath(); ctx[canvas].moveTo(sX,sY,canvas); ctx[canvas].lineTo(sX-4*scale,sY+3*scale); ctx[canvas].lineTo(sX-5*scale,sY-1*scale); ctx[canvas].stroke();
 }
 
-function pattern_9(sX,sY,canvas=1) {pattern_star(sX,sY,'#FFFFFF');} // VDNKh Commonwealth
+function pattern_9(sX,sY,canvas) {pattern_star(sX,sY,'#FFFFFF');} // VDNKh Commonwealth
 
-function pattern_10(sX,sY,canvas=1) {pattern_star(sX,sY,'#FFFFFF');} // 1905 Confederation
+function pattern_10(sX,sY,canvas) {pattern_star(sX,sY,'#FFFFFF');} // 1905 Confederation
 
-function pattern_11(sX,sY,canvas=1) {	// Emerald City
+function pattern_11(sX,sY,canvas) {	// Emerald City
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 1*scale;
 	ctx[canvas].strokeStyle = '#FFFFFF';
@@ -155,7 +165,8 @@ function pattern_11(sX,sY,canvas=1) {	// Emerald City
 	ctx[canvas].fill();
 }
 
-function pattern_12(sX,sY,canvas=1) {	// Collective Farms
+function pattern_12(sX,sY,canvas) {	// Collective Farms
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 1*scale;
 	ctx[canvas].fillStyle = '#39980E';
@@ -166,7 +177,7 @@ function pattern_12(sX,sY,canvas=1) {	// Collective Farms
 	ctx[canvas].lineTo(sX-5*scale,sY-2*scale);
 	ctx[canvas].bezierCurveTo(sX-2*scale,sY-4*scale, sX+5*scale,sY-4*scale, sX+6*scale,sY);
 	ctx[canvas].lineTo(sX+5*scale,sY+1*scale);
-	ctx[canvas].lineTo(sX+4*scale,sY+3*scale);	
+	ctx[canvas].lineTo(sX+4*scale,sY+3*scale);
 	ctx[canvas].lineTo(sX+3*scale,sY+3*scale);
 	ctx[canvas].lineTo(sX+3*scale,sY+2*scale);
 	ctx[canvas].lineTo(sX-2*scale,sY+2*scale);
@@ -177,10 +188,11 @@ function pattern_12(sX,sY,canvas=1) {	// Collective Farms
 	ctx[canvas].lineTo(sX-5*scale,sY+1*scale);
 	ctx[canvas].lineTo(sX-6*scale,sY+1*scale);
 	ctx[canvas].closePath();
-	ctx[canvas].fill();	
+	ctx[canvas].fill();
 }
 
-function pattern_13(sX,sY,canvas=1) { // Baumansky
+function pattern_13(sX,sY,canvas) { // Baumansky
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].strokeStyle = '#1D58FF';
 	ctx[canvas].lineWidth = 1*scale;
@@ -199,15 +211,16 @@ function pattern_13(sX,sY,canvas=1) { // Baumansky
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX-3*scale,sY+3*scale);
 	ctx[canvas].lineTo(sX-1*scale,sY-1*scale);
-	ctx[canvas].lineTo(sX,sY,canvas=1);
+	ctx[canvas].lineTo(sX,sY,canvas);
 	ctx[canvas].lineTo(sX+3*scale,sY-3*scale);
 	ctx[canvas].lineTo(sX+1*scale,sY+1*scale);
-	ctx[canvas].lineTo(sX,sY,canvas=1);
+	ctx[canvas].lineTo(sX,sY,canvas);
 	ctx[canvas].closePath();
 	ctx[canvas].stroke();
 }
 
-function pattern_14(sX,sY,canvas=1) {	// Arbat Confederation
+function pattern_14(sX,sY,canvas) {	// Arbat Confederation
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 12*scale;
 	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
@@ -215,8 +228,8 @@ function pattern_14(sX,sY,canvas=1) {	// Arbat Confederation
 	ctx[canvas].fillText('A',sX,sY);
 }
 
-function pattern_15(sX,sY,canvas=1) { // Pervomay Republic
-
+function pattern_15(sX,sY,canvas) { // Pervomay Republic
+canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].strokeStyle = '#FFFF00';
 	ctx[canvas].fillStyle = '#FFFF00';
@@ -228,7 +241,7 @@ function pattern_15(sX,sY,canvas=1) { // Pervomay Republic
 	ctx[canvas].lineTo(sX+2*scale,sY-4*scale);
 	ctx[canvas].lineTo(sX+3*scale,sY-5*scale);
 	ctx[canvas].lineTo(sX+5*scale,sY-3*scale);
-	ctx[canvas].lineTo(sX+4*scale,sY-2*scale);	
+	ctx[canvas].lineTo(sX+4*scale,sY-2*scale);
 	ctx[canvas].quadraticCurveTo(sX+5*scale,sY+2*scale, sX+4*scale,sY+4*scale);
 	ctx[canvas].quadraticCurveTo(sX+2*scale,sY+4*scale, sX,sY+6*scale);
 	ctx[canvas].quadraticCurveTo(sX-2*scale,sY+4*scale, sX-4*scale,sY+4*scale);
@@ -249,13 +262,14 @@ function pattern_15(sX,sY,canvas=1) { // Pervomay Republic
 	ctx[canvas].stroke();
 }
 
-function pattern_16(sX,sY,canvas=1) {pattern_star(sX,sY,'#000000');} // Kalinin
+function pattern_16(sX,sY,canvas) {pattern_star(sX,sY,'#000000');} // Kalinin
 
-function pattern_17(sX,sY,canvas=1) {pattern_star(sX,sY,'#FFFFFF');} // Petchatniki
+function pattern_17(sX,sY,canvas) {pattern_star(sX,sY,'#FFFFFF');} // Petchatniki
 
-function pattern_18(sX,sY,canvas=1) {pattern_star(sX,sY,'#FFFFFF');} // Yasenevo
+function pattern_18(sX,sY,canvas) {pattern_star(sX,sY,'#FFFFFF');} // Yasenevo
 
-function pattern_19(sX,sY,canvas=1) {  // Human Mutants
+function pattern_19(sX,sY,canvas) {  // Human Mutants
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].fillStyle = '#CBFF00';
 	ctx[canvas].strokeStyle = '#CBFF00';
@@ -273,7 +287,8 @@ function pattern_19(sX,sY,canvas=1) {  // Human Mutants
 	ctx[canvas].stroke();
 }
 
-function pattern_20(sX,sY,canvas=1) { // Great Worm
+function pattern_20(sX,sY,canvas) { // Great Worm
+	canvas = 1;
 	ctx[canvas].lineCap = 'round';
 	ctx[canvas].lineWidth = 2*scale;
 	ctx[canvas].strokeStyle = "#004000";
@@ -286,9 +301,10 @@ function pattern_20(sX,sY,canvas=1) { // Great Worm
 	ctx[canvas].stroke();
 }
 
-function pattern_21(sX,sY,canvas=1) {pattern_star(sX,sY,'#FFFF00');} // Trotskyists
+function pattern_21(sX,sY,canvas) {pattern_star(sX,sY,'#FFFF00');} // Trotskyists
 
-function pattern_220(sX,sY,canvas=1) { // Gangster Hearts
+function pattern_220(sX,sY,canvas) { // Gangster Hearts
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 18*scale;
 	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
@@ -299,7 +315,8 @@ function pattern_220(sX,sY,canvas=1) { // Gangster Hearts
 	ctx[canvas].fillText(sym,sX,sY);
 }
 
-function pattern_221(sX,sY,canvas=1) { // Gangster Clubs
+function pattern_221(sX,sY,canvas) { // Gangster Clubs
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 18*scale;
 	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
@@ -310,7 +327,8 @@ function pattern_221(sX,sY,canvas=1) { // Gangster Clubs
 	ctx[canvas].fillText(sym,sX,sY);
 }
 
-function pattern_222(sX,sY,canvas=1) { // Gangster Diamonds
+function pattern_222(sX,sY,canvas) { // Gangster Diamonds
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY-6*scale);
@@ -322,7 +340,8 @@ function pattern_222(sX,sY,canvas=1) { // Gangster Diamonds
 	ctx[canvas].fill();
 }
 
-function pattern_223(sX,sY,canvas=1) { // Gangster Spades
+function pattern_223(sX,sY,canvas) { // Gangster Spades
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 18*scale;
 	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
@@ -333,7 +352,8 @@ function pattern_223(sX,sY,canvas=1) { // Gangster Spades
 	ctx[canvas].fillText(sym,sX,sY);
 }
 
-function pattern_224(sX,sY,canvas=1) { // Gangster Star
+function pattern_224(sX,sY,canvas) { // Gangster Star
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY-6*scale);
@@ -349,7 +369,8 @@ function pattern_224(sX,sY,canvas=1) { // Gangster Star
 	ctx[canvas].fill();
 }
 
-function pattern_23(sX,sY,canvas=1) { // Sebastapol
+function pattern_23(sX,sY,canvas) { // Sebastapol
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 0.5*scale;
 	ctx[canvas].fillStyle = '#0000AA';
@@ -360,7 +381,7 @@ function pattern_23(sX,sY,canvas=1) { // Sebastapol
 	ctx[canvas].moveTo(sX,sY-6*scale); ctx[canvas].lineTo(sX+3*scale,sY); ctx[canvas].bezierCurveTo(sX+3*scale,sY+7,  sX-3*scale,sY+7,  sX-3*scale,sY);
 	ctx[canvas].closePath();
 	ctx[canvas].fill();
-	
+
 	sX = sX+5; sY = sY+1;
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY-6*scale); ctx[canvas].lineTo(sX+3*scale,sY); ctx[canvas].bezierCurveTo(sX+3*scale,sY+7,  sX-3*scale,sY+7,  sX-3*scale,sY);
@@ -369,7 +390,8 @@ function pattern_23(sX,sY,canvas=1) { // Sebastapol
 	ctx[canvas].stroke();
 }
 
-function pattern_24(sX,sY,canvas=1) { // Occupied by Mutants
+function pattern_24(sX,sY,canvas) { // Occupied by Mutants
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].fillStyle = '#CBFF00';
 	circle(sX,        sY-3*scale,2*scale,canvas); ctx[canvas].fill();
@@ -377,7 +399,8 @@ function pattern_24(sX,sY,canvas=1) { // Occupied by Mutants
 	circle(sX+3*scale,sY+2*scale,2*scale,canvas); ctx[canvas].fill();
 }
 
-function pattern_25(sX,sY,canvas=1) { // Satanists
+function pattern_25(sX,sY,canvas) { // Satanists
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 1*scale;
 	ctx[canvas].beginPath();
@@ -391,11 +414,12 @@ function pattern_25(sX,sY,canvas=1) { // Satanists
 	ctx[canvas].stroke();
 }
 
-function pattern_26(sX,sY,canvas=1) { // Jehovas Witnesses
+function pattern_26(sX,sY,canvas) { // Jehovas Witnesses
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
-	ctx[canvas].lineWidth = 2*scale;	
+	ctx[canvas].lineWidth = 2*scale;
 	ctx[canvas].strokeStyle = "#000000";
-	
+
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY-6*scale);
 	ctx[canvas].lineTo(sX,sY+7*scale);
@@ -424,7 +448,8 @@ function pattern_26(sX,sY,canvas=1) { // Jehovas Witnesses
 
 }
 
-function pattern_27(sX,sY,canvas=1) {	// Flooded
+function pattern_27(sX,sY,canvas) {	// Flooded
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 
 	ctx[canvas].lineWidth = 3*scale;
@@ -436,7 +461,8 @@ function pattern_27(sX,sY,canvas=1) {	// Flooded
 	ctx[canvas].stroke();
 }
 
-function pattern_28(sX,sY,canvas=1) { // Anarchists
+function pattern_28(sX,sY,canvas) { // Anarchists
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].lineWidth = 1*scale;
 
@@ -453,7 +479,8 @@ function pattern_28(sX,sY,canvas=1) { // Anarchists
 	ctx[canvas].moveTo(sX-6*scale,sY+1*scale);ctx[canvas].lineTo(sX+6*scale,sY+2*scale);ctx[canvas].stroke();
 }
 
-function pattern_29(sX,sY,canvas=1) { // Europe
+function pattern_29(sX,sY,canvas) { // Europe
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].fillStyle = '#FFCC00';
 	circle(sX, sY-5*scale,1*scale,canvas); ctx[canvas].fill();
@@ -467,7 +494,8 @@ function pattern_29(sX,sY,canvas=1) { // Europe
 	circle(sX-3.5*scale, sY+3.5*scale,1*scale,canvas); ctx[canvas].fill();
 }
 
-function pattern_30(sX,sY,canvas=1) { // Skaven CCC
+function pattern_30(sX,sY,canvas) { // Skaven CCC
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 14*scale;
 	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
@@ -478,7 +506,8 @@ function pattern_30(sX,sY,canvas=1) { // Skaven CCC
 	ctx[canvas].fillText(sym,sX,sY);
 }
 
-function pattern_31(sX,sY,canvas=1) { // Skaven Emirate
+function pattern_31(sX,sY,canvas) { // Skaven Emirate
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	var fontSize = 12*scale;
 	ctx[canvas].font = 'bold '+fontSize+'px sans-serif';
@@ -489,8 +518,8 @@ function pattern_31(sX,sY,canvas=1) { // Skaven Emirate
 	ctx[canvas].fillText(sym,sX,sY);
 }
 
-function pattern_51(sX,sY,canvas=1) { // Krishnas
-
+function pattern_51(sX,sY,canvas) { // Krishnas
+canvas = 1;
 	// override background
 	ctx[canvas].fillStyle = '#FF8800';
 	circle(sX,sY,station_radius*scale,canvas);
@@ -508,7 +537,8 @@ function pattern_51(sX,sY,canvas=1) { // Krishnas
 
 
 
-function pattern_star(sX,sY,colorFill,canvas=1) { // Generic Star
+function pattern_star(sX,sY,colorFill,canvas) { // Generic Star
+	canvas = 1;
 	ctx[canvas].lineCap = 'butt';
 	ctx[canvas].beginPath();
 	ctx[canvas].moveTo(sX,sY-6*scale);
